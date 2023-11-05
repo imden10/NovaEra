@@ -1,0 +1,14 @@
+/vendor/
+!/app/Controllers/DefaultController.php
+!/app/Controllers/PageController.php
+!/app/Controllers/PostController.php
+!/app/Models/Page.php
+!/app/Models/Post.php
+!/views/layouts/header.php
+!/views/layouts/footer.php
+!/views/layouts/default.php
+!/views/page/front.php
+!/views/page/posts.php
+!/views/page/single.php
+!/views/page/404.php
+!/views/post/single.php

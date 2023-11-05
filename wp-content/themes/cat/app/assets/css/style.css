@@ -1,0 +1,361 @@
+.meta-boxes-container .form-group {
+    margin-bottom: 15px;
+}
+
+.meta-boxes-container label {
+    width: 100%;
+    display: block;
+    font-weight: bolder;
+}
+
+.meta-boxes-container .body-block textarea,
+.meta-boxes-container .body-block input {
+    width: 100%;
+}
+
+.meta-boxes-container textarea {
+    resize: none;
+    height: 150px;
+}
+
+
+/* Options container */
+.custom-options-container {
+    font-size: 12px;
+
+}
+
+.custom-options-form {
+    background: #fff;
+    padding: 15px;
+    margin: 15px 10px 15px 0;
+}
+
+.custom-options-form > h2 {
+    border-bottom: 1px solid #b1b1b1;
+    padding: 5px 0;
+}
+
+.custom-options-container input,
+.custom-options-container textarea {
+    width: 100%;
+}
+
+.custom-options-container textarea {
+    resize: none;
+    height: 100px;
+}
+
+.custom-options-form .button {
+    width: auto;
+}
+/* End Options container */
+
+
+/* Dynamic list option */
+.list-items .items-container li {
+    display: -webkit-flex;
+    display: flex;
+    align-items: baseline;
+}
+
+.list-items .items-container input {
+    width: calc(100% - 100px)!important;
+}
+/* End Dynamic list option */
+
+
+/* MetaBoxes container form group */
+.form-group-meta-box {
+    margin-top: 30px;
+}
+/* End MetaBoxes container form group */
+
+
+/* MetaBox Constructor */
+    .components-container input,
+    .components-container select,
+    .components-container textarea {
+        border: 1px solid #acaeab;
+    }
+
+    .components-container textarea {
+        resize: none;
+    }
+
+    /* Scopes section */
+    #componentsScopes {
+        background: #DDDDDD;
+        padding: 5px 10px;
+        margin: 15px 0 15px 0;
+    }
+
+    button.clone-component {
+        background: #fff;
+        border: 1px solid #000;
+        padding: 2px 15px 5px 15px;
+        cursor: pointer;
+        margin: 1px;
+    }
+    /* End Scopes section */
+
+    /* Component container */
+    .component-container {
+        border: 1px solid #acaeab;
+        margin-bottom: 15px;
+        padding: 5px 15px 15px 15px;
+        position: relative;
+        background: #f1f1f1;
+    }
+
+    .display-layout {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        opacity: 0.4;
+        z-index: 1;
+    }
+
+    .display-layout.display-off {
+        display: block;
+    }
+
+    .body-block {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        justify-content: space-between;
+    }
+    /* End Component container */
+
+    /* Header component */
+    .move-label {
+        cursor: move;
+        color: #000;
+        width: 30px;
+    }
+
+    .name-component {
+        width: calc(100% - 185px);
+        font-size: 14px;
+        font-weight: bolder;
+    }
+
+    .control-block {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 15px 0;
+        border-bottom: 1px solid #DDDDDD;
+        width: 100%;
+    }
+
+    .title-block,
+    .title-block input {
+        width: 100%;
+    }
+
+    .title-block label > input {
+        width: 50%;
+    }
+
+    .control-block > div {
+        margin: 5px;
+    }
+
+    .footer-block {
+        margin-top: 15px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /* End Header component */
+
+    .slide-up {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Delete component button */
+    .delete {
+        position: relative;
+        width: 55px;
+        height: 20px;
+    }
+
+    button.delete-component-button {
+        font-size: 10px!important;
+        height: 20px!important;
+        line-height: normal!important;
+        background-color: #aa0000!important;
+        color: #fff!important;
+        border: 0!important;
+        padding: 0 10px!important;
+        position: absolute;
+        z-index: 5;
+    }
+
+    button.delete-component-button:hover {
+        cursor: pointer;
+        color: silver;
+    }
+    /* End Delete component button */
+
+    /* Show / hide switcher */
+    .show-hide {
+        position: relative;
+        width: 30px;
+        height: 16px;
+    }
+
+    .checkbox {
+        position: absolute;
+        z-index: 3;
+        margin-top: 0;
+    }
+
+    .checkbox input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .checkbox__text {
+        position: relative;
+        padding: 0 0 0 30px;
+        cursor: pointer;
+    }
+
+    .checkbox__text:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 16px;
+        border-radius: 13px;
+        background: #CDD1DA;
+        box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+        transition: .2s;
+    }
+
+    .checkbox__text:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0,.3);
+        transition: .2s;
+    }
+
+    .checkbox input:checked + .checkbox__text:before {
+        background: #9FD468;
+    }
+
+    .checkbox input:checked + .checkbox__text:after {
+        left: 16px;
+    }
+    /* End Show / hide switcher */
+
+    /*Confirm delete window*/
+    .confirm-delete-component {
+        position: absolute;
+        z-index: 999;
+        right: 5px;
+        top: 40px;
+        background: #FDFDFD;
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #3c3f41;
+    }
+    /*End Confirm delete window*/
+/* End MetaBox Constructor */
+
+.slide-up-true:before {
+    content: "\f140"!important;
+}
+
+
+/* Gallery MetaBox */
+.gallery-meta-box ul {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.gallery-meta-box ul li .image-wrapper {
+    width: 150px;
+    height: auto;
+    margin: 5px;
+}
+
+.gallery-meta-box ul li .image-wrapper a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.gallery-meta-box ul li .image-wrapper * {
+    width: 100%;
+}
+/* End Gallery MetaBox */
+
+.meta-box-form-group label {
+    margin-bottom: 5px;
+}
+
+.meta-box-form-group select,
+.meta-box-form-group input,
+.meta-box-form-group textarea {
+    width: 100%;
+}
+
+.form-group-meta-term {
+    margin-bottom: 15px;
+}
+
+.form-group-meta-term .image-wrapper button {
+    width: 100%;
+}
+
+.wp-admin select.form-control {
+    padding: 0 10px;
+    line-height: 27px;
+}
+
+/**************************** media_preview_box **************************************/
+.image-block {
+    width: 130px;
+    padding: 0 15px;
+    box-sizing: content-box;
+    margin-bottom: 15px;
+}
+
+.image-block img {
+    width: 130px;
+    height: auto;
+    margin: 5px 0;
+}
+.image-block .image-wrapper a,
+.image-block .image-wrapper a:focus{
+    outline: none!important;
+    box-shadow: none;
+}
+.image-block .delete-image {
+    width: 130px;
+    margin: 0 auto;
+}
