@@ -1,1 +1,0 @@
-Faq Taxonomy (PostController)
