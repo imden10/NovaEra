@@ -16,10 +16,25 @@ class Constructor extends BaseMetaBox
         echo '<div id="componentsScopes">';
         echo '<input type="hidden" name="component_placeholder" value="' . self::$placeholder . '">';
 
-        foreach ((array) $this->getFilesComponent() as $name)
-        {
-            if (isset($this->params['only']) && !in_array($name, $this->params['only'])) continue;
+//        foreach ((array) $this->getFilesComponent() as $name)
+//        {
+//            if (isset($this->params['only']) && !in_array($name, $this->params['only'])) continue;
+//
+//            $object = $this->makeObject($name);
+//
+//            if ($object)
+//            {
+//                echo '<button type="button" class="clone-component" data="' . $this->objectWithoutNamespace($object) . '">' . $object->name . '</button>';
+//                echo '<div style="display: none;">';
+//                $object->handlerStyle();
+//                $object->handlerScript();
+//                $this->componentBody($object, self::$placeholder);
+//                echo '</div>';
+//            }
+//        }
 
+        foreach ($this->params['only'] as $name)
+        {
             $object = $this->makeObject($name);
 
             if ($object)
@@ -32,6 +47,7 @@ class Constructor extends BaseMetaBox
                 echo '</div>';
             }
         }
+
         echo '</div>';
         /* End Scope section */
 

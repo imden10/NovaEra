@@ -332,6 +332,10 @@ return [
                                 'only' => [
                                     'FormTitle.php',
                                     'FormText.php',
+                                    'FormInput.php',
+                                    'FormTextarea.php',
+                                    'FormSelect.php',
+                                    'FormCheckbox.php',
                                 ],
                             ]
                         ],
