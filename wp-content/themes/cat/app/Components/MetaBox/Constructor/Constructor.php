@@ -10,8 +10,9 @@ class Constructor extends BaseMetaBox
 
     public function html()
     {
+        $label = $this->label ?? __('Конструктор сторінки');
         /* Scope section */
-        echo '<h1>' . __('Конструктор сторінки') . '</h1>';
+        echo '<h1>' . $label . '</h1>';
         echo '<div id="componentsScopes">';
         echo '<input type="hidden" name="component_placeholder" value="' . self::$placeholder . '">';
 
@@ -99,9 +100,13 @@ class Constructor extends BaseMetaBox
                 <span class="toggle-indicator"></span>
             </div>
 
-            <div class="title-block">
-                <input name="<?php echo $title['name']; ?>" placeholder="<?php _e('Title'); ?>" value="<?php echo $title['value']; ?>">
-            </div>
+            <?php if(isset($this->params['without_title']) && $this->params['without_title']):?>
+
+            <?php else:?>
+                <div class="title-block">
+                    <input name="<?php echo $title['name']; ?>" placeholder="<?php _e('Title'); ?>" value="<?php echo $title['value']; ?>">
+                </div>
+            <?php endif;?>
         </div>
 
         <?php
@@ -152,6 +157,9 @@ class Constructor extends BaseMetaBox
         ];
         ?>
 
+        <?php if(isset($this->params['without_separator_block']) && $this->params['without_separator_block']):?>
+
+        <?php else:?>
         <br>
         <hr>
         <div class="separator-block">
@@ -186,6 +194,7 @@ class Constructor extends BaseMetaBox
                 </div>
             </div>
         </div>
+        <?php endif;?>
 
         <div class="footer-block">
             <input type="hidden" name="<?php echo $component['name']; ?>" value="<?php echo $component['value']; ?>">

@@ -35,6 +35,13 @@ page-attributes - блок атрибутов постоянных страни�
 post-formats    – блок форматов записи, если они включены в теме.
 */
 
+$custom_form_settings = get_option('custom_form_settings');
+$formBotList = ['' => '---'];
+
+foreach ($custom_form_settings as $key => $value) {
+    $formBotList[$key] = $value['form_name'];
+}
+
 return [
 
     'page' => [
@@ -266,7 +273,70 @@ return [
 
         'metas' => [
             'post' => [
-
+                'form_information' => [
+                    'label' => __('Налаштування'),
+                    'position' => 'normal',
+                    'priority' => 'default',
+                    'fields' => [
+                        'title' => [
+                            'label' => __('Заголовок для повідомлення'),
+                            'component' => 'App\Components\MetaBox\Text',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'btn_name' => [
+                            'label' => __('Напис на кнопці'),
+                            'component' => 'App\Components\MetaBox\Text',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'image' => [
+                            'label' => __('Зображення'),
+                            'component' => 'App\Components\MetaBox\Image',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'group_id' => [
+                            'label' => __('Надсилати в групу'),
+                            'component' => 'App\Components\MetaBox\Select',
+                            'single' => true,
+                            'params' => [
+                                'list' => $formBotList
+                            ]
+                        ],
+                        [
+                            'label' => __('Вікно результату'),
+                            'component' => 'App\Components\MetaBox\Separator',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'success_title' => [
+                            'label' => __('Заголовок'),
+                            'component' => 'App\Components\MetaBox\Text',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'success_text' => [
+                            'label' => __('Текст'),
+                            'component' => 'App\Components\MetaBox\Textarea',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'fields' => [
+                            'label' => __('Поля форми'),
+                            'component' => 'App\Components\MetaBox\Constructor\Constructor',
+                            'single' => true,
+                            'params' => [
+                                'without_separator_block' => true,
+                                'without_title' => true,
+                                'only' => [
+                                    'FormTitle.php',
+                                    'FormText.php',
+                                ],
+                            ]
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
