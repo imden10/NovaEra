@@ -112,6 +112,7 @@ return [
                                     'Theses.php',
                                     'Table.php',
                                     'AccordionTable.php',
+                                    'Form.php',
                                 ],
                             ]
                         ],
