@@ -13,6 +13,7 @@
 
         print_r([
             $form_title,
+            $post_id,
             $form->form_information_title,
             $form->form_information_btn_name,
             $form->form_information_image,

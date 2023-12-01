@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Banner;
+use App\Models\Form;
 use App\Models\Page;
 use App\Models\Post;
 use Pimple\Container;
@@ -22,6 +23,10 @@ class ModelServiceProvider implements ServiceProviderInterface
 
         $container['model.banner'] = function ($container) {
             return new Banner($container);
+        };
+
+        $container['model.form'] = function ($container) {
+            return new Form($container);
         };
     }
 }
