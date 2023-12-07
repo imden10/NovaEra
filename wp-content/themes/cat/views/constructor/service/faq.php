@@ -54,3 +54,5 @@ if (!empty($faqs)) : ?>
     </div>
 
 <?php endif; ?>
+
+<?php require app('path.views') . '/constructor/_buttons.php'; ?>

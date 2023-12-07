@@ -3,10 +3,14 @@
 namespace App\Components\MetaBox\Constructor;
 
 use App\Core\MetaBox\BaseMetaBox;
+use App\Models\Form;
 
 class Constructor extends BaseMetaBox
 {
     protected static $placeholder = '#listItemId';
+
+    protected static $btn_placeholder = '#btnsElementId';
+    protected static $btn_prefix = 'btns-item';
 
     public function html()
     {
@@ -171,6 +175,15 @@ class Constructor extends BaseMetaBox
             'name' => $this->name . '[' . $key . '][content][background]',
             'value' => (isset($value['content']['background'])) ? $value['content']['background'] : '#ffffff'
         ];
+
+        // buttons
+        $btns_list = [
+            'name' => $this->name . '[' . $key . '][content][btns]',
+            'value' => (isset($value['content']['btns']) && is_array($value['content']['btns'])) ? $value['content']['btns'] : []
+        ];
+
+        $formsList = Form::getList();
+
         ?>
 
         <?php if(isset($this->params['without_separator_block']) && $this->params['without_separator_block']):?>
@@ -209,6 +222,112 @@ class Constructor extends BaseMetaBox
                     <input type="color" class="form-control" name="<?php echo $background['name']; ?>" value="<?php echo $background['value']; ?>">
                 </div>
             </div>
+        </div>
+        <hr>
+        <div class="btns-block">
+            <template>
+                <li data-item-id="<?php echo self::$placeholder; ?>_<?php echo self::$btn_placeholder; ?>" class="item-list-template">
+                    <div class="card border-success">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-sm"
+                                       name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][text]"
+                                       placeholder="<?php _e('Текст '); ?>"
+                                >
+                            </div>
+                            <div class="mb-3">
+                                <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][type_link]" class="form-control form-control-sm type_link">
+                                    <option value="link">Довільне посилання</option>
+                                    <option value="form">Форма</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 type_link_link">
+                                <input type="text" class="form-control form-control-sm"
+                                       name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][link]"
+                                       placeholder="<?php _e('Посилання '); ?>"
+                                >
+                            </div>
+                            <div class="mb-3 type_link_form" style="display: none">
+                                <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][form_id]" class="form-control form-control-sm">
+                                    <?php foreach($formsList as $formListKey => $formList):?>
+                                        <option value="<?= $formListKey ?>"><?= $formList ?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][type]" class="form-control form-control-sm">
+                                    <?php foreach(config('buttons')['type'] as $listKey => $listItem):?>
+                                        <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <?= do_shortcode('[icon_select name="' . esc_attr(base64_encode($btns_list['name'] ."[".self::$btn_placeholder."][icon]" )) . '"]'); ?>
+                            </div>
+                            <button type="button"
+                                    class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
+                        </div>
+                    </div>
+                </li>
+            </template>
+
+            <ul class="list-elements-container">
+                <?php foreach ($btns_list['value'] as $id => $value) : ?>
+                    <li data-item-id="<?php echo $id; ?>" class="item-list-template">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm"
+                                           name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][text]"
+                                           value="<?= esc_attr($value['text']); ?>"
+                                           placeholder="<?php _e('Текст '); ?>"
+                                    >
+                                </div>
+                                <div class="mb-3">
+                                    <?php $type_link = $value['type_link'] ?? ''; ?>
+                                    <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][type_link]" class="form-control form-control-sm type_link">
+                                        <option value="link" <?php if($type_link == 'link') echo "selected"; ?> >Довільне посилання</option>
+                                        <option value="form" <?php if($type_link == 'form') echo "selected"; ?> >Форма</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 type_link_link" style="<?php if($type_link != 'link'):?> display: none <?php endif;?>">
+                                    <input type="text" class="form-control form-control-sm"
+                                           name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][link]"
+                                           placeholder="<?php _e('Посилання '); ?>"
+                                           value="<?= esc_attr($value['link']); ?>"
+                                    >
+                                </div>
+                                <?php $form_id = $value['form_id'] ?? ''; ?>
+                                <div class="mb-3 type_link_form" style="<?php if($type_link != 'form'):?> display: none <?php endif;?>">
+                                    <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][form_id]" class="form-control form-control-sm">
+                                        <?php foreach($formsList as $formListKey => $formList):?>
+                                            <option value="<?= $formListKey ?>" <?php if($form_id == $formListKey) echo "selected"; ?> ><?= $formList ?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <?php $type = $value['type'] ?? ''; ?>
+                                    <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][type]" class="form-control form-control-sm">
+                                        <?php foreach(config('buttons')['type'] as $listKey => $listItem):?>
+                                            <option value="<?= $listKey ?>" <?php if($type == $listKey) echo "selected"; ?> ><?= $listItem ?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <?= do_shortcode('[icon_select ready="true" icon="'.$value['icon'].'" name="' . esc_attr(base64_encode($btns_list['name'] ."[".$id."][icon]" )) . '"]'); ?>
+                                </div>
+                                <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+            <button type="button"
+                    data-id="<?= $key ?>"
+                    data-placeholder="<?= self::$btn_placeholder ?>"
+                    class="btn btn-success btn-sm add-button-component"
+            ><?php _e('Додати кнопку'); ?></button>
         </div>
         <?php endif;?>
 

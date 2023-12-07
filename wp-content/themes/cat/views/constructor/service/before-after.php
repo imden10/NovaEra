@@ -67,3 +67,5 @@ if (!empty($before_after)) : ?>
     </div>
 
 <?php endif; ?>
+
+<?php require app('path.views') . '/constructor/_buttons.php'; ?>

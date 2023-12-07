@@ -13,3 +13,5 @@
         <img src="<?= $imageUrl ?>" alt="" style="width: 200px">
     </div>
 </div>
+
+<?php require app('path.views') . '/constructor/_buttons.php'; ?>

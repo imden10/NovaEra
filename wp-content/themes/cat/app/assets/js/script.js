@@ -1,4 +1,3 @@
-
 String.prototype.replaceAll = function(search, replace)
 {
     return this.split(search).join(replace);
@@ -311,6 +310,45 @@ jQuery(document).ready(function($)
     });
     /* End Slide show/hide components */
 
+    $(document).on('click', '.add-button-component', function () {
+        const placeholder = $(this).data('placeholder');
+        const container = $(this).parents('.btns-block');
+        const template = container.find('template')[0];
+        const itemTemplate = $(template.content).find(".item-list-template");
+        const itemsContainer = container.find('.list-elements-container');
+
+        createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
+
+        itemsContainer.find('.icon-select-component').each(function () {
+            $(this).select2({
+                templateResult: formatStateIcon,
+                templateSelection: formatStateIcon,
+            });
+        });
+    });
+
+    $(document).on('click', '.delete-list-element', function () {
+        deleteItem($(this));
+    });
+
+    $(".icon-select-component-ready").each(function () {
+        $(this).select2({
+            templateResult: formatStateIcon,
+            templateSelection: formatStateIcon,
+        });
+    });
+
+    $(document).on("change", ".type_link", function () {
+        let type = $(this).val();
+
+        if (type == 'form') {
+            $(this).closest('.card-body').find('.type_link_link').hide();
+            $(this).closest('.card-body').find('.type_link_form').show();
+        } else {
+            $(this).closest('.card-body').find('.type_link_link').show();
+            $(this).closest('.card-body').find('.type_link_form').hide();
+        }
+    });
 });
 /* End Building MetaBox Constructor handler */
 

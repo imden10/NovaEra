@@ -9,3 +9,5 @@
         </div>
     </div>
 </div>
+
+<?php require app('path.views') . '/constructor/_buttons.php'; ?>
