@@ -15,7 +15,6 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          cat /home/ka522929/.ssh/config
           ssh -T ka522929@$sisidev_server << 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
