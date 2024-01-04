@@ -18,5 +18,5 @@ Disallow: utm=
 Disallow: openstat=
 Allow: /uploads
 
-Host: https://mk-dental.com.ua/
-Sitemap:https://mk-dental.com.ua/sitemap_index.xml
+Host: https://sisidev.com.ua/
+Sitemap:https://sisidev.com.ua/sitemap_index.xml
