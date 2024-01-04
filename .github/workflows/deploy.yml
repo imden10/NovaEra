@@ -20,5 +20,5 @@ jobs:
     git pull origin master
     ./deploy.sh
     EOF
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+  env:
+    DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
