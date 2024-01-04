@@ -13,24 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check SSH config
-        run: |
-          SSH_CONFIG_PATH="/home/ka522929/.ssh/config"
-          echo "Checking for SSH config file: $SSH_CONFIG_PATH"
-          ls -l $SSH_CONFIG_PATH
-          cat $SSH_CONFIG_PATH
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
-
-      - name: Set permissions for SSH config
-        run: |
-          SSH_CONFIG_PATH="/home/ka522929/.ssh/config"
-          chmod 600 $SSH_CONFIG_PATH
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
-
       - name: Deploy to Server
         run: |
+          cat /home/ka522929/.ssh/config
           ssh -T ka522929@${DEPLOY_SERVER} << 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
