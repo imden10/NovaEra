@@ -1,0 +1,24 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Server
+        env:
+          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+        run: |
+          ssh -T ka522929@${DEPLOY_SERVER} << EOF
+            cd /home/ka522929/sisidev.com.ua/www
+            git pull origin master
+            ./deploy.sh
+          EOF
