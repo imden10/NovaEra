@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Deploy to Server
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
         run: |
           ssh -T ka522929@${DEPLOY_SERVER} << EOF
             cd /home/ka522929/sisidev.com.ua/www
             git pull origin master
             ./deploy.sh
           EOF
+        env:
+          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
