@@ -15,9 +15,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          echo "Current user: $(whoami)"
-          echo "HOME path: $HOME"
-          cat $HOME/.ssh/config
+          cat /home/ka522929/.ssh/config
           ssh -T ka522929@${DEPLOY_SERVER} << 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
