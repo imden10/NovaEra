@@ -16,7 +16,7 @@ jobs:
       - name: Deploy to Server
         run: |
           echo "DEPLOY_SERVER value: $DEPLOY_SERVER"
-          cat ~/.ssh/config
+          cat $HOME/.ssh/config
           ssh -T ka522929@${DEPLOY_SERVER} << 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
