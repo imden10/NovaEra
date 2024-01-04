@@ -15,7 +15,8 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          echo "DEPLOY_SERVER value: $DEPLOY_SERVER"
+          echo "Current user: $(whoami)"
+          echo "HOME path: $HOME"
           cat $HOME/.ssh/config
           ssh -T ka522929@${DEPLOY_SERVER} << 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
