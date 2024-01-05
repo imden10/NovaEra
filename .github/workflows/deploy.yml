@@ -1,23 +1,26 @@
 name: Deploy to Server
 
+env:
+  WORKDIR: /home/ka522929/sisidev.com.ua/www
+
 on:
   push:
     branches:
       - master
 
 jobs:
-  deploy:
+  push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.4
+      - name: Copy code files on server
+        uses: appleboy/scp-action@master
         with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-
-      - name: Deploy to WordPress
-        run: |
-          ssh ${{ secrets.SSH_USERNAME }}@ka522929.ftp.tools 'cd /home/ka522929/sisidev.com.ua/www && git pull'
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
+          source: "./*"
+          target: ${{ env.WORKDIR }}
