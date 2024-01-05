@@ -5,6 +5,7 @@ defined('ABSPATH') or die('No direct access allowed.');
 
 // Обробник вебхуків
 function handle_webhook() {
+    file_put_contents('log_handle_webhook.txt','');
     // Перевірка типу події
     $event_type = $_SERVER['HTTP_X_GITHUB_EVENT'];
 
@@ -20,11 +21,13 @@ function handle_webhook() {
         die('Invalid signature');
     }
 
+    file_put_contents('log_event_type.txt','');
+
     // Обробка подій
     switch ($event_type) {
         case 'push':
             // Виконати git pull або інші дії для розгортання
-            file_put_contents('log123.txt','');
+            file_put_contents('log_push.txt','');
             exec('cd /home/ka522929/sisidev.com.ua/www && git pull');
             break;
 
@@ -34,6 +37,8 @@ function handle_webhook() {
             http_response_code(400);
             die('Unsupported event type');
     }
+
+    file_put_contents('log_http_response_code_200.txt','');
 
     http_response_code(200);
     die('Webhook processed successfully');
