@@ -1,5 +1,8 @@
 name: Deploy to Server
 
+env:
+  DEPLOY_SERVER:${{ secrets.DEPLOY_SERVER }}
+
 on:
   push:
     branches:
@@ -14,10 +17,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to Server
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
         run: |
-          ssh -T your_ssh_user@${DEPLOY_SERVER} << EOF
+          ssh -T your_ssh_user@${{ env.DEPLOY_SERVER }} << EOF
             cd /home/ka522929/sisidev.com.ua/www
             git pull origin master
             ./deploy.sh
