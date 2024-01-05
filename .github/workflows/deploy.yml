@@ -15,7 +15,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -T ka522929@${{ env.DEPLOY_SERVER }} 
+          ssh ${{ env.DEPLOY_SERVER }} 
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
           ./deploy.sh
