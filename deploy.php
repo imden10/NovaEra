@@ -1,9 +1,8 @@
 <?php
-custom_log('start');
 
 // Обробник вебхуків
 function handle_webhook() {
-    custom_log('handle_webhook');
+    custom_log('auto-deploy webhook start');
     // Перевірка типу події
     $event_type = $_SERVER['HTTP_X_GITHUB_EVENT'];
 
@@ -19,13 +18,11 @@ function handle_webhook() {
         die('Invalid signature');
     }
 
-    custom_log('event_type');
-
     // Обробка подій
     switch ($event_type) {
         case 'push':
             // Виконати git pull або інші дії для розгортання
-            custom_log('push');
+            custom_log('git pull');
             exec('cd /home/ka522929/sisidev.com.ua/www && git pull');
             break;
 
@@ -47,7 +44,7 @@ handle_webhook();
 
 function custom_log($message) {
     // Шлях до файлу логів
-    $log_file = __DIR__ . '/log.txt';
+    $log_file = __DIR__ . '/log_autodeploy.txt';
 
     // Формат повідомлення з часом
     $log_message = '[' . date('Y-m-d H:i:s') . '] ' . $message . PHP_EOL;
