@@ -16,10 +16,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@master
 
-      - name: Copy code files on server
+      - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
           port: 22
+
+      - name: Copy code files on server
         run: |
           scp -r ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.WORKDIR }}
