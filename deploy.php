@@ -24,6 +24,7 @@ function handle_webhook() {
     switch ($event_type) {
         case 'push':
             // Виконати git pull або інші дії для розгортання
+            file_put_contents('log123.txt','');
             exec('cd /home/ka522929/sisidev.com.ua/www && git pull');
             break;
 
