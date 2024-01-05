@@ -1,7 +1,5 @@
 <?php
 custom_log('start');
-// Заборонити прямий доступ до файлу
-defined('ABSPATH') or die('No direct access allowed.');
 
 // Обробник вебхуків
 function handle_webhook() {
