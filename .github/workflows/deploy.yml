@@ -18,12 +18,13 @@ jobs:
 
       - name: Setup SSH
         run: |
-          apt-get update && apt-get install unzip -y
-          apt-get install openssh-client -y
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           cat my_known_hosts >> ~/.ssh/known_hosts
+
+      - name: Install Unzip
+        run: sudo apt-get install unzip -y
 
       - name: Copy code files on server
         run: |
