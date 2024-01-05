@@ -18,13 +18,12 @@ jobs:
 
       - name: Setup SSH
         run: |
+          apt-get update && apt-get install unzip -y
+          apt-get install openssh-client -y
           mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/id_rsa
+          cat my_known_hosts >> ~/.ssh/known_hosts
 
       - name: Copy code files on server
         run: |
-          scp -r ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.WORKDIR }}
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }} -t "cd ${{ env.WORKDIR }} && git pull"
+          echo "Deploy step finished"
