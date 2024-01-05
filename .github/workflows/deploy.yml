@@ -15,10 +15,8 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -T ka522929@${{ DEPLOY_SERVER }} <<- 'EOF'
+          ssh -T ka522929@${{ secrets.DEPLOY_SERVER }} << 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
           ./deploy.sh
           EOF
-        env:
-          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
