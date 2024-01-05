@@ -1,11 +1,11 @@
 <?php
-
+custom_log('start');
 // Заборонити прямий доступ до файлу
 defined('ABSPATH') or die('No direct access allowed.');
 
 // Обробник вебхуків
 function handle_webhook() {
-    error_log('handle_webhook', 0);
+    custom_log('handle_webhook');
     // Перевірка типу події
     $event_type = $_SERVER['HTTP_X_GITHUB_EVENT'];
 
@@ -21,13 +21,13 @@ function handle_webhook() {
         die('Invalid signature');
     }
 
-    error_log('event_type', 0);
+    custom_log('event_type');
 
     // Обробка подій
     switch ($event_type) {
         case 'push':
             // Виконати git pull або інші дії для розгортання
-            error_log('push', 0);
+            custom_log('push');
             exec('cd /home/ka522929/sisidev.com.ua/www && git pull');
             break;
 
@@ -38,7 +38,7 @@ function handle_webhook() {
             die('Unsupported event type');
     }
 
-    error_log('Webhook processed successfully', 0);
+    custom_log('Webhook processed successfully');
 
     http_response_code(200);
     die('Webhook processed successfully');
@@ -46,3 +46,14 @@ function handle_webhook() {
 
 // Викликати функцію обробки вебхука
 handle_webhook();
+
+function custom_log($message) {
+    // Шлях до файлу логів
+    $log_file = __DIR__ . '/log.txt';
+
+    // Формат повідомлення з часом
+    $log_message = '[' . date('Y-m-d H:i:s') . '] ' . $message . PHP_EOL;
+
+    // Додаємо лог у файл
+    file_put_contents($log_file, $log_message, FILE_APPEND | LOCK_EX);
+}
