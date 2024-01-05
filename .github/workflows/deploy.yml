@@ -1,8 +1,5 @@
 name: Deploy to Server
 
-env:
-  DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
-
 on:
   push:
     branches:
@@ -22,3 +19,5 @@ jobs:
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
           ./deploy.sh
+        env:
+          DEPLOY_SERVER: sisidev_server
