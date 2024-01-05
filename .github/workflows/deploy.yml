@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Deploy to Server
-        run: |
-          ssh -o StrictHostKeyChecking=no -T ka522929@${{ secrets.DEPLOY_SERVER_IP }} <<- 'EOF'
-          cd /home/ka522929/sisidev.com.ua/www
-          git pull origin master
-          ./deploy.sh
-          EOF
         env:
-          DEPLOY_SERVER_IP: ${{ secrets.DEPLOY_SERVER }}
+          DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+        run: |
+          ssh -T your_ssh_user@${DEPLOY_SERVER} << EOF
+            cd /home/ka522929/sisidev.com.ua/www
+            git pull origin master
+            ./deploy.sh
+          EOF
