@@ -26,5 +26,5 @@ jobs:
 
       - name: Copy code files on server
         run: |
-          ssh-agent bash -c 'ssh-add ~/.ssh/id_rsa; ssh -o "StrictHostKeyChecking=yes" -t "${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }}" "cd ${{ env.WORKDIR }} && git pull"'
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }} -t "cd ${{ env.WORKDIR }} && git pull"
           echo "Deploy step finished"
