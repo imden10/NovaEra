@@ -29,7 +29,6 @@
 
 
 <?php require_once app('path.views') . '/layouts/sections/header.php'; ?>
-test 123
 
 
 
