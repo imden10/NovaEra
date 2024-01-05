@@ -16,8 +16,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@master
 
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
       - name: Copy code files on server
         run: |
-          scp -r ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.WORKDIR }}
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }} 'bash -s' < deploy.sh
+          scp -r ./* {{ secrets.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.WORKDIR }}
+          ssh {{ secrets.SSH_USERNAME }}@${{ secrets.HOST }} 'bash -s' < deploy.sh
           echo "Deploy step finished"
