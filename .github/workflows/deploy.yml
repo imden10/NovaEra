@@ -15,7 +15,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -T ka522929@${{ secrets.DEPLOY_SERVER_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -T ka522929@${{ secrets.DEPLOY_SERVER_IP }} <<- 'EOF'
           cd /home/ka522929/sisidev.com.ua/www
           git pull origin master
           ./deploy.sh
