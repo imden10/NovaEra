@@ -13,11 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Deploy to Server
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Deploy to WordPress
         run: |
-          ssh ${{ env.DEPLOY_SERVER }} 
-          cd /home/ka522929/sisidev.com.ua/www
-          git pull origin master
-          ./deploy.sh
-        env:
-          DEPLOY_SERVER: sisidev_server
+          ssh ${{ secrets.SSH_USERNAME }}@ka522929.ftp.tools 'cd /home/ka522929/sisidev.com.ua/www && git pull'
