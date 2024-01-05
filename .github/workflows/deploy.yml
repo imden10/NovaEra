@@ -21,9 +21,11 @@ jobs:
           apt-get update && apt-get install unzip -y
           apt-get install openssh-client -y
           mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           cat my_known_hosts >> ~/.ssh/known_hosts
 
       - name: Copy code files on server
         run: |
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }} -t "cd ${{ env.WORKDIR }} && git pull"
+          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.HOST }} -o "StrictHostKeyChecking=yes" -t "cd ${{ env.WORKDIR }} && git pull"
           echo "Deploy step finished"
