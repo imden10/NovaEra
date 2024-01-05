@@ -22,7 +22,8 @@ jobs:
           echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-          ssh-add ~/.ssh/id_rsa  # Додайте цей рядок
+          eval $(ssh-agent -s)
+          ssh-add ~/.ssh/id_rsa
 
       - name: Copy code files on server
         run: |
