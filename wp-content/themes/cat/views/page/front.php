@@ -1,5 +1,5 @@
-<section class="gallerypage">
-    <div class="gallerypage__heading">
+<section class="page">
+    <div class="page__heading">
         <div class="container mobfluid">
             <!-- Breadcrumbs -->
             <ul class="brdcrmb">
@@ -10,7 +10,7 @@
             </ul>
             <!-- End Breadcrumbs -->
 
-            <h1 class="gallerypage__title variablefz"><?php echo $page->post_title; ?></h1>
+            <h1 class="page__title variablefz"><?php echo $page->post_title; ?></h1>
 
             <div class="row justify-content-between">
                 <div class="col-lg-7 col-sm-12">
@@ -20,6 +20,9 @@
         </div>
     </div>
 
-    <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
-
+    <div class="container">
+        <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </section>

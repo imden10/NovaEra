@@ -1,3 +1,114 @@
-body h1 {
-  color: green;
+body {
+  font-family: "SF Pro Display";
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1440px) {
+  .container {
+    padding: 0px 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0px 34px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .container {
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 0px 15px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}
+@media (min-width: 1440px) {
+  .container-fluid {
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .container-fluid {
+    padding: 0px 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container-fluid {
+    padding: 0px 34px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .container-fluid {
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container-fluid {
+    padding: 0px 15px;
+  }
+}
+
+.redactor h1 {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+.redactor h2 {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.redactor h3 {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.redactor h4 {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.redactor h5 {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.redactor h6 {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.redactor p, .redactor a {
+  color: var(--text-on-bg-on-default-text-primary);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+.redactor a {
+  color: var(--text-on-bg-on-default-link);
+}
+.redactor img {
+  width: 100%;
 }

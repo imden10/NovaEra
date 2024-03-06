@@ -7,11 +7,13 @@
             <?php endif; ?>
         </div>
 
-        <?php echo $content['text']; ?>
+        <div class="redactor">
+            <?php echo $content['text']; ?>
+        </div>
 
-<!--        <div class="constrlnkwrap">-->
-<!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->
-<!--        </div>-->
+        <!--        <div class="constrlnkwrap">-->
+        <!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->
+        <!--        </div>-->
     </div>
 </div>
 
