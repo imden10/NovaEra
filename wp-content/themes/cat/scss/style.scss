@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-  font-family: "SF Pro Display";
+  font-family: "Montserrat";
 }
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+@import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
 @import './system/container.scss';
 @import './system/colors.scss';
+// common
 @import './system/vis-redactor.scss';
+@import './system/buttons.scss';
+// components
+@import './system/components/header.scss';
+

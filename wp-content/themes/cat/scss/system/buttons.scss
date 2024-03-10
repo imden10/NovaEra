@@ -1,0 +1,22 @@
+.btn {
+	display: inline-flex;
+	height: var(--button-medium-btn-height);
+	min-width: var(--button-medium-min-width);
+	padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
+	justify-content: center;
+	align-items: center;
+	gap: var(--button-medium-btn-gap);
+	flex-shrink: 0;
+	color: var(--btn-on-light-black-fill-label-default);
+	border-radius: var(--button-medium-btn-radius);
+	background: var(--btn-on-light-black-fill-bg-default);
+	text-align: center;
+	leading-trim: both;
+	text-edge: cap;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: 1.68px;
+	text-transform: uppercase;
+}
