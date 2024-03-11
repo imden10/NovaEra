@@ -19,7 +19,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
     </div>

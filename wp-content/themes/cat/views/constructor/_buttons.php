@@ -15,7 +15,7 @@
 <?php if(isset($btns) && is_array($btns) && count($btns)):?>
 <div class="btns-container">
     <?php foreach ($btns as $btn):?>
-        <span class="<?= $btn['type']?>"><?= $btn['text']?></span>
+        <div class="btn <?= $btn['type']?>"><?= $btn['text']?> <i class="<?= $btn['icon']?>"></i></div>
     <?php endforeach;?>
 </div>
 <?php endif;?>

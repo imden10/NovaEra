@@ -15,7 +15,6 @@
         <!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->
         <!--        </div>-->
     </div>
-    <div class="btn">test</div>
 </div>
 
 <?php require app('path.views') . '/constructor/_buttons.php'; ?>
