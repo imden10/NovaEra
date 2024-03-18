@@ -1,7 +1,7 @@
 <?php if ($content['image_position'] == 'top') : ?>
 
     <div class="constr imgtop">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>
                 <?php if (!empty($content['title'])) : ?>
@@ -26,7 +26,7 @@
 <?php else : ?>
 
     <div class="constr <?php echo $content['image_position']; ?>img">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="row">
                 <div class="txtwrap">
                     <div class="headerwrap">

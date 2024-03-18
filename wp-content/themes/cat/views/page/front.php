@@ -1,6 +1,6 @@
 <section class="page">
     <div class="page__heading">
-        <div class="container mobfluid">
+        <div class="container">
             <!-- Breadcrumbs -->
             <ul class="brdcrmb">
                 <?php $home_page = get_post(get_option('page_on_front')); ?>

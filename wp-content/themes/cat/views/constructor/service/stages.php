@@ -3,7 +3,7 @@
 ?>
 
 <div class="constr">
-    <div class="container mobfluid">
+    <div class="container">
         <h3>Етапи</h3>
         <pre>
             <?php

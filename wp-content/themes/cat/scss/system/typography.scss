@@ -47,17 +47,28 @@
 		line-height: 140%;
 	}
 
-	p,a {
+	p,
+	a {
 		color: var(--text-on-bg-on-default-text-primary);
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 160%;
 	}
-	a{
+
+	a {
 		color: var(--text-on-bg-on-default-link);
 	}
-	img{
+
+	img {
 		width: 100%;
 	}
 }
+
+.on-Default {}
+
+.on-Tone {}
+
+.on-Secondary {}
+
+.on-Primary {}

@@ -1,5 +1,5 @@
 <div class="constr txt1col">
-    <div class="container mobfluid">
+    <div class="container">
         <div class="headerwrap">
             <div class="titlefigure"></div>
             <h4>Роздільник тексту</h4>

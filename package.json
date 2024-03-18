@@ -32,8 +32,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2",
     "swiper": "^11.0.7"
   }
 }

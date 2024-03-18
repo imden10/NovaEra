@@ -3,7 +3,7 @@
 ?>
 
 <div class="constr">
-    <div class="container mobfluid">
+    <div class="container">
         <pre>
             <?php
                 print_r($data);

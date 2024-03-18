@@ -1,5 +1,5 @@
-<div class="constr txt1col">
-    <div class="container mobfluid">
+<section class="text btn-light">
+    <div class="container">
         <div class="headerwrap">
             <div class="titlefigure"></div>
             <?php if (!empty($content['title'])) : ?>
@@ -15,6 +15,6 @@
         <!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->
         <!--        </div>-->
     </div>
-</div>
+</ы>
 
 <?php require app('path.views') . '/constructor/_buttons.php'; ?>

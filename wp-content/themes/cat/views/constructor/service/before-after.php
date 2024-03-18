@@ -11,7 +11,7 @@ $before_after = !empty($content['ids']) ? get_posts([
 if (!empty($before_after)) : ?>
 
     <div class="constr beforeafter">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>
                 <?php if (!empty($content['title'])) : ?>

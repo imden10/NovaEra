@@ -5,13 +5,22 @@ body {
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+section{
+  --bg-type: 'on-ligth';
+  &.dark{
+    --bg-type: 'on-dark';
+  }
+}
+
 @import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
 @import './system/container.scss';
 // @import './system/colors.scss';
 // common
-@import './system/vis-redactor.scss';
+@import './system/typography.scss';
 @import './system/buttons.scss';
 // components
 @import './system/components/header.scss';
+@import './system/components/form-fields.scss';
 

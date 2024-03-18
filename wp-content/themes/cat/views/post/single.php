@@ -37,7 +37,7 @@
 <?php $similarArticles = model('post')->similarArticles([$post->ID])->posts;
 if (!empty($similarArticles)) : ?>
     <section class="otherposts">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>
                 <h2 class="variablefz"><?php echo trans('Другие посты на эту тему'); ?></h2>
@@ -71,7 +71,7 @@ if (!empty($similarArticles)) : ?>
 <?php endif; ?>
 
 <section class="constr cformcenter">
-    <div class="container mobfluid">
+    <div class="container">
         <div class="headerwrap">
             <div class="titlefigure"></div>
             <h2 class="variablefz"><?php echo trans('Как попасть на прием?'); ?></h2>

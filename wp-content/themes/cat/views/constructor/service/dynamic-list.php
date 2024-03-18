@@ -1,5 +1,5 @@
 <div class="constr">
-    <div class="container mobfluid">
+    <div class="container">
         <div class="constrlistwrap">
             <div class="headerwrap">
                 <?php if (!empty($content['title'])) : ?>

@@ -11,7 +11,7 @@ $faqs = !empty($content['ids']) ? get_posts([
 if (!empty($faqs)) : ?>
 
     <div class="constr accordquestion">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="sectionheaderwrap">
                 <div class="titlefigure"></div>
                 <?php if (!empty($content['title'])) : ?>

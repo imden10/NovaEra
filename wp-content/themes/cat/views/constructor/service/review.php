@@ -11,7 +11,7 @@ $reviews = !empty($content['ids']) ? get_posts([
 if (!empty($reviews)) : ?>
 
     <div class="constr reviewsblock">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="sectionheaderwrap">
                 <div class="titlefigure"></div>
                 <?php if (!empty($content['title'])) : ?>

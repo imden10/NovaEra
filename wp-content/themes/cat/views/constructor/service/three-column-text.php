@@ -1,5 +1,5 @@
 <div class="constr txt3col">
-    <div class="container mobfluid">
+    <div class="container">
         <div class="headerwrap">
             <?php if (!empty($content['title'])) : ?>
                 <h2><?php echo $content['title']; ?></h2>

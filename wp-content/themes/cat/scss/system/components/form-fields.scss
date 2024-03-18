@@ -1,0 +1,100 @@
+.form-field {
+	input {
+		display: flex;
+		height: var(--form-text-field-outlined-haight-placeholder-input);
+		padding: var(--form-text-field-outlined-padding-input-top-bottom) var(--form-text-field-outlined-padding-input-left-right);
+		align-items: center;
+		gap: var(--form-text-field-underlined-base-gap-gap-horisontal);
+		align-self: stretch;
+		border-radius: var(--form-text-field-outlined-radius-radius-input);
+		border: 1px solid var(--text-field-underline-border-enabled);
+		transition: .3s;
+		outline: none;
+		color: var(--text-field-underline-input-text-focused);
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+
+		&::placeholder {
+			color: var(--text-field-underline-label-enabled);
+		}
+
+		&:hover {
+			border-color: var(--text-field-underline-border-hover);
+		}
+
+		&:focus,
+		&:active {
+			border-color: var(--text-field-underline-border-focused);
+			box-shadow: 0px 0px 1px 1px var(--text-field-underline-border-focused);
+		}
+
+	}
+
+	span {
+		color: var(--text-field-underline-helper-error-text-enabled);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		margin-left: 12px;
+	}
+
+	&.error {
+		span {
+			color: var(--text-field-underline-helper-error-text-error);
+		}
+
+		input {
+			border-color: var(--text-field-underline-border-error);
+			color: var(--text-field-underline-input-text-error);
+
+			&::placeholder {
+				color: var(--text-field-underline-placeholder-error)
+			}
+
+			&:hover {
+				border-color: var(--text-field-underline-border-error-hover)
+			}
+
+			&:focus,
+			&:active {
+				border-color: var(--text-field-underline-border-error-focused);
+				box-shadow: 0px 0px 1px 1px var(--text-field-underline-border-error-focused);
+			}
+		}
+	}
+
+	&.disabled {
+		pointer-events: none;
+
+		span {
+			color: var(--text-field-underline-label-disabled)
+		}
+
+
+		input {
+			border-color: var(--text-field-underline-border-disabled);
+			color: var(--text-field-underline-input-text-disabled);
+
+			&::placeholder {
+				color: var(--text-field-underline-label-disabled)
+			}
+		}
+	}
+
+	&.underline {
+		input {
+			border: none;
+			border-radius: unset;
+			border-bottom: 1px solid var(--text-field-underline-border-enabled);
+
+			&:focus,
+			&:active {
+				border-width: 2px;
+				box-shadow: unset;
+			}
+		}
+	}
+}

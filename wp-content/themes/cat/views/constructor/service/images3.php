@@ -4,7 +4,7 @@
 ?>
 
 <div class="constr">
-    <div class="container mobfluid">
+    <div class="container">
         <h3>3 картинки в рядок</h3>
         <pre>
             <?php

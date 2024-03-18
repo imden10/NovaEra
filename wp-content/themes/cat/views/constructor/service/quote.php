@@ -1,5 +1,5 @@
 <div class="constr quote">
-    <div class="container mobfluid">
+    <div class="container">
         <div class="quotetxtwrap">
             <?php echo $content['text']; ?>
         </div>

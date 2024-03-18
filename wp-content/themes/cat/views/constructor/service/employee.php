@@ -12,7 +12,7 @@ if (!empty($employees)) : ?>
 
     <div class="constr workdoctors">
 
-        <div class="container mobfluid">
+        <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>
                 <?php if (!empty($content['title'])) : ?>

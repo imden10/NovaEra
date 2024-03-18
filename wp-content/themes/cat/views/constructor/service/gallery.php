@@ -29,7 +29,7 @@
         <!-- <?php else : ?>
 
     <div class="constr brickgallery">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>
                 <?php if (!empty($content['title'])) : ?>

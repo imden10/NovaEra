@@ -38,7 +38,7 @@
 $articles = $article_objects->posts;
 if (!empty($articles)) : ?>
     <section class="postssection blogpage">
-        <div class="container mobfluid">
+        <div class="container">
             <div class="row articles-container">
 
                 <?php foreach ($articles as $article) :
