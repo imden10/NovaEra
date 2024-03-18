@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   font-family: "Montserrat";
+  background-color: var(--main-bg);
 }
 
 *, *::after, *::before {
@@ -12,6 +13,25 @@ section {
 }
 section.dark {
   --bg-type: "on-dark";
+}
+
+.setMode, .setColors {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  cursor: pointer;
+  grid-gap: 10px;
+}
+.setMode *, .setColors * {
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+.setColors {
+  margin-top: 20px;
+  position: static;
 }
 
 [data-theme=green-violet] {
@@ -190,6 +210,7 @@ section.dark {
 
 [data-mode=light] {
   /* colors */
+  --main-bg: #fff;
   --accordion-divider: var(--gray-opacity-20);
   --accordion-icon: var(--gray-opacity-40);
   --accordion-icon-hover: var(--gray-1);
@@ -206,10 +227,10 @@ section.dark {
   --accordion-title-bg-hover-primary: var(--brand-1-300);
   --accordion-title-bg-hover-secondary: var(--brand-1-600);
   --accordion-title-bg-hover-tone: var(--brand-1-200);
-  --bg-default: var(--white-opacity-100);
-  --bg-primary: var(--brand-1-900);
-  --bg-secondary: var(--brand-2-800);
-  --bg-tone: var(--brand-1-100);
+  --bg-on-dark-primary: var(--brand-1-900);
+  --bg-on-dark-secondary: var(--brand-2-800);
+  --bg-on-light-default: var(--white-opacity-100);
+  --bg-on-light-tone: var(--brand-1-100);
   --btn-on-dark-fill-opacity-bg-border-default: var(--white-opacity-12);
   --btn-on-dark-fill-opacity-bg-border-disabled: var(--white-opacity-12);
   --btn-on-dark-fill-opacity-bg-border-hover: var(--white-opacity-20);
@@ -306,26 +327,26 @@ section.dark {
   --text-field-underline-placeholder-disabled: var(--gray-opacity-40);
   --text-field-underline-placeholder-enabled: var(--gray-opacity-40);
   --text-field-underline-placeholder-error: var(--gray-opacity-40);
-  --text-on-bg-on-default-link: var(--brand-1-800);
-  --text-on-bg-on-default-text-description: var(--gray-500);
-  --text-on-bg-on-default-text-primary: var(--gray-1);
-  --text-on-bg-on-default-text-secindary: var(--gray-600);
-  --text-on-bg-on-img-link: var(--brand-3-300);
-  --text-on-bg-on-img-text-description: var(--white-opacity-40);
-  --text-on-bg-on-img-text-primary: var(--white-opacity-100);
-  --text-on-bg-on-img-text-secindary: var(--white-opacity-60);
-  --text-on-bg-on-primary-link: var(--brand-3-300);
-  --text-on-bg-on-primary-text-description: var(--white-opacity-40);
-  --text-on-bg-on-primary-text-primary: var(--white-opacity-90);
-  --text-on-bg-on-primary-text-secindary: var(--white-opacity-60);
-  --text-on-bg-on-secondary-link: var(--brand-3-300);
-  --text-on-bg-on-secondary-text-description: var(--white-opacity-40);
-  --text-on-bg-on-secondary-text-primary: var(--white-opacity-100);
-  --text-on-bg-on-secondary-text-secondary: var(--white-opacity-60);
-  --text-on-bg-on-tone-link: var(--brand-3-700);
-  --text-on-bg-on-tone-text-description: var(--gray-400);
-  --text-on-bg-on-tone-text-primary: var(--gray-1);
-  --text-on-bg-on-tone-text-secindary: var(--gray-600);
+  --text-on-dark-bg-img-link: var(--brand-3-300);
+  --text-on-dark-bg-img-text-description: var(--white-opacity-40);
+  --text-on-dark-bg-img-text-primary: var(--white-opacity-100);
+  --text-on-dark-bg-img-text-secondary: var(--white-opacity-60);
+  --text-on-dark-bg-primary-link: var(--brand-3-300);
+  --text-on-dark-bg-primary-text-description: var(--white-opacity-40);
+  --text-on-dark-bg-primary-text-primary: var(--white-opacity-90);
+  --text-on-dark-bg-primary-text-secindary: var(--white-opacity-60);
+  --text-on-dark-bg-secondary-link: var(--brand-3-300);
+  --text-on-dark-bg-secondary-text-description: var(--white-opacity-40);
+  --text-on-dark-bg-secondary-text-primary: var(--white-opacity-100);
+  --text-on-dark-bg-secondary-text-secondary: var(--white-opacity-60);
+  --text-on-light-bg-default-link: var(--brand-1-800);
+  --text-on-light-bg-default-text-description: var(--gray-500);
+  --text-on-light-bg-default-text-primary: var(--gray-1);
+  --text-on-light-bg-default-text-secondary: var(--gray-600);
+  --text-on-light-bg-tone-link: var(--brand-3-700);
+  --text-on-light-bg-tone-text-description: var(--gray-400);
+  --text-on-light-bg-tone-text-primary: var(--gray-1);
+  --text-on-light-bg-tone-text-secindary: var(--gray-600);
   --theses-border-on-default: var(--gray-opacity-40);
   --theses-border-on-primary: var(--white-opacity-20);
   --theses-border-on-secondary: var(--white-opacity-20);
@@ -338,6 +359,7 @@ section.dark {
 
 [data-mode=dark] {
   /* colors */
+  --main-bg: #777;
   --accordion-divider: var(--white-opacity-20);
   --accordion-icon: var(--white-opacity-40);
   --accordion-icon-hover: var(--white-opacity-100);
@@ -354,10 +376,10 @@ section.dark {
   --accordion-title-bg-hover-primary: var(--brand-1-600);
   --accordion-title-bg-hover-secondary: var(--brand-1-600);
   --accordion-title-bg-hover-tone: var(--brand-1-600);
-  --bg-default: var(--gray-1);
-  --bg-primary: var(--brand-1-900);
-  --bg-secondary: var(--brand-2-800);
-  --bg-tone: var(--gray-700);
+  --bg-on-dark-primary: var(--brand-1-900);
+  --bg-on-dark-secondary: var(--brand-2-800);
+  --bg-on-light-default: var(--gray-1);
+  --bg-on-light-tone: var(--gray-700);
   --btn-on-dark-fill-opacity-bg-border-default: var(--white-opacity-12);
   --btn-on-dark-fill-opacity-bg-border-disabled: var(--white-opacity-12);
   --btn-on-dark-fill-opacity-bg-border-hover: var(--white-opacity-20);
@@ -454,26 +476,26 @@ section.dark {
   --text-field-underline-placeholder-disabled: var(--white-opacity-40);
   --text-field-underline-placeholder-enabled: var(--white-opacity-40);
   --text-field-underline-placeholder-error: var(--white-opacity-40);
-  --text-on-bg-on-default-link: var(--brand-1-400);
-  --text-on-bg-on-default-text-description: var(--white-opacity-30);
-  --text-on-bg-on-default-text-primary: var(--white-opacity-60);
-  --text-on-bg-on-default-text-secindary: var(--white-opacity-40);
-  --text-on-bg-on-img-link: var(--brand-3-300);
-  --text-on-bg-on-img-text-description: var(--white-opacity-20);
-  --text-on-bg-on-img-text-primary: var(--white-opacity-80);
-  --text-on-bg-on-img-text-secindary: var(--white-opacity-60);
-  --text-on-bg-on-primary-link: var(--brand-3-300);
-  --text-on-bg-on-primary-text-description: var(--white-opacity-40);
-  --text-on-bg-on-primary-text-primary: var(--white-opacity-90);
-  --text-on-bg-on-primary-text-secindary: var(--white-opacity-60);
-  --text-on-bg-on-secondary-link: var(--brand-3-300);
-  --text-on-bg-on-secondary-text-description: var(--white-opacity-40);
-  --text-on-bg-on-secondary-text-primary: var(--white-opacity-80);
-  --text-on-bg-on-secondary-text-secondary: var(--white-opacity-60);
-  --text-on-bg-on-tone-link: var(--brand-3-300);
-  --text-on-bg-on-tone-text-description: var(--white-opacity-30);
-  --text-on-bg-on-tone-text-primary: var(--white-opacity-60);
-  --text-on-bg-on-tone-text-secindary: var(--white-opacity-40);
+  --text-on-dark-bg-img-link: var(--brand-3-300);
+  --text-on-dark-bg-img-text-description: var(--white-opacity-20);
+  --text-on-dark-bg-img-text-primary: var(--white-opacity-80);
+  --text-on-dark-bg-img-text-secondary: var(--white-opacity-60);
+  --text-on-dark-bg-primary-link: var(--brand-3-300);
+  --text-on-dark-bg-primary-text-description: var(--white-opacity-40);
+  --text-on-dark-bg-primary-text-primary: var(--white-opacity-90);
+  --text-on-dark-bg-primary-text-secindary: var(--white-opacity-60);
+  --text-on-dark-bg-secondary-link: var(--brand-3-300);
+  --text-on-dark-bg-secondary-text-description: var(--white-opacity-40);
+  --text-on-dark-bg-secondary-text-primary: var(--white-opacity-80);
+  --text-on-dark-bg-secondary-text-secondary: var(--white-opacity-60);
+  --text-on-light-bg-default-link: var(--brand-1-400);
+  --text-on-light-bg-default-text-description: var(--white-opacity-30);
+  --text-on-light-bg-default-text-primary: var(--white-opacity-60);
+  --text-on-light-bg-default-text-secondary: var(--white-opacity-40);
+  --text-on-light-bg-tone-link: var(--brand-3-300);
+  --text-on-light-bg-tone-text-description: var(--white-opacity-30);
+  --text-on-light-bg-tone-text-primary: var(--white-opacity-60);
+  --text-on-light-bg-tone-text-secindary: var(--white-opacity-40);
   --theses-border-on-default: var(--white-opacity-20);
   --theses-border-on-primary: var(--white-opacity-20);
   --theses-border-on-secondary: var(--white-opacity-20);
@@ -1033,6 +1055,66 @@ section.dark {
 }
 .redactor img {
   width: 100%;
+}
+
+#on-Default h1,
+#on-Default h2,
+#on-Default h3,
+#on-Default h4,
+#on-Default h5,
+#on-Default h6,
+#on-Default p,
+#on-Default code,
+#on-Default span {
+  color: var(--text-on-light-bg-default-text-primary);
+}
+#on-Default a {
+  color: var(--text-on-light-bg-default-link);
+}
+
+#on-Tone h1,
+#on-Tone h2,
+#on-Tone h3,
+#on-Tone h4,
+#on-Tone h5,
+#on-Tone h6,
+#on-Tone p,
+#on-Tone code,
+#on-Tone span {
+  color: var(--text-on-light-bg-tone-text-primary);
+}
+#on-Tone a {
+  color: var(--text-on-light-bg-tone-link);
+}
+
+#on-Secondary h1,
+#on-Secondary h2,
+#on-Secondary h3,
+#on-Secondary h4,
+#on-Secondary h5,
+#on-Secondary h6,
+#on-Secondary p,
+#on-Secondary code,
+#on-Secondary span {
+  color: var(--text-on-dark-bg-secondary-text-primary);
+}
+#on-Secondary a {
+  color: var(--text-on-light-bg-secondary-link);
+}
+
+#on-Primary h1,
+#on-Primary h2,
+#on-Primary h3,
+#on-Primary h4,
+#on-Primary h5,
+#on-Primary h6,
+#on-Primary p,
+#on-Primary code,
+#on-Primary span {
+  color: var(--text-on-dark-bg-primary-text-primary);
+}
+#on-Primary a {
+  color: var(--text-on-light-bg-primary-link);
 }
 
 .btn {

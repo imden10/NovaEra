@@ -65,10 +65,71 @@
 	}
 }
 
-.on-Default {}
+#on-Default {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	code,
+	span {
+		color: var(--text-on-light-bg-default-text-primary)
+	}
+	a {
+		color: var(--text-on-light-bg-default-link)
+	}
+}
 
-.on-Tone {}
+#on-Tone {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	code,
+	span {
+		color: var(--text-on-light-bg-tone-text-primary)
+	}
+	a {
+		color: var(--text-on-light-bg-tone-link)
+	}
+}
 
-.on-Secondary {}
+#on-Secondary {
 
-.on-Primary {}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	code,
+	span {
+		color: var(--text-on-dark-bg-secondary-text-primary)
+	}
+	a {
+		color: var(--text-on-light-bg-secondary-link)
+	}
+}
+
+#on-Primary {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	code,
+	span {
+		color: var(--text-on-dark-bg-primary-text-primary)
+	}
+	a {
+		color: var(--text-on-light-bg-primary-link)
+	}
+}

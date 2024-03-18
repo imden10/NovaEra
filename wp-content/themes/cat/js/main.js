@@ -28,4 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.addEventListener('resize', () => {
 		checkWindowSize()
 	});
+	
+	const modeBtns = document.querySelectorAll('.mode')
+
+	modeBtns.forEach(el => {
+		el.addEventListener('click', () => {
+            document.body.setAttribute('data-mode', el.getAttribute('data-mode'))
+        })
+	});
+
+	const colorBtns = document.querySelectorAll('.color')
+	const simpleText = document.querySelector('.simple-text')
+
+	colorBtns.forEach(el => {
+		el.addEventListener('click', () => {
+            const color = el.innerHTML
+			simpleText.id = color
+        })
+	});
+
 })

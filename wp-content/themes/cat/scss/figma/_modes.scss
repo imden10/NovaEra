@@ -1,5 +1,6 @@
 [data-mode="light"] {
 	/* colors */
+	--main-bg: #fff;
 	--accordion-divider: var(--gray-opacity-20);
 	--accordion-icon: var(--gray-opacity-40);
 	--accordion-icon-hover: var(--gray-1);
@@ -16,10 +17,10 @@
 	--accordion-title-bg-hover-primary: var(--brand-1-300);
 	--accordion-title-bg-hover-secondary: var(--brand-1-600);
 	--accordion-title-bg-hover-tone: var(--brand-1-200);
-	--bg-default: var(--white-opacity-100);
-	--bg-primary: var(--brand-1-900);
-	--bg-secondary: var(--brand-2-800);
-	--bg-tone: var(--brand-1-100);
+	--bg-on-dark-primary: var(--brand-1-900);
+	--bg-on-dark-secondary: var(--brand-2-800);
+	--bg-on-light-default: var(--white-opacity-100);
+	--bg-on-light-tone: var(--brand-1-100);
 	--btn-on-dark-fill-opacity-bg-border-default: var(--white-opacity-12);
 	--btn-on-dark-fill-opacity-bg-border-disabled: var(--white-opacity-12);
 	--btn-on-dark-fill-opacity-bg-border-hover: var(--white-opacity-20);
@@ -116,26 +117,26 @@
 	--text-field-underline-placeholder-disabled: var(--gray-opacity-40);
 	--text-field-underline-placeholder-enabled: var(--gray-opacity-40);
 	--text-field-underline-placeholder-error: var(--gray-opacity-40);
-	--text-on-bg-on-default-link: var(--brand-1-800);
-	--text-on-bg-on-default-text-description: var(--gray-500);
-	--text-on-bg-on-default-text-primary: var(--gray-1);
-	--text-on-bg-on-default-text-secindary: var(--gray-600);
-	--text-on-bg-on-img-link: var(--brand-3-300);
-	--text-on-bg-on-img-text-description: var(--white-opacity-40);
-	--text-on-bg-on-img-text-primary: var(--white-opacity-100);
-	--text-on-bg-on-img-text-secindary: var(--white-opacity-60);
-	--text-on-bg-on-primary-link: var(--brand-3-300);
-	--text-on-bg-on-primary-text-description: var(--white-opacity-40);
-	--text-on-bg-on-primary-text-primary: var(--white-opacity-90);
-	--text-on-bg-on-primary-text-secindary: var(--white-opacity-60);
-	--text-on-bg-on-secondary-link: var(--brand-3-300);
-	--text-on-bg-on-secondary-text-description: var(--white-opacity-40);
-	--text-on-bg-on-secondary-text-primary: var(--white-opacity-100);
-	--text-on-bg-on-secondary-text-secondary: var(--white-opacity-60);
-	--text-on-bg-on-tone-link: var(--brand-3-700);
-	--text-on-bg-on-tone-text-description: var(--gray-400);
-	--text-on-bg-on-tone-text-primary: var(--gray-1);
-	--text-on-bg-on-tone-text-secindary: var(--gray-600);
+	--text-on-dark-bg-img-link: var(--brand-3-300);
+	--text-on-dark-bg-img-text-description: var(--white-opacity-40);
+	--text-on-dark-bg-img-text-primary: var(--white-opacity-100);
+	--text-on-dark-bg-img-text-secondary: var(--white-opacity-60);
+	--text-on-dark-bg-primary-link: var(--brand-3-300);
+	--text-on-dark-bg-primary-text-description: var(--white-opacity-40);
+	--text-on-dark-bg-primary-text-primary: var(--white-opacity-90);
+	--text-on-dark-bg-primary-text-secindary: var(--white-opacity-60);
+	--text-on-dark-bg-secondary-link: var(--brand-3-300);
+	--text-on-dark-bg-secondary-text-description: var(--white-opacity-40);
+	--text-on-dark-bg-secondary-text-primary: var(--white-opacity-100);
+	--text-on-dark-bg-secondary-text-secondary: var(--white-opacity-60);
+	--text-on-light-bg-default-link: var(--brand-1-800);
+	--text-on-light-bg-default-text-description: var(--gray-500);
+	--text-on-light-bg-default-text-primary: var(--gray-1);
+	--text-on-light-bg-default-text-secondary: var(--gray-600);
+	--text-on-light-bg-tone-link: var(--brand-3-700);
+	--text-on-light-bg-tone-text-description: var(--gray-400);
+	--text-on-light-bg-tone-text-primary: var(--gray-1);
+	--text-on-light-bg-tone-text-secindary: var(--gray-600);
 	--theses-border-on-default: var(--gray-opacity-40);
 	--theses-border-on-primary: var(--white-opacity-20);
 	--theses-border-on-secondary: var(--white-opacity-20);
@@ -144,9 +145,11 @@
 	--theses-item-bg-primary: var(--brand-1-600);
 	--theses-item-bg-secondary: var(--brand-2-600);
 	--theses-item-bg-tone: var(--white-opacity-30);
-  }
-  [data-mode="dark"] {
+}
+
+[data-mode="dark"] {
 	/* colors */
+	--main-bg: #777;
 	--accordion-divider: var(--white-opacity-20);
 	--accordion-icon: var(--white-opacity-40);
 	--accordion-icon-hover: var(--white-opacity-100);
@@ -163,10 +166,10 @@
 	--accordion-title-bg-hover-primary: var(--brand-1-600);
 	--accordion-title-bg-hover-secondary: var(--brand-1-600);
 	--accordion-title-bg-hover-tone: var(--brand-1-600);
-	--bg-default: var(--gray-1);
-	--bg-primary: var(--brand-1-900);
-	--bg-secondary: var(--brand-2-800);
-	--bg-tone: var(--gray-700);
+	--bg-on-dark-primary: var(--brand-1-900);
+	--bg-on-dark-secondary: var(--brand-2-800);
+	--bg-on-light-default: var(--gray-1);
+	--bg-on-light-tone: var(--gray-700);
 	--btn-on-dark-fill-opacity-bg-border-default: var(--white-opacity-12);
 	--btn-on-dark-fill-opacity-bg-border-disabled: var(--white-opacity-12);
 	--btn-on-dark-fill-opacity-bg-border-hover: var(--white-opacity-20);
@@ -263,26 +266,26 @@
 	--text-field-underline-placeholder-disabled: var(--white-opacity-40);
 	--text-field-underline-placeholder-enabled: var(--white-opacity-40);
 	--text-field-underline-placeholder-error: var(--white-opacity-40);
-	--text-on-bg-on-default-link: var(--brand-1-400);
-	--text-on-bg-on-default-text-description: var(--white-opacity-30);
-	--text-on-bg-on-default-text-primary: var(--white-opacity-60);
-	--text-on-bg-on-default-text-secindary: var(--white-opacity-40);
-	--text-on-bg-on-img-link: var(--brand-3-300);
-	--text-on-bg-on-img-text-description: var(--white-opacity-20);
-	--text-on-bg-on-img-text-primary: var(--white-opacity-80);
-	--text-on-bg-on-img-text-secindary: var(--white-opacity-60);
-	--text-on-bg-on-primary-link: var(--brand-3-300);
-	--text-on-bg-on-primary-text-description: var(--white-opacity-40);
-	--text-on-bg-on-primary-text-primary: var(--white-opacity-90);
-	--text-on-bg-on-primary-text-secindary: var(--white-opacity-60);
-	--text-on-bg-on-secondary-link: var(--brand-3-300);
-	--text-on-bg-on-secondary-text-description: var(--white-opacity-40);
-	--text-on-bg-on-secondary-text-primary: var(--white-opacity-80);
-	--text-on-bg-on-secondary-text-secondary: var(--white-opacity-60);
-	--text-on-bg-on-tone-link: var(--brand-3-300);
-	--text-on-bg-on-tone-text-description: var(--white-opacity-30);
-	--text-on-bg-on-tone-text-primary: var(--white-opacity-60);
-	--text-on-bg-on-tone-text-secindary: var(--white-opacity-40);
+	--text-on-dark-bg-img-link: var(--brand-3-300);
+	--text-on-dark-bg-img-text-description: var(--white-opacity-20);
+	--text-on-dark-bg-img-text-primary: var(--white-opacity-80);
+	--text-on-dark-bg-img-text-secondary: var(--white-opacity-60);
+	--text-on-dark-bg-primary-link: var(--brand-3-300);
+	--text-on-dark-bg-primary-text-description: var(--white-opacity-40);
+	--text-on-dark-bg-primary-text-primary: var(--white-opacity-90);
+	--text-on-dark-bg-primary-text-secindary: var(--white-opacity-60);
+	--text-on-dark-bg-secondary-link: var(--brand-3-300);
+	--text-on-dark-bg-secondary-text-description: var(--white-opacity-40);
+	--text-on-dark-bg-secondary-text-primary: var(--white-opacity-80);
+	--text-on-dark-bg-secondary-text-secondary: var(--white-opacity-60);
+	--text-on-light-bg-default-link: var(--brand-1-400);
+	--text-on-light-bg-default-text-description: var(--white-opacity-30);
+	--text-on-light-bg-default-text-primary: var(--white-opacity-60);
+	--text-on-light-bg-default-text-secondary: var(--white-opacity-40);
+	--text-on-light-bg-tone-link: var(--brand-3-300);
+	--text-on-light-bg-tone-text-description: var(--white-opacity-30);
+	--text-on-light-bg-tone-text-primary: var(--white-opacity-60);
+	--text-on-light-bg-tone-text-secindary: var(--white-opacity-40);
 	--theses-border-on-default: var(--white-opacity-20);
 	--theses-border-on-primary: var(--white-opacity-20);
 	--theses-border-on-secondary: var(--white-opacity-20);
@@ -291,4 +294,4 @@
 	--theses-item-bg-primary: var(--brand-1-600);
 	--theses-item-bg-secondary: var(--brand-2-600);
 	--theses-item-bg-tone: var(--gray-500);
-  }
+}
