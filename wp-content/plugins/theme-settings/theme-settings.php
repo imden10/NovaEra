@@ -21,6 +21,8 @@ function theme_settings_page() {
     // Збереження налаштувань при натисканні кнопки "Зберегти"
     if (isset($_POST['custom_settings_submit'])) {
         update_option('theme_settings__bg_type', sanitize_text_field($_POST['theme_settings__bg_type']));
+        update_option('theme_settings__preset', sanitize_text_field($_POST['theme_settings__preset']));
+        update_option('theme_settings__mode', sanitize_text_field($_POST['theme_settings__mode']));
         update_option('theme_settings__color', sanitize_text_field($_POST['theme_settings__color']));
         update_option('theme_settings__gradient_color_1', sanitize_text_field($_POST['theme_settings__gradient_color_1']));
         update_option('theme_settings__gradient_color_2', sanitize_text_field($_POST['theme_settings__gradient_color_2']));
@@ -32,6 +34,8 @@ function theme_settings_page() {
 
     // Отримання значення збереженого налаштування
     $bg_type = get_option('theme_settings__bg_type', 'color');
+    $preset = get_option('theme_settings__preset', '');
+    $mode = get_option('theme_settings__mode', 'light');
     $color = get_option('theme_settings__color', '#ffffff');
     $gradient_color_1 = get_option('theme_settings__gradient_color_1', '#ffffff');
     $gradient_color_2 = get_option('theme_settings__gradient_color_2', '#ffffff');
@@ -56,10 +60,11 @@ function theme_settings_page() {
                             <select name="theme_settings__bg_type" class="select-color-type" id="theme_settings__bg_type">
                                 <option value="color" <?php if($bg_type == 'color'):?> selected <?php endif;?> >Колір</option>
                                 <option value="gradient" <?php if($bg_type == 'gradient'):?> selected <?php endif;?> >Градієнт</option>
+                                <option value="presets" <?php if($bg_type == 'presets'):?> selected <?php endif;?> >Пресети</option>
                             </select>
                         </td>
                     </tr>
-                    <tr class="theme_color_block" <?php if($bg_type == "gradient"):?> style="display: none" <?php endif;?> >
+                    <tr class="theme_color_block" <?php if($bg_type == "color"):?> <?php else: ?> style="display: none" <?php endif;?> >
                         <th scope="row" style="text-align: right">
                             <label>Колір теми</label>
                         </th>
@@ -67,7 +72,7 @@ function theme_settings_page() {
                             <input type="color" name="theme_settings__color" value="<?= esc_attr($color); ?>">
                         </td>
                     </tr>
-                    <tr class="theme_gradient_block" <?php if($bg_type == "color"):?> style="display: none" <?php endif;?>>
+                    <tr class="theme_gradient_block" <?php if($bg_type == "gradient"):?> <?php else: ?> style="display: none" <?php endif;?> >
                         <th scope="row" style="text-align: right">
                             <label>Кольори градієнту</label>
                         </th>
@@ -78,7 +83,7 @@ function theme_settings_page() {
                             </div>
                         </td>
                     </tr>
-                    <tr class="theme_gradient_block" <?php if($bg_type == "color"):?> style="display: none" <?php endif;?>>
+                    <tr class="theme_gradient_block" <?php if($bg_type == "gradient"):?> <?php else: ?> style="display: none" <?php endif;?> >
                         <th scope="row" style="text-align: right">
                             <label for="theme_settings__gradient_type">Тип градієнту</label>
                         </th>
@@ -89,7 +94,7 @@ function theme_settings_page() {
                             </select>
                         </td>
                     </tr>
-                    <tr class="theme_gradient_block" <?php if($bg_type == "color"):?> style="display: none" <?php endif;?>>
+                    <tr class="theme_gradient_block" <?php if($bg_type == "gradient"):?> <?php else: ?> style="display: none" <?php endif;?> >
                         <th scope="row" style="text-align: right">
                             <label for="theme_settings__gradient_deg">Градус градієнту</label>
                         </th>
@@ -108,7 +113,31 @@ function theme_settings_page() {
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="theme_presets_block" <?php if($bg_type == "presets"):?> <?php else: ?> style="display: none" <?php endif;?> >
+                        <th scope="row" style="text-align: right">
+                            <label for="theme_settings__preset">Пресети</label>
+                        </th>
+                        <td>
+                            <select name="theme_settings__preset"  id="theme_settings__preset" style="width: 250px">
+                                <option value="on-light-lighter" data-color="#ffffff" <?php if($preset == 'on-light-lighter'):?> selected <?php endif;?> >on-light-lighter</option>
+                                <option value="on-light-darker" data-color="#D9DAD3" <?php if($preset == 'on-light-darker'):?> selected <?php endif;?> >on-light-darker</option>
+                                <option value="on-dark-lighter" data-color="#9C9F8B" <?php if($preset == 'on-dark-lighter'):?> selected <?php endif;?> >on-dark-lighter</option>
+                                <option value="on-dark-darker" data-color="#635E78" <?php if($preset == 'on-dark-darker'):?> selected <?php endif;?> >on-dark-darker</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="theme_presets_block" <?php if($bg_type == "presets"):?> <?php else: ?> style="display: none" <?php endif;?> >
+                        <th scope="row" style="text-align: right">
+                            <label for="theme_settings__mode">Режим теми</label>
+                        </th>
+                        <td>
+                            <select name="theme_settings__mode"  id="theme_settings__mode">
+                                <option value="light" <?php if($mode == 'light'):?> selected <?php endif;?> >Світла</option>
+                                <option value="dark" <?php if($mode == 'dark'):?> selected <?php endif;?> >Темна</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="theme-settings-noise" <?php if($bg_type == "presets"):?> style="display: none" <?php endif;?> >
                         <th scope="row" style="text-align: right">
                             <label for="theme_settings__noise">Шум</label>
                         </th>
@@ -161,6 +190,15 @@ function theme_settings_page() {
             font-family: "e-Ukraine";
             src: url("/wp-content/themes/dental/fonts/e-Ukraine/e-Ukraine.otf");
         }
+        /* Стилі для кольорів */
+        .color-option {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            margin-top: 2px;
+            border: 1px #bfb0b0 solid;
+        }
     </style>
 
     <script>
@@ -170,10 +208,19 @@ function theme_settings_page() {
 
                 if(type == "color"){
                     $(".theme_color_block").show();
+                    $(".theme-settings-noise").show();
                     $(".theme_gradient_block").hide();
-                } else {
-                    $(".theme_color_block").hide();
+                    $(".theme_presets_block").hide();
+                } else if(type == "gradient") {
                     $(".theme_gradient_block").show();
+                    $(".theme-settings-noise").show();
+                    $(".theme_color_block").hide();
+                    $(".theme_presets_block").hide();
+                } else {
+                    $(".theme_presets_block").show();
+                    $(".theme_color_block").hide();
+                    $(".theme_gradient_block").hide();
+                    $(".theme-settings-noise").hide();
                 }
             });
 
@@ -186,6 +233,33 @@ function theme_settings_page() {
                 $(".template-font-style").hide();
                 $(".template-font-style[data-font_key='"+font+"']").show();
             });
+            $("#theme_settings__preset").select2({
+                minimumResultsForSearch: Infinity,
+                templateResult: function(data) {
+                    // Перевірка, чи має елемент атрибут 'data-color'
+                    if (!data.element) {
+                        return data.text;
+                    }
+
+                    // Створення HTML-коду для відображення кольору перед назвою
+                    var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                    var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                    return $color.add($text);
+                },
+                templateSelection: function(data) {
+                    // Відображення обраного елементу з кольором
+                    if (!data.element) {
+                        return data.text;
+                    }
+
+                    var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                    var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                    return $color.add($text);
+                }
+            });
+
         });
     </script>
     <?php
