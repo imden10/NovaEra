@@ -1,4 +1,4 @@
-<section class="simple-text btn-light" id="on-Default">
+<section class="simple-text">
     <div class="container">
         <div class="headerwrap">
             <div class="titlefigure"></div>
@@ -17,12 +17,5 @@
         <!--        </div>-->
     </div>
     <?php require app('path.views') . '/constructor/_buttons.php'; ?>
-
-    <div class="setColors">
-        <div class="color">on-Default</div>
-        <div class="color">on-Tone</div>
-        <div class="color">on-Primary</div>
-        <div class="color">on-Secondary</div>
-    </div>
 </section>
 

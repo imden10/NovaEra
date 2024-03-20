@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="constructor-container">
         <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
     </div>
     <!-- переключалка для отладки -->

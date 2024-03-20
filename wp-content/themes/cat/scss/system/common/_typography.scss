@@ -65,7 +65,7 @@
 	}
 }
 
-#on-Default {
+@mixin setColors($textColor, $linkColor) {
 	h1,
 	h2,
 	h3,
@@ -75,61 +75,39 @@
 	p,
 	code,
 	span {
-		color: var(--text-on-light-bg-default-text-primary)
+		color: var($textColor)
 	}
+
 	a {
-		color: var(--text-on-light-bg-default-link)
+		color: var($linkColor)
 	}
+};
+@mixin setBgColor($bg){
+	background: var($bg);
+	// box-shadow: 0 0 0 100vmax var($bg);
+	// clip-path: inset(0 -100vmax);
 }
 
-#on-Tone {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	code,
-	span {
-		color: var(--text-on-light-bg-tone-text-primary)
+.on-light {
+	&.bg-lighter, .bg-lighter{
+		@include setBgColor(--bg-on-light-lighter);
+		@include setColors(--text-on-light-bg-lighter-text-primary, --text-on-light-bg-lighter-link)
 	}
-	a {
-		color: var(--text-on-light-bg-tone-link)
+	&.bg-darker, .bg-darker{
+		@include setBgColor(--bg-on-light-darker);
+		@include setColors(--text-on-light-bg-darker-text-primary, --text-on-light-bg-darker-link)
 	}
 }
-
-#on-Secondary {
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	code,
-	span {
-		color: var(--text-on-dark-bg-secondary-text-primary)
+.on-dark {
+	&.bg-img, .bg-img{
+		@include setColors(--text-on-dark-bg-img-text-primary, --text-on-dark-bg-img-link)
 	}
-	a {
-		color: var(--text-on-light-bg-secondary-link)
+	&.bg-lighter, .bg-lighter{
+		@include setBgColor(--bg-on-dark-lighter);
+		@include setColors(--text-on-dark-bg-lighter-text-primary, --text-on-dark-bg-lighter-link)
 	}
-}
-
-#on-Primary {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	code,
-	span {
-		color: var(--text-on-dark-bg-primary-text-primary)
-	}
-	a {
-		color: var(--text-on-light-bg-primary-link)
+	&.bg-darker, .bg-darker{
+		@include setBgColor(--bg-on-dark-darker);
+		@include setColors(--text-on-dark-bg-darker-text-primary, --text-on-dark-bg-darker-link)
 	}
 }
