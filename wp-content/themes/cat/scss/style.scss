@@ -1,3 +1,4 @@
+@import './normalize.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
   font-family: "Montserrat";
@@ -36,11 +37,12 @@ section{
 
 @import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
-@import './system/container.scss';
-// @import './system/colors.scss';
+@import './system/common/_container.scss';
+// @import './system/common/_colors.scss';
 // common
-@import './system/typography.scss';
-@import './system/buttons.scss';
+@import './system/common/_typography.scss';
+@import './system/common/_buttons.scss';
+@import './system/common/_separators.scss';
 // components
 @import './system/components/header.scss';
 @import './system/components/form-fields.scss';
