@@ -161,19 +161,15 @@ class Constructor extends BaseMetaBox
         ];
 
         $backgroundList = [
-            'transparent' => 'Без фону',
-            'white'       => 'Білий',
-            'simple'      => 'Довільний колір',
+            'transparent'  => 'Без фону',
+            'preset_light' => 'Пресети світлі',
+            'preset_dark'  => 'Пресети темні',
+            'image'        => 'Зображення',
         ];
 
         $background_type = [
             'name' => $this->name . '[' . $key . '][content][background_type]',
             'value' => (isset($value['content']['background_type'])) ? $value['content']['background_type'] : 'transparent'
-        ];
-
-        $background = [
-            'name' => $this->name . '[' . $key . '][content][background]',
-            'value' => (isset($value['content']['background'])) ? $value['content']['background'] : '#ffffff'
         ];
 
         // buttons
@@ -183,6 +179,35 @@ class Constructor extends BaseMetaBox
         ];
 
         $formsList = Form::getList();
+
+        $image_id = [
+            'name' => $this->name . '[' . $key . '][content][background_type_image][id]',
+            'value' => isset($value['content']['background_type_image']['id']) ? $value['content']['background_type_image']['id'] : '0'
+        ];
+
+        $background_type_preset_light = [
+            'name' => $this->name . '[' . $key . '][content][background_type_preset_light]',
+            'value' => (isset($value['content']['background_type_preset_light'])) ? $value['content']['background_type_preset_light'] : ''
+        ];
+
+        $background_type_preset_dark = [
+            'name' => $this->name . '[' . $key . '][content][background_type_preset_dark]',
+            'value' => (isset($value['content']['background_type_preset_dark'])) ? $value['content']['background_type_preset_dark'] : ''
+        ];
+
+        $backgroundListPresetLight = [
+            'on_light__bg_default'   => ['title' => 'on-light--bg-default', 'color' => '#ffffff'],
+            'on_light__bg_tone'      => ['title' => 'on-light--bg-tone', 'color' => '#D9DAD3'],
+            'on_light__bg_primary'   => ['title' => 'on-light--bg-primary', 'color' => '#9C9F8B'],
+            'on_light__bg_secondary' => ['title' => 'on-light--bg-secondary', 'color' => '#635E78'],
+        ];
+
+        $backgroundListPresetDark = [
+            'on_dark__bg_default'   => ['title' => 'on-dark--bg-default', 'color' => '#0D0D0D'],
+            'on_dark__bg_tone'      => ['title' => 'on-dark--bg-tone', 'color' => '#3E3E3E'],
+            'on_dark__bg_primary'   => ['title' => 'on-dark--bg-primary', 'color' => '#7B7E6D'],
+            'on_dark__bg_secondary' => ['title' => 'on-dark--bg-secondary', 'color' => '#6F6C81'],
+        ];
 
         ?>
 
@@ -211,15 +236,32 @@ class Constructor extends BaseMetaBox
                 </div>
                 <div class="col-3">
                     <label style="margin-bottom: 5px">Колір фону</label>
-                    <select name="<?php echo $background_type['name']; ?>" class="form-control">
+                    <select name="<?php echo $background_type['name']; ?>" class="form-control select-background-type-mode-<?= $key ?>">
                         <?php foreach ($backgroundList as $backgroundListKey => $backgroundListItem):?>
                             <option value="<?= $backgroundListKey ?>" <?php if($backgroundListKey == $background_type['value']):?> selected <?php endif;?> ><?= $backgroundListItem ?></option>
                         <?php endforeach;?>
                     </select>
                 </div>
                 <div class="col-3">
-                    <label style="margin-bottom: 5px">Довільний колір</label>
-                    <input type="color" class="form-control" name="<?php echo $background['name']; ?>" value="<?php echo $background['value']; ?>">
+                    <div class="theme-block--plight" <?php if($background_type['value'] != 'preset_light'):?> style="display: none" <?php endif?> >
+                        <label style="margin-bottom: 5px">Пресети світлі</label>
+                        <select name="<?php echo $background_type_preset_light['name']; ?>" class="form-control select2-preset select2-preset-<?=$key?>" style="width: 250px">
+                            <?php foreach ($backgroundListPresetLight as $backgroundListPresetLightKey => $backgroundListPresetLightItem):?>
+                                <option value="<?= $backgroundListPresetLightKey ?>" data-color="<?= $backgroundListPresetLightItem['color'] ?>" <?php if($backgroundListPresetLightKey == $background_type_preset_light['value']):?> selected <?php endif;?> ><?= $backgroundListPresetLightItem['title'] ?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </div>
+                    <div class="theme-block--pdark" <?php if($background_type['value'] != 'preset_dark'):?> style="display: none" <?php endif?>>
+                        <label style="margin-bottom: 5px">Пресети темні</label>
+                        <select name="<?php echo $background_type_preset_dark['name']; ?>" class="form-control select2-preset select2-preset-<?=$key?>" style="width: 250px">
+                            <?php foreach ($backgroundListPresetDark as $backgroundListPresetDarkKey => $backgroundListPresetDarkItem):?>
+                                <option value="<?= $backgroundListPresetDarkKey ?>" data-color="<?= $backgroundListPresetDarkItem['color'] ?>" <?php if($backgroundListPresetDarkKey == $background_type_preset_dark['value']):?> selected <?php endif;?> ><?= $backgroundListPresetDarkItem['title'] ?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </div>
+                    <div class="theme-block--image" <?php if($background_type['value'] != 'image'):?> style="display: none" <?php endif?>>
+                        <?= media_preview_box($image_id['name'],$image_id['value'], "Зображення"); ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -335,6 +377,77 @@ class Constructor extends BaseMetaBox
             <input type="hidden" name="<?php echo $component['name']; ?>" value="<?php echo $component['value']; ?>">
             <input type="hidden" name="<?php echo $position['name']; ?>" value="<?php echo $position['value']; ?>" class="position-component">
         </div>
+
+        <style>
+            /* Стилі для кольорів */
+            .color-option {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                margin-top: 2px;
+                border: 1px #bfb0b0 solid;
+            }
+        </style>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".select2-preset-<?=$key?>").select2({
+                    minimumResultsForSearch: Infinity,
+                    templateResult: function(data) {
+                        // Перевірка, чи має елемент атрибут 'data-color'
+                        if (!data.element) {
+                            return data.text;
+                        }
+
+                        // Створення HTML-коду для відображення кольору перед назвою
+                        var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                        var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                        return $color.add($text);
+                    },
+                    templateSelection: function(data) {
+                        // Відображення обраного елементу з кольором
+                        if (!data.element) {
+                            return data.text;
+                        }
+
+                        var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                        var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                        return $color.add($text);
+                    }
+                });
+
+                $(document).on('change', '.select-background-type-mode-<?= $key ?>', function () {
+                    let mode = $(this).val();
+                    let $wrapper = $(this).closest('.separator-block');
+
+                    switch (mode) {
+                        case 'preset_light':
+                            $wrapper.find('.theme-block--plight').show();
+                            $wrapper.find('.theme-block--pdark').hide();
+                            $wrapper.find('.theme-block--image').hide();
+                            break;
+                        case 'preset_dark':
+                            $wrapper.find('.theme-block--plight').hide();
+                            $wrapper.find('.theme-block--pdark').show();
+                            $wrapper.find('.theme-block--image').hide();
+                            break;
+                        case 'image':
+                            $wrapper.find('.theme-block--plight').hide();
+                            $wrapper.find('.theme-block--pdark').hide();
+                            $wrapper.find('.theme-block--image').show();
+                            break;
+                        default:
+                            $wrapper.find('.theme-block--plight').hide();
+                            $wrapper.find('.theme-block--pdark').hide();
+                            $wrapper.find('.theme-block--image').hide();
+                            break;
+                    }
+                });
+            });
+        </script>
 
         <?php
     }
