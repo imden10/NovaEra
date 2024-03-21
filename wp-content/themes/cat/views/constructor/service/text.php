@@ -15,7 +15,6 @@
         <!--        <div class="constrlnkwrap">-->
         <!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->
         <!--        </div>-->
+        <?php require app('path.views') . '/constructor/_buttons.php'; ?>
     </div>
-    <?php require app('path.views') . '/constructor/_buttons.php'; ?>
 </section>
-

@@ -162,8 +162,8 @@ class Constructor extends BaseMetaBox
 
         $backgroundList = [
             'transparent'  => 'Без фону',
-            'preset_light' => 'Пресети світлі',
-            'preset_dark'  => 'Пресети темні',
+            'on-light' => 'Пресети світлі',
+            'on-dark'  => 'Пресети темні',
             'image'        => 'Зображення',
         ];
 
@@ -186,27 +186,27 @@ class Constructor extends BaseMetaBox
         ];
 
         $background_type_preset_light = [
-            'name' => $this->name . '[' . $key . '][content][background_type_preset_light]',
-            'value' => (isset($value['content']['background_type_preset_light'])) ? $value['content']['background_type_preset_light'] : ''
+            'name' => $this->name . '[' . $key . '][content][on-light]',
+            'value' => (isset($value['content']['on-light'])) ? $value['content']['on-light'] : ''
         ];
 
         $background_type_preset_dark = [
-            'name' => $this->name . '[' . $key . '][content][background_type_preset_dark]',
-            'value' => (isset($value['content']['background_type_preset_dark'])) ? $value['content']['background_type_preset_dark'] : ''
+            'name' => $this->name . '[' . $key . '][content][on-dark]',
+            'value' => (isset($value['content']['on-dark'])) ? $value['content']['on-dark'] : ''
         ];
 
         $backgroundListPresetLight = [
-            'on_light__bg_default'   => ['title' => 'on-light--bg-default', 'color' => '#ffffff'],
-            'on_light__bg_tone'      => ['title' => 'on-light--bg-tone', 'color' => '#D9DAD3'],
-            'on_light__bg_primary'   => ['title' => 'on-light--bg-primary', 'color' => '#9C9F8B'],
-            'on_light__bg_secondary' => ['title' => 'on-light--bg-secondary', 'color' => '#635E78'],
+            'bg-lighter'   => ['title' => 'bg-lighter', 'color' => '#ffffff'],
+            'bg-darker'      => ['title' => 'bg-darker', 'color' => '#D9DAD3'],
+            // 'on_light__bg_primary'   => ['title' => 'on-light--bg-primary', 'color' => '#9C9F8B'],
+            // 'on_light__bg_secondary' => ['title' => 'on-light--bg-secondary', 'color' => '#635E78'],
         ];
 
         $backgroundListPresetDark = [
-            'on_dark__bg_default'   => ['title' => 'on-dark--bg-default', 'color' => '#0D0D0D'],
-            'on_dark__bg_tone'      => ['title' => 'on-dark--bg-tone', 'color' => '#3E3E3E'],
-            'on_dark__bg_primary'   => ['title' => 'on-dark--bg-primary', 'color' => '#7B7E6D'],
-            'on_dark__bg_secondary' => ['title' => 'on-dark--bg-secondary', 'color' => '#6F6C81'],
+            'bg-lighter'   => ['title' => 'bg-lighter', 'color' => '#9C9F8B'],
+            'bg-darker'      => ['title' => 'bg-darker', 'color' => '#635E78'],
+            // 'on_dark__bg_primary'   => ['title' => 'on-dark--bg-primary', 'color' => '#7B7E6D'],
+            // 'on_dark__bg_secondary' => ['title' => 'on-dark--bg-secondary', 'color' => '#6F6C81'],
         ];
 
         ?>
@@ -243,7 +243,7 @@ class Constructor extends BaseMetaBox
                     </select>
                 </div>
                 <div class="col-3">
-                    <div class="theme-block--plight" <?php if($background_type['value'] != 'preset_light'):?> style="display: none" <?php endif?> >
+                    <div class="theme-block--plight" <?php if($background_type['value'] != 'on-light'):?> style="display: none" <?php endif?> >
                         <label style="margin-bottom: 5px">Пресети світлі</label>
                         <select name="<?php echo $background_type_preset_light['name']; ?>" class="form-control select2-preset select2-preset-<?=$key?>" style="width: 250px">
                             <?php foreach ($backgroundListPresetLight as $backgroundListPresetLightKey => $backgroundListPresetLightItem):?>
@@ -251,7 +251,7 @@ class Constructor extends BaseMetaBox
                             <?php endforeach;?>
                         </select>
                     </div>
-                    <div class="theme-block--pdark" <?php if($background_type['value'] != 'preset_dark'):?> style="display: none" <?php endif?>>
+                    <div class="theme-block--pdark" <?php if($background_type['value'] != 'on-dark'):?> style="display: none" <?php endif?>>
                         <label style="margin-bottom: 5px">Пресети темні</label>
                         <select name="<?php echo $background_type_preset_dark['name']; ?>" class="form-control select2-preset select2-preset-<?=$key?>" style="width: 250px">
                             <?php foreach ($backgroundListPresetDark as $backgroundListPresetDarkKey => $backgroundListPresetDarkItem):?>
@@ -424,12 +424,12 @@ class Constructor extends BaseMetaBox
                     let $wrapper = $(this).closest('.separator-block');
 
                     switch (mode) {
-                        case 'preset_light':
+                        case 'on-light':
                             $wrapper.find('.theme-block--plight').show();
                             $wrapper.find('.theme-block--pdark').hide();
                             $wrapper.find('.theme-block--image').hide();
                             break;
-                        case 'preset_dark':
+                        case 'on-dark':
                             $wrapper.find('.theme-block--plight').hide();
                             $wrapper.find('.theme-block--pdark').show();
                             $wrapper.find('.theme-block--image').hide();

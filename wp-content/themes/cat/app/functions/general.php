@@ -97,7 +97,7 @@ function buildContentFromConstructorArray($post_type, $data = [])
 
             $file = app('path.views') . '/constructor/' . $post_type . '/' . $component_file_name . '.php';
             if (file_exists($file)) {
-                echo "<section class='mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-darker'>";
+                echo "<section class='mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content[$content['background_type']]}'>";
                 require $file;
                 echo "</section>";
             }

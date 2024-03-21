@@ -119,10 +119,10 @@ function theme_settings_page() {
                         </th>
                         <td>
                             <select name="theme_settings__preset"  id="theme_settings__preset" style="width: 250px">
-                                <option value="on-light-lighter" data-color="#ffffff" <?php if($preset == 'on-light-lighter'):?> selected <?php endif;?> >on-light-lighter</option>
-                                <option value="on-light-darker" data-color="#D9DAD3" <?php if($preset == 'on-light-darker'):?> selected <?php endif;?> >on-light-darker</option>
-                                <option value="on-dark-lighter" data-color="#9C9F8B" <?php if($preset == 'on-dark-lighter'):?> selected <?php endif;?> >on-dark-lighter</option>
-                                <option value="on-dark-darker" data-color="#635E78" <?php if($preset == 'on-dark-darker'):?> selected <?php endif;?> >on-dark-darker</option>
+                                <option value="on-light bg-lighter" data-color="#ffffff" <?php if($preset == 'on-light-lighter'):?> selected <?php endif;?> >on-light bg-lighter</option>
+                                <option value="on-light bg-darker" data-color="#D9DAD3" <?php if($preset == 'on-light-darker'):?> selected <?php endif;?> >on-light bg-darker</option>
+                                <option value="on-dark bg-lighter" data-color="#9C9F8B" <?php if($preset == 'on-dark-lighter'):?> selected <?php endif;?> >on-dark bg-lighter</option>
+                                <option value="on-dark bg-darker" data-color="#635E78" <?php if($preset == 'on-dark-darker'):?> selected <?php endif;?> >on-dark bg-darker</option>
                             </select>
                         </td>
                     </tr>
