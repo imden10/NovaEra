@@ -1,4 +1,4 @@
-<div class="constr quote">
+<div class="quote">
     <div class="container">
         <div class="quotetxtwrap">
             <?php echo $content['text']; ?>

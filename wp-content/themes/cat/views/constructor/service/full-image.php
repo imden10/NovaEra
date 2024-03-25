@@ -3,7 +3,7 @@
     $imageUrl = get_image_url_by_id($content['image']['id']);
 ?>
 
-<div class="constr">
+<div class="full-image">
     <div class="container">
         <pre>
             <?php

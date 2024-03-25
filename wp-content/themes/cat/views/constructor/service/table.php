@@ -2,7 +2,7 @@
     $data = array_diff_key($content,array_flip(['list','list_mob']));
 ?>
 
-<div class="constr">
+<div class="table">
     <div class="container">
         <pre>
             <?php

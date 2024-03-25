@@ -2,7 +2,7 @@
     $data = array_diff_key($content,array_flip(['list']));
 ?>
 
-<div class="constr">
+<div class="stages">
     <div class="container">
         <h3>Етапи</h3>
         <pre>

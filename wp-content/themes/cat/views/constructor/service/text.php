@@ -1,4 +1,4 @@
-<section class="simple-text">
+<div class="simple-text">
     <div class="container">
         <div class="headerwrap">
             <div class="titlefigure"></div>
@@ -17,4 +17,4 @@
         <!--        </div>-->
         <?php require app('path.views') . '/constructor/_buttons.php'; ?>
     </div>
-</section>
+</div>

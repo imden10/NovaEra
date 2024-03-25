@@ -2,7 +2,7 @@
     $data = array_diff_key($content,array_flip(['list']));
 ?>
 
-<div class="constr">
+<div class="numbers">
     <div class="container">
         <h3>Цифри</h3>
         <pre>

@@ -1,4 +1,4 @@
-<div class="constr txt3col">
+<div class="three-column-text">
     <div class="container">
         <div class="headerwrap">
             <?php if (!empty($content['title'])) : ?>

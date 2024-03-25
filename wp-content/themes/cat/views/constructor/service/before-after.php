@@ -10,7 +10,7 @@ $before_after = !empty($content['ids']) ? get_posts([
 
 if (!empty($before_after)) : ?>
 
-    <div class="constr beforeafter">
+    <div class="before-after">
         <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>

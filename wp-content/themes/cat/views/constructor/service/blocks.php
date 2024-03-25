@@ -2,7 +2,7 @@
     $data = array_diff_key($content,array_flip(['list']));
 ?>
 
-<div class="constr">
+<div class="blocks">
     <div class="container">
         <h3>Карточки 1-4</h3>
         <pre>

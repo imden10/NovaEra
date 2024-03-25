@@ -3,7 +3,7 @@
     $list = isset($content['list']) ? array_values($content['list']) : [];
 ?>
 
-<div class="constr">
+<div class="images3">
     <div class="container">
         <h3>3 картинки в рядок</h3>
         <pre>

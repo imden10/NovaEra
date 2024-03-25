@@ -10,7 +10,7 @@ $faqs = !empty($content['ids']) ? get_posts([
 
 if (!empty($faqs)) : ?>
 
-    <div class="constr accordquestion">
+    <div class="faq">
         <div class="container">
             <div class="sectionheaderwrap">
                 <div class="titlefigure"></div>

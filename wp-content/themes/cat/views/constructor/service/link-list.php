@@ -2,7 +2,7 @@
     $data = array_diff_key($content,array_flip(['list']));
 ?>
 
-<div class="constr">
+<div class="link-list">
     <div class="container">
         <h3>Посилання</h3>
         <pre>

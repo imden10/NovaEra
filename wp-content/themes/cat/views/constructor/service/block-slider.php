@@ -2,7 +2,7 @@
     $data = array_diff_key($content,array_flip(['list']));
 ?>
 
-<div class="constr">
+<div class="block-slider">
     <div class="container">
         <h3>Карточка слайдер</h3>
         <pre>

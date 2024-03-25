@@ -1,4 +1,4 @@
-<div class="constr">
+<div class="dynamic-list">
     <div class="container">
         <div class="constrlistwrap">
             <div class="headerwrap">

@@ -10,7 +10,7 @@ $employees = !empty($content['ids']) ? get_posts([
 
 if (!empty($employees)) : ?>
 
-    <div class="constr workdoctors">
+    <div class="employee">
 
         <div class="container">
             <div class="headerwrap">

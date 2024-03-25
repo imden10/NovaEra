@@ -10,7 +10,7 @@ $services = !empty($content['ids']) ? get_posts([
 
 if (!empty($services)) : ?>
 
-    <div class="constr usefulservices">
+    <div class="service">
         <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>

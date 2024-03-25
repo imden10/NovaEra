@@ -1,6 +1,6 @@
 <?php if ($content['image_position'] == 'top') : ?>
 
-    <div class="constr imgtop">
+    <div class="image-and-text">
         <div class="container">
             <div class="headerwrap">
                 <div class="titlefigure"></div>

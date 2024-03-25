@@ -1,4 +1,4 @@
-<div class="constr txt2col">
+<div class="two-column-text">
     <div class="container">
         <div class="headerwrap">
             <?php if (!empty($content['title'])) : ?>

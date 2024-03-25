@@ -1,4 +1,4 @@
-<div class="constr txt1col">
+<div class="text-divider">
     <div class="container">
         <div class="headerwrap">
             <div class="titlefigure"></div>

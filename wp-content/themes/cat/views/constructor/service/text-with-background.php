@@ -1,4 +1,4 @@
-<div class="constr txtonbg" style="background: no-repeat center/cover url(<?php echo appConfig('theme_url'); ?>/img/кабинет4.jpg)">
+<div class="text-with-background" style="background: no-repeat center/cover url(<?php echo appConfig('theme_url'); ?>/img/кабинет4.jpg)">
     <div class="bgpattern"></div>
     <div class="container">
         <div class="headerwrap">
