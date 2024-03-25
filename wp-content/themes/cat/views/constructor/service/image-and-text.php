@@ -25,7 +25,7 @@
 
 <?php else : ?>
 
-    <div class="constr <?php echo $content['image_position']; ?>img">
+    <div class="image-and-text <?php echo $content['image_position']; ?>img">
         <div class="container">
             <div class="row">
                 <div class="txtwrap">

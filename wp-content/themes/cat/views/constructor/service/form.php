@@ -2,13 +2,7 @@
     <div class="container">
         <?php echo $content['title']; ?>
 
-        <pre>
-<?php
-$formData = \App\Models\Form::getData($content['form_id']);
-
-// print_r($formData);
-?>
-</pre>
+        <?php $formData = \App\Models\Form::getData($content['form_id']); ?>
         <form>
             <div class="form-field">
                 <span>Label</span>
@@ -41,7 +35,6 @@ $formData = \App\Models\Form::getData($content['form_id']);
                 <span class="error">disabled</span>
             </div>
         </form>
+        <?php require app('path.views') . '/constructor/_buttons.php'; ?>
     </div>
 </div>
-
-<?php require app('path.views') . '/constructor/_buttons.php'; ?>

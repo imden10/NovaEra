@@ -1,4 +1,4 @@
-<pre>
+<!-- <pre> -->
     <?php
     $btns = [];
 
@@ -11,7 +11,7 @@
         }
     }
     ?>
-</pre>
+<!-- </pre> -->
 <?php if(isset($btns) && is_array($btns) && count($btns)):?>
 <div class="btns-container">
     <?php foreach ($btns as $btn):?>
