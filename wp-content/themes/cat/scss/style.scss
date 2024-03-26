@@ -35,6 +35,11 @@ section{
   position: static
 }
 
+img{
+  width: 100%;
+  display: block;
+}
+
 @import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
 @import './system/common/_container.scss';
@@ -46,6 +51,8 @@ section{
 // components
 @import './system/components/header.scss';
 @import './system/components/form-fields.scss';
+@import './system/components/image-and-text.scss';
+@import './system/components/accordion.scss';
 
 
 

@@ -1,61 +1,24 @@
-<?php if ($content['image_position'] == 'top') : ?>
+<!-- <?php print_r($content) ?> -->
+<div class="image-and-text">
+    <div class="container">
 
-    <div class="image-and-text">
-        <div class="container">
-            <div class="headerwrap">
-                <div class="titlefigure"></div>
-                <?php if (!empty($content['title'])) : ?>
-                    <h2><?php echo $content['title']; ?></h2>
-                <?php endif; ?>
+        <?php if (!empty($content['title'])) : ?>
+            <h2><?php echo $content['title']; ?></h2>
+        <?php endif; ?>
+
+        <div class="text-wrapper <?php echo $content['image_position'] ?>">
+            <div class="image">
+                <img src="<?php echo wp_get_attachment_image_url($content['image']['id'], 'full'); ?>" alt="">
             </div>
-
-            <?php if (isset($content['image']['id']) && !empty($content['image']['id'])) : ?>
-                <img src="<?php echo wp_get_attachment_image_url($content['image']['id'], 'full'); ?>" alt="" class="constrimg">
-            <?php endif; ?>
-
-            <?php echo $content['text']; ?>
-
-            <?php if (isset($content['link']) && !empty($content['link'])) : ?>
-                <div class="constrlnkwrap">
-                    <a href="<?php echo $content['link']; ?>" class="constrlnk"><?php echo trans('Переход'); ?> <img src="<?php echo appConfig('theme_url'); ?>/img/arrow_right.svg" alt=""></a>
-                </div>
-            <?php endif; ?>
-        </div>
-    </div>
-
-<?php else : ?>
-
-    <div class="image-and-text <?php echo $content['image_position']; ?>img">
-        <div class="container">
-            <div class="row">
-                <div class="txtwrap">
-                    <div class="headerwrap">
-                        <div class="titlefigure"></div>
-                        <?php if (!empty($content['title'])) : ?>
-                            <h2><?php echo $content['title']; ?></h2>
-                        <?php endif; ?>
-                    </div>
-
+            <div class="text">
+                <div class="redactor">
                     <?php echo $content['text']; ?>
-
                     <?php if (isset($content['link']) && !empty($content['link'])) : ?>
-                        <div class="constrlnkwrap">
-                            <a href="<?php echo $content['link']; ?>" class="constrlnk"><?php echo trans('Переход'); ?> <img src="<?php echo appConfig('theme_url'); ?>/img/arrow_right.svg" alt=""></a>
-                        </div>
+                        <a href="<?php echo $content['link']; ?>" class="constrlnk"><?php echo trans('Переход'); ?> <img src="<?php echo appConfig('theme_url'); ?>/img/arrow_right.svg" alt=""></a>
                     <?php endif; ?>
                 </div>
-
-                <?php if (isset($content['image']['id']) && !empty($content['image']['id'])) : ?>
-                    <div class="imgcol">
-                        <div class="imgwrap">
-                            <img src="<?php echo wp_get_attachment_image_url($content['image']['id'], 'full'); ?>" alt="" class="constrimg">
-                        </div>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
+        <?php require app('path.views') . '/constructor/_buttons.php'; ?>
     </div>
-
-<?php endif; ?>
-
-<?php require app('path.views') . '/constructor/_buttons.php'; ?>
+</div>

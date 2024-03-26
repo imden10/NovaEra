@@ -1,4 +1,10 @@
 .redactor {
+	*:first-child{
+		margin-top: 0;
+	}
+	*:last-child{
+		margin-bottom: 0;
+	}
 	h1 {
 		color: var(--text-on-bg-on-default-text-primary);
 		font-size: 24px;
@@ -75,17 +81,15 @@
 	p,
 	code,
 	span {
-		color: var($textColor)
+		color: var($textColor) !important
 	}
 
 	a {
-		color: var($linkColor)
+		color: var($linkColor)!important
 	}
 };
 @mixin setBgColor($bg){
 	background: var($bg);
-	// box-shadow: 0 0 0 100vmax var($bg);
-	// clip-path: inset(0 -100vmax);
 }
 
 .on-light {
