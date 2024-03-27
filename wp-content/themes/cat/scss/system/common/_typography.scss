@@ -1,10 +1,12 @@
 .redactor {
-	*:first-child{
+	*:first-child {
 		margin-top: 0;
 	}
-	*:last-child{
+
+	*:last-child {
 		margin-bottom: 0;
 	}
+
 	h1 {
 		color: var(--text-on-bg-on-default-text-primary);
 		font-size: 24px;
@@ -68,50 +70,5 @@
 
 	img {
 		width: 100%;
-	}
-}
-
-@mixin setColors($textColor, $linkColor) {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	code,
-	span {
-		color: var($textColor) !important
-	}
-
-	a {
-		color: var($linkColor)!important
-	}
-};
-@mixin setBgColor($bg){
-	background: var($bg);
-}
-
-.on-light {
-	&.bg-lighter, .bg-lighter{
-		@include setBgColor(--bg-on-light-lighter);
-		@include setColors(--text-on-light-bg-lighter-text-primary, --text-on-light-bg-lighter-link)
-	}
-	&.bg-darker, .bg-darker{
-		@include setBgColor(--bg-on-light-darker);
-		@include setColors(--text-on-light-bg-darker-text-primary, --text-on-light-bg-darker-link)
-	}
-}
-.on-dark {
-	&.bg-img, .bg-img{
-		@include setColors(--text-on-dark-bg-img-text-primary, --text-on-dark-bg-img-link)
-	}
-	&.bg-lighter, .bg-lighter{
-		@include setBgColor(--bg-on-dark-lighter);
-		@include setColors(--text-on-dark-bg-lighter-text-primary, --text-on-dark-bg-lighter-link)
-	}
-	&.bg-darker, .bg-darker{
-		@include setBgColor(--bg-on-dark-darker);
-		@include setColors(--text-on-dark-bg-darker-text-primary, --text-on-dark-bg-darker-link)
 	}
 }

@@ -1,28 +1,35 @@
 @import './normalize.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   font-family: "Montserrat";
   background-color: var(--main-bg);
 }
-*, *::after, *::before {
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
-section{
+section {
   --bg-type: 'on-ligth';
-  &.dark{
+
+  &.dark {
     --bg-type: 'on-dark';
   }
 }
 
 // setMode
-.setMode, .setColors{
+.setMode,
+.setColors {
   position: fixed;
   top: 20px;
   right: 20px;
   display: flex;
   cursor: pointer;
   grid-gap: 10px;
+
   * {
     padding: 10px;
     background-color: #000;
@@ -30,12 +37,12 @@ section{
   }
 }
 
-.setColors{
+.setColors {
   margin-top: 20px;
   position: static
 }
 
-img{
+img {
   width: 100%;
   display: block;
 }
@@ -48,11 +55,9 @@ img{
 @import './system/common/_typography.scss';
 @import './system/common/_buttons.scss';
 @import './system/common/_separators.scss';
+@import './system/common/_bgAndTextColors.scss';
 // components
 @import './system/components/header.scss';
 @import './system/components/form-fields.scss';
 @import './system/components/image-and-text.scss';
 @import './system/components/accordion.scss';
-
-
-
