@@ -6,7 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	// global variables
 	let windowSizeRange;
 	let windowSize = window.innerWidth;
+	let counter = 1
+	const changeTheme = () => {
+		setInterval(() => {
+			counter++
 
+			if (counter >= 4) {
+				counter = 1
+			}
+			console.log(counter);
+			document.body.setAttribute('data-theme', `theme${counter}`)
+		}, 2000)
+
+	}
+	document.querySelector('.startFunc').addEventListener('click', changeTheme)
 	const checkWindowSize = () => {
 		windowSize = window.innerWidth
 		if (windowSize >= 1280) {
@@ -20,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			windowSizeRange = 'Unknown';
 		}
-		document.body.setAttribute('data-windowsize', windowSizeRange);	
+		document.body.setAttribute('data-windowsize', windowSizeRange);
 	}
 
 	checkWindowSize()
@@ -28,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.addEventListener('resize', () => {
 		checkWindowSize()
 	});
-	
+
 	const modeBtns = document.querySelectorAll('.mode')
 
 	modeBtns.forEach(el => {
 		el.addEventListener('click', () => {
-            document.body.setAttribute('data-mode', el.getAttribute('data-mode'))
-        })
+			document.body.setAttribute('data-mode', el.getAttribute('data-mode'))
+		})
 	});
 
 	const colorBtns = document.querySelectorAll('.color')
@@ -42,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	colorBtns.forEach(el => {
 		el.addEventListener('click', () => {
-            const color = el.innerHTML
+			const color = el.innerHTML
 			simpleText.id = color
-        })
+		})
 	});
 
 })

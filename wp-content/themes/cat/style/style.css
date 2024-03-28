@@ -878,6 +878,32 @@ img {
   --theses-item-bg-tone: var(--gray-500);
 }
 
+[data-theme=theme1] {
+  --bg: #fff;
+  --text: #000;
+}
+
+[data-theme=theme2] {
+  --bg: #666;
+  --text: #green;
+}
+
+[data-theme=theme3] {
+  --bg: green;
+  --text: blue;
+}
+
+[data-theme=theme4] {
+  --bg: #000;
+  --text: #fff;
+}
+
+body {
+  transition: 5s;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
 [data-windowsize="1440-1280"] {
   --accordion-content-top-padding: 8px;
   --accordion-content-bottom-padding: 16px;

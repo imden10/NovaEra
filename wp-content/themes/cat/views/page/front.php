@@ -26,6 +26,7 @@
     <div class="setMode">
         <div class="mode" data-mode="light">ligth</div>
         <div class="mode" data-mode="dark">dark</div>
+        <div class="startFunc">start demo animation</div>
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
