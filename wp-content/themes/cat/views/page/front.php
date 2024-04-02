@@ -19,6 +19,7 @@
             </div>
         </div>
     </div>
+    <?php require app('path.views') . '/constructor/service/first-screen.php'; ?>
     <div class="constructor-container">
         <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
     </div>
