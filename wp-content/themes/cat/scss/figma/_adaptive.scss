@@ -1,36 +1,12 @@
-[data-theme="theme1"] {
-	--bg: #fff;
-	--text: #000;
-}
-
-[data-theme="theme2"] {
-	--bg: #666;
-	--text: #green;
-}
-
-[data-theme="theme3"] {
-	--bg: green;
-	--text: blue;
-}
-
-[data-theme="theme4"] {
-	--bg: #000;
-	--text: #fff;
-}
-
-body {
-	transition: 5s;
-	background: var(--bg) !important;
-	color: var(--text) !important;
-}
-
-[data-windowsize="1440-1280"] {
+[data-windowSize="1440-1280"] {
+	/* numbers */
 	--accordion-content-top-padding: 8px;
 	--accordion-content-bottom-padding: 16px;
 	--accordion-content-left-right-padding: 16px;
 	--accordion-head-left-right-padding: 12px;
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 70px;
+	--border-radius-drop-menu: 8px;
 	--border-radius-accordion-head: 12px;
 	--border-radius-banner: 12px;
 	--border-radius-image: 12px;
@@ -46,7 +22,7 @@ body {
 	--button-small-left-right: 12px;
 	--button-small-top-bottom: 16px;
 	--button-small-btn-radius: 30px;
-	--button-small-btn-height: 36px;
+	--button-small-btn-height: 38px;
 	--button-small-min-width: 80px;
 	--cards-coll-gap-4-coll: 32px;
 	--cards-coll-gap-2-coll-with-mini-text: 40px;
@@ -75,7 +51,7 @@ body {
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
+	--form-text-field-outlined-padding-label-helper-left: 12px;
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -86,12 +62,16 @@ body {
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
-	--hero-title-coll-top-bottom-padding: 120px;
+	--hero-img-min-hight: 600px;
+	--hero-content-padding-bottom: 120px;
+	--hero-content-padding-top-s: 60px;
+	--hero-content-padding-top-m: 80px;
+	--hero-content-padding-top-l: 120px;
 	--img-banner-text-img-height: 0px;
 	--spacing-actions-top-s: 8px;
 	--spacing-actions-top-m: 24px;
 	--spacing-actions-top-l: 60px;
-	--spacing-article-article-container-width: 960px;
+	--spacing-article-container-width: 960px;
 	--spacing-coll-gap-coll-6: 4px;
 	--spacing-coll-gap-coll-4: 24px;
 	--spacing-coll-gap-coll-3: 56px;
@@ -109,9 +89,9 @@ body {
 	--spacing-global-spacing-xl: 62px;
 	--spacing-global-spacing-xxl: 78px;
 	--spacing-global-spacing-xxxl: 120px;
+	--spacing-page-headline-h1-bottom: 16px;
+	--spacing-page-headline-h2-bottom: 16px;
 	--spacing-page-headline-h3-bottom: 16px;
-	--spacing-page-headline-h1-bottom: 24px;
-	--spacing-page-headline-h2-bottom: 24px;
 	--spacing-separator-non: 0px;
 	--spacing-separator-s: 32px;
 	--spacing-separator-m: 60px;
@@ -129,11 +109,12 @@ body {
 	--table-row-left-right-padding: 0px;
 	--table-cell-top-bottom-padding: 16px;
 	--table-row-gap: 32px;
+	--theses-gap: 4px;
 	--theses-top-bottom-padding: 12px;
 	--theses-left-right-padding: 16px;
 }
 
-[data-windowsize="1279-1024"] {
+[data-windowSize="1279 - 1024"] {
 	/* numbers */
 	--accordion-content-top-padding: 8px;
 	--accordion-content-bottom-padding: 16px;
@@ -141,6 +122,7 @@ body {
 	--accordion-head-left-right-padding: 12px;
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 70px;
+	--border-radius-drop-menu: 8px;
 	--border-radius-accordion-head: 12px;
 	--border-radius-banner: 12px;
 	--border-radius-image: 12px;
@@ -156,7 +138,7 @@ body {
 	--button-small-left-right: 12px;
 	--button-small-top-bottom: 16px;
 	--button-small-btn-radius: 30px;
-	--button-small-btn-height: 36px;
+	--button-small-btn-height: 38px;
 	--button-small-min-width: 80px;
 	--cards-coll-gap-2-coll-with-mini-text: 40px;
 	--cards-coll-gap-3-coll: 48px;
@@ -185,7 +167,7 @@ body {
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
+	--form-text-field-outlined-padding-label-helper-left: 12px;
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -196,12 +178,16 @@ body {
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
-	--hero-title-coll-top-bottom-padding: 120px;
+	--hero-img-min-hight: 600px;
+	--hero-content-padding-bottom: 120px;
+	--hero-content-padding-top-s: 60px;
+	--hero-content-padding-top-m: 80px;
+	--hero-content-padding-top-l: 120px;
 	--img-banner-text-img-height: 320px;
 	--spacing-actions-top-s: 8px;
 	--spacing-actions-top-m: 24px;
 	--spacing-actions-top-l: 32px;
-	--spacing-article-article-container-width: 960px;
+	--spacing-article-container-width: 960px;
 	--spacing-coll-gap-coll-6: 4px;
 	--spacing-coll-gap-coll-4: 16px;
 	--spacing-coll-gap-coll-3: 32px;
@@ -219,9 +205,9 @@ body {
 	--spacing-global-spacing-xl: 62px;
 	--spacing-global-spacing-xxl: 78px;
 	--spacing-global-spacing-xxxl: 120px;
+	--spacing-page-headline-h1-bottom: 16px;
+	--spacing-page-headline-h2-bottom: 16px;
 	--spacing-page-headline-h3-bottom: 16px;
-	--spacing-page-headline-h1-bottom: 24px;
-	--spacing-page-headline-h2-bottom: 24px;
 	--spacing-separator-non: 0px;
 	--spacing-separator-s: 32px;
 	--spacing-separator-m: 60px;
@@ -239,11 +225,12 @@ body {
 	--table-row-left-right-padding: 0px;
 	--table-cell-top-bottom-padding: 16px;
 	--table-row-gap: 32px;
+	--theses-gap: 4px;
 	--theses-top-bottom-padding: 12px;
 	--theses-left-right-padding: 16px;
 }
 
-[data-windowsize="1023-768"] {
+[data-windowSize="1023 - 768"] {
 	/* numbers */
 	--accordion-content-left-right-padding: 0px;
 	--accordion-content-top-padding: 8px;
@@ -252,6 +239,7 @@ body {
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 64px;
 	--border-radius-accordion-head: 0px;
+	--border-radius-drop-menu: 8px;
 	--border-radius-banner: 12px;
 	--border-radius-image: 12px;
 	--border-radius-step-marker: 12px;
@@ -266,7 +254,7 @@ body {
 	--button-small-left-right: 12px;
 	--button-small-top-bottom: 16px;
 	--button-small-btn-radius: 30px;
-	--button-small-btn-height: 36px;
+	--button-small-btn-height: 38px;
 	--button-small-min-width: 80px;
 	--cards-coll-gap-2-coll: 24px;
 	--cards-coll-gap-3-coll: 24px;
@@ -295,7 +283,7 @@ body {
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
+	--form-text-field-outlined-padding-label-helper-left: 12px;
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -306,17 +294,21 @@ body {
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
-	--hero-title-coll-top-bottom-padding: 60px;
+	--hero-img-min-hight: 460px;
+	--hero-content-padding-bottom: 60px;
+	--hero-content-padding-top-m: 60px;
+	--hero-content-padding-top-s: 60px;
+	--hero-content-padding-top-l: 120px;
 	--img-banner-text-img-height: 280px;
 	--spacing-actions-top-s: 8px;
 	--spacing-actions-top-m: 24px;
 	--spacing-actions-top-l: 32px;
-	--spacing-article-article-container-width: 960px;
+	--spacing-article-container-width: 960px;
 	--spacing-coll-gap-coll-6: 4px;
 	--spacing-coll-gap-coll-4: 16px;
 	--spacing-coll-gap-coll-3: 32px;
 	--spacing-coll-gap-coll-2: 56px;
-	--spacing-coll-padding-coll-2: 32px;
+	--spacing-coll-padding-coll-2: 0px;
 	--spacing-container-left-right-non: 0px;
 	--spacing-container-left-right: 32px;
 	--spacing-container-max-width: 1200px;
@@ -324,14 +316,14 @@ body {
 	--spacing-global-spacing-xxs: 8px;
 	--spacing-global-spacing-xs: 16px;
 	--spacing-global-spacing-s: 24px;
+	--spacing-global-spacing-l: 32px;
 	--spacing-global-spacing-m: 32px;
+	--spacing-global-spacing-xl: 32px;
 	--spacing-global-spacing-xxl: 32px;
 	--spacing-global-spacing-xxxl: 32px;
-	--spacing-global-spacing-l: 48px;
-	--spacing-global-spacing-xl: 62px;
+	--spacing-page-headline-h1-bottom: 16px;
+	--spacing-page-headline-h2-bottom: 16px;
 	--spacing-page-headline-h3-bottom: 16px;
-	--spacing-page-headline-h1-bottom: 24px;
-	--spacing-page-headline-h2-bottom: 24px;
 	--spacing-separator-non: 0px;
 	--spacing-separator-s: 32px;
 	--spacing-separator-m: 60px;
@@ -349,11 +341,12 @@ body {
 	--table-row-left-right-padding: 0px;
 	--table-cell-top-bottom-padding: 16px;
 	--table-row-gap: 32px;
+	--theses-gap: 4px;
 	--theses-top-bottom-padding: 12px;
 	--theses-left-right-padding: 16px;
 }
 
-[data-windowsize="567-320"] {
+[data-windowSize="567 - 320"] {
 	/* numbers */
 	--accordion-content-left-right-padding: 0px;
 	--accordion-content-top-padding: 8px;
@@ -363,20 +356,21 @@ body {
 	--accordion-head-min-height: 64px;
 	--border-radius-accordion-head: 0px;
 	--border-radius-banner: 8px;
+	--border-radius-drop-menu: 8px;
 	--border-radius-image: 8px;
 	--border-radius-step-marker: 12px;
 	--border-radius-thesis: 30px;
 	--button-medium-btn-gap: 8px;
 	--button-medium-top-bottom: 16px;
 	--button-medium-left-right: 24px;
-	--button-medium-btn-radius: 5px;
-	--button-medium-btn-height: 32px;
-	--button-medium-min-width: 10px;
+	--button-medium-btn-radius: 30px;
+	--button-medium-btn-height: 52px;
+	--button-medium-min-width: 150px;
 	--button-small-btn-gap: 4px;
 	--button-small-left-right: 12px;
 	--button-small-top-bottom: 16px;
 	--button-small-btn-radius: 30px;
-	--button-small-btn-height: 36px;
+	--button-small-btn-height: 38px;
 	--button-small-min-width: 80px;
 	--cards-coll-gap-3-coll: 16px;
 	--cards-coll-gap-4-coll: 16px;
@@ -405,7 +399,7 @@ body {
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
+	--form-text-field-outlined-padding-label-helper-left: 12px;
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -416,17 +410,21 @@ body {
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
-	--hero-title-coll-top-bottom-padding: 60px;
+	--hero-img-min-hight: 460px;
+	--hero-content-padding-bottom: 60px;
+	--hero-content-padding-top-m: 0px;
+	--hero-content-padding-top-s: 0px;
+	--hero-content-padding-top-l: 120px;
 	--img-banner-text-img-height: 220px;
 	--spacing-actions-top-s: 8px;
 	--spacing-actions-top-m: 24px;
 	--spacing-actions-top-l: 32px;
-	--spacing-article-article-container-width: 960px;
+	--spacing-article-container-width: 960px;
 	--spacing-coll-gap-coll-6: 4px;
 	--spacing-coll-gap-coll-3: 16px;
 	--spacing-coll-gap-coll-4: 16px;
 	--spacing-coll-gap-coll-2: 56px;
-	--spacing-coll-padding-coll-2: 32px;
+	--spacing-coll-padding-coll-2: 0px;
 	--spacing-container-left-right-non: 0px;
 	--spacing-container-left-right: 16px;
 	--spacing-container-max-width: 1200px;
@@ -439,9 +437,9 @@ body {
 	--spacing-global-spacing-xl: 32px;
 	--spacing-global-spacing-xxl: 32px;
 	--spacing-global-spacing-xxxl: 32px;
+	--spacing-page-headline-h1-bottom: 16px;
+	--spacing-page-headline-h2-bottom: 16px;
 	--spacing-page-headline-h3-bottom: 16px;
-	--spacing-page-headline-h1-bottom: 24px;
-	--spacing-page-headline-h2-bottom: 24px;
 	--spacing-separator-non: 0px;
 	--spacing-separator-s: 32px;
 	--spacing-separator-m: 60px;
@@ -459,6 +457,7 @@ body {
 	--table-row-left-right-padding: 0px;
 	--table-cell-top-bottom-padding: 16px;
 	--table-row-gap: 24px;
+	--theses-gap: 4px;
 	--theses-top-bottom-padding: 12px;
 	--theses-left-right-padding: 16px;
 }

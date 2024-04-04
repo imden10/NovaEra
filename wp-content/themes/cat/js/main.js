@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		setInterval(() => {
 			counter++
 
-			if (counter >= 4) {
+			if (counter >= 5) {
 				counter = 1
 			}
 			console.log(counter);
 			document.body.setAttribute('data-theme', `theme${counter}`)
-		}, 2000)
+		}, 6000)
 
 	}
 	document.querySelector('.startFunc').addEventListener('click', changeTheme)

@@ -47,6 +47,32 @@ img {
   display: block;
 }
 
+[data-theme="theme1"] {
+  --bg: #FCE4CF;
+}
+
+[data-theme="theme2"] {
+  --bg: #FFF2CA;
+}
+
+[data-theme="theme3"] {
+  --bg: #E3F0D4;
+}
+
+[data-theme="theme4"] {
+  --bg: #D7E2F3;
+}
+
+[data-theme="theme5"] {
+  --bg: #D9DDF1;
+}
+
+body {
+  transition: 6s;
+  background: var(--bg) !important;
+}
+
+
 @import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
 @import './system/common/_container.scss';
