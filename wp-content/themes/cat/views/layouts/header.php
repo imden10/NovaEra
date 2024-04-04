@@ -8,6 +8,7 @@
     <?php wp_head(); ?>
 
     <?= config('theme')['fonts'][get_option('theme_settings__font_style')]['link'] ?>
+    <link rel="icon" href="<?= get_image_url_by_id(get_option('theme_settings__favicon')) ?>" type="image/png">
 </head>
 
 <?php

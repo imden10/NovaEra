@@ -2999,13 +2999,6 @@ function wp_site_icon() {
 	if ( empty( $icon_32 ) && is_customize_preview() ) {
 		$icon_32 = '/favicon.ico'; // Serve default favicon URL in customizer so element can be updated for preview.
 	}
-	if ( $icon_32 ) {
-		$meta_tags[] = sprintf( '<link rel="icon" href="%s" sizes="32x32" />', esc_url( $icon_32 ) );
-	}
-	$icon_192 = get_site_icon_url( 192 );
-	if ( $icon_192 ) {
-		$meta_tags[] = sprintf( '<link rel="icon" href="%s" sizes="192x192" />', esc_url( $icon_192 ) );
-	}
 	$icon_180 = get_site_icon_url( 180 );
 	if ( $icon_180 ) {
 		$meta_tags[] = sprintf( '<link rel="apple-touch-icon-precomposed" href="%s" />', esc_url( $icon_180 ) );
