@@ -127,3 +127,4 @@ function num_decline($number, $titles, $param2 = '', $param3 = '')
 
     return "$number " . $titles[($intnum % 100 > 4 && $intnum % 100 < 20) ? 2 : $cases[min($intnum % 10, 5)]];
 }
+

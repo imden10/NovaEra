@@ -359,3 +359,15 @@
     width: 130px;
     margin: 0 auto;
 }
+
+/* WP ADMIN LOGO */
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before {
+    content: "";
+    top: 4px;
+    background-image: url(/wp-content/themes/cat/img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+}

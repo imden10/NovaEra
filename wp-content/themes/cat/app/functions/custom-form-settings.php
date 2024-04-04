@@ -105,3 +105,16 @@ function custom_form_settings_section_callback() {
 function custom_form_settings_field_callback() {
     // Код для полів налаштувань, якщо потрібно
 }
+
+// Відключаємо плашку оновлення WP в адмінці ***************************************************************************
+function remove_core_updates() {
+    global $wp_version;
+    return(object) array(
+        'last_checked'=> time(),
+        'version_checked'=> $wp_version,
+    );
+}
+add_filter('pre_site_transient_update_core','remove_core_updates'); // Hide Updates for WordPress itself
+add_filter('pre_site_transient_update_plugins','remove_core_updates'); // Hide Updates for Plugins
+add_filter('pre_site_transient_update_themes','remove_core_updates'); // Hide Updates for Themes
+// *********************************************************************************************************************
