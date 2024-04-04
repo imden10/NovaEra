@@ -4,7 +4,7 @@ namespace App\Components\MetaBox\Constructor\components;
 
 class ThreeColumnText
 {
-    public $name = 'Текст з трьомв колонками';
+    public $name = 'Текст з трьома колонками';
 
 
     public function html($key, $name, $value)
