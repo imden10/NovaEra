@@ -1,4 +1,4 @@
-[data-windowSize="1440-1280"] {
+[data-windowsize="1440-1280"] {
 	/* numbers */
 	--accordion-content-top-padding: 8px;
 	--accordion-content-bottom-padding: 16px;
@@ -6,7 +6,9 @@
 	--accordion-head-left-right-padding: 12px;
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 70px;
+	--accordion-wrap-list-gap: 0px;
 	--border-radius-drop-menu: 8px;
+	--border-radius-accordeon-wrap: 12px;
 	--border-radius-accordion-head: 12px;
 	--border-radius-banner: 12px;
 	--border-radius-image: 12px;
@@ -51,7 +53,7 @@
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: 12px;
+	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input, 12px);
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -62,8 +64,11 @@
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
+	--hero-img-fix-width: 320px;
 	--hero-img-min-hight: 600px;
-	--hero-content-padding-bottom: 120px;
+	--hero-content-padding-bottom-s: 60px;
+	--hero-content-padding-bottom-m: 80px;
+	--hero-content-padding-bottom-l: 120px;
 	--hero-content-padding-top-s: 60px;
 	--hero-content-padding-top-m: 80px;
 	--hero-content-padding-top-l: 120px;
@@ -114,7 +119,7 @@
 	--theses-left-right-padding: 16px;
 }
 
-[data-windowSize="1279 - 1024"] {
+[data-windowsize="1279-1024"] {
 	/* numbers */
 	--accordion-content-top-padding: 8px;
 	--accordion-content-bottom-padding: 16px;
@@ -122,7 +127,9 @@
 	--accordion-head-left-right-padding: 12px;
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 70px;
+	--accordion-wrap-list-gap: 0px;
 	--border-radius-drop-menu: 8px;
+	--border-radius-accordeon-wrap: 12px;
 	--border-radius-accordion-head: 12px;
 	--border-radius-banner: 12px;
 	--border-radius-image: 12px;
@@ -167,7 +174,7 @@
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: 12px;
+	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input, 12px);
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -178,8 +185,11 @@
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
+	--hero-img-fix-width: 320px;
 	--hero-img-min-hight: 600px;
-	--hero-content-padding-bottom: 120px;
+	--hero-content-padding-bottom-s: 60px;
+	--hero-content-padding-bottom-m: 80px;
+	--hero-content-padding-bottom-l: 120px;
 	--hero-content-padding-top-s: 60px;
 	--hero-content-padding-top-m: 80px;
 	--hero-content-padding-top-l: 120px;
@@ -230,7 +240,7 @@
 	--theses-left-right-padding: 16px;
 }
 
-[data-windowSize="1023 - 768"] {
+[data-windowsize="1023-768"] {
 	/* numbers */
 	--accordion-content-left-right-padding: 0px;
 	--accordion-content-top-padding: 8px;
@@ -238,8 +248,10 @@
 	--accordion-head-left-right-padding: 0px;
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 64px;
+	--accordion-wrap-list-gap: 0px;
 	--border-radius-accordion-head: 0px;
 	--border-radius-drop-menu: 8px;
+	--border-radius-accordeon-wrap: 12px;
 	--border-radius-banner: 12px;
 	--border-radius-image: 12px;
 	--border-radius-step-marker: 12px;
@@ -283,7 +295,7 @@
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: 12px;
+	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input, 12px);
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -294,8 +306,11 @@
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
+	--hero-img-fix-width: 320px;
 	--hero-img-min-hight: 460px;
-	--hero-content-padding-bottom: 60px;
+	--hero-content-padding-bottom-l: 60px;
+	--hero-content-padding-bottom-m: 60px;
+	--hero-content-padding-bottom-s: 60px;
 	--hero-content-padding-top-m: 60px;
 	--hero-content-padding-top-s: 60px;
 	--hero-content-padding-top-l: 120px;
@@ -346,7 +361,7 @@
 	--theses-left-right-padding: 16px;
 }
 
-[data-windowSize="567 - 320"] {
+[data-windowsize="567-320"] {
 	/* numbers */
 	--accordion-content-left-right-padding: 0px;
 	--accordion-content-top-padding: 8px;
@@ -354,6 +369,8 @@
 	--accordion-head-left-right-padding: 0px;
 	--accordion-head-top-bottom-padding: 16px;
 	--accordion-head-min-height: 64px;
+	--accordion-wrap-list-gap: 0px;
+	--border-radius-accordeon-wrap: 0px;
 	--border-radius-accordion-head: 0px;
 	--border-radius-banner: 8px;
 	--border-radius-drop-menu: 8px;
@@ -399,7 +416,7 @@
 	--form-text-field-outlined-padding-helper-text-top: 2px;
 	--form-text-field-outlined-padding-label-bottom: 2px;
 	--form-text-field-outlined-padding-input-left-right: 12px;
-	--form-text-field-outlined-padding-label-helper-left: 12px;
+	--form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input, 12px);
 	--form-text-field-outlined-padding-input-top-bottom: 14px;
 	--form-text-field-outlined-radius-radius-input: 12px;
 	--form-text-field-underlined-base-gap-gap-horisontal: 4px;
@@ -410,8 +427,11 @@
 	--form-text-field-underlined-base-padding-helper-text-top: 2px;
 	--form-text-field-underlined-base-padding-label-bottom: 2px;
 	--form-text-field-underlined-base-padding-input-top-bottom: 12px;
+	--hero-img-fix-width: 320px;
 	--hero-img-min-hight: 460px;
-	--hero-content-padding-bottom: 60px;
+	--hero-content-padding-bottom-l: 60px;
+	--hero-content-padding-bottom-m: 60px;
+	--hero-content-padding-bottom-s: 60px;
 	--hero-content-padding-top-m: 0px;
 	--hero-content-padding-top-s: 0px;
 	--hero-content-padding-top-l: 120px;

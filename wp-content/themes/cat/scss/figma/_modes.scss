@@ -1,21 +1,22 @@
 [data-mode="light"] {
 	/* colors */
-	--accordion-divider: var(--gray-opacity-20);
-	--accordion-icon: var(--gray-opacity-40);
-	--accordion-icon-hover: var(--text-on-light-bg-darker-text-primary);
-	--accordion-title-text-hover: var(--text-on-light-bg-darker-text-primary);
-	--accordion-content-bg-default: var(--white-opacity-100);
-	--accordion-content-bg-primary: var(--brand-1-900);
-	--accordion-content-bg-secondary: var(--brand-2-800);
-	--accordion-content-bg-tone: var(--brand-1-100);
-	--accordion-title-bg-default: var(--white-opacity-100);
-	--accordion-title-bg-primary: var(--brand-1-900);
-	--accordion-title-bg-secondary: var(--brand-2-800);
-	--accordion-title-bg-tone: var(--brand-1-100);
-	--accordion-title-bg-hover-default: var(--brand-1-300);
-	--accordion-title-bg-hover-primary: var(--brand-1-300);
-	--accordion-title-bg-hover-secondary: var(--brand-1-600);
-	--accordion-title-bg-hover-tone: var(--brand-1-200);
+	--accordion-on-dark-bg-default: var(--white-opacity-0);
+	--accordion-on-dark-bg-hover: var(--brand-1-600);
+	--accordion-on-dark-divider-default: var(--white-opacity-20);
+	--accordion-on-dark-divider-hover: var(--white-opacity-0);
+	--accordion-on-dark-icon-default: var(--white-opacity-40);
+	--accordion-on-dark-icon-hover: var(--white-opacity-100);
+	--accordion-on-dark-title-default: var(--white-opacity-100);
+	--accordion-on-dark-title-hover: var(--white-opacity-100);
+	--accordion-on-light-bg-default: var(--gray-opacity-0);
+	--accordion-on-light-bg-hover: var(--gray-opacity-8);
+	--accordion-on-light-divider-default: var(--gray-opacity-20);
+	--accordion-on-light-divider-hover: var(--gray-opacity-0);
+	--accordion-on-light-icon-default: var(--gray-opacity-40);
+	--accordion-on-light-icon-hover: var(--brand-1-700);
+	--accordion-on-light-title-default: var(--gray-1);
+	--accordion-on-light-title-hover: var(--brand-1-700);
+	--accordion-on-light-wrap-border: var(--gray-opacity-0);
 	--bg-on-dark-darker: var(--gray-700);
 	--bg-on-dark-lighter: var(--brand-1-700);
 	--bg-on-light-darker: var(--brand-1-50);
@@ -175,22 +176,23 @@
 
 [data-mode="dark"] {
 	/* colors */
-	--accordion-divider: var(--white-opacity-20);
-	--accordion-icon: var(--white-opacity-40);
-	--accordion-icon-hover: var(--white-opacity-100);
-	--accordion-title-text-hover: var(--white-opacity-100);
-	--accordion-content-bg-default: var(--gray-1);
-	--accordion-content-bg-primary: var(--brand-1-900);
-	--accordion-content-bg-secondary: var(--brand-2-800);
-	--accordion-content-bg-tone: var(--gray-700);
-	--accordion-title-bg-default: var(--gray-1);
-	--accordion-title-bg-primary: var(--brand-1-900);
-	--accordion-title-bg-secondary: var(--brand-2-800);
-	--accordion-title-bg-tone: var(--gray-700);
-	--accordion-title-bg-hover-default: var(--brand-1-600);
-	--accordion-title-bg-hover-primary: var(--brand-1-600);
-	--accordion-title-bg-hover-secondary: var(--brand-1-600);
-	--accordion-title-bg-hover-tone: var(--brand-1-600);
+	--accordion-on-dark-bg-default: var(--white-opacity-0);
+	--accordion-on-dark-bg-hover: var(--brand-1-800);
+	--accordion-on-dark-divider-default: var(--white-opacity-20);
+	--accordion-on-dark-divider-hover: var(--white-opacity-20);
+	--accordion-on-dark-icon-default: var(--white-opacity-40);
+	--accordion-on-dark-icon-hover: var(--white-opacity-100);
+	--accordion-on-dark-title-default: var(--white-opacity-100);
+	--accordion-on-dark-title-hover: var(--white-opacity-100);
+	--accordion-on-light-bg-default: var(--white-opacity-0);
+	--accordion-on-light-bg-hover: var(--white-opacity-12);
+	--accordion-on-light-divider-default: var(--white-opacity-20);
+	--accordion-on-light-divider-hover: var(--white-opacity-20);
+	--accordion-on-light-icon-default: var(--white-opacity-40);
+	--accordion-on-light-icon-hover: var(--brand-1-600);
+	--accordion-on-light-title-default: var(--white-opacity-100);
+	--accordion-on-light-title-hover: var(--brand-1-600);
+	--accordion-on-light-wrap-border: var(--white-opacity-0);
 	--bg-on-dark-darker: var(--gray-900);
 	--bg-on-dark-lighter: var(--brand-1-900);
 	--bg-on-light-darker: var(--gray-800);
