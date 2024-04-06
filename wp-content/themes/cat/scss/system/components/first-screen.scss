@@ -69,6 +69,10 @@
 	}
 
 	&.section50 {
+		@media (min-width: 1023px) and (max-width: 1440px) {
+			padding-left: var(--spacing-container-left-right);
+		}
+
 		.container {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -82,7 +86,7 @@
 			}
 
 			.text-column {
-				padding: var(--hero-content-padding-top-l) var(--spacing-container-left-right, 16px);
+				padding: var(--hero-content-padding-top-l) var(--spacing-coll-padding-coll-2) var(--hero-content-padding-bottom-l) 0;
 			}
 
 			@include _1024 {
@@ -91,6 +95,10 @@
 				.image-column {
 					position: static;
 					width: 100%;
+				}
+
+				.text-column {
+					padding: var(--hero-content-padding-top-l) var(--spacing-container-left-right);
 				}
 			}
 		}
