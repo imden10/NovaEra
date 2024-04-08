@@ -98,9 +98,9 @@ function buildContentFromConstructorArray($post_type, $data = [])
             $file = app('path.views') . '/constructor/' . $post_type . '/' . $component_file_name . '.php';
             if (file_exists($file)) {
                 if ($content['background_type'] !== 'image') {
-                    echo "<section class='mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content[$content['background_type']]}'>";
+                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content[$content['background_type']]}'>";
                 } else {
-                    echo "<section style='background-image: url(" . wp_get_attachment_image_url($content['background_type_image']['id'], 'full') . ")' class='mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-img'>";
+                    echo "<section style='background-image: url(" . wp_get_attachment_image_url($content['background_type_image']['id'], 'full') . ")' class='$component_file_name mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-img'>";
                 }
                 require $file;
                 echo "</section>";
@@ -127,4 +127,3 @@ function num_decline($number, $titles, $param2 = '', $param3 = '')
 
     return "$number " . $titles[($intnum % 100 > 4 && $intnum % 100 < 20) ? 2 : $cases[min($intnum % 10, 5)]];
 }
-
