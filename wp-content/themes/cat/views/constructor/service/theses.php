@@ -1,6 +1,5 @@
 <?php
     $data = array_diff_key($content,array_flip(['list','image']));
-    $imageUrl = get_image_url_by_id($content['image']['id']);
 ?>
 
 <div class="theses">
@@ -10,7 +9,6 @@
                 print_r($data);
             ?>
         </pre>
-        <img src="<?= $imageUrl ?>" alt="" style="width: 200px">
         <div class="constrlistwrap">
             <h4>Тези</h4>
             <div class="headerwrap">
@@ -24,7 +22,7 @@
                     <?php foreach ($content['list'] as $item) : ?>
                         <li>
                             <h4><?= $item['thesis']; ?></h4>
-                            <p><?= $item['icon']; ?></p>
+                            <img src="<?= get_image_url_by_id($item['image']); ?>" alt="" style="max-width: 300px">
                         </li>
                     <?php endforeach; ?>
                 </ul>

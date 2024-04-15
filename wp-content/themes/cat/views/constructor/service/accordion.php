@@ -24,6 +24,11 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                 <?php if (!empty($content['title'])) : ?>
                     <h2><?php echo $content['title']; ?></h2>
                 <?php endif; ?>
+
+                <?php if (!empty($content['text'])) : ?>
+                    <h2><?php echo $content['text']; ?></h2>
+                <?php endif; ?>
+
                 <?php if (isset($content['list'])) : ?>
                     <?php foreach ($content['list'] as $item) : ?>
                         <div class="accordion-title">
@@ -33,6 +38,14 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                         <div class="accordion-content redactor" hidden>
                             <?= $item['description']; ?>
                         </div>
+
+                        <!-- new fields -->
+                        <img src="<?= get_image_url_by_id($item['image']); ?>" alt="" style="max-width: 200px">
+
+                        <?php
+                        print_r($item);
+                        ?>
+
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>

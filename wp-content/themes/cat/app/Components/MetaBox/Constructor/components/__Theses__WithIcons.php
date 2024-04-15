@@ -31,7 +31,7 @@ class Theses
                                     >
                                 </div>
                                 <div class="mb-3">
-                                    <?= media_preview_box($list['name'] . "[" . self::$placeholder . "][image]"); ?>
+                                    <?= do_shortcode('[icon_select name="' . esc_attr(base64_encode($list['name'] ."[".self::$placeholder."][icon]" )) . '"]'); ?>
                                 </div>
                                 <button type="button"
                                         class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
@@ -53,7 +53,7 @@ class Theses
                                         >
                                     </div>
                                     <div class="mb-3">
-                                        <?= media_preview_box($list['name'] . "[" . $id . "][image]",esc_attr($value['image'])); ?>
+                                        <?= do_shortcode('[icon_select ready="true" icon="'.$value['icon'].'" name="' . esc_attr(base64_encode($list['name'] ."[".$id."][icon]" )) . '"]'); ?>
                                     </div>
                                     <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
                                 </div>
@@ -98,10 +98,24 @@ class Theses
                         const itemsContainer = container.find('.list-elements-container');
 
                         createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
+
+                        itemsContainer.find('.icon-select-component').each(function () {
+                            $(this).select2({
+                                templateResult: formatStateIcon,
+                                templateSelection: formatStateIcon,
+                            });
+                        });
                     });
 
                     $(document).on('click', '.delete-list-element', function () {
                         deleteItem($(this));
+                    });
+
+                    $(".icon-select-component-ready").each(function () {
+                        $(this).select2({
+                            templateResult: formatStateIcon,
+                            templateSelection: formatStateIcon,
+                        });
                     });
                 });
             </script>

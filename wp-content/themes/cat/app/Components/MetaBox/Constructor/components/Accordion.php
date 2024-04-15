@@ -2,6 +2,8 @@
 
 namespace App\Components\MetaBox\Constructor\components;
 
+use App\Models\Form;
+
 class Accordion
 {
     public $name = 'Акордеон';
@@ -48,57 +50,145 @@ class Accordion
             'name' => $name . '[' . $key . '][content][icon]',
             'value' => isset($value['content']['icon']) ? $value['content']['icon'] : ''
         ];
+
+        $text = [
+            'name' => $name . '[' . $key . '][content][text]',
+            'value' => isset($value['content']['text']) ? $value['content']['text'] : ''
+        ];
+
+        $formsList = Form::getList();
         ?>
 
         <div class="body-block">
             <div class="list-elements-body">
                 <div class="mb-3">
+                    <label for="componentAccordion<?php echo $key; ?>" class="form-label"><?php _e('Текст '); ?></label>
+                    <textarea id="componentText<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
+                </div>
+
+                <div class="mb-3">
                     <label for="content_position_component" class="form-label"><?php _e('Позиція контенту '); ?></label>
                     <select name="<?php echo $content_position['name']; ?>" class="form-control form-control-sm" id="content_position_component">
-                        <?php foreach ($content_position_options as $key => $name) : ?>
-                            <option value="<?php echo $key; ?>"<?php echo ($content_position['value'] == $key) ? ' selected' : ''; ?>><?php echo $name; ?></option>
+                        <?php foreach ($content_position_options as $key2 => $name) : ?>
+                            <option value="<?php echo $key2; ?>"<?php echo ($content_position['value'] == $key2) ? ' selected' : ''; ?>><?php echo $name; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
 
                 <div class="mb-3">
-                    <label for="content_position_component" class="form-label"><?php _e('Тип '); ?></label>
-                    <select name="<?php echo $type['name']; ?>" class="form-control form-control-sm" id="content_position_component">
-                        <?php foreach ($type_options as $key => $name) : ?>
-                            <option value="<?php echo $key; ?>"<?php echo ($type['value'] == $key) ? ' selected' : ''; ?>><?php echo $name; ?></option>
+                    <label for="content_type_component" class="form-label"><?php _e('Тип '); ?></label>
+                    <select name="<?php echo $type['name']; ?>" class="form-control form-control-sm" id="content_type_component">
+                        <?php foreach ($type_options as $key3 => $name) : ?>
+                            <option value="<?php echo $key3; ?>"<?php echo ($type['value'] == $key3) ? ' selected' : ''; ?>><?php echo $name; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
 
                 <?= media_preview_box($image_id['name'],$image_id['value'], "Зображення"); ?>
 
-                <div style="display: none">
+                <template>
                     <li data-item-id="<?php echo self::$placeholder; ?>" class="item-list-template">
                         <div class="card border-success">
                             <div class="card-body">
-                                <div class="mb-3">
-                                    <input type="text" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][title]" disabled="disabled">
-                                </div>
-                                <div class="mb-3">
-                                    <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][description]" class="ck-editor" disabled="disabled"></textarea>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][title]" disabled="disabled">
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][description]" class="ck-editor" disabled="disabled"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <?= media_preview_box($list['name'] . "[" . self::$placeholder . "][image]"); ?>
+                                    </div>
+                                    <div class="col-3">
+                                        <label style="margin-bottom: 10px">Використовувати кнопку</label>
+                                        <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__enable]" class="form-control form-control-sm">
+                                            <option value="0">Ні</option>
+                                            <option value="1">Так</option>
+                                        </select>
+                                        <input type="text" placeholder="Текст" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__text]" disabled="disabled">
+                                        <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__type_link]" class="form-control form-control-sm type_link">
+                                            <option value="link">Довільне посилання</option>
+                                            <option value="form">Форма</option>
+                                        </select>
+                                        <input type="text" placeholder="Посилання" class="form-control form-control-sm type_link_link" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__link]" disabled="disabled">
+                                        <select style="margin-top: 10px; display: none" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__form_id]" class="form-control form-control-sm type_link_form">
+                                            <?php foreach ($formsList as $formListKey => $formList) : ?>
+                                                <option value="<?= $formListKey ?>"><?= $formList ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__type]" class="form-control form-control-sm">
+                                            <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
+                                                <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <?= do_shortcode('[icon_select name="' . esc_attr(base64_encode($list['name'] . "[" . self::$placeholder . "][icon]")) . '"]'); ?>
+                                    </div>
                                 </div>
                                 <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
                             </div>
                         </div>
                     </li>
-                </div>
+                </template>
 
                 <ul class="list-elements-container">
                     <?php foreach ($list['value'] as $id => $value) : ?>
                         <li data-item-id="<?php echo $id; ?>" class="item-list-template">
                             <div class="card border-success">
                                 <div class="card-body">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][title]" value="<?= esc_attr($value['title']); ?>">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][title]" value="<?= esc_attr($value['title']); ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo $id; ?>][description]" class="ck-editor-ready"><?= esc_attr($value['description']); ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <?= media_preview_box($list['name'] . "[" . $id . "][image]",esc_attr($value['image'])); ?>
+                                        </div>
+                                        <div class="col-3">
+                                            <label style="margin-bottom: 10px">Використовувати кнопку</label>
+                                            <?php $btn_enable = $value['btn__enable'] ?? '0'; ?>
+                                            <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo $id; ?>][btn__enable]" class="form-control form-control-sm">
+                                                <option value="0" <?php if ($btn_enable == '0') echo "selected"; ?>>Ні</option>
+                                                <option value="1" <?php if ($btn_enable == '1') echo "selected"; ?>>Так</option>
+                                            </select>
+                                            <input type="text" placeholder="Текст" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__text]" value="<?= esc_attr($value['btn__text']); ?>">
+                                            <?php $type_link = $value['btn__type_link'] ?? ''; ?>
+                                            <select style="margin: 10px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__type_link]" class="form-control form-control-sm type_link">
+                                                <option value="link" <?php if ($type_link == 'link') echo "selected"; ?>>Довільне посилання</option>
+                                                <option value="form" <?php if ($type_link == 'form') echo "selected"; ?>>Форма</option>
+                                            </select>
+                                            <input type="text"
+                                                   placeholder="Посилання"
+                                                   class="form-control form-control-sm type_link_link"
+                                                   name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__link]"
+                                                   style="<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>"
+                                                   value="<?= esc_attr($value['btn__link']); ?>">
+                                            <?php $form_id = $value['btn__form_id'] ?? ''; ?>
+                                            <select
+                                                    name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__form_id]"
+                                                    class="form-control form-control-sm type_link_form"
+                                                    style="<?php if ($type_link != 'form') : ?> display: none <?php endif; ?>"
+                                            >
+                                                <?php foreach ($formsList as $formListKey => $formList) : ?>
+                                                    <option value="<?= $formListKey ?>" <?php if ($form_id == $formListKey) echo "selected"; ?>><?= $formList ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <?php $type = $value['btn__type'] ?? ''; ?>
+                                            <select style="margin: 10px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__type]" class="form-control form-control-sm">
+                                                <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
+                                                    <option value="<?= $listKey ?>" <?php if ($type == $listKey) echo "selected"; ?>><?= $listItem ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <?= do_shortcode('[icon_select ready="true" icon="' . $value['icon'] . '" name="' . esc_attr(base64_encode($list['name'] . "[" . $id . "][icon]")) . '"]'); ?>
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo $id; ?>][description]" class="ck-editor-ready"><?= esc_attr($value['description']); ?></textarea>
-                                    </div>
+
                                     <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
                                 </div>
                             </div>
@@ -114,6 +204,10 @@ class Accordion
             $(document).ready(function() {
                 $('.ck-editor-ready').summernote({
                     height: 182
+                });
+
+                $('#componentText<?php echo $key; ?>').summernote({
+                    height: 200
                 });
             });
         </script>
@@ -138,12 +232,12 @@ class Accordion
                     const placeholder = '<?php echo self::$placeholder; ?>';
 
                     $(document).on('click', '.add-' + prefix, function () {
-                        console.log(this)
                         const container = $(this).parents('.list-elements-body');
-                        const itemTemplate = container.find('.item-list-template');
+                        const template = container.find('template')[0];
+                        const itemTemplate = $(template.content).find(".item-list-template");
                         const itemsContainer = container.find('.list-elements-container');
 
-                        createItem(container, itemTemplate, itemsContainer, placeholder);
+                        createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
 
                         itemsContainer.find('input, textarea').each(function () {
                             $(this).prop('disabled', false);
@@ -152,6 +246,13 @@ class Accordion
                         itemsContainer.find('textarea.ck-editor').each(function () {
                             $(this).summernote({
                                 height: 182
+                            });
+                        });
+
+                        itemsContainer.find('.icon-select-component').each(function () {
+                            $(this).select2({
+                                templateResult: formatStateIcon,
+                                templateSelection: formatStateIcon,
                             });
                         });
                     });
