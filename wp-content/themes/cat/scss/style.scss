@@ -73,11 +73,13 @@ body {
 }
 
 
+
 @import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
 @import './system/common/_container.scss';
 // @import './system/common/_colors.scss';
 // common
+@import './system/common/_animations.scss';
 @import './system/common/_typography.scss';
 @import './system/common/_buttons.scss';
 @import './system/common/_separators.scss';

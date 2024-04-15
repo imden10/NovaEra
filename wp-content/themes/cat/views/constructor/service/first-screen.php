@@ -1,7 +1,7 @@
 <div class="first-screen on-dark bg-lighter column30">
 	<div class="container">
 		<div class="text-column">
-			<h1>
+			<h1 class="fadeDown">
 				column 30
 				Усі інструменти для зростання бізнесу у сфері салонного бізнесу
 			</h1>
@@ -26,7 +26,7 @@
 <div class="first-screen on-dark bg-darker column30 fix-image">
 	<div class="container">
 		<div class="text-column">
-			<h1>
+			<h1 class="fadeDown">
 				column 30 + fix image
 				Усі інструменти для зростання бізнесу у сфері салонного бізнесу
 			</h1>
@@ -51,7 +51,7 @@
 <div class="first-screen on-dark bg-lighter column50">
 	<div class="container">
 		<div class="text-column">
-			<h1>
+			<h1 class="fadeDown">
 				column 50
 				Усі інструменти для зростання бізнесу у сфері салонного бізнесу
 			</h1>
@@ -77,7 +77,7 @@
 	<div class="container">
 
 		<div class="text-column">
-			<h1>
+			<h1 class="fadeDown">
 				column 50
 				Усі інструменти для зростання бізнесу у сфері салонного бізнесу
 			</h1>
