@@ -112,6 +112,7 @@ return [
                                     'BlockSlider.php',
                                     'Theses.php',
                                     'AccordionTable.php',
+                                    'CardMiniText.php',
                                     'Form.php',
                                 ],
                             ]

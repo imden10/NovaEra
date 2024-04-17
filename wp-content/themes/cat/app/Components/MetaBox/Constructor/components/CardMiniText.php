@@ -4,48 +4,19 @@ namespace App\Components\MetaBox\Constructor\components;
 
 use App\Models\Form;
 
-class Accordion
+class CardMiniText
 {
-    public $name = 'Акордеон';
+    public $name = 'Карточки міні текст';
 
-    protected static $prefix = 'accordion-item';
+    protected static $prefix = 'cardminitext-item';
 
-    protected static $placeholder = '#accordionElementId';
+    protected static $placeholder = '#cardminitextElementId';
 
     public function html($key, $name, $value)
     {
-        $content_position_options = [
-            'left' => __('Ліворуч'),
-            'center' => __('По центру'),
-            'right' => __('Праворуч'),
-        ];
-        $content_position = [
-            'name' => $name . '[' . $key . '][content][content_position]',
-            'value' => isset($value['content']['content_position']) ? $value['content']['content_position'] : 'left'
-        ];
-
-        $type_options = [
-            'numerical' => __('З нумерацією'),
-            'default' => __('Без нумерації'),
-        ];
-        $type = [
-            'name' => $name . '[' . $key . '][content][type]',
-            'value' => isset($value['content']['type']) ? $value['content']['type'] : 'default'
-        ];
-
         $list = [
             'name' => $name . '[' . $key . '][content][list]',
             'value' => (isset($value['content']['list']) && is_array($value['content']['list'])) ? $value['content']['list'] : []
-        ];
-
-        $image_id = [
-            'name' => $name . '[' . $key . '][content][image][id]',
-            'value' => isset($value['content']['image']['id']) ? $value['content']['image']['id'] : '0'
-        ];
-
-        $icon = [
-            'name' => $name . '[' . $key . '][content][icon]',
-            'value' => isset($value['content']['icon']) ? $value['content']['icon'] : ''
         ];
 
         $text = [
@@ -63,26 +34,6 @@ class Accordion
                     <textarea id="componentText<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
                 </div>
 
-                <div class="mb-3">
-                    <label for="content_position_component" class="form-label"><?php _e('Позиція контенту '); ?></label>
-                    <select name="<?php echo $content_position['name']; ?>" class="form-control form-control-sm" id="content_position_component">
-                        <?php foreach ($content_position_options as $key2 => $name) : ?>
-                            <option value="<?php echo $key2; ?>"<?php echo ($content_position['value'] == $key2) ? ' selected' : ''; ?>><?php echo $name; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="content_type_component" class="form-label"><?php _e('Тип '); ?></label>
-                    <select name="<?php echo $type['name']; ?>" class="form-control form-control-sm" id="content_type_component">
-                        <?php foreach ($type_options as $key3 => $name) : ?>
-                            <option value="<?php echo $key3; ?>"<?php echo ($type['value'] == $key3) ? ' selected' : ''; ?>><?php echo $name; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <?= media_preview_box($image_id['name'],$image_id['value'], "Зображення"); ?>
-
                 <template>
                     <li data-item-id="<?php echo self::$placeholder; ?>" class="item-list-template">
                         <div class="card border-success">
@@ -90,7 +41,17 @@ class Accordion
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <input type="text" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][title]" disabled="disabled">
+                                            <input type="text" placeholder="Заголовок" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][title]" disabled="disabled">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <input type="text" placeholder="Посилання текст" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][link_text]" disabled="disabled">
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="text" placeholder="Посилання URL" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][link_url]" disabled="disabled">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="mb-3">
                                             <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][description]" class="ck-editor" disabled="disabled"></textarea>
@@ -138,7 +99,17 @@ class Accordion
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="mb-3">
-                                                <input type="text" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][title]" value="<?= esc_attr($value['title']); ?>">
+                                                <input type="text" placeholder="Заголовок" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][title]" value="<?= esc_attr($value['title']); ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input type="text" placeholder="Посилання текст" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][link_text]" value="<?= esc_attr($value['link_text']); ?>">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input type="text" placeholder="Посилання URL" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][link_url]" value="<?= esc_attr($value['link_url']); ?>">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="mb-3">
                                                 <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo $id; ?>][description]" class="ck-editor-ready"><?= esc_attr($value['description']); ?></textarea>
@@ -203,7 +174,7 @@ class Accordion
                     height: 182
                 });
 
-                $('#componentText<?php echo $key; ?>').summernote({
+                $('#cardminitext<?php echo $key; ?>').summernote({
                     height: 200
                 });
             });

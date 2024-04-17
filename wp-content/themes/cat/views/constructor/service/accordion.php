@@ -42,9 +42,18 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                         <!-- new fields -->
                         <img src="<?= get_image_url_by_id($item['image']); ?>" alt="" style="max-width: 200px">
 
-                        <?php
-                        print_r($item);
-                        ?>
+                        <?php if($item['btn__enable'] == 1): ?>
+                            <?php
+                            if($item['btn__type_link'] === "form"){
+                                $formData = \App\Models\Form::getData($item['btn__form_id']);
+                            }
+
+                            print_r($item);
+                            print_r($formData);
+                            ?>
+
+                            <button><?= $item['btn__text'] ?></button>
+                        <?php endif; ?>
 
                     <?php endforeach; ?>
                 <?php endif; ?>
