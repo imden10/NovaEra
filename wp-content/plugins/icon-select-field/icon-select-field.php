@@ -18,6 +18,7 @@ function icon_select_shortcode($atts) {
         'name' => 'selected_icon', // Default name attribute value
         'icon' => '',
         'ready' => false,
+        'title' => true,
     ), $atts);
     ob_start();
 

@@ -202,7 +202,7 @@ class Table
                                                                 <label>Текст</label>
                                                                 <textarea
                                                                         rows="10"
-                                                                        class="form-control ck-editor-ready"
+                                                                        class="form-control ck-editor-table-ready"
                                                                         name="<?= $list['name']; ?>[<?= $id ?>][<?=$col?>][column_text]"><?= $text['column_text'] ?? '' ?></textarea>
                                                             </div>
                                                         </div>
@@ -334,7 +334,7 @@ class Table
                                                              <label>Текст</label>
                                                              <textarea
                                                                      rows="10"
-                                                                     class="form-control ck-editor-ready"
+                                                                     class="form-control ck-editor-table-ready"
                                                                      name="<?= $listMob['name']; ?>[<?= $id ?>][<?=$col?>][column_text]"><?= $text['column_text'] ?? '' ?></textarea>
                                                          </div>
                                                      </div>
@@ -377,6 +377,72 @@ class Table
         add_action('admin_footer', function () { ?>
 
             <script type="text/javascript">
+                const cb = function (callback) {
+                    $('#exampleModalBtn').modal('show');
+                    $(".cb-btn-submit").on("click",function () {
+                        let div = document.createElement('div');
+                        div.className = "btns btns_sm-x btns_right";
+                        let a = document.createElement('a');
+                        a.className = "bt bt-sm bt-primary i-right ic-arrow-right-line";
+                        a.innerText = $(".cb-input-text").val();
+                        a.setAttribute('href',$(".cb-input-link").val());
+                        div.appendChild(a);
+                        callback(div);
+                        $(".cb-input-link").val('');
+                        $(".cb-input-text").val('');
+                        $('#exampleModalBtn').modal('hide');
+                        $(".cb-btn-submit").off('click');
+                    })
+                };
+
+                const CustomButton = function (context) {
+                    const ui = $.summernote.ui;
+                    const button = ui.button({
+                        contents: '<i class="fa fa-leaf"></i> Кнопка',
+                        tooltip: 'Вставити кнопку',
+                        click: function () {
+                            $(".cb-btn-submit").off('click');
+                            cb(function (btn) {
+                                let rng = context.$note.summernote('getLastRange');
+                                let node = rng.insertNode(btn);
+                                let code = context.$note.summernote('code');
+
+                                context.$note.summernote('code','');
+                                context.invoke('pasteHTML', code);
+                            });
+                        }
+                    });
+
+                    return button.render();
+                };
+
+                const summernote_options = {
+                    lang: 'uk-UA',
+                    height: 250,
+                    minHeight: null,
+                    maxHeight: null,
+                    toolbar: [
+                        ['undoredo', ['undo', 'redo']],
+                        ['style', ['style']],
+                        ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear',
+                            'tags_replace', 'tags_replace_all'
+                        ]],
+                        ['fontname', ['fontname']],
+                        ['fontsize', ['fontsize']],
+                        ['height', ['height']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table', 'specialchars']],
+                        ['insert', ['link', 'hr']],
+                        ['view', ['fullscreen', 'codeview']],
+                        ['typography', ['typography']],
+                        ['popovers', ['cb']]
+                    ],
+                    buttons: {
+                        cb: CustomButton
+                    },
+                };
+
                 jQuery(document).ready(function($) {
 
                     const prefix = '<?php echo self::$prefix; ?>';
@@ -404,9 +470,7 @@ class Table
                         createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
 
                         if (styleTypeVal == "icons") {
@@ -443,9 +507,7 @@ class Table
                         createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
 
                         if (styleTypeVal == "icons") {
@@ -474,9 +536,7 @@ class Table
                         });
                     });
 
-                    $('.ck-editor-ready').summernote({
-                        height: 182
-                    });
+                    $('.ck-editor-table-ready').summernote(summernote_options);
                 });
             </script>
 

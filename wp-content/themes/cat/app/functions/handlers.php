@@ -437,3 +437,9 @@ function loadMoreServicesHandler() {
 
 // Додаємо розділ в налаштуваннях "Форми"
 include_once('custom-form-settings.php');
+
+// Додаємо код в кінець тіла сторінки адмін-панелі
+function my_admin_footer() {
+    include_once(get_template_directory() . '/app/views/modal-add-btn.php');
+}
+add_action('admin_footer', 'my_admin_footer');
