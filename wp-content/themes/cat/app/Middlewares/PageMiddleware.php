@@ -19,6 +19,16 @@ class PageMiddleware implements StageInterface
             $formController->sendForm();
         }
 
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+        if ($path == "/api/form/render" && strpos($query, 'id=') !== false) {
+            parse_str($query, $params);
+            $id = $params['id'];
+
+            $formController = $app->make(FormController::class);
+            $formController->renderFormView($id);
+        }
+
         $pageController = $app->make(PageController::class);
 
         if( is_search() ){

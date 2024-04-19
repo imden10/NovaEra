@@ -21,3 +21,6 @@ $preset = get_option('theme_settings__bg_type') === 'presets' ? get_option('them
 
     <?php require_once app('path.views') . '/layouts/sections/header.php'; ?>
     test
+
+<button onclick="modalFormShow()">show modal</button>
+<button onclick="modalFormHide()">hide modal</button>

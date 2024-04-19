@@ -1886,6 +1886,57 @@ h1 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.modal-form-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal-form-wrapper.modal-form-show {
+  display: flex;
+}
+.modal-form-wrapper .modal-form {
+  margin: 0 10px;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-form-wrapper .modal-form .modal-form--btn-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1001;
+  --size: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  height: 20px;
+  line-height: 1;
+  padding: 0;
+}
+.modal-form-wrapper .modal-form .modal-form--btn-close:hover svg {
+  opacity: 0.9;
+  transition: opacity 0.25s ease 0s;
+}
+.modal-form-wrapper .modal-form .modal-form--btn-close svg {
+  fill: #171717;
+  transition: opacity 0.25s ease 0s;
+}
+.modal-form-wrapper .modal-form .modal-form-content {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 550px;
+  overflow: hidden;
+  padding: 50px;
+  width: calc(100vw - 20px);
+}
+
 header {
   display: flex;
   justify-content: space-between;

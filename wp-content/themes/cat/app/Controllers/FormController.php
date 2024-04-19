@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Core\Controller\Controller;
 use App\Response\ResponseTrait;
 use App\Traits\TelegramBot;
 
@@ -9,6 +10,39 @@ class FormController
 {
     use ResponseTrait;
     use TelegramBot;
+
+    protected function templateName($object): string
+    {
+        return ($object instanceof \WP_Post && isset($object->page_template_name))
+            ? '-' . strtolower($object->page_template_name)
+            : '';
+    }
+
+    public function view($template, array $data = []): void
+    {
+        $viewsPath = app('path.views');
+
+        $object = get_queried_object();
+
+        $template = $viewsPath . DIRECTORY_SEPARATOR . $template .$this->templateName($object) . '.php';
+
+        if (!is_file($template)) {
+            throw new \Exception(sprintf('Template file %s not found', $template));
+        }
+
+        extract($data);
+        status_header(200);
+        require_once $template;
+
+        die;
+    }
+
+    public function renderFormView($id)
+    {
+        $this->view('mod/_form', [
+            'id' => $id
+        ]);
+    }
 
     /**
      * @return void
