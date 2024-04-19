@@ -380,14 +380,33 @@ class Table
                 const cb = function (callback) {
                     $('#exampleModalBtn').modal('show');
                     $(".cb-btn-submit").on("click",function () {
-                        let div = document.createElement('div');
-                        div.className = "btns btns_sm-x btns_right";
+                        let data = {
+                            text:$(".cb-input-text").val(),
+                            type_link:$(".cb-input-type_link").val(),
+                            link:$(".cb-input-link").val(),
+                            form:$(".cb-input-form").val(),
+                            type_button:$(".cb-input-type_button").val(),
+                            icon:$(".cb-input-icon-wrapper").find("select").val(),
+                        };
+
                         let a = document.createElement('a');
-                        a.className = "bt bt-sm bt-primary i-right ic-arrow-right-line";
-                        a.innerText = $(".cb-input-text").val();
-                        a.setAttribute('href',$(".cb-input-link").val());
-                        div.appendChild(a);
-                        callback(div);
+                        a.className = "cb-component " + data.type_button;
+
+                        if(data.icon){
+                            a.className += " icon-" + data.icon;
+                        }
+
+                        a.innerText = data.text;
+
+                        if(data.type_link == "link"){
+                            a.setAttribute('href',data.link);
+                        } else {
+                            a.setAttribute('href',"javascript:void(0)");
+                            a.className += " render-form-btn";
+                            a.setAttribute('data-form_id',data.form);
+                        }
+
+                        callback(a);
                         $(".cb-input-link").val('');
                         $(".cb-input-text").val('');
                         $('#exampleModalBtn').modal('hide');

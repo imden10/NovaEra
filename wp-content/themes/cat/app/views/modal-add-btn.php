@@ -22,7 +22,7 @@ $formsList = Form::getList();
 
                 <div class="form-group note-form-group">
                     <label class="note-form-label">Тип дії</label>
-                    <select class="form-control form-control-sm type_link_select">
+                    <select class="form-control form-control-sm type_link_select cb-input-type_link">
                         <option value="link">Довільне посилання</option>
                         <option value="form">Форма</option>
                     </select>
@@ -35,7 +35,7 @@ $formsList = Form::getList();
 
                 <div class="form-group note-form-group type_link_form" style="display: none">
                     <label class="note-form-label">Форма</label>
-                    <select class="form-control form-control-sm">
+                    <select class="form-control form-control-sm cb-input-form">
                         <?php foreach ($formsList as $formListKey => $formList) : ?>
                             <option value="<?= $formListKey ?>"><?= $formList ?></option>
                         <?php endforeach; ?>
@@ -44,14 +44,14 @@ $formsList = Form::getList();
 
                 <div class="form-group note-form-group">
                     <label class="note-form-label">Тип кнопки</label>
-                    <select class="form-control form-control-sm">
+                    <select class="form-control form-control-sm cb-input-type_button">
                         <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
                             <option value="<?= $listKey ?>"><?= $listItem ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
 
-                <div class="form-group note-form-group">
+                <div class="form-group note-form-group cb-input-icon-wrapper">
                     <label class="note-form-label">Іконка</label>
                     <?= do_shortcode('[icon_select title="false"]'); ?>
                 </div>
