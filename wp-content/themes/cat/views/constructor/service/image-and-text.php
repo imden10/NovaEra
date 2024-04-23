@@ -1,5 +1,4 @@
 <div class="container">
-
     <?php if (!empty($content['title'])) : ?>
         <h2><?php echo $content['title']; ?></h2>
     <?php endif; ?>
@@ -18,5 +17,4 @@
         </div>
     </div>
     <?php require app('path.views') . '/constructor/_buttons.php'; ?>
-
 </div>
