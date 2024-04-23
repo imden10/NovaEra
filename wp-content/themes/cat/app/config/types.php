@@ -109,6 +109,7 @@ return [
                                     'Blocks.php',
                                     'BlockSlider.php',
                                     'CardMiniText.php',
+                                    'CardWithImage.php',
                                     'LinkList.php',
                                     'TextDivider.php',
                                     'Theses.php',
