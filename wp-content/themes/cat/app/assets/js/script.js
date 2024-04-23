@@ -115,6 +115,33 @@ jQuery(document).ready(function($)
 
         if ($('*').is(componentsContainer))
         {
+            componentsContainer.find(".select2-preset").select2({
+                minimumResultsForSearch: Infinity,
+                templateResult: function(data) {
+                    // Перевірка, чи має елемент атрибут 'data-color'
+                    if (!data.element) {
+                        return data.text;
+                    }
+
+                    // Створення HTML-коду для відображення кольору перед назвою
+                    var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                    var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                    return $color.add($text);
+                },
+                templateSelection: function(data) {
+                    // Відображення обраного елементу з кольором
+                    if (!data.element) {
+                        return data.text;
+                    }
+
+                    var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                    var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                    return $color.add($text);
+                }
+            });
+
             /* Create component */
             $('.clone-component').on('click', function (e)
             {
@@ -126,7 +153,35 @@ jQuery(document).ready(function($)
                         .clone()[0]
                         .outerHTML
                         .replaceAll(componentPlaceholder, computationComponentId());
+
                     componentsContainer.append(cloneComponent);
+
+                    componentsContainer.find(".select2-preset").select2({
+                        minimumResultsForSearch: Infinity,
+                        templateResult: function(data) {
+                            // Перевірка, чи має елемент атрибут 'data-color'
+                            if (!data.element) {
+                                return data.text;
+                            }
+
+                            // Створення HTML-коду для відображення кольору перед назвою
+                            var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                            var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                            return $color.add($text);
+                        },
+                        templateSelection: function(data) {
+                            // Відображення обраного елементу з кольором
+                            if (!data.element) {
+                                return data.text;
+                            }
+
+                            var $color = $('<span class="color-option" style="background-color:' + $(data.element).data('color') + '"></span>');
+                            var $text = $('<span style="vertical-align: top;">' + data.text + '</span>');
+
+                            return $color.add($text);
+                        }
+                    });
 
                     const sortableArray = componentsContainer
                         .sortable('refreshPositions')
@@ -249,7 +304,6 @@ jQuery(document).ready(function($)
 
             return 1;
         }
-
     });
 
 

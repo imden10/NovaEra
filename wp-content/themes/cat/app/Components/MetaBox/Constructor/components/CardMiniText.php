@@ -30,7 +30,6 @@ class CardMiniText
             'transparent'  => 'Без фону',
             'on-light' => 'Пресети світлі',
             'on-dark'  => 'Пресети темні',
-//            'image' => 'Зображення',
         ];
 
         $background_type = [
@@ -88,6 +87,16 @@ class CardMiniText
             'big'    => 'Великі',
             'small'  => 'Маленькі',
         ];
+
+        $iconType = [
+            'name'  => $name . '[' . $key . '][content][icon_type]',
+            'value' => (isset($value['content']['icon_type'])) ? $value['content']['icon_type'] : 'standard'
+        ];
+
+        $iconTypeList = [
+            'standard' => 'Стандартні',
+            'custom'   => 'Кастомні',
+        ];
         ?>
 
         <div class="body-block">
@@ -109,7 +118,7 @@ class CardMiniText
                     <div class="col-3">
                         <div class="theme-block--plight" <?php if ($background_type['value'] != 'on-light') : ?> style="display: none" <?php endif ?>>
                             <label style="margin-bottom: 5px">Пресети світлі</label>
-                            <select name="<?php echo $background_type_preset_light['name']; ?>" class="form-control select2-preset select2-preset-<?= $key ?>" style="width: 250px">
+                            <select name="<?php echo $background_type_preset_light['name']; ?>" class="form-control select2-preset" style="width: 250px">
                                 <?php foreach ($backgroundListPresetLight as $backgroundListPresetLightKey => $backgroundListPresetLightItem) : ?>
                                     <option value="<?= $backgroundListPresetLightKey ?>" data-color="<?= $backgroundListPresetLightItem['color'] ?>" <?php if ($backgroundListPresetLightKey == $background_type_preset_light['value']) : ?> selected <?php endif; ?>><?= $backgroundListPresetLightItem['title'] ?></option>
                                 <?php endforeach; ?>
@@ -117,7 +126,7 @@ class CardMiniText
                         </div>
                         <div class="theme-block--pdark" <?php if ($background_type['value'] != 'on-dark') : ?> style="display: none" <?php endif ?>>
                             <label style="margin-bottom: 5px">Пресети темні</label>
-                            <select name="<?php echo $background_type_preset_dark['name']; ?>" class="form-control select2-preset select2-preset-<?= $key ?>" style="width: 250px">
+                            <select name="<?php echo $background_type_preset_dark['name']; ?>" class="form-control select2-preset" style="width: 250px">
                                 <?php foreach ($backgroundListPresetDark as $backgroundListPresetDarkKey => $backgroundListPresetDarkItem) : ?>
                                     <option value="<?= $backgroundListPresetDarkKey ?>" data-color="<?= $backgroundListPresetDarkItem['color'] ?>" <?php if ($backgroundListPresetDarkKey == $background_type_preset_dark['value']) : ?> selected <?php endif; ?>><?= $backgroundListPresetDarkItem['title'] ?></option>
                                 <?php endforeach; ?>
@@ -148,6 +157,14 @@ class CardMiniText
                         <select name="<?php echo $numberSize['name']; ?>" class="form-control">
                             <?php foreach ($numberSizeList as $numberSizeListKey => $numberSizeListItem) : ?>
                                 <option value="<?= $numberSizeListKey ?>" <?php if ($numberSizeListKey == $numberSize['value']) : ?> selected <?php endif; ?>><?= $numberSizeListItem ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="col-3 block-icon-type" style="<?php if($type['value'] !== "icon"):?>display: none <?php endif;?>">
+                        <label style="margin-bottom: 5px">Іконки</label>
+                        <select name="<?php echo $iconType['name']; ?>" class="form-control select-icon-type-card-val">
+                            <?php foreach ($iconTypeList as $iconTypeListKey => $iconTypeListItem) : ?>
+                                <option value="<?= $iconTypeListKey ?>" <?php if ($iconTypeListKey == $iconType['value']) : ?> selected <?php endif; ?>><?= $iconTypeListItem ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -188,6 +205,10 @@ class CardMiniText
                                         <div class="type-with-icon">
                                             <label>Іконка</label>
                                             <?= do_shortcode('[icon_select title="false" name="' . esc_attr(base64_encode($list['name'] ."[".self::$placeholder."][icon]" )) . '"]'); ?>
+                                        </div>
+                                        <div class="type-with-icon-custom">
+                                            <label>Іконка</label>
+                                            <?= media_preview_box($list['name'] . "[" . self::$placeholder . "][icon_custom]"); ?>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -247,16 +268,20 @@ class CardMiniText
                                         </div>
                                         <div class="col-3">
                                             <div class="type-with-image" style="<?php if($type['value'] !== "image"):?>display: none <?php endif;?>">
-                                                <label>Картинка <?= $type['value'] ?></label>
+                                                <label>Картинка</label>
                                                 <?= media_preview_box($list['name'] . "[" . $id . "][image]",esc_attr($value['image'])); ?>
                                             </div>
                                             <div class="type-with-number" style="<?php if($type['value'] !== "number"):?>display: none <?php endif;?>">
-                                                <label>Цифра <?= $type['value'] ?></label>
+                                                <label>Цифра</label>
                                                 <input type="text" placeholder="Цифра" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][number]" value="<?= esc_attr($value['number']); ?>">
                                             </div>
-                                            <div class="type-with-icon" style="<?php if($type['value'] !== "icon"):?>display: none <?php endif;?>">
-                                                <label>Іконка <?= $type['value'] ?></label>
+                                            <div class="type-with-icon" style="<?php if($type['value'] == "icon" && $iconType['value'] == 'standard'):?> <?php else:?> display: none <?php endif;?>">
+                                                <label>Іконка</label>
                                                 <?= do_shortcode('[icon_select title="false" ready="true" icon="' . $value['icon'] . '" name="' . esc_attr(base64_encode($list['name'] . "[" . $id . "][icon]")) . '"]'); ?>
+                                            </div>
+                                            <div class="type-with-icon-custom" style="<?php if($type['value'] == "icon" && $iconType['value'] == 'custom'):?> <?php else:?> display: none <?php endif;?>">
+                                                <label>Іконка</label>
+                                                <?= media_preview_box($list['name'] . "[" . $id . "][icon_custom]",esc_attr($value['icon_custom'])); ?>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -355,18 +380,22 @@ class CardMiniText
                         case 'image':
                             $wrapper.find('.block-image-position').show();
                             $wrapper.find('.block-number-size').hide();
+                            $wrapper.find('.block-icon-type').hide();
                             break;
                         case 'number':
                             $wrapper.find('.block-image-position').hide();
                             $wrapper.find('.block-number-size').show();
+                            $wrapper.find('.block-icon-type').hide();
                             break;
                         case 'icon':
                             $wrapper.find('.block-image-position').hide();
                             $wrapper.find('.block-number-size').hide();
+                            $wrapper.find('.block-icon-type').show();
                             break;
                         default:
                             $wrapper.find('.block-image-position').hide();
                             $wrapper.find('.block-number-size').hide();
+                            $wrapper.find('.block-icon-type').hide();
                             break;
                     }
                 });
@@ -430,27 +459,39 @@ class CardMiniText
                         });
 
                         let type = container.find('.select-type-card-val').val();
+                        let iconType = container.find('.select-icon-type-card-val').val();
 
                         switch (type) {
                             case 'image':
                                 container.find('.type-with-container .type-with-image').show();
                                 container.find('.type-with-container .type-with-number').hide();
                                 container.find('.type-with-container .type-with-icon').hide();
+                                container.find('.type-with-container .type-with-icon-custom').hide();
                                 break;
                             case 'number':
                                 container.find('.type-with-container .type-with-image').hide();
                                 container.find('.type-with-container .type-with-number').show();
                                 container.find('.type-with-container .type-with-icon').hide();
+                                container.find('.type-with-container .type-with-icon-custom').hide();
                                 break;
                             case 'icon':
-                                container.find('.type-with-container .type-with-image').hide();
-                                container.find('.type-with-container .type-with-number').hide();
-                                container.find('.type-with-container .type-with-icon').show();
+                                if(iconType == "standard"){
+                                    container.find('.type-with-container .type-with-image').hide();
+                                    container.find('.type-with-container .type-with-number').hide();
+                                    container.find('.type-with-container .type-with-icon').show();
+                                    container.find('.type-with-container .type-with-icon-custom').hide();
+                                } else if(iconType == "custom") {
+                                    container.find('.type-with-container .type-with-image').hide();
+                                    container.find('.type-with-container .type-with-number').hide();
+                                    container.find('.type-with-container .type-with-icon').hide();
+                                    container.find('.type-with-container .type-with-icon-custom').show();
+                                }
                                 break;
                             default:
                                 container.find('.type-with-container .type-with-image').hide();
                                 container.find('.type-with-container .type-with-number').hide();
                                 container.find('.type-with-container .type-with-icon').hide();
+                                container.find('.type-with-container .type-with-icon-custom').hide();
                                 break;
                         }
 
