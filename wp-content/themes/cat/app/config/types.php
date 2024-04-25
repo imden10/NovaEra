@@ -83,8 +83,21 @@ return [
                             'single' => true,
                             'params' => []
                         ],
+                        'hero' => [
+                            'label' => __('Головний екран'),
+                            'component' => 'App\Components\MetaBox\Constructor\Constructor',
+                            'single' => true,
+                            'params' => [
+                                'only' => [
+                                    'Hero30Grid.php',
+                                    'Hero50Grid.php',
+                                    'Hero50Screen.php',
+                                    'Hero.php',
+                                ],
+                            ]
+                        ],
                         'constructor' => [
-                            'label' => __(''),
+                            'label' => __('Конструктор'),
                             'component' => 'App\Components\MetaBox\Constructor\Constructor',
                             'single' => true,
                             'params' => [
@@ -107,12 +120,13 @@ return [
                                     'Numbers.php',
                                     'QuoteSlider.php',
                                     'Blocks.php',
+                                    'BlockSlider.php',
+                                    'CardMiniText.php',
+                                    'CardWithImage.php',
                                     'LinkList.php',
                                     'TextDivider.php',
-                                    'BlockSlider.php',
                                     'Theses.php',
                                     'AccordionTable.php',
-                                    'CardMiniText.php',
                                     'Form.php',
                                 ],
                             ]

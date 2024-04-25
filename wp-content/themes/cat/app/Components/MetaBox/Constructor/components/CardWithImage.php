@@ -4,24 +4,19 @@ namespace App\Components\MetaBox\Constructor\components;
 
 use App\Models\Form;
 
-class CardMiniText
+class CardWithImage
 {
-    public $name = 'Карточки міні текст';
+    public $name = 'Карточки з картинкой';
 
-    protected static $prefix = 'cardminitext-item';
+    protected static $prefix = 'cardwithimage-item';
 
-    protected static $placeholder = '#cardminitextElementId';
+    protected static $placeholder = '#cardwithimageElementId';
 
     public function html($key, $name, $value)
     {
         $list = [
             'name' => $name . '[' . $key . '][content][list]',
             'value' => (isset($value['content']['list']) && is_array($value['content']['list'])) ? $value['content']['list'] : []
-        ];
-
-        $text = [
-            'name' => $name . '[' . $key . '][content][text]',
-            'value' => isset($value['content']['text']) ? $value['content']['text'] : ''
         ];
 
         $formsList = Form::getList();
@@ -64,28 +59,7 @@ class CardMiniText
 
         $typeList = [
             'image'  => 'З картинкою',
-            'number' => 'З цифрою',
             'icon'   => 'З іконкою',
-        ];
-
-        $imagePosition = [
-            'name'  => $name . '[' . $key . '][content][image_position]',
-            'value' => (isset($value['content']['image_position'])) ? $value['content']['image_position'] : 'top'
-        ];
-
-        $imagePositionList = [
-            'top'    => 'Картинка зверху',
-            'bottom' => 'Картинка знизу',
-        ];
-
-        $numberSize = [
-            'name'  => $name . '[' . $key . '][content][number_size]',
-            'value' => (isset($value['content']['number_size'])) ? $value['content']['number_size'] : 'big'
-        ];
-
-        $numberSizeList = [
-            'big'    => 'Великі',
-            'small'  => 'Маленькі',
         ];
 
         $iconType = [
@@ -101,11 +75,6 @@ class CardMiniText
 
         <div class="body-block">
             <div class="list-elements-body">
-                <div class="mb-3">
-                    <label for="cardminitext<?php echo $key; ?>" class="form-label"><?php _e('Текст '); ?></label>
-                    <textarea id="cardminitext<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
-                </div>
-
                 <div class="row">
                     <div class="col-3">
                         <label style="margin-bottom: 5px">Колір фону карточок</label>
@@ -141,22 +110,6 @@ class CardMiniText
                         <select name="<?php echo $type['name']; ?>" class="form-control select-type-card-val select-type-card-<?= $key ?> <?php if(count($list['value'])):?> disabled-select <?php endif;?>" >
                             <?php foreach ($typeList as $typeListKey => $typeListItem) : ?>
                                 <option value="<?= $typeListKey ?>" <?php if ($typeListKey == $type['value']) : ?> selected <?php endif; ?>><?= $typeListItem ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-3 block-image-position" style="<?php if($type['value'] !== "image"):?>display: none <?php endif;?>">
-                        <label style="margin-bottom: 5px">Позиція картинки</label>
-                        <select name="<?php echo $imagePosition['name']; ?>" class="form-control">
-                            <?php foreach ($imagePositionList as $imagePositionListKey => $imagePositionListItem) : ?>
-                                <option value="<?= $imagePositionListKey ?>" <?php if ($imagePositionListKey == $imagePosition['value']) : ?> selected <?php endif; ?>><?= $imagePositionListItem ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-3 block-number-size" style="<?php if($type['value'] !== "number"):?>display: none <?php endif;?>">
-                        <label style="margin-bottom: 5px">Розмір шрифту цифр</label>
-                        <select name="<?php echo $numberSize['name']; ?>" class="form-control">
-                            <?php foreach ($numberSizeList as $numberSizeListKey => $numberSizeListItem) : ?>
-                                <option value="<?= $numberSizeListKey ?>" <?php if ($numberSizeListKey == $numberSize['value']) : ?> selected <?php endif; ?>><?= $numberSizeListItem ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -197,10 +150,6 @@ class CardMiniText
                                         <div class="type-with-image">
                                             <label>Картинка</label>
                                             <?= media_preview_box($list['name'] . "[" . self::$placeholder . "][image]"); ?>
-                                        </div>
-                                        <div class="type-with-number">
-                                            <label>Цифра</label>
-                                            <input type="text" placeholder="Цифра" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][number]" disabled="disabled">
                                         </div>
                                         <div class="type-with-icon">
                                             <label>Іконка</label>
@@ -271,10 +220,6 @@ class CardMiniText
                                                 <label>Картинка</label>
                                                 <?= media_preview_box($list['name'] . "[" . $id . "][image]",esc_attr($value['image'])); ?>
                                             </div>
-                                            <div class="type-with-number" style="<?php if($type['value'] !== "number"):?>display: none <?php endif;?>">
-                                                <label>Цифра</label>
-                                                <input type="text" placeholder="Цифра" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][number]" value="<?= esc_attr($value['number']); ?>">
-                                            </div>
                                             <div class="type-with-icon" style="<?php if($type['value'] == "icon" && $iconType['value'] == 'standard'):?> <?php else:?> display: none <?php endif;?>">
                                                 <label>Іконка</label>
                                                 <?= do_shortcode('[icon_select title="false" ready="true" icon="' . $value['icon'] . '" name="' . esc_attr(base64_encode($list['name'] . "[" . $id . "][icon]")) . '"]'); ?>
@@ -336,14 +281,6 @@ class CardMiniText
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote({
-                    height: 182
-                });
-
-                $('#cardminitext<?php echo $key; ?>').summernote({
-                    height: 200
-                });
-
                 $(document).on('change', '.select-background-type-mode-card-<?= $key ?>', function() {
                     let mode = $(this).val();
                     let $wrapper = $(this).closest('.list-elements-body');
@@ -378,23 +315,12 @@ class CardMiniText
 
                     switch (mode) {
                         case 'image':
-                            $wrapper.find('.block-image-position').show();
-                            $wrapper.find('.block-number-size').hide();
-                            $wrapper.find('.block-icon-type').hide();
-                            break;
-                        case 'number':
-                            $wrapper.find('.block-image-position').hide();
-                            $wrapper.find('.block-number-size').show();
                             $wrapper.find('.block-icon-type').hide();
                             break;
                         case 'icon':
-                            $wrapper.find('.block-image-position').hide();
-                            $wrapper.find('.block-number-size').hide();
                             $wrapper.find('.block-icon-type').show();
                             break;
                         default:
-                            $wrapper.find('.block-image-position').hide();
-                            $wrapper.find('.block-number-size').hide();
                             $wrapper.find('.block-icon-type').hide();
                             break;
                     }
@@ -464,32 +390,22 @@ class CardMiniText
                         switch (type) {
                             case 'image':
                                 container.find('.type-with-container .type-with-image').show();
-                                container.find('.type-with-container .type-with-number').hide();
-                                container.find('.type-with-container .type-with-icon').hide();
-                                container.find('.type-with-container .type-with-icon-custom').hide();
-                                break;
-                            case 'number':
-                                container.find('.type-with-container .type-with-image').hide();
-                                container.find('.type-with-container .type-with-number').show();
                                 container.find('.type-with-container .type-with-icon').hide();
                                 container.find('.type-with-container .type-with-icon-custom').hide();
                                 break;
                             case 'icon':
                                 if(iconType == "standard"){
                                     container.find('.type-with-container .type-with-image').hide();
-                                    container.find('.type-with-container .type-with-number').hide();
                                     container.find('.type-with-container .type-with-icon').show();
                                     container.find('.type-with-container .type-with-icon-custom').hide();
                                 } else if(iconType == "custom") {
                                     container.find('.type-with-container .type-with-image').hide();
-                                    container.find('.type-with-container .type-with-number').hide();
                                     container.find('.type-with-container .type-with-icon').hide();
                                     container.find('.type-with-container .type-with-icon-custom').show();
                                 }
                                 break;
                             default:
                                 container.find('.type-with-container .type-with-image').hide();
-                                container.find('.type-with-container .type-with-number').hide();
                                 container.find('.type-with-container .type-with-icon').hide();
                                 container.find('.type-with-container .type-with-icon-custom').hide();
                                 break;
