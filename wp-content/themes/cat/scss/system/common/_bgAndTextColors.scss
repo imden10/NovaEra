@@ -1,4 +1,7 @@
 @mixin setColors($textColor, $linkColor) {
+	body {
+		color: var($textColor)
+	}
 
 	h1,
 	h2,
@@ -8,16 +11,16 @@
 	h6,
 	p,
 	code,
-	span {
+	span,
+	.redactor {
 		color: var($textColor) !important
 	}
 
-	a {
+	a,
+	.redactor a {
 		color: var($linkColor) !important
 	}
 }
-
-;
 
 @mixin setBgColor($bg) {
 	background: var($bg);

@@ -1623,42 +1623,36 @@ h1 {
   margin-bottom: 0;
 }
 .redactor h1 {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
 }
 .redactor h2 {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
 }
 .redactor h3 {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
 }
 .redactor h4 {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
 }
 .redactor h5 {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
 }
 .redactor h6 {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -1666,7 +1660,6 @@ h1 {
 }
 .redactor p,
 .redactor a {
-  color: var(--text-on-bg-on-default-text-primary);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -1895,6 +1888,10 @@ h1 {
 .on-light .bg-lighter {
   background: var(--bg-on-light-lighter);
 }
+.on-light.bg-lighter body,
+.on-light .bg-lighter body {
+  color: var(--text-on-light-bg-lighter-text-primary);
+}
 .on-light.bg-lighter h1,
 .on-light.bg-lighter h2,
 .on-light.bg-lighter h3,
@@ -1904,6 +1901,7 @@ h1 {
 .on-light.bg-lighter p,
 .on-light.bg-lighter code,
 .on-light.bg-lighter span,
+.on-light.bg-lighter .redactor,
 .on-light .bg-lighter h1,
 .on-light .bg-lighter h2,
 .on-light .bg-lighter h3,
@@ -1912,15 +1910,21 @@ h1 {
 .on-light .bg-lighter h6,
 .on-light .bg-lighter p,
 .on-light .bg-lighter code,
-.on-light .bg-lighter span {
+.on-light .bg-lighter span,
+.on-light .bg-lighter .redactor {
   color: var(--text-on-light-bg-lighter-text-primary) !important;
 }
 .on-light.bg-lighter a,
-.on-light .bg-lighter a {
+.on-light.bg-lighter .redactor a,
+.on-light .bg-lighter a,
+.on-light .bg-lighter .redactor a {
   color: var(--text-on-light-bg-lighter-link) !important;
 }
 .on-light.bg-darker, .on-light .bg-darker {
   background: var(--bg-on-light-darker);
+}
+.on-light.bg-darker body, .on-light .bg-darker body {
+  color: var(--text-on-light-bg-darker-text-primary);
 }
 .on-light.bg-darker h1,
 .on-light.bg-darker h2,
@@ -1930,7 +1934,8 @@ h1 {
 .on-light.bg-darker h6,
 .on-light.bg-darker p,
 .on-light.bg-darker code,
-.on-light.bg-darker span, .on-light .bg-darker h1,
+.on-light.bg-darker span,
+.on-light.bg-darker .redactor, .on-light .bg-darker h1,
 .on-light .bg-darker h2,
 .on-light .bg-darker h3,
 .on-light .bg-darker h4,
@@ -1938,13 +1943,20 @@ h1 {
 .on-light .bg-darker h6,
 .on-light .bg-darker p,
 .on-light .bg-darker code,
-.on-light .bg-darker span {
+.on-light .bg-darker span,
+.on-light .bg-darker .redactor {
   color: var(--text-on-light-bg-darker-text-primary) !important;
 }
-.on-light.bg-darker a, .on-light .bg-darker a {
+.on-light.bg-darker a,
+.on-light.bg-darker .redactor a, .on-light .bg-darker a,
+.on-light .bg-darker .redactor a {
   color: var(--text-on-light-bg-darker-link) !important;
 }
 
+.on-dark.bg-img body,
+.on-dark .bg-img body {
+  color: var(--text-on-dark-bg-img-text-primary);
+}
 .on-dark.bg-img h1,
 .on-dark.bg-img h2,
 .on-dark.bg-img h3,
@@ -1954,6 +1966,7 @@ h1 {
 .on-dark.bg-img p,
 .on-dark.bg-img code,
 .on-dark.bg-img span,
+.on-dark.bg-img .redactor,
 .on-dark .bg-img h1,
 .on-dark .bg-img h2,
 .on-dark .bg-img h3,
@@ -1962,15 +1975,21 @@ h1 {
 .on-dark .bg-img h6,
 .on-dark .bg-img p,
 .on-dark .bg-img code,
-.on-dark .bg-img span {
+.on-dark .bg-img span,
+.on-dark .bg-img .redactor {
   color: var(--text-on-dark-bg-img-text-primary) !important;
 }
 .on-dark.bg-img a,
-.on-dark .bg-img a {
+.on-dark.bg-img .redactor a,
+.on-dark .bg-img a,
+.on-dark .bg-img .redactor a {
   color: var(--text-on-dark-bg-img-link) !important;
 }
 .on-dark.bg-lighter, .on-dark .bg-lighter {
   background: var(--bg-on-dark-lighter);
+}
+.on-dark.bg-lighter body, .on-dark .bg-lighter body {
+  color: var(--text-on-dark-bg-lighter-text-primary);
 }
 .on-dark.bg-lighter h1,
 .on-dark.bg-lighter h2,
@@ -1980,7 +1999,8 @@ h1 {
 .on-dark.bg-lighter h6,
 .on-dark.bg-lighter p,
 .on-dark.bg-lighter code,
-.on-dark.bg-lighter span, .on-dark .bg-lighter h1,
+.on-dark.bg-lighter span,
+.on-dark.bg-lighter .redactor, .on-dark .bg-lighter h1,
 .on-dark .bg-lighter h2,
 .on-dark .bg-lighter h3,
 .on-dark .bg-lighter h4,
@@ -1988,14 +2008,20 @@ h1 {
 .on-dark .bg-lighter h6,
 .on-dark .bg-lighter p,
 .on-dark .bg-lighter code,
-.on-dark .bg-lighter span {
+.on-dark .bg-lighter span,
+.on-dark .bg-lighter .redactor {
   color: var(--text-on-dark-bg-lighter-text-primary) !important;
 }
-.on-dark.bg-lighter a, .on-dark .bg-lighter a {
+.on-dark.bg-lighter a,
+.on-dark.bg-lighter .redactor a, .on-dark .bg-lighter a,
+.on-dark .bg-lighter .redactor a {
   color: var(--text-on-dark-bg-lighter-link) !important;
 }
 .on-dark.bg-darker, .on-dark .bg-darker {
   background: var(--bg-on-dark-darker);
+}
+.on-dark.bg-darker body, .on-dark .bg-darker body {
+  color: var(--text-on-dark-bg-darker-text-primary);
 }
 .on-dark.bg-darker h1,
 .on-dark.bg-darker h2,
@@ -2005,7 +2031,8 @@ h1 {
 .on-dark.bg-darker h6,
 .on-dark.bg-darker p,
 .on-dark.bg-darker code,
-.on-dark.bg-darker span, .on-dark .bg-darker h1,
+.on-dark.bg-darker span,
+.on-dark.bg-darker .redactor, .on-dark .bg-darker h1,
 .on-dark .bg-darker h2,
 .on-dark .bg-darker h3,
 .on-dark .bg-darker h4,
@@ -2013,10 +2040,13 @@ h1 {
 .on-dark .bg-darker h6,
 .on-dark .bg-darker p,
 .on-dark .bg-darker code,
-.on-dark .bg-darker span {
+.on-dark .bg-darker span,
+.on-dark .bg-darker .redactor {
   color: var(--text-on-dark-bg-darker-text-primary) !important;
 }
-.on-dark.bg-darker a, .on-dark .bg-darker a {
+.on-dark.bg-darker a,
+.on-dark.bg-darker .redactor a, .on-dark .bg-darker a,
+.on-dark .bg-darker .redactor a {
   color: var(--text-on-dark-bg-darker-link) !important;
 }
 

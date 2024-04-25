@@ -43,7 +43,7 @@ $imgPosition = $content['image_position']
                                     $formData = \App\Models\Form::getData($item['btn__form_id']);
                                 }
 
-                                // print_r($item);
+                                print_r($item);
                                 // print_r($formData);
                                 ?>
 
