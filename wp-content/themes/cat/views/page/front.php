@@ -45,7 +45,6 @@
         <img id="banner-action-on-scroll-reverse" src="https://d2interier.com/media/images/orig/uploads/Banneri/banner1.jpg" alt="">
     </div> -->
     
-    
     <div class="constructor-container">
         <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
     </div>

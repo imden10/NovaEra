@@ -2350,6 +2350,11 @@ header nav ul {
   transform: translateX(12px);
 }
 
+[class^=hero] {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .first-screen {
   overflow: hidden;
   position: relative;
