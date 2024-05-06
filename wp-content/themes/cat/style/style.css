@@ -2445,47 +2445,87 @@ header nav ul {
   }
 }
 
-.card-mini-text .wrapper {
+.card-mini-text .wrapper,
+.blocks .wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
 }
-.card-mini-text .cards-wrapper {
+.card-mini-text .cards-wrapper,
+.blocks .cards-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--cards-coll-gap-m);
   padding-bottom: var(--cards-grid-row-bottom-padding-l);
 }
-.card-mini-text .cards-wrapper.card-on-light .card-info {
+.card-mini-text .cards-wrapper.card-in-row-4,
+.blocks .cards-wrapper.card-in-row-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .card-mini-text .cards-wrapper.card-in-row-4,
+  .blocks .cards-wrapper.card-in-row-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 640px) {
+  .card-mini-text .cards-wrapper.card-in-row-4,
+  .blocks .cards-wrapper.card-in-row-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card-mini-text .cards-wrapper.card-in-row-3,
+.blocks .cards-wrapper.card-in-row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 640px) {
+  .card-mini-text .cards-wrapper.card-in-row-3,
+  .blocks .cards-wrapper.card-in-row-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card-mini-text .cards-wrapper.card-in-row-2,
+.blocks .cards-wrapper.card-in-row-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.card-mini-text .cards-wrapper.card-on-light .card-info,
+.blocks .cards-wrapper.card-on-light .card-info {
   padding: var(--cards-item-wrap-padding-m);
 }
-.card-mini-text .cards-wrapper.card-on-light.card-bg-lighter .card {
+.card-mini-text .cards-wrapper.card-on-light.card-bg-lighter .card,
+.blocks .cards-wrapper.card-on-light.card-bg-lighter .card {
   border-radius: var(--border-radius-card-m);
   border: 1px solid var(--card-on-light-bg-lighter-border-default);
   background: var(--card-on-light-bg-lighter-bg-default);
 }
-.card-mini-text .cards-wrapper.card-on-light.card-bg-darker .card {
+.card-mini-text .cards-wrapper.card-on-light.card-bg-darker .card,
+.blocks .cards-wrapper.card-on-light.card-bg-darker .card {
   border-radius: var(--border-radius-card-m);
   border: 1px solid var(--card-on-light-bg-lighter-border-default);
   background: var(--card-on-light-bg-darker-bg-default);
 }
-.card-mini-text .cards-wrapper.card-on-dark .card-info {
+.card-mini-text .cards-wrapper.card-on-dark .card-info,
+.blocks .cards-wrapper.card-on-dark .card-info {
   padding: var(--cards-item-wrap-padding-m);
 }
-.card-mini-text .cards-wrapper.card-on-dark.card-bg-lighter .card {
+.card-mini-text .cards-wrapper.card-on-dark.card-bg-lighter .card,
+.blocks .cards-wrapper.card-on-dark.card-bg-lighter .card {
   border-radius: var(--border-radius-card-m);
   border: 1px solid var(--card-on-dark-bg-lighter-border-default);
   background: var(--card-on-dark-bg-lighter-bg-default);
 }
-.card-mini-text .cards-wrapper.card-on-dark.card-bg-darker .card {
+.card-mini-text .cards-wrapper.card-on-dark.card-bg-darker .card,
+.blocks .cards-wrapper.card-on-dark.card-bg-darker .card {
   border-radius: var(--border-radius-card-m);
   border: 1px solid var(--card-on-dark-bg-lighter-border-default);
   background: var(--card-on-dark-bg-darker-bg-default);
 }
-.card-mini-text .card {
+.card-mini-text .card,
+.blocks .card {
   overflow: hidden;
   height: fit-content;
 }
-.card-mini-text .card h2 {
+.card-mini-text .card h2,
+.blocks .card h2 {
   color: var(--card-on-light-bg-lighter-title-default);
   font-size: 18px;
   font-style: normal;
@@ -2493,19 +2533,24 @@ header nav ul {
   line-height: 140%;
 }
 .card-mini-text .card .card-link,
-.card-mini-text .card .description {
+.card-mini-text .card .description,
+.blocks .card .card-link,
+.blocks .card .description {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
   text-decoration: none;
 }
-.card-mini-text .card .card-link {
+.card-mini-text .card .card-link,
+.blocks .card .card-link {
   color: var(--card-on-light-bg-lighter-price);
 }
-.card-mini-text .card .description {
+.card-mini-text .card .description,
+.blocks .card .description {
   color: var(--text-on-light-bg-darker-text-primary);
 }
-.card-mini-text .card .btn {
+.card-mini-text .card .btn,
+.blocks .card .btn {
   margin-top: 10px;
 }

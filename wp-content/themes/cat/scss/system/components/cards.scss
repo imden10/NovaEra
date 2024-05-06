@@ -1,4 +1,5 @@
-.card-mini-text {
+.card-mini-text,
+.blocks {
 	.wrapper {
 		display: grid;
 		grid-template-columns: 20% 80%;
@@ -9,6 +10,30 @@
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: var(--cards-coll-gap-m);
 		padding-bottom: var(--cards-grid-row-bottom-padding-l);
+
+		&.card-in-row-4 {
+			grid-template-columns: repeat(4, 1fr);
+
+			@include _1024 {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@include _640 {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		&.card-in-row-3 {
+			grid-template-columns: repeat(3, 1fr);
+
+			@include _640 {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		&.card-in-row-2 {
+			grid-template-columns: repeat(2, 1fr);
+		}
 
 		&.card-on-light {
 			.card-info {
