@@ -7,7 +7,7 @@ function handle_webhook() {
     $event_type = $_SERVER['HTTP_X_GITHUB_EVENT'];
 
     // Перевірка підпису (якщо ви використовуєте секрет)
-    $github_secret = '39249594530374593149161297056685';
+    $github_secret = '39249594530374593149161297050475';
     $headers = getallheaders();
     $hub_signature = $headers['X-Hub-Signature'];
     $payload = file_get_contents('php://input');
@@ -23,7 +23,7 @@ function handle_webhook() {
         case 'push':
             // Виконати git pull або інші дії для розгортання
             custom_log('git pull');
-            exec('cd /home/ka522929/sisidev.com.ua/www && git pull');
+            exec('cd /home/ka522929/sisidev.com.ua/nova-era && git pull');
             break;
 
         // Додайте додаткові випадки для інших подій
