@@ -17,6 +17,7 @@ $preset = get_option('theme_settings__bg_type') === 'presets' ? 'global-' . get_
 
 <body <?php body_class($preset); ?> style="--font: <?= get_option('theme_settings__font_style') ?>" data-mode="<?= get_option('theme_settings__mode') ?>">
 
+<h1>Test git</h1>
 
 
     <?php require_once app('path.views') . '/layouts/sections/header.php'; ?>
