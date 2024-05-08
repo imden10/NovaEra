@@ -93,6 +93,7 @@ return [
                                     'Hero50Grid.php',
                                     'Hero50Screen.php',
                                     'Hero.php',
+                                    'HeroCards.php',
                                 ],
                             ]
                         ],

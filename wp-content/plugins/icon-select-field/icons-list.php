@@ -7,7 +7,7 @@
     <?php if(isset($atts['title']) && $atts['title'] == "true"):?>
     <label for="<?php echo esc_attr($decoded_name); ?>">Іконка:</label>
     <?php endif;?>
-    <select name="<?php echo esc_attr($decoded_name); ?>" id="<?php echo esc_attr($decoded_name); ?>" class="<?php if($atts['ready']):?>icon-select-component-ready<?php else:?>icon-select-component<?php endif;?>">
+    <select style="width: 150px" name="<?php echo esc_attr($decoded_name); ?>" id="<?php echo esc_attr($decoded_name); ?>" class="<?php if($atts['ready']):?>icon-select-component-ready<?php else:?>icon-select-component<?php endif;?>">
         <option value="">Без іконки</option>
         <?php foreach ($icons as $item): ?>
             <option data-icon="<?=$item?>" value="<?=$item?>"<?php selected($atts['icon'], $item); ?>><?=$item?></option>
