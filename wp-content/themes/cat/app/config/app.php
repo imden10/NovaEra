@@ -2,9 +2,9 @@
 
 return [
 
-    'name' => 'Cat Project',
+    'name' => 'Nova Era',
 
-    'text_domain' => 'cat-project',
+    'text_domain' => 'nova-era',
 
     'languages_path' => 'languages',
     
