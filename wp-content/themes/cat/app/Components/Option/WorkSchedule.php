@@ -13,7 +13,7 @@ class WorkSchedule extends BaseOption
         <div class="form-group">
             <div class="items-container list-items">
                 <ul style="display: none;">
-                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-template">
+                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-template item-list-template">
                         <input type="text" name="<?php echo $this->name; ?>[<?php echo self::$placeholder; ?>][day]" disabled>
                         <input type="text" name="<?php echo $this->name; ?>[<?php echo self::$placeholder; ?>][hours]" disabled>
                         <button type="button" class="button delete-item"><?php _e('Delete'); ?></button>
@@ -22,7 +22,7 @@ class WorkSchedule extends BaseOption
 
                 <ul class="items-container">
                     <?php foreach ($this->value as $key => $value) : ?>
-                        <li data-item-id="<?php echo $key; ?>">
+                        <li data-item-id="<?php echo $key; ?>" class="item-list-template">
                             <input type="text" name="<?php echo $this->name; ?>[<?php echo $key; ?>][day]" value="<?php echo $value['day']; ?>">
                             <input type="text" name="<?php echo $this->name; ?>[<?php echo $key; ?>][hours]" value="<?php echo $value['hours']; ?>">
                             <button type="button" class="button delete-item"><?php _e('Delete'); ?></button>

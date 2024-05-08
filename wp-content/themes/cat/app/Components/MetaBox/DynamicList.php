@@ -15,7 +15,7 @@ class DynamicList extends BaseMetaBox
             <label><?php echo $this->label; ?></label>
             <div class="items-container list-items">
                 <ul style="display: none;">
-                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-template">
+                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-template item-list-template">
                         <input type="text" name="<?php echo $this->name; ?>[<?php echo self::$placeholder; ?>]">
                         <button type="button" class="button delete-item"><?php _e('Delete'); ?></button>
                     </li>
@@ -23,7 +23,7 @@ class DynamicList extends BaseMetaBox
 
                 <ul class="items-container">
                     <?php foreach ($this->value as $key => $value) : ?>
-                        <li data-item-id="<?php echo $key; ?>">
+                        <li data-item-id="<?php echo $key; ?>" class="item-list-template">
                             <input type="text" name="<?php echo $this->name; ?>[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                             <button type="button" class="button delete-item"><?php _e('Delete'); ?></button>
                         </li>
