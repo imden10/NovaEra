@@ -36,6 +36,10 @@ class Theme
         }, 1);
         /* End Set styles and scripts in Admin panel */
 
+        add_action('admin_head', function() {
+            echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/img/logo-dark.png" />';
+        });
+
         $this->setImageSize();
 
         $this->removing();
