@@ -17,7 +17,8 @@ class Constructor extends BaseMetaBox
         $label = $this->label ?? __('Конструктор сторінки');
         /* Scope section */
         echo '<h1>' . $label . '</h1>';
-        echo '<div id="componentsScopes">';
+        echo '<div class="constructor-section">';
+        echo '<div class="componentsScopes">';
         echo '<input type="hidden" name="component_placeholder" value="' . self::$placeholder . '">';
 
         //        foreach ((array) $this->getFilesComponent() as $name)
@@ -54,7 +55,7 @@ class Constructor extends BaseMetaBox
         /* End Scope section */
 
         /* Output components section */
-        echo '<div id="componentsContainer" class="components-container">';
+        echo '<div class="components-container">';
 
         foreach ((array) $this->value as $key => $component) {
             if (isset($component['component'])) {
@@ -66,6 +67,7 @@ class Constructor extends BaseMetaBox
             }
         }
 
+        echo '</div>';
         echo '</div>';
         /* End Output components section */
     }
@@ -209,9 +211,7 @@ class Constructor extends BaseMetaBox
         <?php if (isset($this->params['without_separator_block']) && $this->params['without_separator_block']) : ?>
 
         <?php else : ?>
-            <br>
-            <hr>
-            <div class="separator-block">
+            <div class="separator-block" style="margin-top: 15px;margin-bottom: 15px;border-top: 1px #c2c2c2 solid;padding-top: 8px;">
                 <div class="row">
                     <div class="col-3">
                         <label style="margin-bottom: 5px">Верхній роздільник</label>
@@ -260,7 +260,6 @@ class Constructor extends BaseMetaBox
                     </div>
                 </div>
             </div>
-            <hr>
             <div class="btns-block">
                 <template>
                     <li data-item-id="<?php echo self::$placeholder; ?>_<?php echo self::$btn_placeholder; ?>" class="item-list-template">
@@ -432,7 +431,9 @@ class Constructor extends BaseMetaBox
     {
         $component = $this->objectWithoutNamespace($object);
 
-        echo '<div id="component-' . $key . '" class="' . $component . ' component-container" data-component-id="' . $key . '">';
+        $rand = uniqid(time());
+
+        echo '<div id="component-' . $key . '_'.$rand.'" class="' . $component . ' component-container" data-component-id="' . $key . '">';
         $this->componentHeader($object, $key, $value);
         $object->html($key, $this->name, $value);
         $this->componentFooter($object, $key, $value);
