@@ -7,6 +7,10 @@
                     <li class="menu__item">
                         <a href="<?php echo $item->url; ?>" class="header-left__menu__menu__item__lnk"><?php echo $item->title; ?></a>
 
+                        <?php if($item->description):?>
+                        <p><?=$item->description?></p>
+                        <?php endif;?>
+
                         <?php if (!empty($item->children)) : ?>
                             <ul class="menu__submenu">
 

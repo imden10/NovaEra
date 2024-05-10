@@ -53,6 +53,7 @@ function getTreeMenu($menu)
     if (!empty($menu_raw_items)) {
         foreach ($menu_raw_items as $item) {
             $menu_items[$item->menu_item_parent][$item->ID] = $item;
+            $menu_items[$item->menu_item_parent][$item->ID]->description = get_post_meta( $item->ID, '_menu_item_desc', true ) ?? '';
         }
 
         $node = $menu_items[0];

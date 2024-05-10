@@ -118,30 +118,3 @@ add_filter('pre_site_transient_update_core','remove_core_updates'); // Hide Upda
 add_filter('pre_site_transient_update_plugins','remove_core_updates'); // Hide Updates for Plugins
 add_filter('pre_site_transient_update_themes','remove_core_updates'); // Hide Updates for Themes
 // *********************************************************************************************************************
-
-wp_add_inline_script( 'jquery', '$ = jQuery;' );
-
-// Додавання поля в меню
-function menu_item_desc( $item_id, $item ) {
-    $menu_item_desc = get_post_meta( $item_id, '_menu_item_desc', true );
-    ?>
-    <p class="description description-wide">
-        <label>Короткий опис</label><br />
-        <input type="hidden" class="nav-menu-id" value="<?php echo $item_id ;?>" />
-        <div class="logged-input-holder">
-            <input type="text" class="widefat edit-menu-item-title" name="menu_item_desc[<?php echo $item_id ;?>]" id="menu-item-desc-<?php echo $item_id ;?>" value="<?php echo esc_attr( $menu_item_desc ); ?>" />
-        </div>
-    </p>
-    <?php
-}
-add_action( 'wp_nav_menu_item_custom_fields', 'menu_item_desc', 10, 2 );
-
-function save_menu_item_desc( $menu_id, $menu_item_db_id ) {
-    if ( isset( $_POST['menu_item_desc'][$menu_item_db_id]  ) ) {
-        $sanitized_data = sanitize_text_field( $_POST['menu_item_desc'][$menu_item_db_id] );
-        update_post_meta( $menu_item_db_id, '_menu_item_desc', $sanitized_data );
-    } else {
-        delete_post_meta( $menu_item_db_id, '_menu_item_desc' );
-    }
-}
-add_action( 'wp_update_nav_menu_item', 'save_menu_item_desc', 10, 2 );
