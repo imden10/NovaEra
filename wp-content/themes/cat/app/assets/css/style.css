@@ -370,3 +370,7 @@
     width: 26px;
     height: 26px;
 }
+
+.constructor-section .card {
+    max-width: inherit;
+}
