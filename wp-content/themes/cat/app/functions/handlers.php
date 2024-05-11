@@ -472,3 +472,28 @@ function save_menu_item_desc( $menu_id, $menu_item_db_id ) {
 }
 add_action( 'wp_update_nav_menu_item', 'save_menu_item_desc', 10, 2 );
 /******************************************************************************************************************** */
+/***************** Додавання поля "Чекбокс 'кастомне меню'" в меню ***********************************************************************/
+function menu_item_menu_custom( $item_id, $item ) {
+    $menu_item_checkbox = get_post_meta( $item_id, '_menu_item_menu_custom', true );
+    ?>
+    <p class="description description-wide">
+        <input type="hidden" class="nav-menu-id" value="<?php echo $item_id ;?>" />
+    <div class="logged-input-holder">
+        <input type="checkbox" name="menu_item_menu_custom[<?php echo $item_id ;?>]" id="menu-item-menu_custom-<?php echo $item_id ;?>" <?php if($menu_item_checkbox == 1):?> checked <?php endif;?>  value="1" />
+        <label for="menu-item-menu_custom-<?php echo $item_id ;?>">Кастомне меню</label>
+    </div>
+    </p>
+    <?php
+}
+add_action( 'wp_nav_menu_item_custom_fields', 'menu_item_menu_custom', 10, 3 );
+
+function save_menu_item_menu_custom( $menu_id, $menu_item_db_id ) {
+    if ( isset( $_POST['menu_item_menu_custom'][$menu_item_db_id]  ) ) {
+        $sanitized_data = sanitize_text_field( $_POST['menu_item_menu_custom'][$menu_item_db_id] );
+        update_post_meta( $menu_item_db_id, '_menu_item_menu_custom', $sanitized_data );
+    } else {
+        delete_post_meta( $menu_item_db_id, '_menu_item_menu_custom' );
+    }
+}
+add_action( 'wp_update_nav_menu_item', 'save_menu_item_menu_custom', 10, 3 );
+/******************************************************************************************************************** */
