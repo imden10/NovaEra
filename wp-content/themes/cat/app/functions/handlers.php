@@ -497,3 +497,12 @@ function save_menu_item_menu_custom( $menu_id, $menu_item_db_id ) {
 }
 add_action( 'wp_update_nav_menu_item', 'save_menu_item_menu_custom', 10, 3 );
 /******************************************************************************************************************** */
+
+function remove_widgets_submenu() {
+    global $submenu;
+    unset($submenu['themes.php'][6]); // Видалити пункт "Паттерни"
+    unset($submenu['themes.php'][8]); // Видалити пункт "Віджети"
+    unset($submenu['themes.php'][5]); // Видалити пункт "Теми"
+    unset($submenu['themes.php'][7]); // Видалити пункт "Налаштування"
+}
+add_action('admin_menu', 'remove_widgets_submenu');
