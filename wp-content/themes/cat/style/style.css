@@ -2485,6 +2485,7 @@ header {
 header .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header a {
   text-decoration: none;
@@ -2604,6 +2605,52 @@ header .lang-switcher .lang {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+footer {
+  background-color: #F3F5FC;
+}
+footer a {
+  text-decoration: none;
+}
+footer .footer__menu {
+  padding: 32px 0px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+footer .menu__title {
+  color: var(--header-items-on-light-main-nav-label-default);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+footer .menu__list {
+  display: grid;
+  grid-gap: 16px;
+  margin-top: 16px;
+}
+footer .menu__link {
+  color: var(--header-items-on-light-main-nav-label-default, #1C1C1E);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+footer .footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  color: var(--header-items-on-light-main-nav-label-default, #1C1C1E);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-top: 1px solid var(--brand-1-200);
+  padding: 16px 0px;
+}
+footer .footer__bottom ul {
+  display: flex;
+  grid-gap: 20px;
 }
 
 .form-field input {
