@@ -1,7 +1,4 @@
 
-// body{
-// 	color: red
-// }
 @mixin setColors($textColor, $linkColor) {
 	body {
 		color: var($textColor)
@@ -20,7 +17,7 @@
 		color: var($textColor) !important
 	}
 
-	a,
+	a:not([class]),
 	.redactor a {
 		color: var($linkColor) !important
 	}
@@ -30,8 +27,10 @@
 	background: var($bg);
 }
 
-.on-light {
+@include setColors(--text-on-light-bg-lighter-high, --text-on-light-bg-lighter-link);
 
+
+.on-light {
 	&.bg-lighter,
 	.bg-lighter {
 		@include setBgColor(--bg-on-light-lighter);

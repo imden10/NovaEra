@@ -60,7 +60,7 @@
 			// grid-gap: var(--spacing-coll-gap-coll-2);
 
 			.text-column {
-				padding: var(--hero-content-padding-top-l) var(--spacing-coll-padding-coll-2) var(--hero-content-padding-bottom-l) 0px;
+				padding: var(--spacing-coll-padding-top-l) var(--spacing-coll-padding-right-l) var(--spacing-coll-padding-bottom-l) 0px;
 			}
 
 			@include _1024 {
@@ -91,7 +91,7 @@
 			}
 
 			.text-column {
-				padding: var(--hero-content-padding-top-l) var(--spacing-coll-padding-coll-2) var(--hero-content-padding-bottom-l) 0;
+				padding: var(--spacing-coll-padding-top-l) var(--spacing-coll-padding-right-l) var(--spacing-coll-padding-bottom-l) 0px;
 			}
 
 			@include _1024 {
@@ -103,7 +103,7 @@
 				}
 
 				.text-column {
-					padding: var(--hero-content-padding-top-l) var(--spacing-container-left-right);
+					padding: var(--spacing-coll-padding-top-l) var(--spacing-container-left-right);
 				}
 			}
 		}
