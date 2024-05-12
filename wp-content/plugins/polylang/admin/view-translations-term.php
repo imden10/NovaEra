@@ -1,12 +1,13 @@
 <?php
-
 /**
  * Displays the translations fields for terms
+ *
+ * @package Polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Don't access directly
-};
+}
 
 if ( isset( $term_id ) ) {
 	// Edit term form ?>

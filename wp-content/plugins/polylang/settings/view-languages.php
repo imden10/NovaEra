@@ -1,12 +1,13 @@
 <?php
-
 /**
  * Displays the Languages admin panel
+ *
+ * @package Polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Don't access directly
-};
+}
 
 require ABSPATH . 'wp-admin/options-head.php'; // Displays the errors messages as when we were a child of options-general.php
 ?>
@@ -17,8 +18,8 @@ require ABSPATH . 'wp-admin/options-head.php'; // Displays the errors messages a
 		case 'lang':     // Languages tab
 		case 'strings':  // String translations tab
 		case 'settings': // Settings tab
-			include PLL_SETTINGS_INC . '/view-tab-' . $this->active_tab . '.php';
-			break;
+			include __DIR__ . '/view-tab-' . $this->active_tab . '.php';
+			// Intentional fall-through to upgrade to fire the action below.
 
 		default:
 			/**

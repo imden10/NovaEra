@@ -1,12 +1,13 @@
 <?php
-
 /**
  * Displays the languages tab in Polylang settings
+ *
+ * @package Polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Don't access directly
-};
+}
 ?>
 <div id="col-container">
 	<div id="col-right">
@@ -18,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="metabox-holder">
 				<?php
 				wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
-				do_meta_boxes( 'settings_page_mlang', 'normal', array() );
+				do_meta_boxes( 'toplevel_page_mlang', 'normal', array() );
 				?>
 			</div>
 		</div><!-- col-wrap -->
@@ -53,14 +54,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<select name="lang_list" id="lang_list">
 							<option value=""></option>
 							<?php
-							foreach ( $this->get_predefined_languages() as $lg ) {
+							foreach ( PLL_Settings::get_predefined_languages() as $language ) {
 								printf(
-									'<option value="%1$s:%2$s:%3$s:%4$s">%5$s - %2$s</option>' . "\n",
-									esc_attr( $lg['code'] ),
-									esc_attr( $lg['locale'] ),
-									'rtl' == $lg['dir'] ? '1' : '0',
-									esc_attr( $lg['flag'] ),
-									esc_html( $lg['name'] )
+									'<option value="%1$s:%2$s:%3$s:%4$s" data-flag-html="%6$s">%5$s - %2$s</option>' . "\n",
+									esc_attr( $language['code'] ),
+									esc_attr( $language['locale'] ),
+									'rtl' == $language['dir'] ? '1' : '0',
+									esc_attr( $language['flag'] ),
+									esc_html( $language['name'] ),
+									esc_attr( PLL_Language::get_predefined_flag( $language['flag'] ) )
 								);
 							}
 							?>
@@ -102,7 +104,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 
 					<div class="form-field"><fieldset>
-						<legend><?php esc_html_e( 'Text direction', 'polylang' ); ?></legend>
+						<legend class="pll-legend"><?php esc_html_e( 'Text direction', 'polylang' ); ?></legend>
 						<?php
 						printf(
 							'<label><input name="rtl" type="radio" value="0" %s /> %s</label>',
@@ -123,17 +125,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<select name="flag" id="flag_list">
 							<option value=""></option>
 							<?php
-							$flags = include PLL_SETTINGS_INC . '/flags.php';
+							$flags = include __DIR__ . '/flags.php';
 							foreach ( $flags as $code => $label ) {
-								/** This filter is documented in include/language.php */
-								$flag = apply_filters( 'pll_flag', array( 'url' => plugins_url( "/flags/{$code}.png", POLYLANG_FILE ) ), $code );
-
 								printf(
-									'<option value="%s" data-url="%s"%s%s%s>%s</option>' . "\n",
+									'<option value="%s" data-flag-html="%s"%s>%s</option>' . "\n",
 									esc_attr( $code ),
-									esc_url( $flag['url'] ),
-									( empty( $flag['width'] ) ? '' : sprintf( ' data-width="%s"', (int) $flag['width'] ) ),
-									( empty( $flag['height'] ) ? '' : sprintf( ' data-height="%s"', (int) $flag['height'] ) ),
+									esc_html( PLL_Language::get_flag_html( PLL_Language::get_flag_informations( $code ) ) ),
 									selected( isset( $edit_lang->flag_code ) && $edit_lang->flag_code === $code, true, false ),
 									esc_html( $label )
 								);
@@ -160,7 +157,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						 *
 						 * @since 1.7.10
 						 *
-						 * @param object $lang language being edited.
+						 * @param PLL_Language $lang language being edited.
 						 */
 						do_action( 'pll_language_edit_form_fields', $edit_lang );
 					} else {
@@ -179,14 +176,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div><!-- col-wrap -->
 	</div><!-- col-left -->
 </div><!-- col-container -->
-
-<script type="text/javascript">
-	//<![CDATA[
-	jQuery( document ).ready( function( $ ) {
-		// close postboxes that should be closed
-		$( '.if-js-closed' ).removeClass( 'if-js-closed' ).addClass( 'closed' );
-		// postboxes setup
-		postboxes.add_postbox_toggles( 'settings_page_mlang' );
-	} );
-	//]]>
-</script>
