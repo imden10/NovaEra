@@ -1,8 +1,11 @@
 <?php
+/**
+ * @package Polylang
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Don't access directly
-};
+}
 
 /**
  * The list of flags

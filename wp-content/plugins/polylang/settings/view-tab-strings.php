@@ -1,12 +1,13 @@
 <?php
-
 /**
  * Displays the strings translations tab in Polylang settings
+ *
+ * @package Polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Don't access directly
-};
+}
 ?>
 <div class="form-wrap">
 	<form id="string-translation" method="post" action="<?php echo esc_url( add_query_arg( 'noheader', 'true' ) ); ?>">
@@ -22,4 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		submit_button(); // Since WP 3.1
 		?>
 	</form>
+	<div class="metabox-holder">
+		<?php
+		wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
+		do_meta_boxes( 'languages_page_mlang_strings', 'normal', array() );
+		?>
+	</div>
+
 </div>

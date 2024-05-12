@@ -59,7 +59,7 @@ class ImageAndText
             <div class="text-block">
                 <textarea id="componentImageAndText<?php echo $key; ?>" name="<?php echo $text['name']; ?>" class="ck-editor"><?php echo $text['value']; ?></textarea>
 
-                <input type="url" name="<?php echo $link['name']; ?>" value="<?php echo $link['value']; ?>" placeholder="<?php _e('Посилання '); ?>">
+                <input type="text" name="<?php echo $link['name']; ?>" value="<?php echo $link['value']; ?>" placeholder="<?php _e('Посилання '); ?>">
             </div>
         </div>
 

@@ -1,12 +1,13 @@
 <?php
-
 /**
  * Displays the content of the About metabox
+ *
+ * @package Polylang
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Don't access directly
-};
+}
 ?>
 <p>
 	<?php
