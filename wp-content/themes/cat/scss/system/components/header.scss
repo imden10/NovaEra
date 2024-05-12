@@ -1,9 +1,155 @@
-header{
+header {
 	display: flex;
 	justify-content: space-between;
-	nav {
-		ul{
-			display: flex;
+	height: 80px;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.menu {
+		list-style: none;
+		display: flex;
+	}
+
+	.menu__item {
+		position: relative;
+		display: flex;
+		padding: 8px var(--header-main-nav-item-left-right-padding, 12px);
+		align-items: center;
+		grid-gap: var(--header-main-nav-item-gap, 4px);
+		align-self: stretch;
+	}
+
+	.menu__item:hover .submenu {
+		display: grid;
+		gap: 30px;
+	}
+
+	.menu__item__link {
+		color: var(--header-items-on-light-main-nav-label-default);
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		text-decoration: none;
+		transition: .3s;
+
+		&:hover {
+			color: #007bff;
+		}
+	}
+
+	/* Стиль для підменю першого рівня */
+	.submenu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 100;
+		border: 1px solid #ccc;
+		padding: 10px;
+		border-radius: var(--border-radius-image-m);
+		border: 1px solid var(--brand-1-200);
+		background: #FFF;
+		width: 344px;
+
+		.list-wrapper {
+			padding: 16px;
+
+			&.custom ul {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			h4 {
+				margin-top: 0px;
+				color: var(--header-items-on-light-main-nav-label-default);
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: normal;
+			}
+		}
+
+		&.double-column {
+			width: 688px;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.submenu__item {
+			position: relative;
+			margin-bottom: 21px;
+
+			a {
+				color: var(--header-items-on-light-main-nav-label-default);
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: normal;
+			}
+
+			p {
+				color: var(--text-on-light-bg-lighter-tertiary);
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// TODO
+	/* Стиль для підменю другого рівня */
+	.sub2menu {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		background-color: #fff;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+		border: 1px solid #ccc;
+		border-left: none;
+		padding: 10px 0;
+	}
+
+	.submenuitem:hover .sub2menu {
+		display: block;
+	}
+
+	.sub2item:hover {
+		background-color: #f4f4f4;
+	}
+
+	.sub2item a {
+		display: block;
+		padding: 10px 15px;
+		text-decoration: none;
+		color: #333;
+		transition: background-color 0.3s ease;
+	}
+
+	// r-column
+	.actions {
+		display: flex;
+		align-items: center;
+	}
+
+	.lang-switcher {
+		.lang {
+			color: var(--header-items-on-light-main-nav-label-default);
+			text-decoration: none;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
 		}
 	}
 }

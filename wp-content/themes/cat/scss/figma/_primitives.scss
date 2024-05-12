@@ -1,40 +1,40 @@
-[data-theme="green-violet"] {
+[data-theme="nova-era"] {
 	/* colors */
 	--brand-1-1: #1655c1;
-	--brand-1-100: #e6ecf6;
-	--brand-1-200: #d2ddf0;
-	--brand-1-300: #c6d5ef;
-	--brand-1-400: #b7cff8;
-	--brand-1-50: #f4f5f8;
-	--brand-1-500: #97bdff;
-	--brand-1-600: #6ba1ff;
-	--brand-1-700: #007aff;
-	--brand-1-800: #306fdb;
-	--brand-1-900: #1f60ce;
-	--brand-2-1: #c74022;
-	--brand-2-100: #ffd5cc;
-	--brand-2-200: #fbc1b4;
-	--brand-2-300: #ffa996;
-	--brand-2-400: #ff9a84;
-	--brand-2-50: #fce2dd;
-	--brand-2-500: #ff8b71;
-	--brand-2-600: #ff785a;
-	--brand-2-700: #ff6745;
-	--brand-2-800: #e8674b;
-	--brand-2-900: #ce5438;
-	--brand-3-300: #d0bcff;
-	--brand-3-700: #9e78f5;
+	--brand-1-100: #e6edf6;
+	--brand-1-200: #cedff3;
+	--brand-1-300: #bcd5f3;
+	--brand-1-400: #96c0f3;
+	--brand-1-50: #f4f6f8;
+	--brand-1-500: #60aafd;
+	--brand-1-600: #3783e1;
+	--brand-1-700: #1374e9;
+	--brand-1-800: #0063dc;
+	--brand-1-900: #065eca;
+	--brand-2-1: #604100;
+	--brand-2-100: #fff3b8;
+	--brand-2-200: #ffe55d;
+	--brand-2-300: #ffd602;
+	--brand-2-400: #f9ca0e;
+	--brand-2-50: #fffbe5;
+	--brand-2-500: #f2be19;
+	--brand-2-600: #e8aa2b;
+	--brand-2-700: #c68d19;
+	--brand-2-800: #a4720c;
+	--brand-2-900: #825802;
+	--brand-3-300: #ffffff;
+	--brand-3-700: #ffffff;
 	--gray-1: #1c1c1e;
-	--gray-100: #e5e5ea;
-	--gray-200: #d1d1d6;
-	--gray-300: #c7c7cc;
-	--gray-400: #aeaeb2;
-	--gray-50: #f2f2f7;
-	--gray-500: #8e8e93;
-	--gray-600: #636366;
-	--gray-700: #48484a;
-	--gray-800: #3a3a3c;
-	--gray-900: #1c1c1e;
+	--gray-100: #e8eaf3;
+	--gray-200: #d7d9e4;
+	--gray-300: #c6c9d1;
+	--gray-400: #b0b2ba;
+	--gray-50: #f3f5fc;
+	--gray-500: #8d8f98;
+	--gray-600: #636467;
+	--gray-700: #474752;
+	--gray-800: #373744;
+	--gray-900: #1f2023;
 	--gray-opacity-0: #1c1c1e00;
 	--gray-opacity-12: #1c1c1e1f;
 	--gray-opacity-20: #1c1c1e33;
@@ -83,9 +83,8 @@
 	--white-opacity-8: #ffffff14;
 	--white-opacity-80: #ffffffcc;
 	--white-opacity-90: #ffffffe5;
-}
-
-[data-theme="orange-teal"] {
+  }
+  [data-theme="orange-teal"] {
 	/* colors */
 	--brand-1-1: #cc5940;
 	--brand-1-100: #f2e4e1;
@@ -170,4 +169,4 @@
 	--white-opacity-8: #ffffff14;
 	--white-opacity-80: #ffffffcc;
 	--white-opacity-90: #ffffffe5;
-}
+  }

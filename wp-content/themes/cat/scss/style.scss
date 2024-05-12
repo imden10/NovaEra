@@ -1,79 +1,6 @@
 @import './normalize.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-  font-family: "Montserrat";
-  background-color: var(--main-bg);
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-section {
-  --bg-type: 'on-ligth';
-
-  &.dark {
-    --bg-type: 'on-dark';
-  }
-}
-
-// setMode
-.setMode,
-.setColors {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  cursor: pointer;
-  grid-gap: 10px;
-
-  * {
-    padding: 10px;
-    background-color: #000;
-    color: #fff
-  }
-}
-
-.setColors {
-  margin-top: 20px;
-  position: static
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
-[data-theme="theme1"] {
-  --bg: #FCE4CF;
-}
-
-[data-theme="theme2"] {
-  --bg: #FFF2CA;
-}
-
-[data-theme="theme3"] {
-  --bg: #E3F0D4;
-}
-
-[data-theme="theme4"] {
-  --bg: #D7E2F3;
-}
-
-[data-theme="theme5"] {
-  --bg: #D9DDF1;
-}
-
-body {
-  transition: 6s;
-  background: var(--bg) !important;
-}
-
-
-
 @import './figma/figma_variables.scss';
 @import './mixinsAndVariables/breakpoints.scss';
 @import './system/common/_container.scss';
@@ -85,6 +12,7 @@ body {
 @import './system/common/_separators.scss';
 @import './system/common/_bgAndTextColors.scss';
 @import './system/common/_modals.scss';
+@import './system/common/_global.scss';
 // components
 @import './system/components/header.scss';
 @import './system/components/form-fields.scss';

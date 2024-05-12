@@ -1,0 +1,45 @@
+body {
+	font-family: "Montserrat";
+	background-color: var(--main-bg);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+section {
+	--bg-type: 'on-ligth';
+
+	&.dark {
+		--bg-type: 'on-dark';
+	}
+}
+
+// setMode
+.setMode,
+.setColors {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	display: flex;
+	cursor: pointer;
+	grid-gap: 10px;
+
+	* {
+		padding: 10px;
+		background-color: #000;
+		color: #fff
+	}
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	padding-left: 0;
+	list-style-type: none;
+}

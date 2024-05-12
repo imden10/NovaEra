@@ -1,3 +1,7 @@
+
+// body{
+// 	color: red
+// }
 @mixin setColors($textColor, $linkColor) {
 	body {
 		color: var($textColor)
@@ -12,7 +16,7 @@
 	p,
 	code,
 	span,
-	.redactor {
+	.redactor > * {
 		color: var($textColor) !important
 	}
 
@@ -31,12 +35,12 @@
 	&.bg-lighter,
 	.bg-lighter {
 		@include setBgColor(--bg-on-light-lighter);
-		@include setColors(--text-on-light-bg-lighter-text-primary, --text-on-light-bg-lighter-link)
+		@include setColors(--text-on-light-bg-lighter-high, --text-on-light-bg-lighter-link)
 	}
 
 	&.bg-darker, .bg-darker {
 		@include setBgColor(--bg-on-light-darker);
-		@include setColors(--text-on-light-bg-darker-text-primary, --text-on-light-bg-darker-link)
+		@include setColors(--text-on-light-bg-darker-high, --text-on-light-bg-darker-link)
 	}
 }
 
@@ -44,17 +48,17 @@
 
 	&.bg-img,
 	.bg-img {
-		@include setColors(--text-on-dark-bg-img-text-primary, --text-on-dark-bg-img-link)
+		@include setColors(--text-on-dark-bg-img-high, --text-on-dark-bg-img-link)
 	}
 
 	&.bg-lighter, .bg-lighter {
 		@include setBgColor(--bg-on-dark-lighter);
-		@include setColors(--text-on-dark-bg-lighter-text-primary, --text-on-dark-bg-lighter-link)
+		@include setColors(--text-on-dark-bg-lighter-high, --text-on-dark-bg-lighter-link)
 	}
 
 	&.bg-darker, .bg-darker {
 		@include setBgColor(--bg-on-dark-darker);
-		@include setColors(--text-on-dark-bg-darker-text-primary, --text-on-dark-bg-darker-link)
+		@include setColors(--text-on-dark-bg-darker-high, --text-on-dark-bg-darker-link)
 	}
 
 }

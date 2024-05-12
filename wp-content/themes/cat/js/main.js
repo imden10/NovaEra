@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	'use strict';
-	document.body.setAttribute('data-theme', 'green-violet')
+	document.body.setAttribute('data-theme', 'nova-era')
 	// document.body.setAttribute('data-mode', 'light')
 	document.body.setAttribute('data-windowsize', '1440-1280')
 	// global variables
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		}, 6000)
 
 	}
-	// document.querySelector('.startFunc').addEventListener('click', changeTheme)
 	const checkWindowSize = () => {
 		windowSize = window.innerWidth
 		if (windowSize >= 1280) {
@@ -40,24 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	window.addEventListener('resize', () => {
 		checkWindowSize()
-	});
-
-	const modeBtns = document.querySelectorAll('.mode')
-
-	modeBtns.forEach(el => {
-		el.addEventListener('click', () => {
-			document.body.setAttribute('data-mode', el.getAttribute('data-mode'))
-		})
-	});
-
-	const colorBtns = document.querySelectorAll('.color')
-	const simpleText = document.querySelector('.simple-text')
-
-	colorBtns.forEach(el => {
-		el.addEventListener('click', () => {
-			const color = el.innerHTML
-			simpleText.id = color
-		})
 	});
 
 	// JavaScript код для виклику ajax-запиту
