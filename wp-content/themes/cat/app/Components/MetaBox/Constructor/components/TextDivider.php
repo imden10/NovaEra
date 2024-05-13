@@ -45,9 +45,7 @@ class TextDivider
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentTextDivider<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentTextDivider<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
         <?php

@@ -104,6 +104,7 @@ return [
                             'params' => [
                                 'only' => [
                                     'Text.php',
+                                    'SeoText.php',
                                     'DynamicList.php',
                                     'Table.php',
                                     'FullImage.php',
@@ -128,6 +129,7 @@ return [
                                     'TextDivider.php',
                                     'Theses.php',
                                     'AccordionTable.php',
+                                    'Partners.php',
                                     'Form.php',
                                 ],
                             ]

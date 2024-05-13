@@ -25,9 +25,7 @@ class TextWithBackground
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentTextWithBackground<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentTextWithBackground<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 

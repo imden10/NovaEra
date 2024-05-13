@@ -115,9 +115,7 @@ class Stages
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote({
-                    height: 182
-                });
+                $('.ck-editor-ready').summernote(summernote_options);
             });
         </script>
 
@@ -150,9 +148,7 @@ class Stages
                         createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
                     });
 

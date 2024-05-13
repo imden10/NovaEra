@@ -2,21 +2,16 @@
 
 namespace App\Components\MetaBox\Constructor\components;
 
-class BlockSlider
+class Partners
 {
-    public $name = 'Карточка слайдер';
+    public $name = 'Партнери';
 
-    protected static $prefix = 'block-slider-item';
+    protected static $prefix = 'partners-item';
 
-    protected static $placeholder = '#block_sliderElementId';
+    protected static $placeholder = '#partnersElementId';
 
     public function html($key, $name, $value)
     {
-        $text = [
-            'name' => $name . '[' . $key . '][content][text]',
-            'value' => isset($value['content']['text']) ? $value['content']['text'] : ''
-        ];
-
         $list = [
             'name' => $name . '[' . $key . '][content][list]',
             'value' => (isset($value['content']['list']) && is_array($value['content']['list'])) ? $value['content']['list'] : []
@@ -25,12 +20,6 @@ class BlockSlider
 
         <div class="body-block">
             <div class="list-elements-body">
-                <div class="mb-3">
-                    <div class="textarea-part">
-                        <textarea id="componentBlockSlider<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
-                    </div>
-                </div>
-
                 <template>
                     <li data-item-id="<?php echo self::$placeholder; ?>" class="item-list-template">
                         <div class="card border-success">
@@ -41,15 +30,11 @@ class BlockSlider
                                     </div>
                                     <div class="col-9">
                                         <div class="mb-3">
-                                            <textarea id="component_<?= uniqid(time()) ?>"
-                                              name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][text]"
-                                              class="ck-editor"></textarea>
-                                        </div>
-                                        <div class="mb-3">
                                             <input type="text" class="form-control form-control-sm"
                                                    name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][link]"
-                                                   placeholder="<?php _e('Посилання '); ?>"
+                                                   placeholder="<?php _e('Посилання'); ?>"
                                             >
+                                        </div>
                                         </div>
                                         <button type="button"
                                                 class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
@@ -70,9 +55,6 @@ class BlockSlider
                                             <?= media_preview_box($list['name'] . "[" . $id . "][image]",esc_attr($value['image'])); ?>
                                         </div>
                                         <div class="col-9">
-                                            <div class="mb-3">
-                                                <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo $id; ?>][text]" class="ck-editor-ready"><?= esc_attr($value['text']); ?></textarea>
-                                            </div>
                                             <div class="mb-3">
                                                 <input type="text" class="form-control form-control-sm"
                                                        name="<?php echo $list['name']; ?>[<?php echo $id; ?>][link]"
@@ -95,9 +77,7 @@ class BlockSlider
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote(summernote_options);
 
-                $('#componentBlockSlider<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 
@@ -127,12 +107,6 @@ class BlockSlider
                         const itemsContainer = container.find('.list-elements-container');
 
                         createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
-
-                        itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
-                        });
                     });
 
                     $(document).on('click', '.delete-list-element', function () {

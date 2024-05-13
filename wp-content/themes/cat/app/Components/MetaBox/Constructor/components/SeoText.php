@@ -2,9 +2,9 @@
 
 namespace App\Components\MetaBox\Constructor\components;
 
-class FormText
+class SeoText
 {
-    public $name = 'Текст';
+    public $name = 'SEO Текст';
 
     public function html($key, $name, $value)
     {
@@ -16,13 +16,13 @@ class FormText
 
         <div class="body-block">
             <div class="textarea-part">
-                <textarea id="componentText<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
+                <textarea id="componentSeoText<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
             </div>
         </div>
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentText<?php echo $key; ?>').summernote(summernote_options);
+                $('#componentSeoText<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
         <?php

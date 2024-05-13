@@ -10,7 +10,7 @@ $formsList = Form::getList();
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalBtnLabel">Вставити кнопку</h5>
-                <button type="button" class="close cb-btn-close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close cb-btn-close" data-dismiss="modal" aria-label="Close" onclick="$('#exampleModalBtn').modal('hide');">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

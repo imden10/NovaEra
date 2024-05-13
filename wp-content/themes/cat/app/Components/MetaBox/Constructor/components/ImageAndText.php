@@ -65,9 +65,7 @@ class ImageAndText
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentImageAndText<?php echo $key; ?>').summernote({
-                    height: 182
-                });
+                $('#componentImageAndText<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 

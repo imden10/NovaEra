@@ -32,12 +32,8 @@ class TwoColumnText
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentText1<?php echo $key; ?>').summernote({
-                    height: 200
-                });
-                $('#componentText2<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentText1<?php echo $key; ?>').summernote(summernote_options);
+                $('#componentText2<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 
