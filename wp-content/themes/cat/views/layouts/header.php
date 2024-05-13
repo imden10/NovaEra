@@ -9,6 +9,7 @@
 
     <?= config('theme')['fonts'][get_option('theme_settings__font_style')]['link'] ?>
     <link rel="icon" href="<?= get_image_url_by_id(get_option('theme_settings__favicon')) ?>" type="image/png">
+    <link rel="stylesheet" href="https://i.icomoon.io/public/0b30d968be/NovaEraNew/style.css">
 </head>
 
 <?php
