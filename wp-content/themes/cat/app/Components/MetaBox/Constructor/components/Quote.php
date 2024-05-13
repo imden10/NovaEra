@@ -22,9 +22,7 @@ class Quote
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentQuote<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentQuote<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 

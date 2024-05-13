@@ -372,9 +372,7 @@ class CardWithImage
                         });
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
 
                         itemsContainer.find('.icon-select-component').each(function () {

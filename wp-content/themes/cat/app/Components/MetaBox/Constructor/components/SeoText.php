@@ -22,9 +22,7 @@ class SeoText
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentSeoText<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentSeoText<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
         <?php

@@ -336,13 +336,9 @@ class CardMiniText
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote({
-                    height: 182
-                });
+                $('.ck-editor-ready').summernote(summernote_options);
 
-                $('#cardminitext<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#cardminitext<?php echo $key; ?>').summernote(summernote_options);
 
                 $(document).on('change', '.select-background-type-mode-card-<?= $key ?>', function() {
                     let mode = $(this).val();
@@ -446,9 +442,7 @@ class CardMiniText
                         });
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
 
                         itemsContainer.find('.icon-select-component').each(function () {

@@ -384,9 +384,7 @@ class Blocks
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote({
-                    height: 182
-                });
+                $('.ck-editor-ready').summernote(summernote_options);
 
                 $(document).on('change', '.select-background-type-mode-card-<?= $key ?>', function() {
                     let mode = $(this).val();
@@ -490,9 +488,7 @@ class Blocks
                         });
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
 
                         itemsContainer.find('.icon-select-component').each(function () {

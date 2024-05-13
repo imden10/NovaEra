@@ -199,13 +199,9 @@ class Accordion
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote({
-                    height: 182
-                });
+                $('.ck-editor-ready').summernote(summernote_options);
 
-                $('#componentText<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentText<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 
@@ -241,9 +237,7 @@ class Accordion
                         });
 
                         itemsContainer.find('textarea.ck-editor').each(function () {
-                            $(this).summernote({
-                                height: 182
-                            });
+                            $(this).summernote(summernote_options);
                         });
 
                         itemsContainer.find('.icon-select-component').each(function () {

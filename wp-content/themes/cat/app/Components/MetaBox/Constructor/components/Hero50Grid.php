@@ -39,13 +39,9 @@ class Hero50Grid
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.ck-editor-ready').summernote({
-                    height: 182
-                });
+                $('.ck-editor-ready').summernote(summernote_options);
 
-                $('#componentHero50Grid<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentHero50Grid<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
 

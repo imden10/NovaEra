@@ -153,9 +153,7 @@ class FormSelect
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#componentText<?php echo $key; ?>').summernote({
-                    height: 200
-                });
+                $('#componentText<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
         <?php
