@@ -15,7 +15,7 @@
 <?php if(isset($btns) && is_array($btns) && count($btns)):?>
 <div class="btns-container">
     <?php foreach ($btns as $btn):?>
-        <div class="btn <?= $btn['type']?> <?php if($btn['type_link'] == 'form'):?> render-form-btn <?php endif;?>"
+        <div class="btn primary <?= $btn['type']?> <?php if($btn['type_link'] == 'form'):?> render-form-btn <?php endif;?>"
         <?php if($btn['type_link'] == 'form'):?> data-form_id="<?= $btn['form_id'] ?>" <?php endif;?>
         >
             <?= $btn['text']?><i class="<?= $btn['icon']?>"></i>
