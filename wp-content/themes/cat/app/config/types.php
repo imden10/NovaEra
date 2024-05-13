@@ -129,6 +129,7 @@ return [
                                     'TextDivider.php',
                                     'Theses.php',
                                     'AccordionTable.php',
+                                    'Partners.php',
                                     'Form.php',
                                 ],
                             ]
