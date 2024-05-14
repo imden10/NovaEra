@@ -1,8 +1,8 @@
 [class^="hero"] {
-	 padding-top: 0 !important;
-	 padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
-  
+
 .first-screen {
 	overflow: hidden;
 	position: relative;
@@ -49,7 +49,8 @@
 		}
 	}
 
-	&.column50 {
+	&.column50,
+	&.hero-cards {
 		padding: var(--spacing-separator-m) var(--spacing-container-left-right);
 
 		.container {
@@ -68,6 +69,47 @@
 
 				.image-column {
 					order: -1;
+				}
+			}
+		}
+	}
+
+	&.hero-cards {
+		// background-color: gray;
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 8px;
+			@include _1280{
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			.hero-card {
+				background-color: #fff;
+				border-radius: var(--border-radius-global-m, 12px);
+				background: var(--bg-on-light-lighter, #FFF);
+				padding: 16px !important;
+
+				&-link, &-img {
+					color: var(--text-on-light-bg-lighter-high);
+					font-variant-numeric: lining-nums proportional-nums;
+					font-size: 15px;
+					font-style: normal;
+					font-weight: 500;
+					line-height: 140%;
+					text-decoration: none;
+					i{
+						display: block;
+						margin-top: 35px;
+					}
+				}
+
+				&:has(.hero-card-img) {
+					display: grid;
+					grid-column: 3 / span 2; 
+					@include _1280{
+						grid-column: 2 / span 2; 
+					}
 				}
 			}
 		}

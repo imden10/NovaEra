@@ -19,32 +19,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="on-dark bg-darker mb-L mt-L">
-        <div class="container">
-
-            <h2>Вспылтие можно настроить чтобы с любой стороны выезжали</h2>
-            <div class="headline">
-                <h2 class="masked">анимация вспылтие + маска</h2>
-            </div>
-       
-            <h2 class="fadeDown-t">анимация вспылтие без маски</h2>
-            
-
-            <h2>Анимации банеров/картинок</h2>
-            <div class="masked-wrp">
-                <img class="masked-image" src="https://images.ctfassets.net/oydui2rqm15t/51btQIIZDerr255ipgviRV/561b08cff61a06d9bbce093e356b0765/ABOUT_US_3_1840x2254.jpg?fm=webp&q=80" alt="">
-            </div>
-            <h3>тут поставил смещение на 150 для теста
-                можем смещать в любую сторону </h3>
-            <div class="masked-wrp" style="width: 400px;">
-                <img class="paralax-image" src="https://images.ctfassets.net/oydui2rqm15t/51btQIIZDerr255ipgviRV/561b08cff61a06d9bbce093e356b0765/ABOUT_US_3_1840x2254.jpg?fm=webp&q=80" alt="">
-            </div>
-        </div>
-        <h3>от скрола увеличивается/уменьшается банер/картинка</h3>
-        <img id="banner-action-on-scroll" src="https://d2interier.com/media/images/orig/uploads/Banneri/banner1.jpg" alt="">
-        <img id="banner-action-on-scroll-reverse" src="https://d2interier.com/media/images/orig/uploads/Banneri/banner1.jpg" alt="">
-    </div> -->
-
     <div class="main-screen-container">
         <?php buildContentFromConstructorArray('hero', $page->page_information_hero); ?>
     </div>

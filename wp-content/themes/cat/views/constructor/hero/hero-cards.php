@@ -15,22 +15,26 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
             <?php require app('path.views') . '/constructor/_buttons.php'; ?>
 
         </div>
-        <div class="image-column">
+        <!-- <div class="image-column">
             <img src="<?= $imageUrl ?>" alt="<?= $content['image_type']; ?>" style="max-width: 300px">
-        </div>
+        </div> -->
         <div class="cards">
             <?php if (isset($content['list'])) : ?>
-            <?php foreach ($content['list'] as $item) : ?>
-                <a href="<?= $item['link'] ?>" class="hero-card">
-                    <?= $item['title'] ?>
+                <?php foreach ($content['list'] as $item) : ?>
+                    <div class="hero-card">
+                        <?php if ($item['icon_type'] === 'custom') : ?>
+                            <div class="hero-card-img">
+                                <?= $item['title'] ?>
+                                <img src="<?= get_image_url_by_id($item['icon_custom']) ?>">
+                            </div>
+                        <?php else : ?>
+                            <a href="<?= $item['link'] ?>" class="hero-card-link"><?= $item['title'] ?>
+                                <i class="<?= $item['icon'] ?>"><?= $item['icon'] ?></i>
+                            </a>
+                        <?php endif; ?>
 
-                    <?php if($item['icon_type'] === 'custom'):?>
-                        <img src="<?= get_image_url_by_id($item['icon_custom']) ?>" style="width: 50px">
-                    <?php else:?>
-                        <i class="<?= $item['icon'] ?>"><?= $item['icon'] ?></i>
-                    <?php endif; ?>
-                </a>
-            <?php endforeach; ?>
+                    </div>
+                <?php endforeach; ?>
             <?php endif; ?>
         </div>
     </div>

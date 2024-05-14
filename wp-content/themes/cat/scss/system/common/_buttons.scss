@@ -23,197 +23,212 @@
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: .3s;
+
 	i {
 		pointer-events: none;
 		color: inherit;
 	}
+
 	&.disabled {
 		pointer-events: none;
 	}
 }
 
-.on-dark {
-	.btn {
-		&.primary {
-			&.fill {
-				background: var(--btn-primary-on-dark-fill-bg-default);
-				color: var(--btn-primary-on-dark-fill-label-default);
+@mixin set-btn-colors($bg, $bgHover, $bgDisabled, $border, $borderHover, $borderDisabled, $text, $textHover, $textDisabled) {
+	color: var($text);
 
-				&:hover {
-					background: var(--btn-primary-on-dark-fill-bg-hover);
-					color: var(--btn-primary-on-dark-fill-label-hover);
-				}
+	@if $bg {
+		background: var($bg)
+	}
 
-				&.disabled {
-					background: var(--btn-primary-on-dark-fill-bg-disabled);
-					color: var(--btn-primary-on-dark-fill-label-disabled);
-				}
-			}
+	@if $border {
+		border: 1px solid var($border)
+	}
 
-			&.stroke {
-				color: var(--btn-primary-on-dark-stroke-label-default);
-				border: 1px solid var(--btn-primary-on-dark-stroke-border-default);
+	&:hover {
+		color: var($textHover);
 
-				&:hover {
-					border: 1px solid var(--btn-primary-on-dark-stroke-border-hover);
-					color: var(--btn-primary-on-dark-stroke-label-hover)
-				}
-
-				&.disabled {
-					border: 1px solid var(--btn-primary-on-dark-stroke-border-disabled);
-					color: var(--btn-primary-on-dark-stroke-label-disabled);
-				}
-			}
-
-			&.simple,
-			&.text {
-				&:hover {
-					background: var(--btn-primary-on-dark-text-bg-hover);
-					color: var(--btn-primary-on-dark-text-label-hover);
-				}
-
-				&.disabled {
-					background: var(--btn-primary-on-dark-text-bg-disabled);
-					color: var(--btn-primary-on-dark-text-label-disabled);
-				}
-			}
+		@if $bg {
+			background: var($bgHover)
 		}
 
-		&.secondary {
-			&.fill {
-				background: var(--btn-secondary-on-dark-fill-bg-default);
-				color: var(--btn-secondary-on-dark-fill-label-default);
+		@if $border {
+			border: 1px solid var($borderHover)
+		}
+	}
 
-				&:hover {
-					background: var(--btn-secondary-on-dark-fill-bg-hover);
-					color: var(--btn-secondary-on-dark-fill-label-hover);
-				}
+	&.disabled {
+		color: var($textHover);
 
-				&.disabled {
-					background: var(--btn-secondary-on-dark-fill-bg-disabled);
-					color: var(--btn-secondary-on-dark-fill-label-disabled);
-				}
-			}
+		@if $bg {
+			background: var($bgDisabled)
+		}
 
-			&.stroke {
-				color: var(--btn-secondary-on-dark-stroke-label-default);
-				border: 1px solid var(--btn-secondary-on-dark-stroke-border-default);
-
-				&:hover {
-					border: 1px solid var(--btn-secondary-on-dark-stroke-border-hover);
-					color: var(--btn-secondary-on-dark-stroke-label-hover)
-				}
-
-				&.disabled {
-					border: 1px solid var(--btn-secondary-on-dark-stroke-border-disabled);
-					color: var(--btn-secondary-on-dark-stroke-label-disabled);
-				}
-			}
-
-			&.simple,
-			&.text {
-				&:hover {
-					background: var(--btn-secondary-on-dark-text-bg-hover);
-					color: var(--btn-secondary-on-dark-text-label-hover);
-				}
-
-				&.disabled {
-					background: var(--btn-secondary-on-dark-text-bg-disabled);
-					color: var(--btn-secondary-on-dark-text-label-disabled);
-				}
-			}
+		@if $border {
+			border: 1px solid var($borderDisabled)
 		}
 	}
 }
 
+
+.on-dark {
+	.btn {
+		&.primary {
+			&.fill {
+				@include set-btn-colors(--btn-primary-on-dark-fill-bg-default,
+					--btn-primary-on-dark-fill-bg-hover,
+					--btn-primary-on-dark-fill-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-primary-on-dark-fill-label-default,
+					--btn-primary-on-dark-fill-label-hover,
+					--btn-primary-on-dark-fill-label-disabled);
+			}
+
+			&.stroke {
+				@include set-btn-colors(false,
+					false,
+					false,
+					--btn-primary-on-dark-stroke-border-default,
+					--btn-primary-on-dark-stroke-border-hover,
+					--btn-primary-on-dark-stroke-border-disabled,
+					--btn-primary-on-dark-stroke-label-default,
+					--btn-primary-on-dark-stroke-label-hover,
+					--btn-primary-on-dark-stroke-label-disabled);
+			}
+
+			&.simple,
+			&.text {
+				@include set-btn-colors(false, // У text нет фона
+					--btn-primary-on-dark-text-bg-hover,
+					--btn-primary-on-dark-text-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-primary-on-dark-text-label-default, // Нет отдельного цвета текста для дефолтного состояния
+					--btn-primary-on-dark-text-label-hover,
+					--btn-primary-on-dark-text-label-disabled);
+			}
+		}
+
+		&.secondary {
+			&.fill {
+				@include set-btn-colors(--btn-secondary-on-dark-fill-bg-default,
+					--btn-secondary-on-dark-fill-bg-hover,
+					--btn-secondary-on-dark-fill-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-secondary-on-dark-fill-label-default,
+					--btn-secondary-on-dark-fill-label-hover,
+					--btn-secondary-on-dark-fill-label-disabled);
+			}
+
+			&.stroke {
+				@include set-btn-colors(false,
+					false,
+					false,
+					--btn-secondary-on-dark-stroke-border-default,
+					--btn-secondary-on-dark-stroke-border-hover,
+					--btn-secondary-on-dark-stroke-border-disabled,
+					--btn-secondary-on-dark-stroke-label-default,
+					--btn-secondary-on-dark-stroke-label-hover,
+					--btn-secondary-on-dark-stroke-label-disabled);
+			}
+
+			&.simple,
+			&.text {
+				@include set-btn-colors(false,
+					--btn-secondary-on-dark-text-bg-hover,
+					--btn-secondary-on-dark-text-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-secondary-on-dark-text-label-default,
+					--btn-secondary-on-dark-text-label-hover,
+					--btn-secondary-on-dark-text-label-disabled);
+			}
+		}
+	}
+}
 .on-light {
 	.btn {
 		&.primary {
 			&.fill {
-				background: var(--btn-primary-on-light-fill-bg-default);
-				color: var(--btn-primary-on-light-fill-label-default);
-
-				&:hover {
-					background: var(--btn-primary-on-light-fill-bg-hover);
-					color: var(--btn-primary-on-light-fill-label-hover);
-				}
-
-				&.disabled {
-					background: var(--btn-primary-on-light-fill-bg-disabled);
-					color: var(--btn-primary-on-light-fill-label-disabled);
-				}
+				@include set-btn-colors(--btn-primary-on-light-fill-bg-default,
+					--btn-primary-on-light-fill-bg-hover,
+					--btn-primary-on-light-fill-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-primary-on-light-fill-label-default,
+					--btn-primary-on-light-fill-label-hover,
+					--btn-primary-on-light-fill-label-disabled);
 			}
 
 			&.stroke {
-				color: var(--btn-primary-on-light-stroke-label-default);
-				border: 1px solid var(--btn-primary-on-light-stroke-border-default);
-
-				&:hover {
-					border: 1px solid var(--btn-primary-on-light-stroke-border-hover);
-					color: var(--btn-primary-on-light-stroke-label-hover)
-				}
-
-				&.disabled {
-					border: 1px solid var(--btn-primary-on-light-stroke-border-disabled);
-					color: var(--btn-primary-on-light-stroke-label-disabled);
-				}
+				@include set-btn-colors(false,
+					false,
+					false,
+					--btn-primary-on-light-stroke-border-default,
+					--btn-primary-on-light-stroke-border-hover,
+					--btn-primary-on-light-stroke-border-disabled,
+					--btn-primary-on-light-stroke-label-default,
+					--btn-primary-on-light-stroke-label-hover,
+					--btn-primary-on-light-stroke-label-disabled);
 			}
 
 			&.simple,
 			&.text {
-				&:hover {
-					background: var(--btn-primary-on-light-text-bg-hover);
-					color: var(--btn-primary-on-light-text-label-hover);
-				}
-
-				&.disabled {
-					background: var(--btn-primary-on-light-text-bg-disabled);
-					color: var(--btn-primary-on-light-text-label-disabled);
-				}
+				@include set-btn-colors(false, // У text нет фона
+					--btn-primary-on-light-text-bg-hover,
+					--btn-primary-on-light-text-bg-disabled,
+					false, // У text нет границы
+					false, // У text нет границы на hover
+					false, // У text нет границы в disabled состоянии
+					--btn-primary-on-light-text-label-default, // Нет отдельного цвета текста для дефолтного состояния
+					--btn-primary-on-light-text-label-hover,
+					--btn-primary-on-light-text-label-disabled);
 			}
 		}
+
 		&.secondary {
 			&.fill {
-				background: var(--btn-secondary-on-light-fill-bg-default);
-				color: var(--btn-secondary-on-light-fill-label-default);
-
-				&:hover {
-					background: var(--btn-secondary-on-light-fill-bg-hover);
-					color: var(--btn-secondary-on-light-fill-label-hover);
-				}
-
-				&.disabled {
-					background: var(--btn-secondary-on-light-fill-bg-disabled);
-					color: var(--btn-secondary-on-light-fill-label-disabled);
-				}
+				@include set-btn-colors(--btn-secondary-on-light-fill-bg-default,
+					--btn-secondary-on-light-fill-bg-hover,
+					--btn-secondary-on-light-fill-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-secondary-on-light-fill-label-default,
+					--btn-secondary-on-light-fill-label-hover,
+					--btn-secondary-on-light-fill-label-disabled);
 			}
 
 			&.stroke {
-				color: var(--btn-secondary-on-light-stroke-label-default);
-				border: 1px solid var(--btn-secondary-on-light-stroke-border-default);
-
-				&:hover {
-					border: 1px solid var(--btn-secondary-on-light-stroke-border-hover);
-					color: var(--btn-secondary-on-light-stroke-label-hover)
-				}
-
-				&.disabled {
-					border: 1px solid var(--btn-secondary-on-light-stroke-border-disabled);
-					color: var(--btn-secondary-on-light-stroke-label-disabled);
-				}
+				@include set-btn-colors(false,
+					false,
+					false,
+					--btn-secondary-on-light-stroke-border-default,
+					--btn-secondary-on-light-stroke-border-hover,
+					--btn-secondary-on-light-stroke-border-disabled,
+					--btn-secondary-on-light-stroke-label-default,
+					--btn-secondary-on-light-stroke-label-hover,
+					--btn-secondary-on-light-stroke-label-disabled);
 			}
 
 			&.simple,
 			&.text {
-				&:hover {
-					background: var(--btn-secondary-on-light-text-bg-hover);
-					color: var(--btn-secondary-on-light-text-label-hover);
-				}
-
-				&.disabled {
-					background: var(--btn-secondary-on-light-text-bg-disabled);
-					color: var(--btn-secondary-on-light-text-label-disabled);
-				}
+				@include set-btn-colors(false,
+					--btn-secondary-on-light-text-bg-hover,
+					--btn-secondary-on-light-text-bg-disabled,
+					false,
+					false,
+					false,
+					--btn-secondary-on-light-text-label-default,
+					--btn-secondary-on-light-text-label-hover,
+					--btn-secondary-on-light-text-label-disabled);
 			}
 		}
 	}

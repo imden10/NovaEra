@@ -1,3 +1,6 @@
+<?php 
+    $image = wp_get_attachment_image_url($content['image']['id'], 'full');
+?>
 <div class="container">
     <?php if (!empty($content['title'])) : ?>
         <h2><?php echo $content['title']; ?></h2>
@@ -5,7 +8,7 @@
 
     <div class="text-wrapper <?php echo $content['image_position'] ?>">
         <div class="image">
-            <img src="<?php echo wp_get_attachment_image_url($content['image']['id'], 'full'); ?>" alt="">
+            <img src="<?= $image ?>" alt="<?= $image ?>">
         </div>
         <div class="text">
             <div class="redactor">

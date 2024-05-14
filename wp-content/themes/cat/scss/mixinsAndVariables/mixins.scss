@@ -1,0 +1,9 @@
+@mixin set-typography($font-size, $font-weight, $font-color, $line-height, $letter-spacing: normal, $text-transform: none) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $font-color;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+	text-transform: $text-transform;
+  }
+  

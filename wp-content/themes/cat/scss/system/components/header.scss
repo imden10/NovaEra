@@ -16,12 +16,16 @@ header {
 	.menu {
 		list-style: none;
 		display: flex;
+
+		@include _1280 {
+			display: none;
+		}
 	}
 
 	.menu__item {
 		position: relative;
 		display: flex;
-		padding: 8px var(--header-main-nav-item-left-right-padding, 12px);
+		padding: 8px var(-header-main-nav-item-padding-left-right, 12px);
 		align-items: center;
 		grid-gap: var(--header-main-nav-item-gap, 4px);
 		align-self: stretch;
@@ -33,12 +37,9 @@ header {
 	}
 
 	.menu__item__link {
-		color: var(--header-items-on-light-main-nav-label-default);
-		font-size: 16px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: normal;
+		@include set-typography(16px, 500, var(--header-items-on-light-main-nav-label-default), normal);
 		text-decoration: none;
+		padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
 		transition: .3s;
 
 		&:hover {
@@ -57,6 +58,7 @@ header {
 		padding: 10px;
 		border-radius: var(--border-radius-image-m);
 		border: 1px solid var(--brand-1-200);
+		box-shadow: 0px 0px 0px 6px rgba(123, 136, 153, 0.08);
 		background: #FFF;
 		width: 344px;
 
@@ -70,11 +72,7 @@ header {
 
 			h4 {
 				margin-top: 0px;
-				color: var(--header-items-on-light-main-nav-label-default);
-				font-size: 16px;
-				font-style: normal;
-				font-weight: 600;
-				line-height: normal;
+				@include set-typography(16px, 600, var(--header-items-on-light-main-nav-label-default), normal);
 			}
 		}
 
@@ -88,19 +86,11 @@ header {
 			margin-bottom: 21px;
 
 			a {
-				color: var(--header-items-on-light-main-nav-label-default);
-				font-size: 16px;
-				font-style: normal;
-				font-weight: 600;
-				line-height: normal;
+				@include set-typography(16px, 600, var(--header-items-on-light-main-nav-label-default), normal);
 			}
 
 			p {
-				color: var(--text-on-light-bg-lighter-tertiary);
-				font-size: 14px;
-				font-style: normal;
-				font-weight: 400;
-				line-height: normal;
+				@include set-typography(14px, 400, var(--text-on-light-bg-lighter-tertiary), normal);
 				margin-bottom: 0;
 			}
 		}
@@ -144,13 +134,22 @@ header {
 	}
 
 	.lang-switcher {
+		display: flex;
+		align-items: center;
+		padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
+		.icon{
+			margin-right: 4px;
+			font-size: 20px;
+			cursor: pointer;
+			color: #3783E1;
+		}
 		.lang {
-			color: var(--header-items-on-light-main-nav-label-default);
 			text-decoration: none;
-			font-size: 16px;
-			font-style: normal;
-			font-weight: 500;
-			line-height: normal;
+			@include set-typography(16px, 500, var(--header-items-on-light-main-nav-label-default), normal);
+			display: none;
+			&.active{
+				display: block;
+			}
 		}
 	}
 }

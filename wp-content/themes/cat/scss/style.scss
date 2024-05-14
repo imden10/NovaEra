@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import './figma/figma_variables.scss';
-@import './mixinsAndVariables/breakpoints.scss';
 @import './system/common/_container.scss';
 // @import './system/common/_colors.scss';
+// mixins and variables
+@import './mixinsAndVariables/breakpoints.scss';
+@import './mixinsAndVariables/mixins.scss';
 // common
 @import './system/common/_animations.scss';
 @import './system/common/_typography.scss';

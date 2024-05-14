@@ -69,6 +69,7 @@
             <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
             <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
                 <div class="lang-switcher">
+                    <i class="icon ic-lang"></i>
                     <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
                         <a href="<?php echo $locale['url']; ?>" class="lang <?php echo $locale['slug'] == pll_current_language() ? ' active' : ''; ?>">
                             <?php echo strtoupper($locale['slug']); ?>
@@ -76,11 +77,11 @@
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
+            <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
-                <div class="btn fill">Демо версія</div>
-                <div class="btn fill">Реєстрація</div>
+                <div class="btn secondary fill">Демо версія</div>
+                <div class="btn primary fill">Реєстрація</div>
             </div>
         </div>
     </div>
-    <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
 </header>

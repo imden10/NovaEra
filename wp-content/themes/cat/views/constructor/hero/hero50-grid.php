@@ -16,7 +16,7 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
     </div>
 </div> -->
 
-<div class="first-screen on-dark bg-lighter column50">
+<div class="first-screen column50">
     <div class="container">
         <div class="text-column">
             <?php if (!empty($content['title'])) : ?>

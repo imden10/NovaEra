@@ -14,7 +14,7 @@ $imgPosition = $content['image_position']
                 </div>
             <?php endif; ?>
         </div>
-        <div class="cards-wrapper <?= 'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
+        <div class="cards-wrapper card-in-row-2 <?= 'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
             <?php if (isset($content['list'])) : ?>
                 <?php foreach ($content['list'] as $item) : ?>
                     <div class="card">
@@ -35,8 +35,6 @@ $imgPosition = $content['image_position']
                             <div class="description">
                                 <?= $item['description']; ?>
                             </div>
-                            <!-- new fields -->
-
                             <?php if ($item['btn__enable'] == 1) : ?>
                                 <?php
                                 if ($item['btn__type_link'] === "form") {

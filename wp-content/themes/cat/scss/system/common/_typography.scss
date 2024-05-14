@@ -1,71 +1,59 @@
-h1 {
+.tac {
+	text-align: center;
+  }
+  
+  h1 {
 	margin-top: 0;
-}
-
-.redactor {
+  }
+  
+  h2 {
+	@include set-typography(30px, 500, var(--text-on-light-bg-darker-high), 120%, -0.6px);
+  }
+  
+  .redactor {
 	*:first-child {
-		margin-top: 0;
+	  margin-top: 0;
 	}
-
+  
 	*:last-child {
-		margin-bottom: 0;
+	  margin-bottom: 0;
 	}
-
+  
 	h1 {
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 120%;
+	  @include set-typography(24px, 600, inherit, 120%);
 	}
-
+  
 	h2 {
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 140%;
+	  @include set-typography(20px, 600, inherit, 140%);
 	}
-
+  
 	h3 {
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 140%;
+	  @include set-typography(18px, 600, inherit, 140%);
 	}
-
+  
 	h4 {
-		font-size: 16px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 140%;
+	  @include set-typography(16px, 600, inherit, 140%);
 	}
-
+  
 	h5 {
-		font-size: 14px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 140%;
+	  @include set-typography(14px, 600, inherit, 140%);
 	}
-
+  
 	h6 {
-		font-size: 12px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 140%;
+	  @include set-typography(12px, 600, inherit, 140%);
 	}
-
+  
 	p,
 	a {
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 160%;
+	  @include set-typography(16px, 400, inherit, 160%);
 	}
-
+  
 	a {
-		color: var(--text-on-bg-on-default-link);
+	  color: var(--text-on-bg-on-default-link);
 	}
-
+  
 	img {
-		width: 100%;
+	  max-width: 100%;
 	}
-}
+  }
+  
