@@ -38,10 +38,9 @@ function getOption($option, $default = '')
     return get_option($option, $default);
 }
 
-function menuItems($menu)
+function menuItems($menuId)
 {
-    $locations = get_nav_menu_locations();
-    return $locations && isset($locations[$menu]) ? wp_get_nav_menu_items(wp_get_nav_menu_object($locations[$menu])) : [];
+    return wp_get_nav_menu_items(wp_get_nav_menu_object($menuId));
 }
 
 function getTreeMenu($menu)
