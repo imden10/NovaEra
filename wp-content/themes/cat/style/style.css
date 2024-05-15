@@ -2069,7 +2069,7 @@ h2 {
   margin-top: var(--spacing-actions-top-m);
 }
 
-.btn {
+.btn, .cb-component {
   display: inline-flex;
   height: var(--button-medium-btn-height);
   min-width: var(--button-medium-min-width);
@@ -2091,11 +2091,11 @@ h2 {
   cursor: pointer;
   transition: 0.3s;
 }
-.btn i {
+.btn i, .cb-component i {
   pointer-events: none;
   color: inherit;
 }
-.btn.disabled {
+.btn.disabled, .cb-component.disabled {
   pointer-events: none;
 }
 
@@ -2403,6 +2403,42 @@ a:not([class]),
 .on-light .bg-lighter .redactor a {
   color: var(--text-on-light-bg-lighter-link) !important;
 }
+.on-light.bg-gradient,
+.on-light .bg-gradient {
+  background: linear-gradient(80deg, #D9E7FD 0%, #F5F5F3 50.96%, #FFF2C4 100%);
+}
+.on-light.bg-gradient body,
+.on-light .bg-gradient body {
+  color: var(--text-on-light-bg-darker-high);
+}
+.on-light.bg-gradient h1,
+.on-light.bg-gradient h2,
+.on-light.bg-gradient h3,
+.on-light.bg-gradient h4,
+.on-light.bg-gradient h5,
+.on-light.bg-gradient h6,
+.on-light.bg-gradient p,
+.on-light.bg-gradient code,
+.on-light.bg-gradient span,
+.on-light.bg-gradient .redactor > *,
+.on-light .bg-gradient h1,
+.on-light .bg-gradient h2,
+.on-light .bg-gradient h3,
+.on-light .bg-gradient h4,
+.on-light .bg-gradient h5,
+.on-light .bg-gradient h6,
+.on-light .bg-gradient p,
+.on-light .bg-gradient code,
+.on-light .bg-gradient span,
+.on-light .bg-gradient .redactor > * {
+  color: var(--text-on-light-bg-darker-high) !important;
+}
+.on-light.bg-gradient a:not([class]),
+.on-light.bg-gradient .redactor a,
+.on-light .bg-gradient a:not([class]),
+.on-light .bg-gradient .redactor a {
+  color: var(--text-on-light-bg-darker-link) !important;
+}
 .on-light.bg-darker, .on-light .bg-darker {
   background: var(--bg-on-light-darker);
 }
@@ -2652,6 +2688,20 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
+}
+
+[class^=ic-], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "nova-era" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -2967,6 +3017,11 @@ footer .footer__bottom ul {
 .image-and-text .text-wrapper.top .text,
 .image-and-text .text-wrapper.top .image {
   width: 100%;
+}
+.image-and-text .btns-container {
+  display: inline-flex;
+  flex-direction: column;
+  grid-gap: 8px;
 }
 
 .accordion .accordion-title {
@@ -3356,4 +3411,16 @@ footer .footer__bottom ul {
   line-height: 160%;
   letter-spacing: normal;
   text-transform: none;
+}
+
+.text-with-background .container {
+  display: flex;
+  justify-content: center;
+}
+.text-with-background .content {
+  max-width: 768px;
+  text-align: center;
+}
+.text-with-background .content h2 {
+  padding-bottom: var(--spacing-page-headline-h2-bottom);
 }

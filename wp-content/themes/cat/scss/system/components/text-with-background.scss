@@ -1,0 +1,16 @@
+.text-with-background {
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.content {
+		max-width: 768px;
+		text-align: center;
+
+		h2 {
+			padding-bottom: var(--spacing-page-headline-h2-bottom);
+		}
+	}
+
+}

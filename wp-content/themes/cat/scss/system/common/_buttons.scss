@@ -2,7 +2,7 @@
 	margin-top: var(--spacing-actions-top-m);
 }
 
-.btn {
+.btn, .cb-component {
 	display: inline-flex;
 	height: var(--button-medium-btn-height);
 	min-width: var(--button-medium-min-width);

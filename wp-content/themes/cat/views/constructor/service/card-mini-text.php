@@ -20,7 +20,6 @@ $imgPosition = $content['image_position']
                     <div class="card">
                         <?php if ($imgPosition == 'top') : ?>
                             <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
-
                         <?php endif ?>
 
                         <div class="card-info">
@@ -41,7 +40,7 @@ $imgPosition = $content['image_position']
                                     $formData = \App\Models\Form::getData($item['btn__form_id']);
                                 }
 
-                                print_r($item);
+                                // print_r($item);
                                 // print_r($formData);
                                 ?>
 

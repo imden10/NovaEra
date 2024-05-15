@@ -37,6 +37,13 @@
 		@include setColors(--text-on-light-bg-lighter-high, --text-on-light-bg-lighter-link)
 	}
 
+	&.bg-gradient,
+	.bg-gradient {
+		@include setColors(--text-on-light-bg-darker-high, --text-on-light-bg-darker-link);
+		background: linear-gradient(80deg, #D9E7FD 0%, #F5F5F3 50.96%, #FFF2C4 100%);
+	}
+
+
 	&.bg-darker, .bg-darker {
 		@include setBgColor(--bg-on-light-darker);
 		@include setColors(--text-on-light-bg-darker-high, --text-on-light-bg-darker-link)
