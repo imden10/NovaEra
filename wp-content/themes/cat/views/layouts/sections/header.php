@@ -3,10 +3,10 @@
 
         <img class="logo" src="https://placehold.co/140x36" alt="logo"></img>
         <!--------------------------------- MENU -------------------------------------------------------------------------->
-        <?php if (!empty(getTreeMenu('main_menu'))) : ?>
+        <?php if (!empty(getTreeMenu(23))) : ?>
             <nav>
                 <ul class="menu">
-                    <?php foreach (getTreeMenu('main_menu') as $item) : ?>
+                    <?php foreach (getTreeMenu(23) as $item) : ?>
                         <li class="menu__item">
                             <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title . ' - ' . $item->is_custom_menu; ?></a>
 
