@@ -29,7 +29,7 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                             </div>
                         <?php else : ?>
                             <a href="<?= $item['link'] ?>" class="hero-card-link"><?= $item['title'] ?>
-                                <i class="<?= $item['icon'] ?>"><?= $item['icon'] ?></i>
+                                <i class="icon <?= $item['icon'] ?>"></i>
                             </a>
                         <?php endif; ?>
 

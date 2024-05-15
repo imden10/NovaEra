@@ -161,6 +161,7 @@ class Constructor extends BaseMetaBox
             'transparent'  => 'Без фону',
             'on-light' => 'Пресети світлі',
             'on-dark'  => 'Пресети темні',
+            'gradient'  => 'Градієнт',
             'image' => 'Зображення',
         ];
 

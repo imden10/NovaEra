@@ -15,11 +15,12 @@
 <?php if(isset($btns) && is_array($btns) && count($btns)):?>
 <div class="btns-container">
     <?php foreach ($btns as $btn):?>
-        <div class="btn primary <?= $btn['type']?> <?php if($btn['type_link'] == 'form'):?> render-form-btn <?php endif;?>"
+        <?php print_r($btn) ?>
+        <a href="<?php $btn['link'] ?>" class="btn <?= $btn['color'] ?> <?= $btn['size'] ?> <?= $btn['type']?> <?php if($btn['type_link'] == 'form'):?> render-form-btn <?php endif;?>"
         <?php if($btn['type_link'] == 'form'):?> data-form_id="<?= $btn['form_id'] ?>" <?php endif;?>
         >
-            <?= $btn['text']?><i class="<?= $btn['icon']?>"></i>
-        </div>
+            <?= $btn['text']?><i class="icon <?= $btn['icon']?>"></i>
+        </a>
     <?php endforeach;?>
 </div>
 <?php endif;?>

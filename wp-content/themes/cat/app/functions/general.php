@@ -98,9 +98,12 @@ function buildContentFromConstructorArray($post_type, $data = [])
 
             $file = app('path.views') . '/constructor/' . $post_type . '/' . $component_file_name . '.php';
             if (file_exists($file)) {
-                if ($content['background_type'] !== 'image') {
+                if ($content['background_type'] !== 'image' && $content['background_type'] !== 'gradient') {
                     echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content[$content['background_type']]}'>";
-                } else {
+                } elseif ($content['background_type'] === 'gradient') {
+                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-light bg-gradient'>";
+                }
+                else {
                     echo "<section style='background-image: url(" . wp_get_attachment_image_url($content['background_type_image']['id'], 'full') . ")' class='$component_file_name mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-img'>";
                 }
                 require $file;
