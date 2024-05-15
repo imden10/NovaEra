@@ -7,7 +7,8 @@ Version: 1.0
 
 // Enqueue scripts and styles
 function icon_select_enqueue_assets() {
-    wp_enqueue_style('plugin-style', 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css');
+    $plugin_url = plugins_url( 'assets/style.css', __FILE__ );
+    wp_enqueue_style( 'plugin-style', $plugin_url);
 }
 add_action('admin_enqueue_scripts', 'icon_select_enqueue_assets');
 
