@@ -266,18 +266,22 @@ class Constructor extends BaseMetaBox
                         <div class="card border-success">
                             <div class="card-body">
                                 <div class="mb-3">
+                                    <label>Текст на кнопці</label>
                                     <input type="text" class="form-control form-control-sm" name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][text]" placeholder="<?php _e('Текст '); ?>">
                                 </div>
                                 <div class="mb-3">
+                                    <label>Тип дії</label>
                                     <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][type_link]" class="form-control form-control-sm type_link">
                                         <option value="link">Довільне посилання</option>
                                         <option value="form">Форма</option>
                                     </select>
                                 </div>
                                 <div class="mb-3 type_link_link">
+                                    <label>Посилання</label>
                                     <input type="text" class="form-control form-control-sm" name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][link]" placeholder="<?php _e('Посилання '); ?>">
                                 </div>
                                 <div class="mb-3 type_link_form" style="display: none">
+                                    <label>Форма</label>
                                     <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][form_id]" class="form-control form-control-sm">
                                         <?php foreach ($formsList as $formListKey => $formList) : ?>
                                             <option value="<?= $formListKey ?>"><?= $formList ?></option>
@@ -285,6 +289,23 @@ class Constructor extends BaseMetaBox
                                     </select>
                                 </div>
                                 <div class="mb-3">
+                                    <label>Колір</label>
+                                    <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][color]" class="form-control form-control-sm">
+                                        <?php foreach (config('buttons')['color'] as $listKey => $listItem) : ?>
+                                            <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Розмір</label>
+                                    <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][size]" class="form-control form-control-sm">
+                                        <?php foreach (config('buttons')['size'] as $listKey => $listItem) : ?>
+                                            <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Тип кнопки</label>
                                     <select name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][type]" class="form-control form-control-sm">
                                         <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
                                             <option value="<?= $listKey ?>"><?= $listItem ?></option>
@@ -306,20 +327,24 @@ class Constructor extends BaseMetaBox
                             <div class="card border-success">
                                 <div class="card-body">
                                     <div class="mb-3">
+                                        <label>Текст на кнопці</label>
                                         <input type="text" class="form-control form-control-sm" name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][text]" value="<?= esc_attr($value['text']); ?>" placeholder="<?php _e('Текст '); ?>">
                                     </div>
                                     <div class="mb-3">
                                         <?php $type_link = $value['type_link'] ?? ''; ?>
+                                        <label>Тип дії</label>
                                         <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][type_link]" class="form-control form-control-sm type_link">
                                             <option value="link" <?php if ($type_link == 'link') echo "selected"; ?>>Довільне посилання</option>
                                             <option value="form" <?php if ($type_link == 'form') echo "selected"; ?>>Форма</option>
                                         </select>
                                     </div>
                                     <div class="mb-3 type_link_link" style="<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>">
+                                        <label>Посилання</label>
                                         <input type="text" class="form-control form-control-sm" name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][link]" placeholder="<?php _e('Посилання '); ?>" value="<?= esc_attr($value['link']); ?>">
                                     </div>
                                     <?php $form_id = $value['form_id'] ?? ''; ?>
                                     <div class="mb-3 type_link_form" style="<?php if ($type_link != 'form') : ?> display: none <?php endif; ?>">
+                                        <label>Форма</label>
                                         <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][form_id]" class="form-control form-control-sm">
                                             <?php foreach ($formsList as $formListKey => $formList) : ?>
                                                 <option value="<?= $formListKey ?>" <?php if ($form_id == $formListKey) echo "selected"; ?>><?= $formList ?></option>
@@ -327,7 +352,26 @@ class Constructor extends BaseMetaBox
                                         </select>
                                     </div>
                                     <div class="mb-3">
+                                        <?php $color = $value['color'] ?? ''; ?>
+                                        <label>Колір</label>
+                                        <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][color]" class="form-control form-control-sm">
+                                            <?php foreach (config('buttons')['color'] as $listKey => $listItem) : ?>
+                                                <option value="<?= $listKey ?>" <?php if ($color == $listKey) echo "selected"; ?>><?= $listItem ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <?php $size = $value['size'] ?? ''; ?>
+                                        <label>Розмір</label>
+                                        <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][size]" class="form-control form-control-sm">
+                                            <?php foreach (config('buttons')['size'] as $listKey => $listItem) : ?>
+                                                <option value="<?= $listKey ?>" <?php if ($size == $listKey) echo "selected"; ?>><?= $listItem ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
                                         <?php $type = $value['type'] ?? ''; ?>
+                                        <label>Тип кнопки</label>
                                         <select name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][type]" class="form-control form-control-sm">
                                             <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
                                                 <option value="<?= $listKey ?>" <?php if ($type == $listKey) echo "selected"; ?>><?= $listItem ?></option>

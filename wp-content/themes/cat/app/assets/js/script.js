@@ -536,6 +536,8 @@ const cb = function (callback) {
             type_link:$(".cb-input-type_link").val(),
             link:$(".cb-input-link").val(),
             form:$(".cb-input-form").val(),
+            color_button:$(".cb-input-color_button").val(),
+            size_button:$(".cb-input-size_button").val(),
             type_button:$(".cb-input-type_button").val(),
             icon:$(".cb-input-icon-wrapper").find("select").val(),
         };
@@ -556,6 +558,9 @@ const cb = function (callback) {
             a.className += " render-form-btn";
             a.setAttribute('data-form_id',data.form);
         }
+
+        a.className += " btn-color--" + data.color_button;
+        a.className += " btn-size--" + data.size_button;
 
         callback(a);
         $(".cb-input-link").val('');

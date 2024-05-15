@@ -43,6 +43,24 @@ $formsList = Form::getList();
                 </div>
 
                 <div class="form-group note-form-group">
+                    <label class="note-form-label">Колір</label>
+                    <select class="form-control form-control-sm cb-input-color_button">
+                        <?php foreach (config('buttons')['color'] as $listKey => $listItem) : ?>
+                            <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="form-group note-form-group">
+                    <label class="note-form-label">Розмір</label>
+                    <select class="form-control form-control-sm cb-input-size_button">
+                        <?php foreach (config('buttons')['size'] as $listKey => $listItem) : ?>
+                            <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="form-group note-form-group">
                     <label class="note-form-label">Тип кнопки</label>
                     <select class="form-control form-control-sm cb-input-type_button">
                         <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
