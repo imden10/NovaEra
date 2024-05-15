@@ -41,6 +41,12 @@ class BlockSlider
                                     </div>
                                     <div class="col-9">
                                         <div class="mb-3">
+                                            <input type="text" class="form-control form-control-sm"
+                                                   name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][title]"
+                                                   placeholder="<?php _e('Заголовок'); ?>"
+                                            >
+                                        </div>
+                                        <div class="mb-3">
                                             <textarea id="component_<?= uniqid(time()) ?>"
                                               name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][text]"
                                               class="ck-editor"></textarea>
@@ -70,6 +76,13 @@ class BlockSlider
                                             <?= media_preview_box($list['name'] . "[" . $id . "][image]",esc_attr($value['image'])); ?>
                                         </div>
                                         <div class="col-9">
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control form-control-sm"
+                                                       name="<?php echo $list['name']; ?>[<?php echo $id; ?>][title]"
+                                                       value="<?= esc_attr($value['title']); ?>"
+                                                       placeholder="<?php _e('Заголовок '); ?>"
+                                                >
+                                            </div>
                                             <div class="mb-3">
                                                 <textarea id="component_<?= uniqid(time()) ?>" name="<?= $list['name']; ?>[<?php echo $id; ?>][text]" class="ck-editor-ready"><?= esc_attr($value['text']); ?></textarea>
                                             </div>

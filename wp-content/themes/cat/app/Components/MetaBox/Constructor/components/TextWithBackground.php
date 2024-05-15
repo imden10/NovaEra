@@ -4,7 +4,7 @@ namespace App\Components\MetaBox\Constructor\components;
 
 class TextWithBackground
 {
-    public $name = 'Текст на фоні';
+    public $name = 'СТА';
 
     protected static $defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABlBMVEUAAAC7u7s37rVJAAAAAXRSTlMAQObYZgAAACJJREFUOMtjGAV0BvL/G0YMr/4/CDwY0rzBFJ704o0CWgMAvyaRh+c6m54AAAAASUVORK5CYII=';
 

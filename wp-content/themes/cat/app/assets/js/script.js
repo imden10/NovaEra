@@ -586,6 +586,19 @@ const CustomButton = function (context) {
     return button.render();
 };
 
+const MoreButton = function (context) {
+    const ui = $.summernote.ui;
+    const button = ui.button({
+        contents: 'Читати далі',
+        tooltip: 'Читати далі',
+        click: function () {
+            context.invoke('editor.pasteHTML', '<span class="hideMarker" style="color:red">сховати весь текст внизу</span>');
+        }
+    });
+
+    return button.render();
+};
+
 summernote_options = {
     lang: 'uk-UA',
     height: 250,
@@ -606,9 +619,10 @@ summernote_options = {
         ['insert', ['link', 'hr']],
         ['view', ['fullscreen', 'codeview']],
         ['typography', ['typography']],
-        ['popovers', ['cb']]
+        ['popovers', ['cb','rdm']]
     ],
     buttons: {
-        cb: CustomButton
+        cb: CustomButton,
+        rdm: MoreButton
     },
 };
