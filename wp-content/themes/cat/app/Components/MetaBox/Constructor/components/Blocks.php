@@ -260,23 +260,41 @@ class Blocks
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <label style="margin-bottom: 10px">Використовувати кнопку</label>
-                                        <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__enable]" class="form-control form-control-sm">
+                                        <label>Використовувати кнопку</label>
+                                        <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__enable]" class="form-control form-control-sm">
                                             <option value="0">Ні</option>
                                             <option value="1">Так</option>
                                         </select>
-                                        <input type="text" placeholder="Текст" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__text]" disabled="disabled">
-                                        <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__type_link]" class="form-control form-control-sm type_link">
+                                        <label>Текст на кнопці</label>
+                                        <input type="text" style="margin: 5px 0 15px 0" placeholder="Текст" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__text]" disabled="disabled">
+                                        <label>Тип дії</label>
+                                        <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__type_link]" class="form-control form-control-sm type_link">
                                             <option value="link">Довільне посилання</option>
                                             <option value="form">Форма</option>
                                         </select>
-                                        <input type="text" placeholder="Посилання" class="form-control form-control-sm type_link_link" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__link]" disabled="disabled">
-                                        <select style="margin-top: 10px; display: none" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__form_id]" class="form-control form-control-sm type_link_form">
+                                        <input type="text" style="margin: 5px 0 15px 0" placeholder="Посилання" class="form-control form-control-sm type_link_link" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__link]" disabled="disabled">
+                                        <select style="margin: 5px 0 15px 0; display: none" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__form_id]" class="form-control form-control-sm type_link_form">
                                             <?php foreach ($formsList as $formListKey => $formList) : ?>
                                                 <option value="<?= $formListKey ?>"><?= $formList ?></option>
                                             <?php endforeach; ?>
                                         </select>
-                                        <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__type]" class="form-control form-control-sm">
+
+                                        <label>Колір</label>
+                                        <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__color]" class="form-control form-control-sm">
+                                            <?php foreach (config('buttons')['color'] as $listKey => $listItem) : ?>
+                                                <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+
+                                        <label>Розмір</label>
+                                        <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__size]" class="form-control form-control-sm">
+                                            <?php foreach (config('buttons')['size'] as $listKey => $listItem) : ?>
+                                                <option value="<?= $listKey ?>"><?= $listItem ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+
+                                        <label>Тип кнопки</label>
+                                        <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__type]" class="form-control form-control-sm">
                                             <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
                                                 <option value="<?= $listKey ?>"><?= $listItem ?></option>
                                             <?php endforeach; ?>
@@ -333,15 +351,17 @@ class Blocks
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <label style="margin-bottom: 10px">Використовувати кнопку</label>
+                                            <label style="margin: 5px 0 15px 0">Використовувати кнопку</label>
                                             <?php $btn_enable = $value['btn__enable'] ?? '0'; ?>
-                                            <select style="margin: 10px 0" name="<?= $list['name']; ?>[<?php echo $id; ?>][btn__enable]" class="form-control form-control-sm">
+                                            <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo $id; ?>][btn__enable]" class="form-control form-control-sm">
                                                 <option value="0" <?php if ($btn_enable == '0') echo "selected"; ?>>Ні</option>
                                                 <option value="1" <?php if ($btn_enable == '1') echo "selected"; ?>>Так</option>
                                             </select>
-                                            <input type="text" placeholder="Текст" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__text]" value="<?= esc_attr($value['btn__text']); ?>">
+                                            <label>Текст на кнопці</label>
+                                            <input style="margin: 5px 0 15px 0" type="text" placeholder="Текст" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__text]" value="<?= esc_attr($value['btn__text']); ?>">
                                             <?php $type_link = $value['btn__type_link'] ?? ''; ?>
-                                            <select style="margin: 10px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__type_link]" class="form-control form-control-sm type_link">
+                                            <label>Тип дії</label>
+                                            <select style="margin:5px 0 15px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__type_link]" class="form-control form-control-sm type_link">
                                                 <option value="link" <?php if ($type_link == 'link') echo "selected"; ?>>Довільне посилання</option>
                                                 <option value="form" <?php if ($type_link == 'form') echo "selected"; ?>>Форма</option>
                                             </select>
@@ -349,20 +369,38 @@ class Blocks
                                                    placeholder="Посилання"
                                                    class="form-control form-control-sm type_link_link"
                                                    name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__link]"
-                                                   style="<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>"
+                                                   style="margin:5px 0 15px 0;<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>"
                                                    value="<?= esc_attr($value['btn__link']); ?>">
                                             <?php $form_id = $value['btn__form_id'] ?? ''; ?>
                                             <select
                                                     name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__form_id]"
                                                     class="form-control form-control-sm type_link_form"
-                                                    style="<?php if ($type_link != 'form') : ?> display: none <?php endif; ?>"
+                                                    style="margin:5px 0 15px 0;<?php if ($type_link != 'form') : ?> display: none <?php endif; ?>"
                                             >
                                                 <?php foreach ($formsList as $formListKey => $formList) : ?>
                                                     <option value="<?= $formListKey ?>" <?php if ($form_id == $formListKey) echo "selected"; ?>><?= $formList ?></option>
                                                 <?php endforeach; ?>
                                             </select>
+
+                                            <?php $btn__color = $value['btn__color'] ?? ''; ?>
+                                            <label>Колір</label>
+                                            <select style="margin:5px 0 15px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__color]" class="form-control form-control-sm">
+                                                <?php foreach (config('buttons')['color'] as $listKey => $listItem) : ?>
+                                                    <option value="<?= $listKey ?>" <?php if ($btn__color == $listKey) echo "selected"; ?>><?= $listItem ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+
+                                            <?php $btn__size = $value['btn__size'] ?? ''; ?>
+                                            <label>Розмір</label>
+                                            <select style="margin:5px 0 15px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__size]" class="form-control form-control-sm">
+                                                <?php foreach (config('buttons')['size'] as $listKey => $listItem) : ?>
+                                                    <option value="<?= $listKey ?>" <?php if ($btn__size == $listKey) echo "selected"; ?>><?= $listItem ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+
                                             <?php $btn__type = $value['btn__type'] ?? ''; ?>
-                                            <select style="margin: 10px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__type]" class="form-control form-control-sm">
+                                            <label>Тип кнопки</label>
+                                            <select style="margin:5px 0 15px 0" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__type]" class="form-control form-control-sm">
                                                 <?php foreach (config('buttons')['type'] as $listKey => $listItem) : ?>
                                                     <option value="<?= $listKey ?>" <?php if ($btn__type == $listKey) echo "selected"; ?>><?= $listItem ?></option>
                                                 <?php endforeach; ?>
