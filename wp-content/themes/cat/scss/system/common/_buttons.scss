@@ -2,27 +2,19 @@
 	margin-top: var(--spacing-actions-top-m);
 }
 
-.btn, .cb-component {
+.btn,
+.cb-component {
 	display: inline-flex;
-	height: var(--button-medium-btn-height);
 	min-width: var(--button-medium-min-width);
-	padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
 	justify-content: center;
 	align-items: center;
 	gap: var(--button-medium-btn-gap);
-	flex-shrink: 0;
 	border-radius: var(--button-medium-btn-radius);
 	text-align: center;
-	leading-trim: both;
-	text-edge: cap;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 100%;
-	letter-spacing: 1.68px;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 	cursor: pointer;
 	transition: .3s;
+	text-decoration: none;
 
 	i {
 		pointer-events: none;
@@ -31,6 +23,16 @@
 
 	&.disabled {
 		pointer-events: none;
+	}
+	&.lg{
+		@include set-typography(16px, 400, false, 100%);
+		height: var(--button-medium-btn-height);
+		padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
+	}
+	&.sm {
+		@include set-typography(15px, 400, false, 100%, 0.3px);
+		height: var(--button-small-btn-height);
+		padding: var(--button-small-top-bottom) var(--button-small-left-right);
 	}
 }
 
@@ -100,7 +102,7 @@
 
 			&.simple,
 			&.text {
-				@include set-btn-colors(false, // У text нет фона
+				@include set-btn-colors(trasparent, // У text нет фона
 					--btn-primary-on-dark-text-bg-hover,
 					--btn-primary-on-dark-text-bg-disabled,
 					false,
@@ -152,6 +154,7 @@
 		}
 	}
 }
+
 .on-light {
 	.btn {
 		&.primary {
@@ -181,7 +184,7 @@
 
 			&.simple,
 			&.text {
-				@include set-btn-colors(false, // У text нет фона
+				@include set-btn-colors(trasparent, // У text нет фона
 					--btn-primary-on-light-text-bg-hover,
 					--btn-primary-on-light-text-bg-disabled,
 					false, // У text нет границы

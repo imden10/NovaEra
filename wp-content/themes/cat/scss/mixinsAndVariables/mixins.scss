@@ -1,9 +1,25 @@
-@mixin set-typography($font-size, $font-weight, $font-color, $line-height, $letter-spacing: normal, $text-transform: none) {
-	font-size: $font-size;
-	font-weight: $font-weight;
-	color: $font-color;
-	line-height: $line-height;
-	letter-spacing: $letter-spacing;
-	text-transform: $text-transform;
-  }
-  
+@mixin set-typography($font-size, $font-weight, $font-color, $line-height, $letter-spacing: false, $text-transform: false) {
+	@if $font-size !=false {
+		font-size: $font-size;
+	}
+
+	@if $font-weight !=false {
+		font-weight: $font-weight;
+	}
+
+	@if $font-color !=false {
+		color: $font-color;
+	}
+
+	@if $line-height !=false {
+		line-height: $line-height;
+	}
+
+	@if $letter-spacing !=false {
+		letter-spacing: $letter-spacing;
+	}
+
+	@if $text-transform !=false {
+		text-transform: $text-transform;
+	}
+}

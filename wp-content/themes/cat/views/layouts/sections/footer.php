@@ -1,9 +1,9 @@
 <footer>
     <div class="container">
         <div class="footer__menu">
-        <?php foreach (getTreeMenu(223) as $item) : ?>
-            
-            <?php endforeach ?>
+        <!-- <?php foreach (getTreeMenu(225) as $item) : ?> -->
+            <!-- <?php print_r($item) ?> -->
+            <!-- <?php endforeach ?> -->
             <div class="menu__item">
                 <a href="#" class="menu__title">
                     Розділи обліку (Заголовок)

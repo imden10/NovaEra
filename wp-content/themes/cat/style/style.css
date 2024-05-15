@@ -1992,7 +1992,6 @@ h2 {
   color: var(--text-on-light-bg-darker-high);
   line-height: 120%;
   letter-spacing: -0.6px;
-  text-transform: none;
 }
 
 .redactor *:first-child {
@@ -2006,48 +2005,36 @@ h2 {
   font-weight: 600;
   color: inherit;
   line-height: 120%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor h2 {
   font-size: 20px;
   font-weight: 600;
   color: inherit;
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor h3 {
   font-size: 18px;
   font-weight: 600;
   color: inherit;
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor h4 {
   font-size: 16px;
   font-weight: 600;
   color: inherit;
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor h5 {
   font-size: 14px;
   font-weight: 600;
   color: inherit;
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor h6 {
   font-size: 12px;
   font-weight: 600;
   color: inherit;
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor p,
 .redactor a {
@@ -2055,8 +2042,6 @@ h2 {
   font-weight: 400;
   color: inherit;
   line-height: 160%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .redactor a {
   color: var(--text-on-bg-on-default-link);
@@ -2069,34 +2054,44 @@ h2 {
   margin-top: var(--spacing-actions-top-m);
 }
 
-.btn, .cb-component {
+.btn,
+.cb-component {
   display: inline-flex;
-  height: var(--button-medium-btn-height);
   min-width: var(--button-medium-min-width);
-  padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
   justify-content: center;
   align-items: center;
   gap: var(--button-medium-btn-gap);
-  flex-shrink: 0;
   border-radius: var(--button-medium-btn-radius);
   text-align: center;
-  leading-trim: both;
-  text-edge: cap;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: 1.68px;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
 }
-.btn i, .cb-component i {
+.btn i,
+.cb-component i {
   pointer-events: none;
   color: inherit;
 }
-.btn.disabled, .cb-component.disabled {
+.btn.disabled,
+.cb-component.disabled {
   pointer-events: none;
+}
+.btn.lg,
+.cb-component.lg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  height: var(--button-medium-btn-height);
+  padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
+}
+.btn.sm,
+.cb-component.sm {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.3px;
+  height: var(--button-small-btn-height);
+  padding: var(--button-small-top-bottom) var(--button-small-left-right);
 }
 
 .on-dark .btn.primary.fill {
@@ -2125,12 +2120,15 @@ h2 {
 }
 .on-dark .btn.primary.simple, .on-dark .btn.primary.text {
   color: var(--btn-primary-on-dark-text-label-default);
+  background: var(trasparent);
 }
 .on-dark .btn.primary.simple:hover, .on-dark .btn.primary.text:hover {
   color: var(--btn-primary-on-dark-text-label-hover);
+  background: var(--btn-primary-on-dark-text-bg-hover);
 }
 .on-dark .btn.primary.simple.disabled, .on-dark .btn.primary.text.disabled {
   color: var(--btn-primary-on-dark-text-label-hover);
+  background: var(--btn-primary-on-dark-text-bg-disabled);
 }
 .on-dark .btn.secondary.fill {
   color: var(--btn-secondary-on-dark-fill-label-default);
@@ -2192,12 +2190,15 @@ h2 {
 }
 .on-light .btn.primary.simple, .on-light .btn.primary.text {
   color: var(--btn-primary-on-light-text-label-default);
+  background: var(trasparent);
 }
 .on-light .btn.primary.simple:hover, .on-light .btn.primary.text:hover {
   color: var(--btn-primary-on-light-text-label-hover);
+  background: var(--btn-primary-on-light-text-bg-hover);
 }
 .on-light .btn.primary.simple.disabled, .on-light .btn.primary.text.disabled {
   color: var(--btn-primary-on-light-text-label-hover);
+  background: var(--btn-primary-on-light-text-bg-disabled);
 }
 .on-light .btn.secondary.fill {
   color: var(--btn-secondary-on-light-fill-label-default);
@@ -2745,8 +2746,6 @@ header .menu__item__link {
   font-weight: 500;
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
-  letter-spacing: normal;
-  text-transform: none;
   text-decoration: none;
   padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
   transition: 0.3s;
@@ -2781,8 +2780,6 @@ header .submenu .list-wrapper h4 {
   font-weight: 600;
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
-  letter-spacing: normal;
-  text-transform: none;
 }
 header .submenu.double-column {
   width: 688px;
@@ -2797,16 +2794,12 @@ header .submenu .submenu__item a {
   font-weight: 600;
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
-  letter-spacing: normal;
-  text-transform: none;
 }
 header .submenu .submenu__item p {
   font-size: 14px;
   font-weight: 400;
   color: var(--text-on-light-bg-lighter-tertiary);
   line-height: normal;
-  letter-spacing: normal;
-  text-transform: none;
   margin-bottom: 0;
 }
 header .sub2menu {
@@ -2855,8 +2848,6 @@ header .lang-switcher .lang {
   font-weight: 500;
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
-  letter-spacing: normal;
-  text-transform: none;
   display: none;
 }
 header .lang-switcher .lang.active {
@@ -3343,8 +3334,6 @@ footer .footer__bottom ul {
   font-weight: 400;
   color: var(--text-on-light-bg-darker-high);
   line-height: 160%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .card-mini-text .card .btn,
 .blocks .card .btn {
@@ -3360,16 +3349,12 @@ footer .footer__bottom ul {
   font-weight: 500;
   color: var(--card-on-light-bg-lighter-title-default);
   line-height: 120%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .blocks .card .card-link {
   font-size: 24px;
   font-weight: 400;
   color: var(--card-on-light-bg-darker-price);
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
   overflow: hidden;
   text-decoration: none;
 }
@@ -3392,8 +3377,6 @@ footer .footer__bottom ul {
   font-weight: 600;
   color: var(--card-on-light-bg-lighter-title-default);
   line-height: 140%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 .card-mini-text .card-info {
   padding: var(--cards-item-wrap-padding-s);
@@ -3409,8 +3392,6 @@ footer .footer__bottom ul {
   font-weight: 400;
   color: var(--text-on-light-bg-lighter-high);
   line-height: 160%;
-  letter-spacing: normal;
-  text-transform: none;
 }
 
 .text-with-background .container {
