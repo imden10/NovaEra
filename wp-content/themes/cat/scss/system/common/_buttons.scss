@@ -75,7 +75,7 @@
 
 .on-dark {
 	.btn {
-		&.primary {
+		&.primary, &.btn-color--primary{
 			&.fill {
 				@include set-btn-colors(--btn-primary-on-dark-fill-bg-default,
 					--btn-primary-on-dark-fill-bg-hover,
@@ -114,7 +114,7 @@
 			}
 		}
 
-		&.secondary {
+		&.secondary, &.btn-color--secondary {
 			&.fill {
 				@include set-btn-colors(--btn-secondary-on-dark-fill-bg-default,
 					--btn-secondary-on-dark-fill-bg-hover,
@@ -157,7 +157,7 @@
 
 .on-light {
 	.btn {
-		&.primary {
+		&.primary, &.btn-color--primary {
 			&.fill {
 				@include set-btn-colors(--btn-primary-on-light-fill-bg-default,
 					--btn-primary-on-light-fill-bg-hover,
@@ -196,7 +196,7 @@
 			}
 		}
 
-		&.secondary {
+		&.secondary, &.btn-color--secondary {
 			&.fill {
 				@include set-btn-colors(--btn-secondary-on-light-fill-bg-default,
 					--btn-secondary-on-light-fill-bg-hover,

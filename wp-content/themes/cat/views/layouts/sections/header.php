@@ -67,7 +67,7 @@
 
         <div class="actions">
             <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
-            <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
+            <!-- <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
                 <div class="lang-switcher">
                     <i class="icon ic-lang"></i>
                     <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
@@ -76,7 +76,31 @@
                         </a>
                     <?php endforeach; ?>
                 </div>
+            <?php endif; ?> -->
+            <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
+                <div class="lang-switcher">
+                    <?php $current_language = pll_current_language(); ?>
+                    <div class="selected-lang">
+                        <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
+                            <?php if ($locale['slug'] == $current_language) : ?>
+                                <div class="lang">
+                                <i class="icon ic-lang"></i> <?php echo strtoupper($locale['slug']); ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="other-langs">
+                        <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
+                            <?php if ($locale['slug'] != $current_language) : ?>
+                                <a href="<?php echo $locale['url']; ?>" class="lang">
+                                    <?php echo strtoupper($locale['slug']); ?>
+                                </a>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             <?php endif; ?>
+
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
                 <div class="btn lg secondary fill">Демо версія</div>

@@ -14,7 +14,8 @@
             <div class="redactor">
                 <?php echo $content['text']; ?>
                 <?php if (isset($content['link']) && !empty($content['link'])) : ?>
-                    <a href="<?php echo $content['link']; ?>" class="constrlnk"><?php echo trans('Переход'); ?> <img src="<?php echo appConfig('theme_url'); ?>/img/arrow_right.svg" alt=""></a>
+                    <!-- <img src="<?php echo appConfig('theme_url'); ?>/img/arrow_right.svg" alt=""> -->
+                    <a href="<?php echo $content['link']; ?>" class="constrlnk"><?php echo trans('Переход'); ?></a>
                 <?php endif; ?>
             </div>
         </div>
