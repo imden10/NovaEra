@@ -96,7 +96,7 @@
 				grid-template-columns: repeat(3, 1fr);
 			}
 
-			.hero-card {
+			.hero-card:not(.hero-card-img) {
 				background-color: #fff;
 				border-radius: var(--border-radius-global-m, 12px);
 				background: var(--bg-on-light-lighter, #FFF);
