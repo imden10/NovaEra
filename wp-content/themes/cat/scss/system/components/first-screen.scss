@@ -78,7 +78,7 @@
 
 		// background-color: gray;
 		.cards {
-			
+
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-gap: 8px;
@@ -86,17 +86,20 @@
 			@include _1280 {
 				grid-template-columns: repeat(3, 1fr);
 			}
+
 			@include _1024 {
 				grid-template-columns: repeat(5, 1fr);
 			}
+
 			@include _768 {
 				grid-template-columns: repeat(4, 1fr);
 			}
+
 			@include _576 {
 				grid-template-columns: repeat(3, 1fr);
 			}
 
-			.hero-card:not(.hero-card-img) {
+			.hero-card {
 				background-color: #fff;
 				border-radius: var(--border-radius-global-m, 12px);
 				background: var(--bg-on-light-lighter, #FFF);
@@ -126,21 +129,24 @@
 					}
 				}
 
-				&.hero-card-img {
-					display: grid;
-					grid-column: 3 / span 2;
+			}
 
-					@include _1280 {
-						order: 1;
-						grid-column: 2 / span 2;
-					}
-					@include _1280 {
-						order: 10;
-						grid-column: 1 / -1;
-					}
-					@include _768 {
-						order: 0
-					}
+			.hero-card-img {
+				display: grid;
+				grid-column: 3 / span 2;
+
+				@include _1280 {
+					order: 1;
+					grid-column: 2 / span 2;
+				}
+
+				@include _1280 {
+					order: 10;
+					grid-column: 1 / -1;
+				}
+
+				@include _768 {
+					order: 0
 				}
 			}
 		}
@@ -184,7 +190,7 @@
 }
 
 @for $i from 1 through 10 {
-    .hero-card:nth-child(#{$i}) {
-      order: $i;
-    }
-  }
+	.hero-item:nth-child(#{$i}) {
+		order: $i;
+	}
+}

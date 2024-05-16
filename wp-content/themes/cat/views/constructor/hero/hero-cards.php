@@ -22,14 +22,14 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
             <?php if (isset($content['list'])) : ?>
                 <?php foreach ($content['list'] as $item) : ?>
                     <?php if ($item['icon_type'] === 'custom') : ?>
-                        <div class="hero-card hero-card-img">
+                        <div class="hero-item hero-card-img">
                             <!-- <p>
                                 <?= $item['title'] ?>
                             </p> -->
                             <img src="<?= get_image_url_by_id($item['icon_custom']) ?>">
                         </div>
                     <?php else : ?>
-                        <div class="hero-card">
+                        <div class="hero-item hero-card">
 
                             <a href="<?= $item['link'] ?>" class="hero-card-link"><?= $item['title'] ?>
                                 <?php if ($item['icon']) : ?>
