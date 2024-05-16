@@ -21,19 +21,24 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
         <div class="cards">
             <?php if (isset($content['list'])) : ?>
                 <?php foreach ($content['list'] as $item) : ?>
-                    <div class="hero-card">
-                        <?php if ($item['icon_type'] === 'custom') : ?>
-                            <div class="hero-card-img">
+                    <?php if ($item['icon_type'] === 'custom') : ?>
+                        <div class="hero-card hero-card-img">
+                            <p>
                                 <?= $item['title'] ?>
-                                <img src="<?= get_image_url_by_id($item['icon_custom']) ?>">
-                            </div>
-                        <?php else : ?>
-                            <a href="<?= $item['link'] ?>" class="hero-card-link"><?= $item['title'] ?>
-                                <i class="icon <?= $item['icon'] ?>"></i>
-                            </a>
-                        <?php endif; ?>
+                            </p>
+                            <img src="<?= get_image_url_by_id($item['icon_custom']) ?>">
+                        </div>
+                    <?php else : ?>
+                        <div class="hero-card">
 
-                    </div>
+                            <a href="<?= $item['link'] ?>" class="hero-card-link"><?= $item['title'] ?>
+                                <?php if ($item['icon']) : ?>
+                                    <i class="icon <?= $item['icon'] ?>"></i>
+                                <?php endif; ?>
+                            </a>
+
+                        </div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>

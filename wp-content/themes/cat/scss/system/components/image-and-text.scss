@@ -3,9 +3,6 @@
 		display: flex;
 		justify-content: space-between;
 		grid-gap: var(--spacing-coll-gap-coll-2);
-		@include _1024 {
-			flex-direction: column;
-		}
 		.text,
 		.image {
 			width: 50%;
@@ -16,6 +13,9 @@
 		.redactor, .image img{
 			position: sticky;
 			top: 0px;
+			@include _1024 {
+				position: unset;
+			}
 		}
 		&.right {
 			flex-direction: row-reverse;
@@ -27,6 +27,9 @@
 			.image {
 				width: 100%;
 			}
+		}
+		@include _1024 {
+			flex-direction: column;
 		}
 	}
 	.btns-container{

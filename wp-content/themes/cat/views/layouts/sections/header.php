@@ -79,8 +79,8 @@
             <?php endif; ?>
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
-                <div class="btn secondary fill">Демо версія</div>
-                <div class="btn primary fill">Реєстрація</div>
+                <div class="btn lg secondary fill">Демо версія</div>
+                <div class="btn lg primary fill">Реєстрація</div>
             </div>
         </div>
     </div>

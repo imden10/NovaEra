@@ -27,6 +27,10 @@
 
 		&.card-in-row-2 {
 			grid-template-columns: repeat(2, 1fr);
+
+			@include _640 {
+				grid-template-columns: 1fr;
+			}
 		}
 
 		&.card-on-light {
@@ -130,6 +134,10 @@
 	position: sticky;
 	top: 0;
 	height: fit-content;
+
+	@include _1024 {
+		position: unset;
+	}
 
 	.redactor>* {
 		@include set-typography(16px, 400, var(--text-on-light-bg-lighter-high), 160%);

@@ -16,10 +16,6 @@ header {
 	.menu {
 		list-style: none;
 		display: flex;
-
-		@include _1280 {
-			display: none;
-		}
 	}
 
 	.menu__item {
@@ -137,19 +133,37 @@ header {
 		display: flex;
 		align-items: center;
 		padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
-		.icon{
+
+		.icon {
 			margin-right: 4px;
 			font-size: 20px;
 			cursor: pointer;
 			color: #3783E1;
 		}
+
 		.lang {
 			text-decoration: none;
 			@include set-typography(16px, 500, var(--header-items-on-light-main-nav-label-default), normal);
-			display: none;
-			&.active{
+			// display: none;
+
+			&.active {
 				display: block;
 			}
+		}
+	}
+}
+
+header {
+	@include _1280 {
+		.menu,
+		.lang-switcher {
+			display: none;
+		}
+	}
+
+	@include _1024 {
+		.secondary {
+			display: none;
 		}
 	}
 }

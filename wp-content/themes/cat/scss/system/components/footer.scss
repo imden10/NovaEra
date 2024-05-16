@@ -9,6 +9,10 @@ footer {
 		padding: 32px 0px;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
+		@include _1024{
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 40px;
+		}
 	}
 
 	.menu__title {
@@ -31,6 +35,9 @@ footer {
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
+		i{
+			color: var(--footer-nav-item-ic-default)
+		}
 	}
 
 	.footer__bottom {
@@ -46,6 +53,16 @@ footer {
 		ul{
 			display: flex;
 			grid-gap: 20px;
+		}
+		@include _1024{
+			flex-direction: column;
+			align-items: center;
+		}
+		@include _768{
+			ul{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
 		}
 	}
 }
