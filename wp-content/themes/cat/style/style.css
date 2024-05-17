@@ -3065,7 +3065,7 @@ footer .footer__bottom ul {
 }
 @media screen and (max-width: 1024px) {
   .image-and-text .text-wrapper {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 }
 .image-and-text .btns-container {

@@ -29,7 +29,7 @@
 			}
 		}
 		@include _1024 {
-			flex-direction: column;
+			flex-direction: column !important;
 		}
 	}
 	.btns-container{
