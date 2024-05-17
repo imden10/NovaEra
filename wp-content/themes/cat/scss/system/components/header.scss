@@ -8,6 +8,10 @@ header {
 		justify-content: space-between;
 		align-items: center;
 	}
+	.left-column{
+		display: flex;
+		grid-gap: 48px;
+	}
 
 	a {
 		text-decoration: none;

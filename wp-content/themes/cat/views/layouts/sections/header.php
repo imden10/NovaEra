@@ -1,67 +1,69 @@
 <header>
     <div class="container">
 
-        <img class="logo" src="https://placehold.co/140x36" alt="logo"></img>
-        <!--------------------------------- MENU -------------------------------------------------------------------------->
-        <?php if (!empty(getTreeMenu(23))) : ?>
-            <nav>
-                <ul class="menu">
-                    <?php foreach (getTreeMenu(23) as $item) : ?>
-                        <li class="menu__item">
-                            <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title . ' - ' . $item->is_custom_menu; ?></a>
+        <div class="left-column">
+            <img class="logo" src="https://placehold.co/140x36" alt="logo"></img>
+            <!--------------------------------- MENU -------------------------------------------------------------------------->
+            <?php if (!empty(getTreeMenu(23))) : ?>
+                <nav>
+                    <ul class="menu">
+                        <?php foreach (getTreeMenu(23) as $item) : ?>
+                            <li class="menu__item">
+                                <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title . ' - ' . $item->is_custom_menu; ?></a>
 
-                            <?php if (!empty($item->children)) : ?>
-                                <?php $has_custom_menu = false; ?>
-                                <div class="submenu double-column">
-                                    <ul class="list-wrapper">
-                                        <?php foreach ($item->children as $children_item) : ?>
-                                            <?php if (!$children_item->is_custom_menu) : ?>
-                                                <li class="submenu__item">
-
-                                                    <a href="<?php echo $children_item->url; ?>" class="sublnk"><?php echo $children_item->title; ?></a>
-
-                                                    <?php if ($children_item->description) : ?>
-
-                                                        <p><?= $children_item->description ?></p>
-                                                    <?php endif; ?>
-
-                                                    <?php if (!empty($children_item->children)) : ?>
-                                                        <ul class="sub2menu">
-                                                            <?php foreach ($children_item->children as $children_children_item) : ?>
-                                                                <li class="sub2item"><a href="<?php echo $children_children_item->url; ?>" class="sub2lnk"><?php echo $children_children_item->title; ?></a></li>
-                                                            <?php endforeach; ?>
-                                                        </ul>
-                                                    <?php endif; ?>
-                                                </li>
-                                            <?php else : ?>
-                                                <?php
-                                                $has_custom_menu = true;
-                                                $custom_menu_title = $children_item->title;
-                                                $custom_menu = $children_item->children;
-                                                ?>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                    </ul>
-
-                                    <?php if ($has_custom_menu) : ?>
-                                        <div class="list-wrapper custom">
-                                            <h4><?= $custom_menu_title ?></h4>
-                                            <ul>
-                                                <?php foreach ($custom_menu as $children_item_custom) : ?>
+                                <?php if (!empty($item->children)) : ?>
+                                    <?php $has_custom_menu = false; ?>
+                                    <div class="submenu double-column">
+                                        <ul class="list-wrapper">
+                                            <?php foreach ($item->children as $children_item) : ?>
+                                                <?php if (!$children_item->is_custom_menu) : ?>
                                                     <li class="submenu__item">
-                                                        <a href="<?php echo $children_item_custom->url; ?>" class="sublnk"><?php echo $children_item_custom->title; ?></a>
+
+                                                        <a href="<?php echo $children_item->url; ?>" class="sublnk"><?php echo $children_item->title; ?></a>
+
+                                                        <?php if ($children_item->description) : ?>
+
+                                                            <p><?= $children_item->description ?></p>
+                                                        <?php endif; ?>
+
+                                                        <?php if (!empty($children_item->children)) : ?>
+                                                            <ul class="sub2menu">
+                                                                <?php foreach ($children_item->children as $children_children_item) : ?>
+                                                                    <li class="sub2item"><a href="<?php echo $children_children_item->url; ?>" class="sub2lnk"><?php echo $children_children_item->title; ?></a></li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        <?php endif; ?>
                                                     </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endif; ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </nav>
-        <?php endif; ?>
+                                                <?php else : ?>
+                                                    <?php
+                                                    $has_custom_menu = true;
+                                                    $custom_menu_title = $children_item->title;
+                                                    $custom_menu = $children_item->children;
+                                                    ?>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </ul>
+
+                                        <?php if ($has_custom_menu) : ?>
+                                            <div class="list-wrapper custom">
+                                                <h4><?= $custom_menu_title ?></h4>
+                                                <ul>
+                                                    <?php foreach ($custom_menu as $children_item_custom) : ?>
+                                                        <li class="submenu__item">
+                                                            <a href="<?php echo $children_item_custom->url; ?>" class="sublnk"><?php echo $children_item_custom->title; ?></a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </nav>
+            <?php endif; ?>
+        </div>
         <!--------------------------------- END MENU ---------------------------------------------------------------------->
 
 
@@ -84,7 +86,7 @@
                         <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
                             <?php if ($locale['slug'] == $current_language) : ?>
                                 <div class="lang">
-                                <i class="icon ic-lang"></i> <?php echo strtoupper($locale['slug']); ?>
+                                    <i class="icon ic-lang"></i> <?php echo strtoupper($locale['slug']); ?>
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>

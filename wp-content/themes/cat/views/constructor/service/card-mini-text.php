@@ -17,7 +17,7 @@ $imgPosition = $content['image_position']
         <div class="cards-wrapper card-in-row-2 <?= 'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
             <?php if (isset($content['list'])) : ?>
                 <?php foreach ($content['list'] as $item) : ?>
-                    <div class="card">
+                    <a href="<?= $item['link_url']?>" class="card">
                         <?php if ($imgPosition == 'top') : ?>
                             <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
                         <?php endif ?>
@@ -39,9 +39,6 @@ $imgPosition = $content['image_position']
                                 if ($item['btn__type_link'] === "form") {
                                     $formData = \App\Models\Form::getData($item['btn__form_id']);
                                 }
-
-                                // print_r($item);
-                                // print_r($formData);
                                 ?>
 
                                 <div class="btn <?= $item['btn__type'] ?>"><?= $item['btn__text'] ?></div>
@@ -52,7 +49,7 @@ $imgPosition = $content['image_position']
                             <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 
                         <?php endif ?>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             <?php endif; ?>
             <?php require app('path.views') . '/constructor/_buttons.php'; ?>

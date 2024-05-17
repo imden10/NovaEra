@@ -16,6 +16,9 @@ section {
 		--bg-type: 'on-dark';
 	}
 }
+a{
+	text-decoration: none;
+}
 
 // setMode
 .setMode,
@@ -48,7 +51,7 @@ ul {
 	list-style-type: none;
 }
 h1,h2,h3,h4,h5,h6 {
-	margin-top: 0;
+	margin: 0;
 }
 
 [class^="ic-"], [class*=" ic-"] {

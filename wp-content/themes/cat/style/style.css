@@ -2656,6 +2656,10 @@ section.dark {
   --bg-type: "on-dark";
 }
 
+a {
+  text-decoration: none;
+}
+
 .setMode,
 .setColors {
   position: fixed;
@@ -2689,7 +2693,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+  margin: 0;
 }
 
 [class^=ic-], [class*=" ic-"] {
@@ -2717,6 +2721,10 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header .left-column {
+  display: flex;
+  grid-gap: 48px;
 }
 header a {
   text-decoration: none;
@@ -3478,9 +3486,19 @@ footer .footer__bottom ul {
   color: var(--text-on-light-bg-darker-high);
   line-height: 160%;
 }
+.card-mini-text .card .description p,
+.blocks .card .description p {
+  margin: 0;
+}
 .card-mini-text .card .btn,
 .blocks .card .btn {
   margin-top: 10px;
+}
+.card-mini-text .card-info,
+.blocks .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cards-item-gap-s, 8px);
 }
 
 .blocks .cards-wrapper {
@@ -3534,6 +3552,9 @@ footer .footer__bottom ul {
   .mini-text {
     position: unset;
   }
+}
+.mini-text h2 {
+  padding-bottom: var(--spacing-page-headline-h2-bottom, 24px);
 }
 .mini-text .redactor > * {
   font-size: 16px;

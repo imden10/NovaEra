@@ -77,11 +77,21 @@
 		.description {
 			overflow: hidden;
 			@include set-typography(15px, 400, var(--text-on-light-bg-darker-high), 160%);
+
+			p {
+				margin: 0;
+			}
 		}
 
 		.btn {
 			margin-top: 10px;
 		}
+	}
+
+	.card-info {
+		display: flex;
+		flex-direction: column;
+		gap: var(--cards-item-gap-s, 8px);
 	}
 }
 
@@ -137,6 +147,10 @@
 
 	@include _1024 {
 		position: unset;
+	}
+
+	h2 {
+		padding-bottom: var(--spacing-page-headline-h2-bottom, 24px);
 	}
 
 	.redactor>* {
