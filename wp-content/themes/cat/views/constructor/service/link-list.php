@@ -3,14 +3,6 @@ $data = array_diff_key($content, array_flip(['list']));
 ?>
 
 <div class="container">
-    <h3>Посилання</h3>
-    <pre>
-            <?php
-            print_r($data);
-            ?>
-        </pre>
-
-
     <?php if (!empty($content['title'])) : ?>
         <h2><?php echo $content['title']; ?></h2>
     <?php endif; ?>
