@@ -103,8 +103,8 @@
 
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
-                <div class="btn lg secondary fill">Демо версія</div>
-                <div class="btn lg primary fill">Реєстрація</div>
+                <div class="btn sm secondary fill">Демо версія</div>
+                <div class="btn sm primary fill">Реєстрація</div>
             </div>
         </div>
     </div>
