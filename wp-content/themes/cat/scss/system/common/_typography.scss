@@ -44,7 +44,8 @@
 	}
   
 	p,
-	a {
+	a,
+	li {
 	  @include set-typography(16px, 400, inherit, 160%);
 	}
   

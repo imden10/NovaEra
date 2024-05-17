@@ -1,0 +1,15 @@
+.links__list {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: var(--spacing-global-spacing-xxs);
+
+	.links__item {
+		border-radius: var(--border-radius-card-s, 8px);
+		border: 1px solid var(--card-on-light-bg-darker-border-default, #CEDFF3);
+		display: flex;
+		text-decoration: none;
+		min-width: var(--cards-item-min-width-m, 180px);
+		padding: var(--cards-item-wrap-padding-s, 16px);
+		@include set-typography(14px, 400, var(--card-on-light-bg-darker-title-default), 140%)
+	}
+}

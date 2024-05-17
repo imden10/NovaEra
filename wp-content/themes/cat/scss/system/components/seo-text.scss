@@ -1,0 +1,43 @@
+.seo-text {
+	.redactor {
+		color: var(--text-on-light-bg-darker-medium);
+
+		h1 {
+			@include set-typography(24px, 600, inherit, 120%);
+		}
+
+		h2 {
+			@include set-typography(20px, 600, inherit, 140%);
+		}
+
+		h3 {
+			@include set-typography(18px, 600, inherit, 140%);
+		}
+
+		h4 {
+			@include set-typography(16px, 600, inherit, 140%);
+		}
+
+		h5 {
+			@include set-typography(14px, 600, inherit, 140%);
+		}
+
+		h6 {
+			@include set-typography(12px, 600, inherit, 140%);
+		}
+
+		p,
+		a,
+		li {
+			@include set-typography(14px, 400, inherit, 180%);
+		}
+
+		a {
+			color: var(--text-on-bg-on-default-link);
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+}
