@@ -3304,6 +3304,9 @@ footer .footer__bottom ul {
   background-color: var(--surface-primary-default);
   border-radius: 50%;
 }
+.first-screen.hero-cards .cards .hero-item {
+  height: 130px;
+}
 .first-screen.hero-cards .cards .hero-card-img {
   display: grid;
   grid-column: 3/span 2;
