@@ -2779,7 +2779,11 @@ header .container {
 }
 header .left-column {
   display: flex;
+  align-items: center;
   grid-gap: 48px;
+}
+header .left-column .logo {
+  height: 36px;
 }
 header a {
   text-decoration: none;
