@@ -112,4 +112,4 @@
         </div>
     </div>
 </header>
-<?php require_once app('path.views') . '../constructor/modals//mobile-menu.php'; ?>
+<?php require_once app('path.views') . '../constructor/modals/mobile-menu.php'; ?>
