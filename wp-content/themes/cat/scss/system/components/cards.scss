@@ -73,7 +73,9 @@
 	.card {
 		overflow: hidden;
 		height: fit-content;
-
+		h2{
+			padding-bottom: unset;
+		}
 		.description {
 			overflow: hidden;
 			@include set-typography(15px, 400, var(--text-on-light-bg-darker-high), 160%);
