@@ -31,6 +31,7 @@ function theme_settings_page() {
         update_option('theme_settings__noise', sanitize_text_field($_POST['theme_settings__noise']));
         update_option('theme_settings__font_style', sanitize_text_field($_POST['theme_settings__font_style']));
         update_option('theme_settings__favicon', sanitize_text_field($_POST['theme_settings__favicon']));
+        update_option('theme_settings__logotype', sanitize_text_field($_POST['theme_settings__logotype']));
     }
 
     // Отримання значення збереженого налаштування
@@ -45,6 +46,7 @@ function theme_settings_page() {
     $noise = get_option('theme_settings__noise', '0');
     $font_style = get_option('theme_settings__font_style');
     $favicon = get_option('theme_settings__favicon');
+    $logotype = get_option('theme_settings__logotype');
     ?>
     <div class="custom-options-container">
         <form method="post" action="" class="custom-options-form">
@@ -180,6 +182,14 @@ function theme_settings_page() {
                         </th>
                         <td>
                             <?= media_preview_box('theme_settings__favicon',$favicon, ""); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="text-align: right">
+                            <label for="theme_settings__logotype">Логотип</label>
+                        </th>
+                        <td>
+                            <?= media_preview_box('theme_settings__logotype',$logotype, ""); ?>
                         </td>
                     </tr>
                 </tbody>

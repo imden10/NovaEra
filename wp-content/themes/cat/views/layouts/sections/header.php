@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="left-column">
-            <img class="logo" src="https://placehold.co/140x36" alt="logo"></img>
+            <img class="logo" src="<?= get_image_url_by_id(get_option('theme_settings__logotype')) ?>" alt="logo"></img>
             <!--------------------------------- MENU -------------------------------------------------------------------------->
             <?php if (!empty(getTreeMenu(23))) : ?>
                 <nav>
@@ -112,4 +112,4 @@
         </div>
     </div>
 </header>
-<?php require_once app('path.views') . '../constructor/modals/mobile-menu.php'; ?>
+<?php require_once app('path.views') . '/constructor/modals/mobile-menu.php'; ?>

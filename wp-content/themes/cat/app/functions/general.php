@@ -5,6 +5,7 @@ function dd($value)
     echo '<pre>';
     print_r($value);
     echo '</pre>';
+    die;
 }
 
 function trans($text = '', $domain = false)
@@ -99,7 +100,7 @@ function buildContentFromConstructorArray($post_type, $data = [])
             $file = app('path.views') . '/constructor/' . $post_type . '/' . $component_file_name . '.php';
             if (file_exists($file)) {
                 if ($content['background_type'] !== 'image' && $content['background_type'] !== 'gradient') {
-                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content[$content['background_type']]}'>";
+                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content['background_type']}'>";
                 } elseif ($content['background_type'] === 'gradient') {
                     echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-light bg-gradient'>";
                 }
