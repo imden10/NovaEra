@@ -54,6 +54,10 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0;
 }
 
+p{
+	margin-top: 0;
+}
+
 [class^="ic-"], [class*=" ic-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'nova-era' !important;
@@ -63,8 +67,8 @@ h1,h2,h3,h4,h5,h6 {
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-  
-	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	transition: .3s;
+	transform-origin: center;
   }

@@ -91,12 +91,3 @@ function slideToggle(target, isActive = true) {
 		slideUp(target);
 	}
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-	const triggers = document.querySelectorAll('.accordion-title');
-	triggers.forEach(trigger => {
-		trigger.addEventListener('click', () => {
-			slideToggle(trigger);
-		});
-	});
-});

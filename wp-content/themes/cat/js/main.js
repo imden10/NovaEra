@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 	'use strict';
-	document.body.setAttribute('data-theme', 'nova-era')
+	// document.body.setAttribute('data-theme', 'nova-era')
 	// document.body.setAttribute('data-mode', 'light')
-	document.body.setAttribute('data-windowsize', '1440-1280')
+	// document.body.setAttribute('data-windowsize', '1440-1280')
 	// global variables
 	let windowSizeRange;
 	let windowSize = window.innerWidth;
@@ -41,31 +41,44 @@ document.addEventListener("DOMContentLoaded", () => {
 		checkWindowSize()
 	});
 
-	// JavaScript код для виклику ajax-запиту
-	function loadForm(id) {
-		var url = '/api/form/render?id='+id;
+	// try {
 
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', url, true);
 
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState === 4 && xhr.status === 200) {
-				document.querySelector(".modal-form-content").innerHTML = xhr.responseText;
-				modalFormShow();
-			}
-		};
+	// 	// JavaScript код для виклику ajax-запиту
+	// 	function loadForm(id) {
+	// 		var url = '/api/form/render?id=' + id;
 
-		xhr.send();
-	}
+	// 		var xhr = new XMLHttpRequest();
+	// 		xhr.open('GET', url, true);
 
-	// Отримання всіх елементів з класом render-form-btn
-	var buttons = document.querySelectorAll('.render-form-btn');
+	// 		xhr.onreadystatechange = function () {
+	// 			if (xhr.readyState === 4 && xhr.status === 200) {
+	// 				document.querySelector(".modal-form-content").innerHTML = xhr.responseText;
+	// 				modalFormShow();
+	// 			}
+	// 		};
 
-	// Додавання обробника події для кожної кнопки
-	buttons.forEach(function(button) {
-		button.addEventListener('click', function() {
-			var id = this.getAttribute('data-form_id');
-			loadForm(id);
-		});
-	});
+	// 		xhr.send();
+	// 	}
+
+	// 	// Отримання всіх елементів з класом render-form-btn
+	// 	var buttons = document.querySelectorAll('.render-form-btn');
+
+	// 	// Додавання обробника події для кожної кнопки
+	// 	buttons.forEach(function (button) {
+	// 		button.addEventListener('click', function () {
+	// 			var id = this.getAttribute('data-form_id');
+	// 			loadForm(id);
+	// 		});
+	// 	});
+	// } catch (error) {
+
+	// }
+	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger')
+	const mobileMenu = document.querySelector('.mobile-menu')
+	burgerMenuTrigger.addEventListener('click', ({target}) => {
+		target.classList.toggle('active')
+		mobileMenu.classList.toggle('show')
+	})
 })
+

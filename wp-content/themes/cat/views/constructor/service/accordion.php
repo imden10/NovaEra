@@ -31,7 +31,7 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
 
                 <?php if (isset($content['list'])) : ?>
                     <?php foreach ($content['list'] as $item) : ?>
-                        <div class="accordion-title">
+                        <div onclick="slideToggle(this)" class="accordion-title">
                             <?= $item['title']; ?>
                             <span class="icon"></span>
                         </div>

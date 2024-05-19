@@ -105,9 +105,11 @@
 
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
-                <div class="btn sm secondary fill">Демо версія</div>
-                <div class="btn sm primary fill">Реєстрація</div>
+                <div class="btn sm primary fill">Демо версія</div>
+                <div class="btn sm secondary fill">Реєстрація</div>
+                <div class="burger-menu-trigger ic-menu"></div>
             </div>
         </div>
     </div>
 </header>
+<?php require_once app('path.views') . '../constructor/modals//mobile-menu.php'; ?>

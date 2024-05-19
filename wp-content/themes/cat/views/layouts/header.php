@@ -16,7 +16,7 @@
 $preset = get_option('theme_settings__bg_type') === 'presets' ? get_option('theme_settings__preset') : '';
 ?>
 
-<body <?php body_class($preset); ?> style="--font: <?= get_option('theme_settings__font_style') ?>" data-mode="<?= get_option('theme_settings__mode') ?>">
+<body <?php body_class($preset); ?> style="--font: <?= get_option('theme_settings__font_style') ?>" data-theme="nova-era" data-windowsize="1440-1280" data-mode="<?= get_option('theme_settings__mode') ?>">
 
     <?php require_once app('path.views') . '/layouts/sections/header.php'; ?>
 

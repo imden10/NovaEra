@@ -3,36 +3,45 @@
 		display: flex;
 		justify-content: space-between;
 		grid-gap: var(--spacing-coll-gap-coll-2);
+		
 		.text,
 		.image {
 			width: 50%;
+
 			@include _1024 {
 				width: 100%;
 			}
 		}
-		.redactor, .image img{
+
+		.redactor,
+		.image img {
 			position: sticky;
 			top: 0px;
+
 			@include _1024 {
 				position: unset;
 			}
 		}
+
 		&.right {
 			flex-direction: row-reverse;
 		}
 
 		&.top {
 			flex-direction: column;
+
 			.text,
 			.image {
 				width: 100%;
 			}
 		}
+
 		@include _1024 {
 			flex-direction: column !important;
 		}
 	}
-	.btns-container{
+
+	.btns-container {
 		display: inline-flex;
 		flex-direction: column;
 		grid-gap: 8px;
