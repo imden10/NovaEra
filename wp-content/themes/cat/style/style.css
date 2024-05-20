@@ -3127,6 +3127,7 @@ footer .footer__bottom ul {
 .image-and-text .text-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   grid-gap: var(--spacing-coll-gap-coll-2);
 }
 .image-and-text .text-wrapper .text,
