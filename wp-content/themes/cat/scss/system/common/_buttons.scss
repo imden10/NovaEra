@@ -24,12 +24,12 @@
 	&.disabled {
 		pointer-events: none;
 	}
-	&.lg{
+	&.lg, &.btn-size--lg{
 		@include set-typography(16px, 400, false, 100%);
 		height: var(--button-medium-btn-height);
 		padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
 	}
-	&.sm {
+	&.sm, &.btn-size--sm{
 		@include set-typography(15px, 400, false, 100%, 0.3px);
 		height: var(--button-small-btn-height);
 		padding: var(--button-small-top-bottom) var(--button-small-left-right);
@@ -74,7 +74,7 @@
 
 
 .on-dark {
-	.btn {
+	.btn, .cb-component {
 		&.primary, &.btn-color--primary{
 			&.fill {
 				@include set-btn-colors(--btn-primary-on-dark-fill-bg-default,
@@ -156,7 +156,7 @@
 }
 
 .on-light {
-	.btn {
+	.btn, .cb-component {
 		&.primary, &.btn-color--primary {
 			&.fill {
 				@include set-btn-colors(--btn-primary-on-light-fill-bg-default,

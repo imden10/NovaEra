@@ -2078,16 +2078,18 @@ h2 {
 .cb-component.disabled {
   pointer-events: none;
 }
-.btn.lg,
-.cb-component.lg {
+.btn.lg, .btn.btn-size--lg,
+.cb-component.lg,
+.cb-component.btn-size--lg {
   font-size: 16px;
   font-weight: 400;
   line-height: 100%;
   height: var(--button-medium-btn-height);
   padding: var(--button-medium-top-bottom) var(--button-medium-left-right);
 }
-.btn.sm,
-.cb-component.sm {
+.btn.sm, .btn.btn-size--sm,
+.cb-component.sm,
+.cb-component.btn-size--sm {
   font-size: 15px;
   font-weight: 400;
   line-height: 100%;
@@ -2096,143 +2098,143 @@ h2 {
   padding: var(--button-small-top-bottom) var(--button-small-left-right);
 }
 
-.on-dark .btn.primary.fill, .on-dark .btn.btn-color--primary.fill {
+.on-dark .btn.primary.fill, .on-dark .btn.btn-color--primary.fill, .on-dark .cb-component.primary.fill, .on-dark .cb-component.btn-color--primary.fill {
   color: var(--btn-primary-on-dark-fill-label-default);
   background: var(--btn-primary-on-dark-fill-bg-default);
 }
-.on-dark .btn.primary.fill:hover, .on-dark .btn.btn-color--primary.fill:hover {
+.on-dark .btn.primary.fill:hover, .on-dark .btn.btn-color--primary.fill:hover, .on-dark .cb-component.primary.fill:hover, .on-dark .cb-component.btn-color--primary.fill:hover {
   color: var(--btn-primary-on-dark-fill-label-hover);
   background: var(--btn-primary-on-dark-fill-bg-hover);
 }
-.on-dark .btn.primary.fill.disabled, .on-dark .btn.btn-color--primary.fill.disabled {
+.on-dark .btn.primary.fill.disabled, .on-dark .btn.btn-color--primary.fill.disabled, .on-dark .cb-component.primary.fill.disabled, .on-dark .cb-component.btn-color--primary.fill.disabled {
   color: var(--btn-primary-on-dark-fill-label-hover);
   background: var(--btn-primary-on-dark-fill-bg-disabled);
 }
-.on-dark .btn.primary.stroke, .on-dark .btn.btn-color--primary.stroke {
+.on-dark .btn.primary.stroke, .on-dark .btn.btn-color--primary.stroke, .on-dark .cb-component.primary.stroke, .on-dark .cb-component.btn-color--primary.stroke {
   color: var(--btn-primary-on-dark-stroke-label-default);
   border: 1px solid var(--btn-primary-on-dark-stroke-border-default);
 }
-.on-dark .btn.primary.stroke:hover, .on-dark .btn.btn-color--primary.stroke:hover {
+.on-dark .btn.primary.stroke:hover, .on-dark .btn.btn-color--primary.stroke:hover, .on-dark .cb-component.primary.stroke:hover, .on-dark .cb-component.btn-color--primary.stroke:hover {
   color: var(--btn-primary-on-dark-stroke-label-hover);
   border: 1px solid var(--btn-primary-on-dark-stroke-border-hover);
 }
-.on-dark .btn.primary.stroke.disabled, .on-dark .btn.btn-color--primary.stroke.disabled {
+.on-dark .btn.primary.stroke.disabled, .on-dark .btn.btn-color--primary.stroke.disabled, .on-dark .cb-component.primary.stroke.disabled, .on-dark .cb-component.btn-color--primary.stroke.disabled {
   color: var(--btn-primary-on-dark-stroke-label-hover);
   border: 1px solid var(--btn-primary-on-dark-stroke-border-disabled);
 }
-.on-dark .btn.primary.simple, .on-dark .btn.primary.text, .on-dark .btn.btn-color--primary.simple, .on-dark .btn.btn-color--primary.text {
+.on-dark .btn.primary.simple, .on-dark .btn.primary.text, .on-dark .btn.btn-color--primary.simple, .on-dark .btn.btn-color--primary.text, .on-dark .cb-component.primary.simple, .on-dark .cb-component.primary.text, .on-dark .cb-component.btn-color--primary.simple, .on-dark .cb-component.btn-color--primary.text {
   color: var(--btn-primary-on-dark-text-label-default);
   background: var(trasparent);
 }
-.on-dark .btn.primary.simple:hover, .on-dark .btn.primary.text:hover, .on-dark .btn.btn-color--primary.simple:hover, .on-dark .btn.btn-color--primary.text:hover {
+.on-dark .btn.primary.simple:hover, .on-dark .btn.primary.text:hover, .on-dark .btn.btn-color--primary.simple:hover, .on-dark .btn.btn-color--primary.text:hover, .on-dark .cb-component.primary.simple:hover, .on-dark .cb-component.primary.text:hover, .on-dark .cb-component.btn-color--primary.simple:hover, .on-dark .cb-component.btn-color--primary.text:hover {
   color: var(--btn-primary-on-dark-text-label-hover);
   background: var(--btn-primary-on-dark-text-bg-hover);
 }
-.on-dark .btn.primary.simple.disabled, .on-dark .btn.primary.text.disabled, .on-dark .btn.btn-color--primary.simple.disabled, .on-dark .btn.btn-color--primary.text.disabled {
+.on-dark .btn.primary.simple.disabled, .on-dark .btn.primary.text.disabled, .on-dark .btn.btn-color--primary.simple.disabled, .on-dark .btn.btn-color--primary.text.disabled, .on-dark .cb-component.primary.simple.disabled, .on-dark .cb-component.primary.text.disabled, .on-dark .cb-component.btn-color--primary.simple.disabled, .on-dark .cb-component.btn-color--primary.text.disabled {
   color: var(--btn-primary-on-dark-text-label-hover);
   background: var(--btn-primary-on-dark-text-bg-disabled);
 }
-.on-dark .btn.secondary.fill, .on-dark .btn.btn-color--secondary.fill {
+.on-dark .btn.secondary.fill, .on-dark .btn.btn-color--secondary.fill, .on-dark .cb-component.secondary.fill, .on-dark .cb-component.btn-color--secondary.fill {
   color: var(--btn-secondary-on-dark-fill-label-default);
   background: var(--btn-secondary-on-dark-fill-bg-default);
 }
-.on-dark .btn.secondary.fill:hover, .on-dark .btn.btn-color--secondary.fill:hover {
+.on-dark .btn.secondary.fill:hover, .on-dark .btn.btn-color--secondary.fill:hover, .on-dark .cb-component.secondary.fill:hover, .on-dark .cb-component.btn-color--secondary.fill:hover {
   color: var(--btn-secondary-on-dark-fill-label-hover);
   background: var(--btn-secondary-on-dark-fill-bg-hover);
 }
-.on-dark .btn.secondary.fill.disabled, .on-dark .btn.btn-color--secondary.fill.disabled {
+.on-dark .btn.secondary.fill.disabled, .on-dark .btn.btn-color--secondary.fill.disabled, .on-dark .cb-component.secondary.fill.disabled, .on-dark .cb-component.btn-color--secondary.fill.disabled {
   color: var(--btn-secondary-on-dark-fill-label-hover);
   background: var(--btn-secondary-on-dark-fill-bg-disabled);
 }
-.on-dark .btn.secondary.stroke, .on-dark .btn.btn-color--secondary.stroke {
+.on-dark .btn.secondary.stroke, .on-dark .btn.btn-color--secondary.stroke, .on-dark .cb-component.secondary.stroke, .on-dark .cb-component.btn-color--secondary.stroke {
   color: var(--btn-secondary-on-dark-stroke-label-default);
   border: 1px solid var(--btn-secondary-on-dark-stroke-border-default);
 }
-.on-dark .btn.secondary.stroke:hover, .on-dark .btn.btn-color--secondary.stroke:hover {
+.on-dark .btn.secondary.stroke:hover, .on-dark .btn.btn-color--secondary.stroke:hover, .on-dark .cb-component.secondary.stroke:hover, .on-dark .cb-component.btn-color--secondary.stroke:hover {
   color: var(--btn-secondary-on-dark-stroke-label-hover);
   border: 1px solid var(--btn-secondary-on-dark-stroke-border-hover);
 }
-.on-dark .btn.secondary.stroke.disabled, .on-dark .btn.btn-color--secondary.stroke.disabled {
+.on-dark .btn.secondary.stroke.disabled, .on-dark .btn.btn-color--secondary.stroke.disabled, .on-dark .cb-component.secondary.stroke.disabled, .on-dark .cb-component.btn-color--secondary.stroke.disabled {
   color: var(--btn-secondary-on-dark-stroke-label-hover);
   border: 1px solid var(--btn-secondary-on-dark-stroke-border-disabled);
 }
-.on-dark .btn.secondary.simple, .on-dark .btn.secondary.text, .on-dark .btn.btn-color--secondary.simple, .on-dark .btn.btn-color--secondary.text {
+.on-dark .btn.secondary.simple, .on-dark .btn.secondary.text, .on-dark .btn.btn-color--secondary.simple, .on-dark .btn.btn-color--secondary.text, .on-dark .cb-component.secondary.simple, .on-dark .cb-component.secondary.text, .on-dark .cb-component.btn-color--secondary.simple, .on-dark .cb-component.btn-color--secondary.text {
   color: var(--btn-secondary-on-dark-text-label-default);
 }
-.on-dark .btn.secondary.simple:hover, .on-dark .btn.secondary.text:hover, .on-dark .btn.btn-color--secondary.simple:hover, .on-dark .btn.btn-color--secondary.text:hover {
+.on-dark .btn.secondary.simple:hover, .on-dark .btn.secondary.text:hover, .on-dark .btn.btn-color--secondary.simple:hover, .on-dark .btn.btn-color--secondary.text:hover, .on-dark .cb-component.secondary.simple:hover, .on-dark .cb-component.secondary.text:hover, .on-dark .cb-component.btn-color--secondary.simple:hover, .on-dark .cb-component.btn-color--secondary.text:hover {
   color: var(--btn-secondary-on-dark-text-label-hover);
 }
-.on-dark .btn.secondary.simple.disabled, .on-dark .btn.secondary.text.disabled, .on-dark .btn.btn-color--secondary.simple.disabled, .on-dark .btn.btn-color--secondary.text.disabled {
+.on-dark .btn.secondary.simple.disabled, .on-dark .btn.secondary.text.disabled, .on-dark .btn.btn-color--secondary.simple.disabled, .on-dark .btn.btn-color--secondary.text.disabled, .on-dark .cb-component.secondary.simple.disabled, .on-dark .cb-component.secondary.text.disabled, .on-dark .cb-component.btn-color--secondary.simple.disabled, .on-dark .cb-component.btn-color--secondary.text.disabled {
   color: var(--btn-secondary-on-dark-text-label-hover);
 }
 
-.on-light .btn.primary.fill, .on-light .btn.btn-color--primary.fill {
+.on-light .btn.primary.fill, .on-light .btn.btn-color--primary.fill, .on-light .cb-component.primary.fill, .on-light .cb-component.btn-color--primary.fill {
   color: var(--btn-primary-on-light-fill-label-default);
   background: var(--btn-primary-on-light-fill-bg-default);
 }
-.on-light .btn.primary.fill:hover, .on-light .btn.btn-color--primary.fill:hover {
+.on-light .btn.primary.fill:hover, .on-light .btn.btn-color--primary.fill:hover, .on-light .cb-component.primary.fill:hover, .on-light .cb-component.btn-color--primary.fill:hover {
   color: var(--btn-primary-on-light-fill-label-hover);
   background: var(--btn-primary-on-light-fill-bg-hover);
 }
-.on-light .btn.primary.fill.disabled, .on-light .btn.btn-color--primary.fill.disabled {
+.on-light .btn.primary.fill.disabled, .on-light .btn.btn-color--primary.fill.disabled, .on-light .cb-component.primary.fill.disabled, .on-light .cb-component.btn-color--primary.fill.disabled {
   color: var(--btn-primary-on-light-fill-label-hover);
   background: var(--btn-primary-on-light-fill-bg-disabled);
 }
-.on-light .btn.primary.stroke, .on-light .btn.btn-color--primary.stroke {
+.on-light .btn.primary.stroke, .on-light .btn.btn-color--primary.stroke, .on-light .cb-component.primary.stroke, .on-light .cb-component.btn-color--primary.stroke {
   color: var(--btn-primary-on-light-stroke-label-default);
   border: 1px solid var(--btn-primary-on-light-stroke-border-default);
 }
-.on-light .btn.primary.stroke:hover, .on-light .btn.btn-color--primary.stroke:hover {
+.on-light .btn.primary.stroke:hover, .on-light .btn.btn-color--primary.stroke:hover, .on-light .cb-component.primary.stroke:hover, .on-light .cb-component.btn-color--primary.stroke:hover {
   color: var(--btn-primary-on-light-stroke-label-hover);
   border: 1px solid var(--btn-primary-on-light-stroke-border-hover);
 }
-.on-light .btn.primary.stroke.disabled, .on-light .btn.btn-color--primary.stroke.disabled {
+.on-light .btn.primary.stroke.disabled, .on-light .btn.btn-color--primary.stroke.disabled, .on-light .cb-component.primary.stroke.disabled, .on-light .cb-component.btn-color--primary.stroke.disabled {
   color: var(--btn-primary-on-light-stroke-label-hover);
   border: 1px solid var(--btn-primary-on-light-stroke-border-disabled);
 }
-.on-light .btn.primary.simple, .on-light .btn.primary.text, .on-light .btn.btn-color--primary.simple, .on-light .btn.btn-color--primary.text {
+.on-light .btn.primary.simple, .on-light .btn.primary.text, .on-light .btn.btn-color--primary.simple, .on-light .btn.btn-color--primary.text, .on-light .cb-component.primary.simple, .on-light .cb-component.primary.text, .on-light .cb-component.btn-color--primary.simple, .on-light .cb-component.btn-color--primary.text {
   color: var(--btn-primary-on-light-text-label-default);
   background: var(trasparent);
 }
-.on-light .btn.primary.simple:hover, .on-light .btn.primary.text:hover, .on-light .btn.btn-color--primary.simple:hover, .on-light .btn.btn-color--primary.text:hover {
+.on-light .btn.primary.simple:hover, .on-light .btn.primary.text:hover, .on-light .btn.btn-color--primary.simple:hover, .on-light .btn.btn-color--primary.text:hover, .on-light .cb-component.primary.simple:hover, .on-light .cb-component.primary.text:hover, .on-light .cb-component.btn-color--primary.simple:hover, .on-light .cb-component.btn-color--primary.text:hover {
   color: var(--btn-primary-on-light-text-label-hover);
   background: var(--btn-primary-on-light-text-bg-hover);
 }
-.on-light .btn.primary.simple.disabled, .on-light .btn.primary.text.disabled, .on-light .btn.btn-color--primary.simple.disabled, .on-light .btn.btn-color--primary.text.disabled {
+.on-light .btn.primary.simple.disabled, .on-light .btn.primary.text.disabled, .on-light .btn.btn-color--primary.simple.disabled, .on-light .btn.btn-color--primary.text.disabled, .on-light .cb-component.primary.simple.disabled, .on-light .cb-component.primary.text.disabled, .on-light .cb-component.btn-color--primary.simple.disabled, .on-light .cb-component.btn-color--primary.text.disabled {
   color: var(--btn-primary-on-light-text-label-hover);
   background: var(--btn-primary-on-light-text-bg-disabled);
 }
-.on-light .btn.secondary.fill, .on-light .btn.btn-color--secondary.fill {
+.on-light .btn.secondary.fill, .on-light .btn.btn-color--secondary.fill, .on-light .cb-component.secondary.fill, .on-light .cb-component.btn-color--secondary.fill {
   color: var(--btn-secondary-on-light-fill-label-default);
   background: var(--btn-secondary-on-light-fill-bg-default);
 }
-.on-light .btn.secondary.fill:hover, .on-light .btn.btn-color--secondary.fill:hover {
+.on-light .btn.secondary.fill:hover, .on-light .btn.btn-color--secondary.fill:hover, .on-light .cb-component.secondary.fill:hover, .on-light .cb-component.btn-color--secondary.fill:hover {
   color: var(--btn-secondary-on-light-fill-label-hover);
   background: var(--btn-secondary-on-light-fill-bg-hover);
 }
-.on-light .btn.secondary.fill.disabled, .on-light .btn.btn-color--secondary.fill.disabled {
+.on-light .btn.secondary.fill.disabled, .on-light .btn.btn-color--secondary.fill.disabled, .on-light .cb-component.secondary.fill.disabled, .on-light .cb-component.btn-color--secondary.fill.disabled {
   color: var(--btn-secondary-on-light-fill-label-hover);
   background: var(--btn-secondary-on-light-fill-bg-disabled);
 }
-.on-light .btn.secondary.stroke, .on-light .btn.btn-color--secondary.stroke {
+.on-light .btn.secondary.stroke, .on-light .btn.btn-color--secondary.stroke, .on-light .cb-component.secondary.stroke, .on-light .cb-component.btn-color--secondary.stroke {
   color: var(--btn-secondary-on-light-stroke-label-default);
   border: 1px solid var(--btn-secondary-on-light-stroke-border-default);
 }
-.on-light .btn.secondary.stroke:hover, .on-light .btn.btn-color--secondary.stroke:hover {
+.on-light .btn.secondary.stroke:hover, .on-light .btn.btn-color--secondary.stroke:hover, .on-light .cb-component.secondary.stroke:hover, .on-light .cb-component.btn-color--secondary.stroke:hover {
   color: var(--btn-secondary-on-light-stroke-label-hover);
   border: 1px solid var(--btn-secondary-on-light-stroke-border-hover);
 }
-.on-light .btn.secondary.stroke.disabled, .on-light .btn.btn-color--secondary.stroke.disabled {
+.on-light .btn.secondary.stroke.disabled, .on-light .btn.btn-color--secondary.stroke.disabled, .on-light .cb-component.secondary.stroke.disabled, .on-light .cb-component.btn-color--secondary.stroke.disabled {
   color: var(--btn-secondary-on-light-stroke-label-hover);
   border: 1px solid var(--btn-secondary-on-light-stroke-border-disabled);
 }
-.on-light .btn.secondary.simple, .on-light .btn.secondary.text, .on-light .btn.btn-color--secondary.simple, .on-light .btn.btn-color--secondary.text {
+.on-light .btn.secondary.simple, .on-light .btn.secondary.text, .on-light .btn.btn-color--secondary.simple, .on-light .btn.btn-color--secondary.text, .on-light .cb-component.secondary.simple, .on-light .cb-component.secondary.text, .on-light .cb-component.btn-color--secondary.simple, .on-light .cb-component.btn-color--secondary.text {
   color: var(--btn-secondary-on-light-text-label-default);
 }
-.on-light .btn.secondary.simple:hover, .on-light .btn.secondary.text:hover, .on-light .btn.btn-color--secondary.simple:hover, .on-light .btn.btn-color--secondary.text:hover {
+.on-light .btn.secondary.simple:hover, .on-light .btn.secondary.text:hover, .on-light .btn.btn-color--secondary.simple:hover, .on-light .btn.btn-color--secondary.text:hover, .on-light .cb-component.secondary.simple:hover, .on-light .cb-component.secondary.text:hover, .on-light .cb-component.btn-color--secondary.simple:hover, .on-light .cb-component.btn-color--secondary.text:hover {
   color: var(--btn-secondary-on-light-text-label-hover);
 }
-.on-light .btn.secondary.simple.disabled, .on-light .btn.secondary.text.disabled, .on-light .btn.btn-color--secondary.simple.disabled, .on-light .btn.btn-color--secondary.text.disabled {
+.on-light .btn.secondary.simple.disabled, .on-light .btn.secondary.text.disabled, .on-light .btn.btn-color--secondary.simple.disabled, .on-light .btn.btn-color--secondary.text.disabled, .on-light .cb-component.secondary.simple.disabled, .on-light .cb-component.secondary.text.disabled, .on-light .cb-component.btn-color--secondary.simple.disabled, .on-light .cb-component.btn-color--secondary.text.disabled {
   color: var(--btn-secondary-on-light-text-label-hover);
 }
 
