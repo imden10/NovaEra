@@ -472,7 +472,7 @@ function save_menu_item_desc( $menu_id, $menu_item_db_id ) {
 }
 add_action( 'wp_update_nav_menu_item', 'save_menu_item_desc', 10, 2 );
 /******************************************************************************************************************** */
-/***************** Додавання поля "Чекбокс 'кастомне меню'" в меню ***********************************************************************/
+/***************** Додавання поля "Чекбокс 'кастомне меню'" в меню ****************************************************/
 function menu_item_menu_custom( $item_id, $item ) {
     $menu_item_checkbox = get_post_meta( $item_id, '_menu_item_menu_custom', true );
     ?>
@@ -506,3 +506,11 @@ function remove_widgets_submenu() {
     unset($submenu['themes.php'][7]); // Видалити пункт "Налаштування"
 }
 add_action('admin_menu', 'remove_widgets_submenu');
+
+/***************** Додавання mime type SVG ****************************************************************************/
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+/******************************************************************************************************************** */
