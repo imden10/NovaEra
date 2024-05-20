@@ -6,7 +6,6 @@ $data = array_diff_key($content, array_flip(['list']));
         <h2 class="tac"><?php echo $content['title']; ?></h2>
     <?php endif; ?>
     <div class="cards-wrapper <?= 'card-in-row-' . $content['items_in_row'] . ' ' .  'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
-        >
     <?php if (isset($content['list'])) : ?>
         <?php foreach ($content['list'] as $item) : ?>
                 <div class="card">
