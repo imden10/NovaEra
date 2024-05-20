@@ -3646,6 +3646,11 @@ footer .footer__bottom ul {
   display: flex;
   grid-gap: 8px;
 }
+.card-mini-text .card .title-wrp i,
+.blocks .card .title-wrp i {
+  font-size: 24px;
+  color: var(--card-on-light-bg-darker-icon-default);
+}
 .card-mini-text .card h2,
 .blocks .card h2 {
   padding-bottom: unset;
