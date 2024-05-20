@@ -3431,7 +3431,7 @@ footer .footer__bottom ul {
 }
 @media screen and (max-width: 768px) {
   .first-screen.hero-cards .cards .hero-item:nth-child(11) {
-    grid-column: 1/span 3;
+    grid-column: 3/span 2;
   }
 }
 @media screen and (max-width: 375px) {
