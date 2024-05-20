@@ -18,7 +18,7 @@
                     <a href="<?php echo $content['link']; ?>" class="constrlnk"><?php echo trans('Переход'); ?></a>
                 <?php endif; ?>
             </div>
+            <?php require app('path.views') . '/constructor/_buttons.php'; ?>
         </div>
     </div>
-    <?php require app('path.views') . '/constructor/_buttons.php'; ?>
 </div>
