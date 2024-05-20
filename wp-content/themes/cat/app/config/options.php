@@ -111,6 +111,16 @@ return [
                             'component' => 'App\Components\Option\Text',
                             'params' => [],
                         ],
+                        'linkedin' => [
+                            'label' => __('Linkedin'),
+                            'component' => 'App\Components\Option\Text',
+                            'params' => [],
+                        ],
+                        'youtube' => [
+                            'label' => __('Youtube'),
+                            'component' => 'App\Components\Option\Text',
+                            'params' => [],
+                        ],
                     ],
                 ],
             ],
