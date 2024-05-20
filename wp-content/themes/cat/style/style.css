@@ -3315,7 +3315,6 @@ footer .footer__bottom ul {
   padding: var(--spacing-separator-l) var(--spacing-container-left-right);
 }
 .first-screen.column30 .container {
-  padding: 0;
   display: grid;
   align-items: center;
   grid-template-columns: 0.7fr 0.3fr;
@@ -3333,7 +3332,6 @@ footer .footer__bottom ul {
   padding: var(--spacing-separator-m) var(--spacing-container-left-right);
 }
 .first-screen.column50 .container, .first-screen.hero-cards .container {
-  padding: 0;
   display: grid;
   align-items: center;
   grid-template-columns: 0.5fr 0.5fr;
@@ -3489,7 +3487,6 @@ footer .footer__bottom ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  padding: 0;
 }
 .first-screen.section50 .container .image-column {
   position: absolute;

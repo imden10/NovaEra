@@ -33,7 +33,7 @@
 		padding: var(--spacing-separator-l) var(--spacing-container-left-right);
 
 		.container {
-			padding: 0;
+			// padding: 0;
 			display: grid;
 			align-items: center;
 			grid-template-columns: 0.7fr 0.3fr;
@@ -54,7 +54,7 @@
 		padding: var(--spacing-separator-m) var(--spacing-container-left-right);
 
 		.container {
-			padding: 0;
+			// padding: 0;
 			display: grid;
 			align-items: center;
 			grid-template-columns: 0.5fr 0.5fr;
@@ -212,7 +212,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			align-items: center;
-			padding: 0;
+			// padding: 0;
 
 			.image-column {
 				position: absolute;
