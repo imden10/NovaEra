@@ -280,6 +280,10 @@ function theme_settings_page() {
                 }
             });
 
+            $(document).on('click', '.delete-image', function () {
+                removeImage($(this));
+            });
+
         });
     </script>
     <?php

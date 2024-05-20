@@ -1,6 +1,7 @@
 # Ignore WordPress core files
 wp-content/upgrade/
 wp-content/backups/
+wp-content/uploads/
 wp-content/themes/cat/vendor/
 wp-content/themes/cat/vendor/composer.lock
 
