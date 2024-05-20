@@ -6,11 +6,12 @@ $data = array_diff_key($content, array_flip(['list']));
         <h2 class="tac"><?php echo $content['title']; ?></h2>
     <?php endif; ?>
     <div class="cards-wrapper <?= 'card-in-row-' . $content['items_in_row'] . ' ' .  'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
-        <?php if (isset($content['list'])) : ?>
-            <?php foreach ($content['list'] as $item) : ?>
+        >
+    <?php if (isset($content['list'])) : ?>
+        <?php foreach ($content['list'] as $item) : ?>
                 <div class="card">
                     <!-- <?php print_r($item); ?> -->
-                    <?php if ($imgPosition == 'top') : ?>
+                    <?php if ($content['image_position'] == 'top') : ?>
                         <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 
                     <?php endif ?>
@@ -47,7 +48,7 @@ $data = array_diff_key($content, array_flip(['list']));
                         <?php endif; ?>
                     </div>
 
-                    <?php if ($imgPosition == 'bottom') : ?>
+                    <?php if ($content['image_position'] == 'bottom') : ?>
                         <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 
                     <?php endif ?>

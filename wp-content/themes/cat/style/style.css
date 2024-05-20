@@ -3495,6 +3495,26 @@ footer .footer__bottom ul {
   order: 10;
 }
 
+.hero-item:nth-child(11) {
+  order: 11;
+}
+
+.hero-item:nth-child(12) {
+  order: 12;
+}
+
+.hero-item:nth-child(13) {
+  order: 13;
+}
+
+.hero-item:nth-child(14) {
+  order: 14;
+}
+
+.hero-item:nth-child(15) {
+  order: 15;
+}
+
 .card-mini-text .cards-wrapper,
 .blocks .cards-wrapper {
   display: grid;

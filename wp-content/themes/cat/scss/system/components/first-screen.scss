@@ -191,7 +191,7 @@
 	}
 }
 
-@for $i from 1 through 10 {
+@for $i from 1 through 15 {
 	.hero-item:nth-child(#{$i}) {
 		order: $i;
 	}
