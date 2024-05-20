@@ -3584,6 +3584,8 @@ footer .footer__bottom ul {
 .blocks .card {
   overflow: hidden;
   height: fit-content;
+  display: flex;
+  justify-content: center;
 }
 .card-mini-text .card h2,
 .blocks .card h2 {

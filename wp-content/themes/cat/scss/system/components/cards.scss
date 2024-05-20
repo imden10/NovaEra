@@ -73,6 +73,8 @@
 	.card {
 		overflow: hidden;
 		height: fit-content;
+		display: flex;
+		justify-content: center;
 		h2{
 			padding-bottom: unset;
 		}
