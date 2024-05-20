@@ -1,3 +1,0 @@
-esphome run relay.yaml
-
-понять где обекти где точки
