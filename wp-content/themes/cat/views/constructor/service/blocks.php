@@ -16,14 +16,16 @@ $data = array_diff_key($content, array_flip(['list']));
                     <?php endif ?>
 
                     <div class="card-info">
-                        <?php if ($content['type'] === 'icon'  && $item['btn__icon']) : ?>
-                            <i class="<?= $item['btn__icon'] ?>"></i>
-                        <?php endif ?>
-                        <?php if ($item['title']) : ?>
-                            <h2>
-                                <?= $item['title']; ?>
-                            </h2>
-                        <?php endif; ?>
+                        <div class="title-wrp">
+                            <?php if ($content['type'] === 'icon' && $item['icon']) : ?>
+                                <i class="<?= $item['icon'] ?>"></i>
+                            <?php endif ?>
+                            <?php if ($item['title']) : ?>
+                                <h2>
+                                    <?= $item['title']; ?>
+                                </h2>
+                            <?php endif; ?>
+                        </div>
 
                         <?php if ($item['link_text'] && $item['link_url']) : ?>
                             <a href="<?= $item['link_url']; ?>" class="card-link"><?= $item['link_text']; ?></a>

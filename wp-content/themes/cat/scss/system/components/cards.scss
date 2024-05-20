@@ -75,6 +75,10 @@
 		height: fit-content;
 		display: flex;
 		justify-content: center;
+		.title-wrp{
+			display: flex;
+			grid-gap: 8px;
+		}
 		h2{
 			padding-bottom: unset;
 		}

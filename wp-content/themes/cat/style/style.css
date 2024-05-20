@@ -3641,6 +3641,11 @@ footer .footer__bottom ul {
   display: flex;
   justify-content: center;
 }
+.card-mini-text .card .title-wrp,
+.blocks .card .title-wrp {
+  display: flex;
+  grid-gap: 8px;
+}
 .card-mini-text .card h2,
 .blocks .card h2 {
   padding-bottom: unset;
