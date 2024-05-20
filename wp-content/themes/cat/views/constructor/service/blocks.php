@@ -6,16 +6,19 @@ $data = array_diff_key($content, array_flip(['list']));
         <h2 class="tac"><?php echo $content['title']; ?></h2>
     <?php endif; ?>
     <div class="cards-wrapper <?= 'card-in-row-' . $content['items_in_row'] . ' ' .  'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
-    <?php if (isset($content['list'])) : ?>
-        <?php foreach ($content['list'] as $item) : ?>
+        <?php if (isset($content['list'])) : ?>
+            <?php foreach ($content['list'] as $item) : ?>
                 <div class="card">
                     <!-- <?php print_r($item); ?> -->
-                    <?php if ($content['image_position'] == 'top') : ?>
+                    <?php if ($content['image_position'] == 'top' && $content['type'] === 'image') : ?>
                         <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 
                     <?php endif ?>
 
                     <div class="card-info">
+                        <?php if ($content['type'] === 'icon'  && $item['btn__icon']) : ?>
+                            <i class="<?= $item['btn__icon'] ?>"></i>
+                        <?php endif ?>
                         <?php if ($item['title']) : ?>
                             <h2>
                                 <?= $item['title']; ?>
@@ -47,7 +50,7 @@ $data = array_diff_key($content, array_flip(['list']));
                         <?php endif; ?>
                     </div>
 
-                    <?php if ($content['image_position'] == 'bottom') : ?>
+                    <?php if ($content['image_position'] == 'bottom' && $content['type'] === 'image') : ?>
                         <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 
                     <?php endif ?>

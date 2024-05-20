@@ -17,15 +17,19 @@ $imgPosition = $content['image_position']
         <div class="cards-wrapper card-in-row-2 <?= 'card-' . $content['card_background_type'] . ' ' . 'card-' . $content['card_' . $content['card_background_type']]  ?>">
             <?php if (isset($content['list'])) : ?>
                 <?php foreach ($content['list'] as $item) : ?>
-                    <a href="<?= $item['link_url']?>" class="card">
-                        <?php if ($imgPosition == 'top') : ?>
+                    <a href="<?= $item['link_url'] ?>" class="card">
+                        <?php if ($content['image_position'] == 'top' && $content['type'] === 'image') : ?>
                             <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
                         <?php endif ?>
-
                         <div class="card-info">
-                            <h2>
-                                <?= $item['title']; ?>
-                            </h2>
+                            <?php if ($content['type'] === 'icon' && $item['btn__icon']) : ?>
+                                <i class="<?= $item['btn__icon'] ?>"></i>
+                            <?php endif ?>
+                            <?php if ($item['title']) : ?>
+                                <h2>
+                                    <?= $item['title']; ?>
+                                </h2>
+                            <?php endif; ?>
 
                             <?php if ($item['link_text'] && $item['link_url']) : ?>
                                 <a href="<?= $item['link_url']; ?>" class="card-link"><?= $item['link_text']; ?></a>
@@ -45,7 +49,7 @@ $imgPosition = $content['image_position']
                             <?php endif; ?>
                         </div>
 
-                        <?php if ($imgPosition == 'bottom') : ?>
+                        <?php if ($content['image_position'] == 'bottom' && $content['type'] === 'image') : ?>
                             <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 
                         <?php endif ?>
