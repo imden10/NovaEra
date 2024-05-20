@@ -3374,11 +3374,26 @@ footer .footer__bottom ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+@media screen and (max-width: 375px) {
+  .first-screen.hero-cards .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .first-screen.hero-cards .cards .hero-card {
   background-color: #fff;
   border-radius: var(--border-radius-global-m, 12px);
   background: var(--bg-on-light-lighter, #FFF);
   padding: 16px !important;
+}
+.first-screen.hero-cards .cards .hero-card-link {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+.first-screen.hero-cards .cards .hero-card-link .icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .first-screen.hero-cards .cards .hero-card-link, .first-screen.hero-cards .cards .hero-card-img {
   color: var(--text-on-light-bg-lighter-high);
@@ -3404,9 +3419,44 @@ footer .footer__bottom ul {
 .first-screen.hero-cards .cards .hero-item {
   height: 130px;
 }
+@media screen and (max-width: 768px) {
+  .first-screen.hero-cards .cards .hero-item:nth-child(10) {
+    grid-column: 1/span 2;
+  }
+}
+@media screen and (max-width: 576px) {
+  .first-screen.hero-cards .cards .hero-item:nth-child(10) {
+    grid-column: unset;
+  }
+}
+@media screen and (max-width: 768px) {
+  .first-screen.hero-cards .cards .hero-item:nth-child(11) {
+    grid-column: 1/span 3;
+  }
+}
+@media screen and (max-width: 375px) {
+  .first-screen.hero-cards .cards .hero-item:nth-child(11) {
+    grid-column: unset;
+  }
+}
 .first-screen.hero-cards .cards .hero-card-img {
+  border-radius: var(--border-radius-global-m, 12px);
+  border: 6px solid var(--bg-on-light-lighter, #FFF);
+  background: var(--bg) lightgray 50%/cover no-repeat;
   display: grid;
   grid-column: 3/span 2;
+  position: relative;
+}
+.first-screen.hero-cards .cards .hero-card-img .description {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  color: var(--text-on-dark-bg-img-high) !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-dark-bg-img-high);
+  line-height: normal;
+  letter-spacing: 0.16px;
 }
 @media screen and (max-width: 1280px) {
   .first-screen.hero-cards .cards .hero-card-img {
@@ -3414,9 +3464,9 @@ footer .footer__bottom ul {
     grid-column: 2/span 2;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1024px) {
   .first-screen.hero-cards .cards .hero-card-img {
-    order: 10;
+    order: 12;
     grid-column: 1/-1;
   }
 }

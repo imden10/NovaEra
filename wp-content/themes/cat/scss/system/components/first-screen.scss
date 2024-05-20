@@ -98,12 +98,27 @@
 			@include _576 {
 				grid-template-columns: repeat(3, 1fr);
 			}
+			@include _375 {
+				grid-template-columns: repeat(2, 1fr);
+			}
 
 			.hero-card {
 				background-color: #fff;
 				border-radius: var(--border-radius-global-m, 12px);
 				background: var(--bg-on-light-lighter, #FFF);
 				padding: 16px !important;
+
+				&-link {
+					display: block;
+					height: 100%;
+					position: relative;
+
+					.icon {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+					}
+				}
 
 				&-link,
 				&-img {
@@ -130,20 +145,51 @@
 				}
 
 			}
-			.hero-item{
+
+			.hero-item {
 				height: 130px;
+
+				&:nth-child(10) {
+					@include _768 {
+						grid-column: 1 / span 2;
+					}
+					@include _576 {
+						grid-column: unset;
+					}
+				}
+				&:nth-child(11) {
+					@include _768 {
+						grid-column: 1 / span 3;
+					}
+					@include _375 {
+						grid-column: unset;
+					}
+				}
 			}
+
 			.hero-card-img {
+				border-radius: var(--border-radius-global-m, 12px);
+				border: 6px solid var(--bg-on-light-lighter, #FFF);
+				background: var(--bg) lightgray 50% / cover no-repeat;
 				display: grid;
 				grid-column: 3 / span 2;
+				position: relative;
+
+				.description {
+					position: absolute;
+					bottom: 0;
+					left: 20px;
+					color: var(--text-on-dark-bg-img-high) !important;
+					@include set-typography(16px, 400, var(--text-on-dark-bg-img-high), normal, 0.16px);
+				}
 
 				@include _1280 {
 					order: 1;
 					grid-column: 2 / span 2;
 				}
 
-				@include _1280 {
-					order: 10;
+				@include _1024 {
+					order: 12;
 					grid-column: 1 / -1;
 				}
 
