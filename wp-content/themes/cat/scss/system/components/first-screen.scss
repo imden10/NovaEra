@@ -161,6 +161,9 @@
 					@include _768 {
 						grid-column: 3 / span 2;
 					}
+					@include _576 {
+						grid-column: 1 / span 3 ;
+					}
 					@include _375 {
 						grid-column: unset;
 					}
