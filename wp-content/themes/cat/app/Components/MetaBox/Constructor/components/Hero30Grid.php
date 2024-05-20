@@ -26,6 +26,15 @@ class Hero30Grid
             'name' => $name . '[' . $key . '][content][image_type]',
             'value' => isset($value['content']['image_type']) ? $value['content']['image_type'] : 'square'
         ];
+
+        $imageFormatTypeList = [
+            'portrait' => __('Сімейне фото'),
+            'fon' => __('Фонове зображення'),
+        ];
+        $imageFormatType = [
+            'name' => $name . '[' . $key . '][content][image_format_type]',
+            'value' => isset($value['content']['image_format_type']) ? $value['content']['image_format_type'] : 'portrait'
+        ];
         ?>
 
         <div class="body-block">
@@ -46,6 +55,14 @@ class Hero30Grid
                           <select name="<?php echo $imageType['name']; ?>" class="form-control form-control-sm">
                               <?php foreach ($imageTypeList as $imageTypeListKey => $imageTypeListItem) : ?>
                                   <option value="<?php echo $imageTypeListKey; ?>"<?php echo ($imageType['value'] == $imageTypeListKey) ? ' selected' : ''; ?>><?php echo $imageTypeListItem; ?></option>
+                              <?php endforeach; ?>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label"><?php _e('Формат зображення'); ?></label>
+                          <select name="<?php echo $imageFormatType['name']; ?>" class="form-control form-control-sm">
+                              <?php foreach ($imageFormatTypeList as $imageFormatTypeListKey => $imageFormatTypeListItem) : ?>
+                                  <option value="<?php echo $imageFormatTypeListKey; ?>"<?php echo ($imageFormatType['value'] == $imageFormatTypeListKey) ? ' selected' : ''; ?>><?php echo $imageFormatTypeListItem; ?></option>
                               <?php endforeach; ?>
                           </select>
                       </div>

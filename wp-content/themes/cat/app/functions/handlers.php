@@ -507,9 +507,12 @@ function remove_widgets_submenu() {
 }
 add_action('admin_menu', 'remove_widgets_submenu');
 
-/***************** Додавання mime type SVG ****************************************************************************/
+/***************** Додавання mime type svg, mp4, webm, gif ************************************************************/
 function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
+    $mimes['mp4'] = 'video/mp4';
+    $mimes['webm'] = 'video/webm';
+    $mimes['gif'] = 'image/gif';
     return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');

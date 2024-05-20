@@ -33,6 +33,14 @@ class ImageAndText
             'name' => $name . '[' . $key . '][content][image][id]',
             'value' => isset($value['content']['image']['id']) ? $value['content']['image']['id'] : '0'
         ];
+        $imageFormatTypeList = [
+            'portrait' => __('Сімейне фото'),
+            'fon' => __('Фонове зображення'),
+        ];
+        $imageFormatType = [
+            'name' => $name . '[' . $key . '][content][image_format_type]',
+            'value' => isset($value['content']['image_format_type']) ? $value['content']['image_format_type'] : 'portrait'
+        ];
         ?>
 
         <div class="body-block">
@@ -41,6 +49,13 @@ class ImageAndText
                 <select name="<?php echo $position['name']; ?>" class="position-image-select">
                     <?php foreach ($positions as $k => $name) : ?>
                         <option value="<?php echo $k; ?>"<?php echo ($position['value'] == $k) ? ' selected' : ''; ?>><?php echo $name; ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+                <label style="margin-top: 15px"><?php _e('Формат зображення'); ?></label>
+                <select name="<?php echo $imageFormatType['name']; ?>" class="position-image-select">
+                    <?php foreach ($imageFormatTypeList as $imageFormatTypeListKey => $imageFormatTypeListItem) : ?>
+                        <option value="<?php echo $imageFormatTypeListKey; ?>"<?php echo ($imageFormatType['value'] == $imageFormatTypeListKey) ? ' selected' : ''; ?>><?php echo $imageFormatTypeListItem; ?></option>
                     <?php endforeach; ?>
                 </select>
 
