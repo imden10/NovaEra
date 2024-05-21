@@ -1,9 +1,44 @@
-.swiper1{
+.swiper1 {
 	display: flex;
 	grid-gap: 10px;
 	overflow-x: hidden;
 }
-.right{
+
+.right {
 	display: flex;
 	justify-content: flex-end;
 }
+
+// .swiper {
+//     overflow: hidden; /* Make sure the overflow is visible to see the partially visible slides */
+// }
+
+.swiper-slide {
+	border-radius: var(--border-radius-card-m);
+	border: 1px solid var(--card-on-light-bg-lighter-border-default);
+	background: var(--card-on-light-bg-darker-bg-default);
+	overflow: hidden;
+
+	h4 {
+		@include set-typography(15px, 700, var(--card-on-light-bg-darker-title-default), 140%);
+		font-variant-numeric: lining-nums proportional-nums;
+		padding: var(--cards-item-wrap-padding-s);
+	}
+
+	img {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		flex: 1 0 0;
+		align-self: stretch;
+	}
+}
+
+// .swiper-wrapper {
+//     padding: 0 50px; /* Adjust padding to control the visibility of the partial slides */
+// }
+
+// .swiper-slide:last-child {
+//     margin-right: 0; /* Remove margin on the last slide */
+// }

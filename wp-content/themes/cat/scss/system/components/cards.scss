@@ -145,6 +145,9 @@
 		h2 {
 			@include set-typography(16px, 600, var(--card-on-light-bg-lighter-title-default), 140%);
 		}
+		&:nth-child(odd):last-of-type {
+			grid-column: 1 / span 2;
+		}
 	}
 
 	.card-info {

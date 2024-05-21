@@ -3,7 +3,7 @@
         <div class="footer__menu">
             <?php foreach (getTreeMenu(225) as $item) : ?>
                 <div class="menu__item">
-                    <a href="<?php echo $item->url; ?>" class="menu__title"><?php echo $item->title . ' - ' . $item->is_custom_menu; ?></a>
+                    <a href="<?php echo $item->url; ?>" class="menu__title"><?php echo $item->title ?></a>
                     <?php if (!empty($item->children)) : ?>
                         <ul class="menu__list">
                             <?php foreach ($item->children as $children_item) : ?>
