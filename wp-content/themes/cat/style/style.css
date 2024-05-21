@@ -3929,3 +3929,20 @@ footer .footer__bottom ul {
 .mobile-menu .custom a {
   color: var(--text-on-light-bg-lighter-medium);
 }
+
+.partner-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--slider-gap-l, 32px);
+}
+
+.swiper1 {
+  display: flex;
+  grid-gap: 10px;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
