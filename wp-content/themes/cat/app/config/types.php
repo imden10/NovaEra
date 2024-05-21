@@ -104,6 +104,7 @@ return [
                             'params' => [
                                 'only' => [
                                     'Text.php',
+                                    'TextAndMenu.php',
                                     'SeoText.php',
                                     'DynamicList.php',
                                     'Table.php',

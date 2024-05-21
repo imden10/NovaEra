@@ -1,0 +1,130 @@
+<?php
+
+namespace App\Components\MetaBox\Constructor\components;
+
+class TextAndMenu
+{
+    public $name = 'Текстовий блок';
+
+    protected static $prefix = 'textandmenu-item';
+
+    protected static $placeholder = '#textandmenuElementId';
+
+    public function html($key, $name, $value)
+    {
+        $list = [
+            'name' => $name . '[' . $key . '][content][list]',
+            'value' => (isset($value['content']['list']) && is_array($value['content']['list'])) ? $value['content']['list'] : []
+        ];
+
+        $text = [
+            'name' => $name . '[' . $key . '][content][text]',
+            'value' => isset($value['content']['text']) ? $value['content']['text'] : ''
+        ];
+        ?>
+
+        <div class="body-block">
+            <div class="list-elements-body">
+                <div class="mb-3">
+                    <label for="textandmenu<?php echo $key; ?>" class="form-label"><?php _e('Текст '); ?></label>
+                    <textarea id="textandmenu<?php echo $key; ?>" class="ck-editor" name="<?php echo $text['name']; ?>"><?php echo $text['value']; ?></textarea>
+                </div>
+
+                <template>
+                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-list-template">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <input type="text" placeholder="Текст" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][link_name]" disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <input type="text" placeholder="Url" class="form-control form-control-sm" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][link_url]" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+
+                <ul class="list-elements-container">
+                    <?php foreach ($list['value'] as $id => $value) : ?>
+                        <li data-item-id="<?php echo $id; ?>" class="item-list-template">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <input type="text" placeholder="Текст" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][link_name]" value="<?= esc_attr($value['link_name']); ?>">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <input type="text" placeholder="Url" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][link_url]" value="<?= esc_attr($value['link_url']); ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+
+                <button type="button" class="btn btn-success btn-sm add-<?php echo self::$prefix; ?>"><?php _e('Додати посилання'); ?></button>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#textandmenu<?php echo $key; ?>').summernote(summernote_options);
+            });
+        </script>
+
+        <?php
+    }
+
+    public function handlerStyle()
+    {
+        add_action('admin_footer', function () { ?>
+        <?php });
+    }
+
+    public function handlerScript()
+    {
+        add_action('admin_footer', function () { ?>
+
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+
+                    const prefix = '<?php echo self::$prefix; ?>';
+                    const placeholder = '<?php echo self::$placeholder; ?>';
+
+                    $(document).on('click', '.add-' + prefix, function () {
+                        const container = $(this).parents('.list-elements-body');
+                        const template = container.find('template')[0];
+                        const itemTemplate = $(template.content).find(".item-list-template");
+                        const itemsContainer = container.find('.list-elements-container');
+
+                        createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
+
+                        itemsContainer.find('input, textarea').each(function () {
+                            $(this).prop('disabled', false);
+                        });
+                    });
+
+                    $(document).on('click', '.delete-list-element', function () {
+                        deleteItem($(this));
+                    });
+                });
+            </script>
+
+        <?php });
+    }
+}
