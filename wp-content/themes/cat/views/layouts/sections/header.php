@@ -2,7 +2,9 @@
     <div class="container">
 
         <div class="left-column">
-            <img class="logo" src="<?= get_image_url_by_id(get_option('theme_settings__logotype')) ?>" alt="logo"></img>
+            <a href="<?php echo $locale['url']; ?>/">
+                <img class="logo" src="<?= get_image_url_by_id(get_option('theme_settings__logotype')) ?>" alt="logo"></img>
+            </a>
             <!--------------------------------- MENU -------------------------------------------------------------------------->
             <?php if (!empty(getTreeMenu(23))) : ?>
                 <nav>
