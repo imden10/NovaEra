@@ -2908,23 +2908,24 @@ header .actions {
   display: flex;
   align-items: center;
 }
-header .lang-switcher {
+
+.lang-switcher {
   display: flex;
   align-items: center;
   padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
   position: relative;
 }
-header .lang-switcher:hover .other-langs {
+.lang-switcher:hover .other-langs {
   opacity: 1;
   visibility: visible;
 }
-header .lang-switcher .icon {
+.lang-switcher .icon {
   margin-right: 4px;
   font-size: 20px;
   cursor: pointer;
   color: #3783E1;
 }
-header .lang-switcher .lang {
+.lang-switcher .lang {
   display: flex;
   text-decoration: none;
   font-size: 16px;
@@ -2932,16 +2933,17 @@ header .lang-switcher .lang {
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
 }
-header .lang-switcher .selected-lang {
+.lang-switcher .selected-lang {
   cursor: pointer;
 }
-header .lang-switcher .other-langs {
+.lang-switcher .other-langs {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
   position: absolute;
   top: 100%;
   left: 50%;
+  z-index: 10;
   transform: translateX(-50%);
   border-radius: var(--border-radius-global-m, 12px);
   border: 1px solid var(--border-on-light-bg-lighter-medium);
@@ -2952,8 +2954,11 @@ header .lang-switcher .other-langs {
   justify-content: center;
   width: 56px;
 }
-header .lang-switcher .other-langs .lang {
+.lang-switcher .other-langs .lang {
   padding: 8px 0px;
+}
+.lang-switcher.footer .other-langs {
+  top: -100%;
 }
 
 header .burger-menu-trigger {
