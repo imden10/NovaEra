@@ -2,13 +2,15 @@ header {
 	display: flex;
 	justify-content: space-between;
 	height: 80px;
-
+	background: var(--bg-on-light-lighter);
 	.container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
-
+	.btn{
+		min-width: unset;
+	}
 	.left-column {
 		display: flex;
 		align-items: center;
