@@ -131,6 +131,7 @@ return [
                                     'Theses.php',
                                     'AccordionTable.php',
                                     'Partners.php',
+                                    'Prices.php',
                                     'Form.php',
                                 ],
                             ]
