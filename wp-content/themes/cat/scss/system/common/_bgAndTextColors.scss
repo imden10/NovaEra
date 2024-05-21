@@ -14,12 +14,12 @@
 	code,
 	span,
 	.redactor > * {
-		color: var($textColor) !important
+		color: var($textColor)
 	}
 
 	a:not([class]),
 	.redactor a {
-		color: var($linkColor) !important
+		color: var($linkColor)
 	}
 }
 
