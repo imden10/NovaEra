@@ -11,8 +11,12 @@
                     <ul class="menu">
                         <?php foreach (getTreeMenu(23) as $item) : ?>
                             <li class="menu__item">
-                                <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title . ' - ' . $item->is_custom_menu; ?></a>
-
+                                <?php if (!empty($item->children)) : ?>
+                                    <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title ?> <i class="ic-chevron-down"></i></a>
+                                <?php else : ?>
+                                    <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title ?></a>
+                                <?php endif; ?>
+                                
                                 <?php if (!empty($item->children)) : ?>
                                     <?php $has_custom_menu = false; ?>
                                     <div class="submenu double-column">

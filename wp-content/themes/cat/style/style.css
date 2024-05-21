@@ -2364,12 +2364,12 @@ p,
 code,
 span,
 .redactor > * {
-  color: var(--text-on-light-bg-lighter-high) !important;
+  color: var(--text-on-light-bg-lighter-high);
 }
 
 a:not([class]),
 .redactor a {
-  color: var(--text-on-light-bg-lighter-link) !important;
+  color: var(--text-on-light-bg-lighter-link);
 }
 
 .on-light.bg-lighter,
@@ -2400,13 +2400,13 @@ a:not([class]),
 .on-light .bg-lighter code,
 .on-light .bg-lighter span,
 .on-light .bg-lighter .redactor > * {
-  color: var(--text-on-light-bg-lighter-high) !important;
+  color: var(--text-on-light-bg-lighter-high);
 }
 .on-light.bg-lighter a:not([class]),
 .on-light.bg-lighter .redactor a,
 .on-light .bg-lighter a:not([class]),
 .on-light .bg-lighter .redactor a {
-  color: var(--text-on-light-bg-lighter-link) !important;
+  color: var(--text-on-light-bg-lighter-link);
 }
 .on-light.bg-gradient,
 .on-light .bg-gradient {
@@ -2436,13 +2436,13 @@ a:not([class]),
 .on-light .bg-gradient code,
 .on-light .bg-gradient span,
 .on-light .bg-gradient .redactor > * {
-  color: var(--text-on-light-bg-darker-high) !important;
+  color: var(--text-on-light-bg-darker-high);
 }
 .on-light.bg-gradient a:not([class]),
 .on-light.bg-gradient .redactor a,
 .on-light .bg-gradient a:not([class]),
 .on-light .bg-gradient .redactor a {
-  color: var(--text-on-light-bg-darker-link) !important;
+  color: var(--text-on-light-bg-darker-link);
 }
 .on-light.bg-darker, .on-light .bg-darker {
   background: var(--bg-on-light-darker);
@@ -2469,12 +2469,12 @@ a:not([class]),
 .on-light .bg-darker code,
 .on-light .bg-darker span,
 .on-light .bg-darker .redactor > * {
-  color: var(--text-on-light-bg-darker-high) !important;
+  color: var(--text-on-light-bg-darker-high);
 }
 .on-light.bg-darker a:not([class]),
 .on-light.bg-darker .redactor a, .on-light .bg-darker a:not([class]),
 .on-light .bg-darker .redactor a {
-  color: var(--text-on-light-bg-darker-link) !important;
+  color: var(--text-on-light-bg-darker-link);
 }
 
 .on-dark.bg-img body,
@@ -2501,13 +2501,13 @@ a:not([class]),
 .on-dark .bg-img code,
 .on-dark .bg-img span,
 .on-dark .bg-img .redactor > * {
-  color: var(--text-on-dark-bg-img-high) !important;
+  color: var(--text-on-dark-bg-img-high);
 }
 .on-dark.bg-img a:not([class]),
 .on-dark.bg-img .redactor a,
 .on-dark .bg-img a:not([class]),
 .on-dark .bg-img .redactor a {
-  color: var(--text-on-dark-bg-img-link) !important;
+  color: var(--text-on-dark-bg-img-link);
 }
 .on-dark.bg-lighter, .on-dark .bg-lighter {
   background: var(--bg-on-dark-lighter);
@@ -2534,12 +2534,12 @@ a:not([class]),
 .on-dark .bg-lighter code,
 .on-dark .bg-lighter span,
 .on-dark .bg-lighter .redactor > * {
-  color: var(--text-on-dark-bg-lighter-high) !important;
+  color: var(--text-on-dark-bg-lighter-high);
 }
 .on-dark.bg-lighter a:not([class]),
 .on-dark.bg-lighter .redactor a, .on-dark .bg-lighter a:not([class]),
 .on-dark .bg-lighter .redactor a {
-  color: var(--text-on-dark-bg-lighter-link) !important;
+  color: var(--text-on-dark-bg-lighter-link);
 }
 .on-dark.bg-darker, .on-dark .bg-darker {
   background: var(--bg-on-dark-darker);
@@ -2566,12 +2566,12 @@ a:not([class]),
 .on-dark .bg-darker code,
 .on-dark .bg-darker span,
 .on-dark .bg-darker .redactor > * {
-  color: var(--text-on-dark-bg-darker-high) !important;
+  color: var(--text-on-dark-bg-darker-high);
 }
 .on-dark.bg-darker a:not([class]),
 .on-dark.bg-darker .redactor a, .on-dark .bg-darker a:not([class]),
 .on-dark .bg-darker .redactor a {
-  color: var(--text-on-dark-bg-darker-link) !important;
+  color: var(--text-on-dark-bg-darker-link);
 }
 
 .bg-img {
@@ -2818,6 +2818,14 @@ header .menu__item__link {
   text-decoration: none;
   padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
   transition: 0.3s;
+}
+header .menu__item__link:has(i) {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+}
+header .menu__item__link:has(i) i {
+  color: inherit;
 }
 header .menu__item__link:hover {
   color: #007bff;
@@ -3137,17 +3145,15 @@ footer .footer__bottom ul {
 .image-and-text .text-wrapper .text,
 .image-and-text .text-wrapper .image {
   width: 50%;
+  position: sticky;
+  top: 0px;
 }
 @media screen and (max-width: 1024px) {
   .image-and-text .text-wrapper .text,
   .image-and-text .text-wrapper .image {
     width: 100%;
+    position: static;
   }
-}
-.image-and-text .text-wrapper .redactor,
-.image-and-text .text-wrapper .image img {
-  position: sticky;
-  top: 0px;
 }
 @media screen and (max-width: 1024px) {
   .image-and-text .text-wrapper .redactor,
@@ -3813,45 +3819,46 @@ footer .footer__bottom ul {
 .seo-text .redactor h1 {
   font-size: 24px;
   font-weight: 600;
-  color: inherit;
+  color: inherit !important;
   line-height: 120%;
 }
 .seo-text .redactor h2 {
   font-size: 20px;
   font-weight: 600;
-  color: inherit;
+  color: inherit !important;
   line-height: 140%;
 }
 .seo-text .redactor h3 {
   font-size: 18px;
   font-weight: 600;
-  color: inherit;
+  color: inherit !important;
   line-height: 140%;
 }
 .seo-text .redactor h4 {
   font-size: 16px;
   font-weight: 600;
-  color: inherit;
+  color: inherit !important;
   line-height: 140%;
 }
 .seo-text .redactor h5 {
   font-size: 14px;
   font-weight: 600;
-  color: inherit;
+  color: inherit !important;
   line-height: 140%;
 }
 .seo-text .redactor h6 {
   font-size: 12px;
   font-weight: 600;
-  color: inherit;
+  color: inherit !important;
   line-height: 140%;
 }
 .seo-text .redactor p,
 .seo-text .redactor a,
-.seo-text .redactor li {
+.seo-text .redactor li,
+.seo-text .redactor span {
   font-size: 14px;
   font-weight: 400;
-  color: inherit;
+  color: inherit !important;
   line-height: 180%;
 }
 .seo-text .redactor a {
