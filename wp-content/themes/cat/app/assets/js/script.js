@@ -545,11 +545,11 @@ const cb = function (callback) {
         let a = document.createElement('a');
         a.className = "cb-component " + data.type_button;
 
-        if(data.icon){
-            a.className += " " + data.icon;
-        }
-
         a.innerText = data.text;
+
+        if(data.icon){
+            a.innerText += "<i class='icon "+data.icon+"'></i>";
+        }
 
         if(data.type_link == "link"){
             a.setAttribute('href',data.link);
