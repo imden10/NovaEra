@@ -29,32 +29,46 @@ class DynamicList
 
         <div class="body-block">
             <div class="list-elements-body">
-                <label>
-                    <?php _e('Тип списку '); ?>
-                    <select name="<?php echo $type['name']; ?>">
+                <div class="mb-3">
+                    <label for="content_position_component" class="form-label"><?php _e('Тип списку'); ?></label>
+                    <select name="<?php echo $type['name']; ?>" class="form-control form-control-sm" id="content_position_component">
                         <?php foreach ($types as $key => $name) : ?>
                             <option value="<?php echo $key; ?>"<?php echo ($type['value'] == $key) ? ' selected' : ''; ?>><?php echo $name; ?></option>
                         <?php endforeach; ?>
                     </select>
-                </label>
-
-                <div style="display: none">
-                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-list-template">
-                        <input type="text" name="<?php echo $list['name']; ?>[<?php echo self::$placeholder; ?>]" disabled="disabled">
-                        <button type="button" class="delete-list-element"><?php _e('Delete'); ?></button>
-                    </li>
                 </div>
+
+                <template>
+                    <li data-item-id="<?php echo self::$placeholder; ?>" class="item-list-template">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm"
+                                           name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][title]">
+                                </div>
+                                <button type="button"
+                                        class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
+                            </div>
+                        </div>
+                    </li>
+                </template>
 
                 <ul class="list-elements-container">
                     <?php foreach ($list['value'] as $id => $value) : ?>
                         <li data-item-id="<?php echo $id; ?>" class="item-list-template">
-                            <input type="text" name="<?php echo $list['name']; ?>[<?php echo $id; ?>]" value="<?php echo esc_attr($value); ?>">
-                            <button type="button" class="delete-list-element"><?php _e('Delete'); ?></button>
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control form-control-sm" name="<?php echo $list['name']; ?>[<?php echo $id; ?>][title]" value="<?= esc_attr($value['title']); ?>">
+                                    </div>
+                                    <button type="button" class="btn btn-danger btn-sm float-end delete-list-element"><?php _e('Delete'); ?></button>
+                                </div>
+                            </div>
                         </li>
                     <?php endforeach; ?>
                 </ul>
 
-                <button type="button" class="button button-secondary add-<?php echo self::$prefix; ?>"><?php _e('Add'); ?></button>
+                <button type="button" class="btn btn-success btn-sm add-<?php echo self::$prefix; ?>"><?php _e('Add'); ?></button>
             </div>
         </div>
 
@@ -65,7 +79,12 @@ class DynamicList
     {
         add_action('admin_footer', function () { ?>
 
-            <style></style>
+            <style>
+                .list-elements-body {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            </style>
 
         <?php });
     }
@@ -83,13 +102,14 @@ class DynamicList
                     $(document).on('click', '.add-' + prefix, function () {
                         console.log(this)
                         const container = $(this).parents('.list-elements-body');
-                        const itemTemplate = container.find('.item-list-template');
+                        const template = container.find('template')[0];
+                        const itemTemplate = $(template.content).find(".item-list-template");
                         const itemsContainer = container.find('.list-elements-container');
 
-                        createItem(container, itemTemplate, itemsContainer, placeholder);
+                        createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
 
-                        itemsContainer.find('input').each(function () {
-                            $(this).prop('disabled', false);
+                        itemsContainer.find('textarea.ck-editor').each(function () {
+                            $(this).summernote(summernote_options);
                         });
                     });
 

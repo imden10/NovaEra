@@ -507,6 +507,14 @@ function remove_widgets_submenu() {
 }
 add_action('admin_menu', 'remove_widgets_submenu');
 
+/***************** Видалення підрозділів з меню "Записи" **************************************************************/
+function custom_remove_menus() {
+    remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' ); // Видалення підрозділу "Категорії"
+    remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' ); // Видалення підрозділу "Мітки"
+    remove_submenu_page( 'edit.php', 'to-interface-post' ); // Видалення підрозділу "taxonomy"
+}
+add_action( 'admin_menu', 'custom_remove_menus', 999 );
+
 /***************** Додавання mime type svg, mp4, webm, gif ************************************************************/
 function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
@@ -527,4 +535,42 @@ function allow_svg_uploads($data, $file, $filename, $mimes) {
     return $data;
 }
 add_filter('wp_check_filetype_and_ext', 'allow_svg_uploads', 10, 4);
+/******************************************************************************************************************** */
+
+/*************************** Перейменувати "Записи" на "Блог" *********************************************************/
+function rename_posts_menu() {
+    global $menu;
+    global $submenu;
+
+    // Змінити основний пункт меню
+    $menu[5][0] = 'Блог';
+
+    // Змінити підпункт меню
+    $submenu['edit.php'][5][0] = 'Всі записи блогу';
+    $submenu['edit.php'][10][0] = 'Додати новий запис';
+    $submenu['edit.php'][16][0] = 'Теги блогу'; // Підрозділ "Мітки"
+
+    // Якщо є додаткові підрозділи, змініть їхні назви тут
+}
+add_action( 'admin_menu', 'rename_posts_menu' );
+
+function rename_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+
+    $labels->name = 'Блог';
+    $labels->singular_name = 'Запис блогу';
+    $labels->add_new = 'Додати новий';
+    $labels->add_new_item = 'Додати новий запис блогу';
+    $labels->edit_item = 'Редагувати запис блогу';
+    $labels->new_item = 'Новий запис блогу';
+    $labels->view_item = 'Переглянути запис блогу';
+    $labels->search_items = 'Шукати в блозі';
+    $labels->not_found = 'Записів блогу не знайдено';
+    $labels->not_found_in_trash = 'Записів блогу не знайдено в кошику';
+    $labels->all_items = 'Всі записи блогу';
+    $labels->menu_name = 'Блог';
+    $labels->name_admin_bar = 'Запис блогу';
+}
+add_action( 'init', 'rename_post_object' );
 /******************************************************************************************************************** */

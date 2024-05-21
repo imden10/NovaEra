@@ -12,22 +12,8 @@
 
             <div class="cformbanner__textcol__formwrap">
                 <h1 class="blogtitle"><?php echo $page->post_title; ?></h1>
-
-                <?php $main_article = model('post')->findMain(); ?>
-
-                <?php if ($main_article) : ?>
-                    <h2 class="blogsubtitle variablefz"><?php echo $main_article->post_title; ?></h2>
-
-                    <p><?php echo wpautop($main_article->post_excerpt); ?></p>
-
-                    <a href="<?php echo get_permalink($main_article->ID); ?>" class="catmainsec__desc__lnk"><span><?php echo trans('Подробнее'); ?> </span><img src="<?php echo appConfig('theme_url'); ?>/img/arrow_right.svg" alt=""></a>
-                <?php endif; ?>
             </div>
         </div>
-
-        <?php if ($main_article) : ?>
-            <div class="cformbanner__banner" style="background: no-repeat center/cover url('<?php echo has_post_thumbnail($main_article->ID) ? get_the_post_thumbnail_url($main_article->ID, 'full') : ''; ?>');"></div>
-        <?php endif; ?>
     </div>
 
     <div class="bgdots bgtopcenter"></div>
@@ -103,19 +89,3 @@ if (!empty($articles)) : ?>
         </div>
     </section>
 <?php endif; ?>
-
-<section class="menu3items">
-    <div class="container">
-        <?php if (is_active_sidebar('information-section' )) : ?>
-            <div class="row prikol">
-                <?php dynamic_sidebar('information-section'); ?>
-            </div>
-        <?php endif; ?>
-    </div>
-
-    <div class="bgdots bgtopright"></div>
-    <div class="bgdots bgbotleft"></div>
-    <div class="bgtext bg3row bgtopleft"></div>
-</section>
-
-<?php require app('path.views') . '/layouts/forms/footer_form.php'; ?>
