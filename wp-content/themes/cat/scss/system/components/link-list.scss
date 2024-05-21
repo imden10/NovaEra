@@ -3,6 +3,13 @@
 	flex-wrap: wrap;
 	grid-gap: var(--spacing-global-spacing-xxs);
 
+	li {
+		width: calc(20% - 8px);
+		@include _768{
+			width: unset;
+		}
+	}
+
 	.links__item {
 		border-radius: var(--border-radius-card-s, 8px);
 		border: 1px solid var(--card-on-light-bg-darker-border-default, #CEDFF3);
