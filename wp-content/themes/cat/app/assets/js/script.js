@@ -546,7 +546,7 @@ const cb = function (callback) {
         a.className = "cb-component " + data.type_button;
 
         if(data.icon){
-            a.className += " icon-" + data.icon;
+            a.className += " " + data.icon;
         }
 
         a.innerText = data.text;
