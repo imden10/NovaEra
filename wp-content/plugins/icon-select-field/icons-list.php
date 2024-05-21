@@ -2,13 +2,19 @@
     <?php
     $decoded_name = base64_decode($atts['name']);
     $icons = [
+        'ic-check-large',
+        'ic-packages',
+        'ic-send',
+        'ic-packages1',
+        'ic-a-b-2',
+        'ic-home',
+        'ic-lang',
         'ic-insragram',
         'ic-insragram-light',
         'ic-linkedin',
         'ic-linkedin-simple',
         'ic-messanger',
         'ic-messanger-simple',
-        'ic-packages',
         'ic-shopping-cart',
         'ic-telegram',
         'ic-tiktok',
@@ -19,7 +25,6 @@
         'ic-viber',
         'ic-whatsapp',
         'ic-youtube-simple',
-        'ic-a-b-2',
         'ic-basket',
         'ic-building-estate',
         'ic-calculator',
@@ -48,8 +53,6 @@
         'ic-error-warning-line',
         'ic-eye-close-line',
         'ic-eye-line',
-        'ic-home',
-        'ic-lang',
         'ic-link',
         'ic-mail-line',
         'ic-menu',
@@ -57,8 +60,8 @@
         'ic-pin',
         'ic-play',
         'ic-plus',
-        'ic-send',
     ];
+
     ?>
     <?php if(isset($atts['title']) && $atts['title'] == "true"):?>
     <label for="<?php echo esc_attr($decoded_name); ?>">Іконка:</label>

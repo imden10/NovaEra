@@ -17,6 +17,14 @@ class Hero50Grid
             'name' => $name . '[' . $key . '][content][text]',
             'value' => isset($value['content']['text']) ? $value['content']['text'] : ''
         ];
+        $imageFormatTypeList = [
+            'portrait' => __('Сімейне фото'),
+            'fon' => __('Фонове зображення'),
+        ];
+        $imageFormatType = [
+            'name' => $name . '[' . $key . '][content][image_format_type]',
+            'value' => isset($value['content']['image_format_type']) ? $value['content']['image_format_type'] : 'portrait'
+        ];
         ?>
 
         <div class="body-block">
@@ -31,6 +39,14 @@ class Hero50Grid
                   <div class="col-3">
                       <div class="mb-3">
                           <?= media_preview_box($image_id['name'],$image_id['value'], "Зображення"); ?>
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label"><?php _e('Формат зображення'); ?></label>
+                          <select name="<?php echo $imageFormatType['name']; ?>" class="form-control form-control-sm">
+                              <?php foreach ($imageFormatTypeList as $imageFormatTypeListKey => $imageFormatTypeListItem) : ?>
+                                  <option value="<?php echo $imageFormatTypeListKey; ?>"<?php echo ($imageFormatType['value'] == $imageFormatTypeListKey) ? ' selected' : ''; ?>><?php echo $imageFormatTypeListItem; ?></option>
+                              <?php endforeach; ?>
+                          </select>
                       </div>
                   </div>
                 </div>
