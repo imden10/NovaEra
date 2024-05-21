@@ -3731,6 +3731,20 @@ footer .footer__bottom ul {
 .card-mini-text .card:nth-child(odd):last-of-type {
   grid-column: 1/span 2;
 }
+@media screen and (max-width: 1024px) {
+  .card-mini-text .card:nth-child(odd):last-of-type {
+    grid-column: unset;
+  }
+}
+.card-mini-text .btns-container {
+  grid-column: 1/span 2;
+  margin-left: auto;
+}
+@media screen and (max-width: 1024px) {
+  .card-mini-text .btns-container {
+    grid-column: unset;
+  }
+}
 .card-mini-text .card-info {
   padding: var(--cards-item-wrap-padding-s);
 }
@@ -3942,24 +3956,18 @@ footer .footer__bottom ul {
   gap: var(--slider-gap-l, 32px);
 }
 
-.swiper1 {
-  display: flex;
-  grid-gap: 10px;
-  overflow-x: hidden;
+.block-slider .swiper {
+  position: relative;
+  overflow: hidden;
+  /* Make sure the overflow is visible to see the partially visible slides */
 }
-
-.right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.swiper-slide {
+.block-slider .swiper-slide {
   border-radius: var(--border-radius-card-m);
   border: 1px solid var(--card-on-light-bg-lighter-border-default);
   background: var(--card-on-light-bg-darker-bg-default);
   overflow: hidden;
 }
-.swiper-slide h4 {
+.block-slider .swiper-slide h4 {
   font-size: 15px;
   font-weight: 700;
   color: var(--card-on-light-bg-darker-title-default);
@@ -3967,11 +3975,31 @@ footer .footer__bottom ul {
   font-variant-numeric: lining-nums proportional-nums;
   padding: var(--cards-item-wrap-padding-s);
 }
-.swiper-slide img {
+.block-slider .swiper-slide img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  flex: 1 0 0;
-  align-self: stretch;
+  max-height: 147px;
+  object-fit: cover;
+  width: 100%;
+}
+.block-slider .btns-container {
+  margin-top: 0;
+}
+.block-slider .controls {
+  position: relative;
+  display: flex;
+}
+.block-slider .controls .button-next,
+.block-slider .controls .button-prev {
+  padding: var(--button-small-top-bottom, 16px) var(--button-small-left-right, 16px);
+  color: var(--btn-primary-on-light-text-label-default);
+  cursor: pointer;
+  font-size: 16px;
+}
+.block-slider .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
