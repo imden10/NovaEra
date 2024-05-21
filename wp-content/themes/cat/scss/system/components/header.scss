@@ -48,7 +48,14 @@ header {
 		text-decoration: none;
 		padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
 		transition: .3s;
-
+		&:has(i){
+			display: flex;
+			align-items: center;
+			grid-gap: 5px;
+			i{
+				color: inherit;
+			}
+		}
 		&:hover {
 			color: #007bff;
 		}

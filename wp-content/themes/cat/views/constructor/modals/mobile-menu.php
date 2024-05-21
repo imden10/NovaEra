@@ -4,7 +4,6 @@
 			<ul class="menu">
 				<?php foreach (getTreeMenu(23) as $item) : ?>
 					<li class="menu__item">
-						<!-- <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title ?> <i class="ic-chevron-down"></i></a> -->
 						<?php if (!empty($item->children)) : ?>
 							<div onclick="slideToggle(this)" class="menu__item__link"><?php echo $item->title ?> <i class="ic-chevron-down"></i></div>
 						<?php else : ?>

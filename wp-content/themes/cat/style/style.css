@@ -2819,6 +2819,14 @@ header .menu__item__link {
   padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
   transition: 0.3s;
 }
+header .menu__item__link:has(i) {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+}
+header .menu__item__link:has(i) i {
+  color: inherit;
+}
 header .menu__item__link:hover {
   color: #007bff;
 }
