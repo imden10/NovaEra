@@ -150,34 +150,15 @@ return [
                     'position' => 'normal',
                     'priority' => 'default',
                     'fields' => [
-                        'subtitle' => [
-                            'label' => __('Підзаголовок'),
-                            'component' => 'App\Components\MetaBox\Text',
-                            'single' => true,
-                            'params' => []
-                        ],
-                        'main' => [
-                            'label' => __('Головна стаття'),
-                            'component' => 'App\Components\MetaBox\Checkbox',
-                            'single' => true,
-                            'params' => []
-                        ],
                         'body' => [
                             'label' => __(''),
                             'component' => 'App\Components\MetaBox\Constructor\Constructor',
                             'single' => true,
                             'params' => [
                                 'only' => [
-                                    'DynamicList.php',
-                                    'Gallery.php',
-                                    'ImageAndText.php',
-                                    'Quote.php',
                                     'Text.php',
-                                    'TextWithBackground.php',
-                                    'ThreeColumnText.php',
-                                    'TwoColumnText.php',
-                                    'VideoAndText.php',
-                                    'BeforeAfter.php',
+                                    'DynamicList.php',
+                                    'ImageBlock.php',
                                 ],
                             ]
                         ],

@@ -10,7 +10,7 @@
             <?php if (isset($content['list'])) : ?>
                 <ul class="constlist">
                     <?php foreach ($content['list'] as $item) : ?>
-                        <li class="<?php echo $content['type'] == 'numeric' ? 'constlinum' : 'constli'; ?>"><?php echo $item; ?></li>
+                        <li class="<?php echo $content['type'] == 'numeric' ? 'constlinum' : 'constli'; ?>"><?php echo $item['title']; ?></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
