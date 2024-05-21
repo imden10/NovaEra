@@ -510,10 +510,21 @@ add_action('admin_menu', 'remove_widgets_submenu');
 /***************** Додавання mime type svg, mp4, webm, gif ************************************************************/
 function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
     $mimes['mp4'] = 'video/mp4';
     $mimes['webm'] = 'video/webm';
     $mimes['gif'] = 'image/gif';
     return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+function allow_svg_uploads($data, $file, $filename, $mimes) {
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if ($ext === 'svg') {
+        $data['ext'] = 'svg';
+        $data['type'] = 'image/svg+xml';
+    }
+    return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'allow_svg_uploads', 10, 4);
 /******************************************************************************************************************** */
