@@ -2771,6 +2771,7 @@ header {
   display: flex;
   justify-content: space-between;
   height: 80px;
+  background: var(--bg-on-light-lighter);
   /* Стиль для підменю першого рівня */
   /* Стиль для підменю другого рівня */
 }
@@ -2778,6 +2779,9 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header .btn {
+  min-width: unset;
 }
 header .left-column {
   display: flex;
@@ -3380,9 +3384,15 @@ footer .footer__bottom ul {
 }
 .first-screen.hero-cards .cards .hero-card {
   background-color: #fff;
-  border-radius: var(--border-radius-global-m, 12px);
-  background: var(--bg-on-light-lighter, #FFF);
+  border-radius: var(--border-radius-global-m);
+  background: var(--bg-on-light-lighter);
+  border: 1px solid var(--bg-on-light-lighter);
   padding: 16px !important;
+  transition: 0.3s;
+}
+.first-screen.hero-cards .cards .hero-card:not(.first-screen.hero-cards .cards .hero-card.hero-card-img):hover {
+  background: var(--bg-on-light-darker);
+  border-color: var(--border-on-light-bg-darker-medium);
 }
 .first-screen.hero-cards .cards .hero-card-link {
   display: block;

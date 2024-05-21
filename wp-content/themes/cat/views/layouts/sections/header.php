@@ -105,7 +105,7 @@
 
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
-                <div class="btn sm primary fill">Демо версія</div>
+                <div class="btn sm primary fill">Демо версія <i class="ic-chevron-right"></i></div>
                 <div class="btn sm secondary fill">Реєстрація</div>
                 <div class="burger-menu-trigger ic-menu"></div>
             </div>

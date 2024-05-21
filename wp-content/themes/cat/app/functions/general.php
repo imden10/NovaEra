@@ -53,8 +53,8 @@ function getTreeMenu($menu)
     if (!empty($menu_raw_items)) {
         foreach ($menu_raw_items as $item) {
             $menu_items[$item->menu_item_parent][$item->ID] = $item;
-            $menu_items[$item->menu_item_parent][$item->ID]->description = get_post_meta( $item->ID, '_menu_item_desc', true ) ?? '';
-            $menu_items[$item->menu_item_parent][$item->ID]->is_custom_menu = (bool)get_post_meta( $item->ID, '_menu_item_menu_custom', true ) ?? false;
+            $menu_items[$item->menu_item_parent][$item->ID]->description = get_post_meta($item->ID, '_menu_item_desc', true) ?? '';
+            $menu_items[$item->menu_item_parent][$item->ID]->is_custom_menu = (bool)get_post_meta($item->ID, '_menu_item_menu_custom', true) ?? false;
         }
 
         $node = $menu_items[0];
@@ -100,11 +100,11 @@ function buildContentFromConstructorArray($post_type, $data = [])
             $file = app('path.views') . '/constructor/' . $post_type . '/' . $component_file_name . '.php';
             if (file_exists($file)) {
                 if ($content['background_type'] !== 'image' && $content['background_type'] !== 'gradient') {
-                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$content['background_type']}'>";
+                    $bg = $content[$content['background_type']] ?? '';
+                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$bg}'>";
                 } elseif ($content['background_type'] === 'gradient') {
                     echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-light bg-gradient'>";
-                }
-                else {
+                } else {
                     echo "<section style='background-image: url(" . wp_get_attachment_image_url($content['background_type_image']['id'], 'full') . ")' class='$component_file_name mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-img'>";
                 }
                 require $file;

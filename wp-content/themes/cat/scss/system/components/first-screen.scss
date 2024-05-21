@@ -98,15 +98,25 @@
 			@include _576 {
 				grid-template-columns: repeat(3, 1fr);
 			}
+
 			@include _375 {
 				grid-template-columns: repeat(2, 1fr);
 			}
 
 			.hero-card {
 				background-color: #fff;
-				border-radius: var(--border-radius-global-m, 12px);
-				background: var(--bg-on-light-lighter, #FFF);
+				border-radius: var(--border-radius-global-m);
+				background: var(--bg-on-light-lighter);
+				border: 1px solid var(--bg-on-light-lighter);
 				padding: 16px !important;
+				transition: .3s;
+
+				&:not(&.hero-card-img):hover {
+					background: var(--bg-on-light-darker);
+					border-color: var(--border-on-light-bg-darker-medium);
+
+
+				}
 
 				&-link {
 					display: block;
@@ -153,17 +163,21 @@
 					@include _768 {
 						grid-column: 1 / span 2;
 					}
+
 					@include _576 {
 						grid-column: unset;
 					}
 				}
+
 				&:nth-child(11) {
 					@include _768 {
 						grid-column: 3 / span 2;
 					}
+
 					@include _576 {
-						grid-column: 1 / span 3 ;
+						grid-column: 1 / span 3;
 					}
+
 					@include _375 {
 						grid-column: unset;
 					}
