@@ -1,44 +1,54 @@
-.swiper1 {
-	display: flex;
-	grid-gap: 10px;
-	overflow-x: hidden;
-}
+.block-slider {
 
-.right {
-	display: flex;
-	justify-content: flex-end;
-}
-
-// .swiper {
-//     overflow: hidden; /* Make sure the overflow is visible to see the partially visible slides */
-// }
-
-.swiper-slide {
-	border-radius: var(--border-radius-card-m);
-	border: 1px solid var(--card-on-light-bg-lighter-border-default);
-	background: var(--card-on-light-bg-darker-bg-default);
-	overflow: hidden;
-
-	h4 {
-		@include set-typography(15px, 700, var(--card-on-light-bg-darker-title-default), 140%);
-		font-variant-numeric: lining-nums proportional-nums;
-		padding: var(--cards-item-wrap-padding-s);
+	.swiper {
+		position: relative;
+		overflow: hidden;
+		/* Make sure the overflow is visible to see the partially visible slides */
 	}
 
-	img {
+	.swiper-slide {
+		border-radius: var(--border-radius-card-m);
+		border: 1px solid var(--card-on-light-bg-lighter-border-default);
+		background: var(--card-on-light-bg-darker-bg-default);
+		overflow: hidden;
+
+		h4 {
+			@include set-typography(15px, 700, var(--card-on-light-bg-darker-title-default), 140%);
+			font-variant-numeric: lining-nums proportional-nums;
+			padding: var(--cards-item-wrap-padding-s);
+		}
+
+		img {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 10px;
+			max-height: 147px;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+
+	.btns-container {
+		margin-top: 0;
+	}
+
+	.controls {
+		position: relative;
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 10px;
-		flex: 1 0 0;
-		align-self: stretch;
+
+		.button-next,
+		.button-prev {
+			padding: var(--button-small-top-bottom, 16px) var(--button-small-left-right, 16px);
+			color: var(--btn-primary-on-light-text-label-default);
+			cursor: pointer;
+			font-size: 16px;
+		}
+	}
+
+	.right {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
 	}
 }
-
-// .swiper-wrapper {
-//     padding: 0 50px; /* Adjust padding to control the visibility of the partial slides */
-// }
-
-// .swiper-slide:last-child {
-//     margin-right: 0; /* Remove margin on the last slide */
-// }

@@ -75,17 +75,21 @@
 		height: fit-content;
 		display: flex;
 		justify-content: center;
-		.title-wrp{
+
+		.title-wrp {
 			display: flex;
 			grid-gap: 8px;
-			i{
+
+			i {
 				font-size: 24px;
 				color: var(--card-on-light-bg-darker-icon-default)
 			}
 		}
-		h2{
+
+		h2 {
 			padding-bottom: unset;
 		}
+
 		.description {
 			overflow: hidden;
 			@include set-typography(15px, 400, var(--text-on-light-bg-darker-high), 160%);
@@ -145,8 +149,21 @@
 		h2 {
 			@include set-typography(16px, 600, var(--card-on-light-bg-lighter-title-default), 140%);
 		}
+
 		&:nth-child(odd):last-of-type {
 			grid-column: 1 / span 2;
+
+			@include _1024 {
+				grid-column: unset;
+			}
+		}
+	}
+
+	.btns-container {
+		grid-column: 1 / span 2;
+		margin-left: auto;
+		@include _1024 {
+			grid-column: unset;
 		}
 	}
 

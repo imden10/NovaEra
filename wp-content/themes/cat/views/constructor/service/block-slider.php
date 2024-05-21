@@ -25,15 +25,15 @@ $data = array_diff_key($content, array_flip(['list']));
                 </div>
             <?php endforeach; ?>
         </div>
+
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
 <?php endif; ?>
 
 
 <div class="container right">
     <?php require app('path.views') . '/constructor/_buttons.php'; ?>
+    <div class="controls">
+        <div class="button-prev ic-chevron-left"></div>
+        <div class="button-next ic-chevron-right"></div>
+    </div>
 </div>
