@@ -545,10 +545,10 @@ const cb = function (callback) {
         let a = document.createElement('a');
         a.className = "cb-component " + data.type_button;
 
-        a.innerText = data.text;
+        a.innerHTML = data.text;
 
         if(data.icon){
-            a.innerText += "<i class='icon "+data.icon+"'></i>";
+            a.innerHTML += "<i class='icon "+data.icon+"'></i>";
         }
 
         if(data.type_link == "link"){
