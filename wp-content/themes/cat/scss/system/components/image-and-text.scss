@@ -23,6 +23,10 @@
 				position: unset;
 			}
 		}
+		img{
+			overflow: hidden;
+			border-radius: var(--border-radius-image-m);
+		}
 
 		&.right {
 			flex-direction: row-reverse;
