@@ -1,8 +1,6 @@
 <div class="contacts">
     <div class="container">
-        <?php use App\Controllers\PostController;
-
-        if (!empty($content['title'])) : ?>
+        <?php if (!empty($content['title'])) : ?>
             <h2><?php echo $content['title']; ?></h2>
         <?php endif; ?>
 
