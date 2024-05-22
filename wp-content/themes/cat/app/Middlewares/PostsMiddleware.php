@@ -13,7 +13,7 @@ class PostsMiddleware implements StageInterface
 
         $queriedObject = $wp_query->get_queried_object();
 
-        dd($queriedObject);
+        dd($wp_query->request);
 
         $postController = $app->make(PostController::class);
 
