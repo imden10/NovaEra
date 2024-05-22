@@ -630,7 +630,7 @@ summernote_options = {
         cb: CustomButton,
         rdm: MoreButton,
         image: function(context) {
-            var button = $('<button class="note-btn btn btn-default btn-sm" type="button" title="Вставити зоюраження" tabindex="-1"><i class="note-icon-picture"></i></button>');
+            var button = $('<button class="note-btn btn btn-default btn-sm" type="button" title="Вставити зображення" tabindex="-1"><i class="note-icon-picture"></i></button>');
             button.click(function() {
                 let frame;
                 if (frame) {
