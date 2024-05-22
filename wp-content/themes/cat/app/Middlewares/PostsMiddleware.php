@@ -9,6 +9,7 @@ class PostsMiddleware implements StageInterface
 {
     public function __invoke($wp_query)
     {
+        dd($wp_query);
         $app = $wp_query->get('app');
 
         $queriedObject = $wp_query->get_queried_object();
