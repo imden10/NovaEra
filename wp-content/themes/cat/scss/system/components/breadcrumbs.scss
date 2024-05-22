@@ -1,0 +1,23 @@
+.breadcrumbs {
+	display: flex;
+	grid-gap: 22px;
+	flex-wrap: wrap;
+	li {
+		&:last-of-type {
+			color: var(--gray-600);
+		}
+
+		a {
+			@include set-typography(16px, 400, var(--brand-1-700), 120%);
+			position: relative;
+			&:after{
+				position: absolute;
+				content: "\e924";
+				top: 50%;
+				transform: translateY(-50%);
+				right: -22px;
+				font-family: 'nova-era' !important;
+			}
+		}
+	}
+}
