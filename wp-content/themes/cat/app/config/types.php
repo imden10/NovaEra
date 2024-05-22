@@ -132,6 +132,7 @@ return [
                                     'AccordionTable.php',
                                     'Partners.php',
                                     'Prices.php',
+                                    'Contacts.php',
                                     'Form.php',
                                 ],
                             ]
