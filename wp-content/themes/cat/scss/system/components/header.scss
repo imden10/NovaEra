@@ -147,54 +147,61 @@ header {
 		align-items: center;
 	}
 
-	.lang-switcher {
+}
+
+.lang-switcher {
+	display: flex;
+	align-items: center;
+	padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
+	position: relative;
+
+	&:hover .other-langs {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.icon {
+		margin-right: 4px;
+		font-size: 20px;
+		cursor: pointer;
+		color: #3783E1;
+	}
+
+	.lang {
 		display: flex;
-		align-items: center;
-		padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
-		position: relative;
+		text-decoration: none;
+		@include set-typography(16px, 500, var(--header-items-on-light-main-nav-label-default), normal);
+	}
 
-		&:hover .other-langs {
-			opacity: 1;
-			visibility: visible;
-		}
+	.selected-lang {
+		cursor: pointer;
+	}
 
-		.icon {
-			margin-right: 4px;
-			font-size: 20px;
-			cursor: pointer;
-			color: #3783E1;
-		}
+	.other-langs {
+		opacity: 0;
+		visibility: hidden;
+		transition: .3s;
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		z-index: 10;
+		transform: translateX(-50%);
+		border-radius: var(--border-radius-global-m, 12px);
+		border: 1px solid var(--border-on-light-bg-lighter-medium);
+		background: var(--bg-on-light-lighter);
+		box-shadow: 0px 0px 0px 6px rgba(123, 136, 153, 0.08);
+		padding: var(--header-drop-menu-wrap-padding-s);
+		display: flex;
+		justify-content: center;
+		width: 56px;
 
 		.lang {
-			display: flex;
-			text-decoration: none;
-			@include set-typography(16px, 500, var(--header-items-on-light-main-nav-label-default), normal);
+			padding: 8px 0px;
 		}
-
-		.selected-lang {
-			cursor: pointer;
-		}
-
-		.other-langs {
-			opacity: 0;
-			visibility: hidden;
-			transition: .3s;
-			position: absolute;
-			top: 100%;
-			left: 50%;
-			transform: translateX(-50%);
-			border-radius: var(--border-radius-global-m, 12px);
-			border: 1px solid var(--border-on-light-bg-lighter-medium);
-			background: var(--bg-on-light-lighter);
-			box-shadow: 0px 0px 0px 6px rgba(123, 136, 153, 0.08);
-			padding: var(--header-drop-menu-wrap-padding-s);
-			display: flex;
-			justify-content: center;
-			width: 56px;
-
-			.lang {
-				padding: 8px 0px;
-			}
+	}
+	&.footer{
+		.other-langs{
+			top: -100%;
 		}
 	}
 }
