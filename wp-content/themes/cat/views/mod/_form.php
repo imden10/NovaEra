@@ -2,7 +2,7 @@
 $formData = \App\Models\Form::getData($id);
 ?>
 
-This is form
+This is form <?= $id ?>
 
 <pre>
     <?php
