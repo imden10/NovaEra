@@ -508,12 +508,12 @@ function remove_widgets_submenu() {
 add_action('admin_menu', 'remove_widgets_submenu');
 
 /***************** Видалення підрозділів з меню "Записи" **************************************************************/
-function custom_remove_menus() {
-    remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' ); // Видалення підрозділу "Категорії"
-    remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' ); // Видалення підрозділу "Мітки"
-    remove_submenu_page( 'edit.php', 'to-interface-post' ); // Видалення підрозділу "taxonomy"
-}
-add_action( 'admin_menu', 'custom_remove_menus', 999 );
+//function custom_remove_menus() {
+//    remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' ); // Видалення підрозділу "Категорії"
+//    remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' ); // Видалення підрозділу "Мітки"
+//    remove_submenu_page( 'edit.php', 'to-interface-post' ); // Видалення підрозділу "taxonomy"
+//}
+//add_action( 'admin_menu', 'custom_remove_menus', 999 );
 
 /***************** Додавання mime type svg, mp4, webm, gif ************************************************************/
 function cc_mime_types($mimes) {
