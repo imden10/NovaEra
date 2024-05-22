@@ -554,23 +554,23 @@ function rename_posts_menu() {
 }
 add_action( 'admin_menu', 'rename_posts_menu' );
 
-function rename_post_object() {
-    global $wp_post_types;
-    $labels = &$wp_post_types['post']->labels;
-
-    $labels->name = 'Блог';
-    $labels->singular_name = 'Запис блогу';
-    $labels->add_new = 'Додати новий';
-    $labels->add_new_item = 'Додати новий запис блогу';
-    $labels->edit_item = 'Редагувати запис блогу';
-    $labels->new_item = 'Новий запис блогу';
-    $labels->view_item = 'Переглянути запис блогу';
-    $labels->search_items = 'Шукати в блозі';
-    $labels->not_found = 'Записів блогу не знайдено';
-    $labels->not_found_in_trash = 'Записів блогу не знайдено в кошику';
-    $labels->all_items = 'Всі записи блогу';
-    $labels->menu_name = 'Блог';
-    $labels->name_admin_bar = 'Запис блогу';
-}
-add_action( 'init', 'rename_post_object' );
+//function rename_post_object() {
+//    global $wp_post_types;
+//    $labels = &$wp_post_types['post']->labels;
+//
+//    $labels->name = 'Блог';
+//    $labels->singular_name = 'Запис блогу';
+//    $labels->add_new = 'Додати новий';
+//    $labels->add_new_item = 'Додати новий запис блогу';
+//    $labels->edit_item = 'Редагувати запис блогу';
+//    $labels->new_item = 'Новий запис блогу';
+//    $labels->view_item = 'Переглянути запис блогу';
+//    $labels->search_items = 'Шукати в блозі';
+//    $labels->not_found = 'Записів блогу не знайдено';
+//    $labels->not_found_in_trash = 'Записів блогу не знайдено в кошику';
+//    $labels->all_items = 'Всі записи блогу';
+//    $labels->menu_name = 'Блог';
+//    $labels->name_admin_bar = 'Запис блогу';
+//}
+//add_action( 'init', 'rename_post_object' );
 /******************************************************************************************************************** */
