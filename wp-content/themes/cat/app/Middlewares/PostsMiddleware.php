@@ -13,6 +13,8 @@ class PostsMiddleware implements StageInterface
 
         $queriedObject = $wp_query->get_queried_object();
 
+        dd($queriedObject);
+
         $postController = $app->make(PostController::class);
 
         if ($queriedObject instanceof \WP_Post && 'post' === $queriedObject->post_type && is_single()) {
