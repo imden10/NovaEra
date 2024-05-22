@@ -624,10 +624,36 @@ summernote_options = {
         ['insert', ['link', 'hr']],
         ['view', ['fullscreen', 'codeview']],
         ['typography', ['typography']],
-        ['popovers', ['cb','rdm']]
+        ['popovers', ['cb','rdm','image']]
     ],
     buttons: {
         cb: CustomButton,
-        rdm: MoreButton
+        rdm: MoreButton,
+        image: function(context) {
+            var button = $('<button class="note-btn btn btn-default btn-sm" type="button" title="Вставити зображення" tabindex="-1"><i class="note-icon-picture"></i></button>');
+            button.click(function() {
+                let frame;
+                if (frame) {
+                    frame.open();
+                    return;
+                }
+
+                frame = wp.media({
+                    title: 'Виберіть або завантажте файл',
+                    button: {
+                        text: 'Вибрати'
+                    },
+                    multiple: false
+                });
+
+                frame.on('select', function() {
+                    var attachment = frame.state().get('selection').first().toJSON();
+                    context.invoke('insertImage', attachment.url);
+                });
+
+                frame.open();
+            });
+            return button;
+        }
     },
 };
