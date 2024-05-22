@@ -9,14 +9,11 @@ class PostsMiddleware implements StageInterface
 {
     public function __invoke($wp_query)
     {
-        dd($wp_query);
         $app = $wp_query->get('app');
 
         $queriedObject = $wp_query->get_queried_object();
 
         $postController = $app->make(PostController::class);
-
-        dd($queriedObject);
 
         if ($queriedObject instanceof \WP_Post && 'post' === $queriedObject->post_type && is_single()) {
             $postController->single();
