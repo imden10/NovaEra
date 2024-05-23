@@ -186,8 +186,8 @@
 			}
 
 			.hero-card-img {
-				border-radius: var(--border-radius-global-m, 12px);
-				border: 6px solid var(--bg-on-light-lighter, #FFF);
+				border-radius: var(--border-radius-global-m);
+				border: 6px solid var(--bg-on-light-lighter);
 				background: var(--bg) lightgray 50% / cover no-repeat;
 				display: grid;
 				grid-column: 3 / span 2;
@@ -196,6 +196,8 @@
 					position: absolute;
 					width: 100%;
 					height: 100%;
+					border-radius: var(--border-radius-global-m);
+					object-fit: fill;
 				}
 				.description {
 					position: absolute;
