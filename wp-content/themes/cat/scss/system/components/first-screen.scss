@@ -205,6 +205,7 @@
 					left: 20px;
 					color: var(--text-on-dark-bg-img-high) !important;
 					@include set-typography(16px, 400, var(--text-on-dark-bg-img-high), normal, 0.16px);
+					z-index: 2;
 				}
 
 				@include _1280 {

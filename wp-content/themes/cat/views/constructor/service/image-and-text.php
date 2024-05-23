@@ -3,8 +3,18 @@ $image = wp_get_attachment_image_url($content['image']['id'], 'full');
 ?>
 <div class="container">
     <div class="text-wrapper <?php echo $content['image_position'] ?>">
-        <div class="image">
-            <img src="<?= $image ?>" alt="<?= $image ?>">
+        <div class="media">
+            <?php
+            $path_parts = pathinfo(get_image_url_by_id($image));
+            if ($path_parts['extension'] === 'mp4') :
+            ?>
+                <video autoplay muted playsinline loop>
+                    <source src="<?= get_image_url_by_id($image); ?>" type="video/mp4">
+                    Ваш браузер не поддерживает тег видео.
+                </video>
+            <?php else : ?>
+                <img src="<?= $image ?>" alt="<?= $image ?>">
+            <?php endif; ?>
         </div>
         <div class="text">
             <?php if (!empty($content['title'])) : ?>

@@ -6,7 +6,7 @@
 		grid-gap: var(--spacing-coll-gap-coll-2);
 
 		.text,
-		.image {
+		.media {
 			width: 50%;
 			position: sticky;
 			top: 0px;
@@ -18,7 +18,7 @@
 		}
 
 		.redactor,
-		.image img {
+		.media img {
 			@include _1024 {
 				position: unset;
 			}
@@ -36,7 +36,7 @@
 			flex-direction: column;
 
 			.text,
-			.image {
+			.media {
 				width: 100%;
 			}
 		}

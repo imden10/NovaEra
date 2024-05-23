@@ -3349,21 +3349,21 @@ footer .footer__bottom ul {
   grid-gap: var(--spacing-coll-gap-coll-2);
 }
 .image-and-text .text-wrapper .text,
-.image-and-text .text-wrapper .image {
+.image-and-text .text-wrapper .media {
   width: 50%;
   position: sticky;
   top: 0px;
 }
 @media screen and (max-width: 1024px) {
   .image-and-text .text-wrapper .text,
-  .image-and-text .text-wrapper .image {
+  .image-and-text .text-wrapper .media {
     width: 100%;
     position: static;
   }
 }
 @media screen and (max-width: 1024px) {
   .image-and-text .text-wrapper .redactor,
-  .image-and-text .text-wrapper .image img {
+  .image-and-text .text-wrapper .media img {
     position: unset;
   }
 }
@@ -3378,7 +3378,7 @@ footer .footer__bottom ul {
   flex-direction: column;
 }
 .image-and-text .text-wrapper.top .text,
-.image-and-text .text-wrapper.top .image {
+.image-and-text .text-wrapper.top .media {
   width: 100%;
 }
 @media screen and (max-width: 1024px) {
@@ -3697,6 +3697,7 @@ footer .footer__bottom ul {
   color: var(--text-on-dark-bg-img-high);
   line-height: normal;
   letter-spacing: 0.16px;
+  z-index: 2;
 }
 @media screen and (max-width: 1280px) {
   .first-screen.hero-cards .cards .hero-card-img {

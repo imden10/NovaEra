@@ -34,7 +34,6 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                                     <source src="<?= get_image_url_by_id($item['icon_custom']); ?>" type="video/mp4">
                                     Ваш браузер не поддерживает тег видео.
                                 </video>
-                                <!-- Ваш HTML-код для обработки видео -->
                             <?php endif; ?>
 
                             <!-- <img src="<?= get_image_url_by_id($item['icon_custom']) ?>"> -->
