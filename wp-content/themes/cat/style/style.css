@@ -3680,6 +3680,11 @@ footer .footer__bottom ul {
   grid-column: 3/span 2;
   position: relative;
 }
+.first-screen.hero-cards .cards .hero-card-img video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .first-screen.hero-cards .cards .hero-card-img .description {
   position: absolute;
   bottom: 0;

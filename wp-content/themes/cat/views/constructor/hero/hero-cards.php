@@ -26,6 +26,17 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                             <p class="description">
                                 <?= $item['title'] ?>
                             </p>
+                            <?php
+                            $path_parts = pathinfo(get_image_url_by_id($item['icon_custom']));
+                            if ($path_parts['extension'] === 'mp4') :
+                            ?>
+                                <video autoplay muted playsinline loop controls="false">
+                                    <source src="<?= get_image_url_by_id($item['icon_custom']); ?>" type="video/mp4">
+                                    Ваш браузер не поддерживает тег видео.
+                                </video>
+                                <!-- Ваш HTML-код для обработки видео -->
+                            <?php endif; ?>
+
                             <!-- <img src="<?= get_image_url_by_id($item['icon_custom']) ?>"> -->
                         </div>
                     <?php else : ?>
