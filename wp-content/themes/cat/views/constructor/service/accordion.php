@@ -5,22 +5,9 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
 
 <div class="column60">
     <div class="container">
-        <?php
-        print_r($data);
-        ?>
-        <!-- <img src="<?= $imageUrl ?>" alt="" style="width: 200px"> -->
 
-        <!-- hasMiniText -->
         <div class="block-wrapper <?= $content['content_position'] ?>">
-            <!-- <div class="mini-text">
-                <div class="redactor">
-                    <h1>Lorem, ipsum.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div> -->
-            <div class="accordion-wrapper">
+            <div class="accordion-wrapper <?= $content['type'] ?>">
                 <?php if (!empty($content['title'])) : ?>
                     <h2><?php echo $content['title']; ?></h2>
                 <?php endif; ?>
@@ -33,27 +20,26 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                     <?php foreach ($content['list'] as $item) : ?>
                         <div onclick="slideToggle(this)" class="accordion-title">
                             <?= $item['title']; ?>
-                            <span class="icon"></span>
+                            <i class="ic-plus"></i>
                         </div>
                         <div class="accordion-content redactor" hidden>
                             <?= $item['description']; ?>
+                            <img src="<?= get_image_url_by_id($item['image']); ?>" alt="" style="max-width: 200px">
+
+                            <?php if ($item['btn__enable'] == 1) : ?>
+                                <!-- <?php
+                                        if ($item['btn__type_link'] === "form") {
+                                            $formData = \App\Models\Form::getData($item['btn__form_id']);
+                                        }
+
+                                        print_r($item);
+                                        print_r($formData);
+                                        ?> -->
+                                <div class="btn-wrp">
+                                    <a href="<?= $item['btn__link'] ?>" class="btn <?= $item['btn__color'] . ' ' . $item['btn__type'] . ' ' . $item['btn__size'] ?>"><?= $item['btn__text'] ?></a>
+                                </div>
+                            <?php endif; ?>
                         </div>
-
-                        <!-- new fields -->
-                        <img src="<?= get_image_url_by_id($item['image']); ?>" alt="" style="max-width: 200px">
-
-                        <?php if($item['btn__enable'] == 1): ?>
-                            <?php
-                            if($item['btn__type_link'] === "form"){
-                                $formData = \App\Models\Form::getData($item['btn__form_id']);
-                            }
-
-                            print_r($item);
-                            print_r($formData);
-                            ?>
-
-                            <button><?= $item['btn__text'] ?></button>
-                        <?php endif; ?>
 
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -61,6 +47,5 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
         </div>
     </div>
 </div>
-</div>
-
 <?php require app('path.views') . '/constructor/_buttons.php'; ?>
+</div>

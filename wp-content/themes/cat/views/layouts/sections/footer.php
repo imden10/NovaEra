@@ -40,43 +40,36 @@
         </div>
         <div class="footer__bottom">
             <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
-            <!-- <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
-                <div class="lang-switcher">
-                    <i class="icon ic-lang"></i>
-                    <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
-                        <a href="<?php echo $locale['url']; ?>" class="lang <?php echo $locale['slug'] == pll_current_language() ? ' active' : ''; ?>">
-                            <?php echo strtoupper($locale['slug']); ?>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?> -->
-            <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
-                <div class="lang-switcher footer">
-                    <?php $current_language = pll_current_language(); ?>
-                    <div class="selected-lang">
-                        <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
-                            <?php if ($locale['slug'] == $current_language) : ?>
-                                <div class="lang">
-                                    <i class="icon ic-lang"></i> <?php echo strtoupper($locale['slug']); ?>
-                                </div>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </div>
-                    <div class="other-langs">
-                        <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
-                            <?php if ($locale['slug'] != $current_language) : ?>
-                                <a href="<?php echo $locale['url']; ?>" class="lang">
-                                    <?php echo strtoupper($locale['slug']); ?>
-                                </a>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            <?php endif; ?>
+
 
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
 
             <ul>
+                <li>
+                    <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
+                        <div class="lang-switcher footer">
+                            <?php $current_language = pll_current_language(); ?>
+                            <div class="selected-lang">
+                                <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
+                                    <?php if ($locale['slug'] == $current_language) : ?>
+                                        <div class="lang">
+                                            <i class="icon ic-lang"></i> <?php echo strtoupper($locale['slug']); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="other-langs">
+                                <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
+                                    <?php if ($locale['slug'] != $current_language) : ?>
+                                        <a href="<?php echo $locale['url']; ?>" class="lang">
+                                            <?php echo strtoupper($locale['slug']); ?>
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </li>
                 <li>Copyright © 2024</li>
                 <li><a class="menu__link" href="#">Правила використання</a></li>
                 <li><a class="menu__link" href="#">Політика конфіденційності</a></li>

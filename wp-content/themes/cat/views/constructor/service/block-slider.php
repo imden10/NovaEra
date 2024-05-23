@@ -17,12 +17,12 @@ $data = array_diff_key($content, array_flip(['list']));
     <div class="swiper">
         <div class="swiper-wrapper">
             <?php foreach ($content['list'] as $item) : ?>
-                <div class="swiper-slide">
-                    <h4><?= $item['link']; ?></h4>
+                <a href="<?= $item['link'] ?>" class="swiper-slide">
+                    <h4><?= $item['title']; ?></h4>
                     <!-- <p><?= $item['text']; ?>descr</p> -->
                     <!-- <img src="https://nova-era.sisidev.com.ua/wp-content/uploads/2024/05/img-golovna-test.png" alt=""> -->
                     <img src="<?= get_image_url_by_id($item['image']); ?>" alt="" style="max-width: 300px">
-                </div>
+                </a>
             <?php endforeach; ?>
         </div>
 

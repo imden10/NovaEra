@@ -9,6 +9,7 @@ footer {
 		padding: 32px 0px;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
+		border-top: 1px solid var(--brand-1-200);
 		@include _1024{
 			grid-template-columns: repeat(2, 1fr);
 			grid-gap: 40px;
@@ -16,11 +17,7 @@ footer {
 	}
 
 	.menu__title {
-		color: var(--header-items-on-light-main-nav-label-default);
-		font-size: 16px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
+		@include set-typography(16px, 600, var(--header-items-on-light-main-nav-label-default), normal);
 	}
 
 	.menu__list {
@@ -30,29 +27,23 @@ footer {
 	}
 
 	.menu__link {
-		color: var(--header-items-on-light-main-nav-label-default, #1C1C1E);
-		font-size: 14px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
+		@include set-typography(14px, 400, var(--header-items-on-light-main-nav-label-default), normal);
 		i{
 			color: var(--footer-nav-item-ic-default)
 		}
 	}
 
 	.footer__bottom {
+		@include set-typography(14px, 400, var(--header-items-on-light-main-nav-label-default), normal);
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
-		color: var(--header-items-on-light-main-nav-label-default, #1C1C1E);
-		font-size: 14px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
 		border-top: 1px solid var(--brand-1-200);
 		padding: 16px 0px;
 		ul{
 			display: flex;
 			grid-gap: 20px;
+			align-items: center;
 		}
 		@include _1024{
 			flex-direction: column;

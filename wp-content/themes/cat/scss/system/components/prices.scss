@@ -1,0 +1,60 @@
+.prices {
+	.prices-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		grid-gap: var(--cards-coll-gap-s);
+		@include _768{
+		flex-direction: column;
+		}
+	}
+	.title{
+		text-align: center;
+	}
+	.prices-item {
+		width: calc(100% / 3 - var(--cards-coll-gap-s));
+		border-radius: var(--border-radius-card-m);
+		border: 1px solid var(--card-on-light-bg-lighter-border-default);
+		background: var(--card-on-light-bg-darker-bg-default);
+		display: flex;
+		padding: var(--cards-item-wrap-padding-m);
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--cards-item-gap-l);
+		align-self: stretch;
+		@include _768{
+			width: 100%;
+		}
+
+		h2 {
+			@include set-typography(20px, 500, var(--card-on-light-bg-darker-title-default), 120%);
+			font-variant-numeric: lining-nums proportional-nums;
+			height: var(--cards-item-title-haight);
+		}
+
+		.price-title {
+			@include set-typography(20px, 400, inherit, 140%);
+			margin: 0;
+			&.blue {
+				color: var(--text-on-light-bg-lighter-primary);
+			}
+
+			&.green {
+				color: var(--system-green-700);
+			}
+		}
+
+		.main-info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+			grid-gap: var(--cards-coll-gap-s);
+		}
+
+		.redactor {
+			width: 100%;
+		}
+	}
+}
