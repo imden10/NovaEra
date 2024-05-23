@@ -6,19 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	// global variables
 	let windowSizeRange;
 	let windowSize = window.innerWidth;
-	let counter = 1
-	const changeTheme = () => {
-		setInterval(() => {
-			counter++
-
-			if (counter >= 5) {
-				counter = 1
-			}
-			console.log(counter);
-			document.body.setAttribute('data-theme', `theme${counter}`)
-		}, 6000)
-
-	}
 	const checkWindowSize = () => {
 		windowSize = window.innerWidth
 		if (windowSize >= 1280) {
@@ -74,9 +61,43 @@ document.addEventListener("DOMContentLoaded", () => {
 	// } catch (error) {
 
 	// }
+
+
+	const form = document.querySelector('.form');
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
+		const formData = new FormData(form);
+
+		// Собрать данные в объект
+		const data = {};
+		formData.forEach((value, key) => {
+			data[key] = value;
+		});
+
+		console.log(data);
+
+		// Отправить данные через fetch или другим способом
+		fetch('your-server-endpoint', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log('Success:', data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
+	});
+
+
+
 	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger')
 	const mobileMenu = document.querySelector('.mobile-menu')
-	burgerMenuTrigger.addEventListener('click', ({target}) => {
+	burgerMenuTrigger.addEventListener('click', ({ target }) => {
 		target.classList.toggle('active')
 		mobileMenu.classList.toggle('show')
 	})
