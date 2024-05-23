@@ -2880,7 +2880,7 @@ a {
   color: #fff;
 }
 
-img {
+img, video {
   max-width: 100%;
   display: block;
 }
@@ -3367,7 +3367,7 @@ footer .footer__bottom ul {
     position: unset;
   }
 }
-.image-and-text .text-wrapper img {
+.image-and-text .text-wrapper img, .image-and-text .text-wrapper video {
   overflow: hidden;
   border-radius: var(--border-radius-image-m);
 }
