@@ -2,18 +2,17 @@
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 }
-
 .first-screen {
 	overflow: hidden;
 	position: relative;
 
 	h1 {
 		margin-bottom: var(--spacing-page-headline-h1-bottom);
+		font-weight: 500;
 	}
 
 	.btns-container {
 		display: flex;
-		justify-content: flex-end;
 	}
 
 	&.fix-image {

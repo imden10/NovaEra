@@ -2255,6 +2255,7 @@ h2 {
 
 .btns-container {
   margin-top: var(--spacing-actions-top-m);
+  grid-gap: 8px;
 }
 
 .btn,
@@ -3520,10 +3521,10 @@ footer .footer__bottom ul {
 }
 .first-screen h1 {
   margin-bottom: var(--spacing-page-headline-h1-bottom);
+  font-weight: 500;
 }
 .first-screen .btns-container {
   display: flex;
-  justify-content: flex-end;
 }
 @media screen and (max-width: 1024px) {
   .first-screen.fix-image .image-column {
