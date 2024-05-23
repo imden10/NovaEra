@@ -23,9 +23,10 @@
 				position: unset;
 			}
 		}
-		img{
+		img, video {
 			overflow: hidden;
 			border-radius: var(--border-radius-image-m);
+			max-width: 100%;
 		}
 
 		&.right {
