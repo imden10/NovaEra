@@ -93,10 +93,19 @@ if (!function_exists('media_preview_box')) {
 
 if (!function_exists('get_image_url_by_id')) {
     function get_image_url_by_id($attachment_id) {
+        // Спробуємо отримати URL зображення
         $image_attributes = wp_get_attachment_image_src($attachment_id, 'full');
         if ($image_attributes) {
             return $image_attributes[0];
         }
+
+        // Якщо не зображення, спробуємо отримати URL прикріпленого файлу
+        $media_url = wp_get_attachment_url($attachment_id);
+        if ($media_url) {
+            return $media_url;
+        }
+
+        // Якщо нічого не знайдено, повертаємо порожній рядок
         return '';
     }
 }
