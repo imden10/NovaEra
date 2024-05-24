@@ -12,12 +12,10 @@ $data = array_diff_key($content, array_flip(['list']));
         <ul class="links__list">
             <?php foreach ($content['list'] as $item) : ?>
                 <li>
-                    <a  class="links__item" href="<?= $item['link']; ?>"><?= $item['name']; ?></a>
+                    <a class="links__item" href="<?= $item['link']; ?>"><?= $item['name']; ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
+    <?php require app('path.views') . '/constructor/_buttons.php'; ?>
 </div>
-
-
-<?php require app('path.views') . '/constructor/_buttons.php'; ?>

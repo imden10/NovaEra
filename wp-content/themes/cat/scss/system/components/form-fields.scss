@@ -1,7 +1,20 @@
 .form-field {
-	input {
+	position: relative;
+	width: 100%;
+
+	textarea {
+		resize: 0px;
+		min-height: var(--form-text-area-height-input);
+		padding: var(--form-text-field-underlined-base-padding-input-top-bottom) 0px;
+
+
+	}
+
+	input,
+	textarea {
 		display: flex;
 		height: var(--form-text-field-outlined-haight-placeholder-input);
+		width: 100%;
 		padding: var(--form-text-field-outlined-padding-input-top-bottom) var(--form-text-field-outlined-padding-input-left-right);
 		align-items: center;
 		gap: var(--form-text-field-underlined-base-gap-gap-horisontal);
@@ -15,6 +28,7 @@
 		font-style: normal;
 		font-weight: 400;
 		line-height: 100%;
+		background-color: transparent;
 
 		&::placeholder {
 			color: var(--text-field-underline-label-enabled);
@@ -33,12 +47,10 @@
 	}
 
 	span {
-		color: var(--text-field-underline-helper-error-text-enabled);
-		font-size: 14px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 120%;
-		margin-left: 12px;
+		// position: absolute;
+		@include set-typography(14px, 500, var(--text-field-underline-label-filled) !important, 100%, 0.56px);
+		// top: 50%;
+		// transition: 0.3s;
 	}
 
 	&.error {
@@ -46,7 +58,8 @@
 			color: var(--text-field-underline-helper-error-text-error);
 		}
 
-		input {
+		input,
+		textarea {
 			border-color: var(--text-field-underline-border-error);
 			color: var(--text-field-underline-input-text-error);
 
@@ -74,7 +87,8 @@
 		}
 
 
-		input {
+		input,
+		textarea {
 			border-color: var(--text-field-underline-border-disabled);
 			color: var(--text-field-underline-input-text-disabled);
 
@@ -85,7 +99,9 @@
 	}
 
 	&.underline {
-		input {
+
+		input,
+		textarea {
 			border: none;
 			border-radius: unset;
 			border-bottom: 1px solid var(--text-field-underline-border-enabled);
@@ -96,5 +112,14 @@
 				box-shadow: unset;
 			}
 		}
+	}
+
+	h2 {
+		@include set-typography(24px, 600, var(--text-on-light-bg-darker-high), 120%, -0.48px);
+		padding: 0;
+	}
+
+	.text {
+		@include set-typography(16px, 400, var(--text-on-light-bg-darker-high), 160%)
 	}
 }
