@@ -10,23 +10,18 @@ class Editor extends BaseMetaBox
     {
         echo '<div class="form-group">';
         echo '<label for="' . $this->name . '">' . $this->label . '</label>';
-
-        wp_editor($this->value, $this->name, [
-            'wpautop' => 1,
-            'media_buttons' => 1,
-            'textarea_name' => $this->name,
-            'textarea_rows' => 20,
-            'tabindex' => null,
-            'editor_css' => '',
-            'editor_class' => '',
-            'teeny' => 0,
-            'dfw' => 0,
-            'tinymce' => 1,
-            'quicktags' => 1,
-            'drag_drop_upload' => false
-        ]);
-
+        echo '<textarea id="' . $this->name . '" class="form-control ck-editor" name="' . $this->name . '">' . $this->value . '</textarea>';
         echo '</div>';
+
+        ?>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.ck-editor').summernote(summernote_options);
+            });
+        </script>
+
+    <?php
     }
 
     public static function beforeOutput($value)

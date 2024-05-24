@@ -374,3 +374,35 @@
 .constructor-section .card {
     max-width: inherit;
 }
+
+.btn-card-collapse {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.btn-card-collapse:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.btn-card-collapse svg {
+    width: 15px;
+}
+
+.btn-card-collapse {
+    font-size: 10px;
+    transform: rotate(180deg);
+    transition: all .3s;
+}
+
+.btn-card-collapse[aria-expanded="true"] {
+    transform: rotate(0deg);
+    transition: all .3s;
+}
