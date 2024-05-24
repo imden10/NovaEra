@@ -8,18 +8,17 @@ class DynamicList extends BaseMetaBox
 {
     protected static $placeholder = '#listItemId';
 
-
     public function html()
     { ?>
         <div class="form-group form-group-meta-box">
             <label><?php echo $this->label; ?></label>
             <div class="items-container list-items">
-                <ul style="display: none;">
+                <template>
                     <li data-item-id="<?php echo self::$placeholder; ?>" class="item-template item-list-template">
                         <input type="text" name="<?php echo $this->name; ?>[<?php echo self::$placeholder; ?>]">
                         <button type="button" class="button delete-item"><?php _e('Delete'); ?></button>
                     </li>
-                </ul>
+                </template>
 
                 <ul class="items-container">
                     <?php foreach ($this->value as $key => $value) : ?>
@@ -44,10 +43,11 @@ class DynamicList extends BaseMetaBox
 
                 $(document).on('click', '.add-' + prefix, function () {
                     const container = $(this).parents('.items-container');
-                    const itemTemplate = container.find('.item-template');
+                    const template = container.find('template')[0];
+                    const itemTemplate = $(template.content).find(".item-list-template");
                     const itemsContainer = container.find('.items-container');
 
-                    createItem(container, itemTemplate, itemsContainer, placeholder);
+                    createItemFromTemplate(container, itemTemplate, itemsContainer, placeholder);
                 });
 
                 $(document).on('click', '.delete-item', function () {

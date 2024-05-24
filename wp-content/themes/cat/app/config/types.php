@@ -169,73 +169,79 @@ return [
         ],
     ],
 
-//    'banner' => [
-//        'type' => [
-//            'labels' => [
-//                'name' => __('Головний банер'),
-//                'singular_name' => __('Банер'),
-//                'add_new' => __('Додати банер'),
-//                'add_new_item' => __('Додати новий банер'),
-//                'edit_item' => __('Редагувати банер'),
-//                'new_item' => __('Новий банер'),
-//                'view_item' => __('Подивитись банер'),
-//                'search_items' => __('Знайти банер'),
-//                'not_found' => __('Банер не знайдено'),
-//                'not_found_in_trash' => __('В кошику банер не знайдено'),
-//                'parent_item_colon' => '',
-//                'menu_name' => __('Головний банер'),
-//            ],
-//            'public'  => true,
-//            'publicly_queryable' => true,
-//            'show_ui' => true,
-//            'show_in_menu' => true,
-//            'query_var' => true,
-//            'capability_type' => 'post',
-//            'has_archive' => true,
-//            'hierarchical' => false,
-//            'menu_position' => 0,
-//            'menu_icon' => 'dashicons-format-image',
-//            'supports' => [
-//                'title',
-//                //'editor',
-//                //'author',
-//                //'thumbnail',
-//                'page-attributes',
-//                //'excerpt',
-//                //'comments'
-//            ]
-//        ],
-//
-//        'metas' => [
-//            'post' => [
-//                'banner_information' => [
-//                    'label' => __('Додаткова інформація'),
-//                    'position' => 'normal',
-//                    'priority' => 'default',
-//                    'fields' => [
-//                        'link' => [
-//                            'label' => __('Посилання'),
-//                            'component' => 'App\Components\MetaBox\Url',
-//                            'single' => true,
-//                            'params' => [],
-//                        ],
-//                        'desktop_image' => [
-//                            'label' => __('Зображення (desktop)'),
-//                            'component' => 'App\Components\MetaBox\Image',
-//                            'single' => true,
-//                            'params' => [],
-//                        ],
-//                        'mobile_image' => [
-//                            'label' => __('Зображення (mobile)'),
-//                            'component' => 'App\Components\MetaBox\Image',
-//                            'single' => true,
-//                            'params' => [],
-//                        ],
-//                    ],
-//                ],
-//            ],
-//        ],
-//    ],
+    'banner' => [
+        'type' => [
+            'labels' => [
+                'name' => __('Банери'),
+                'singular_name' => __('Банер'),
+                'add_new' => __('Додати банер'),
+                'add_new_item' => __('Додати новий банер'),
+                'edit_item' => __('Редагувати банер'),
+                'new_item' => __('Новий банер'),
+                'view_item' => __('Подивитись банер'),
+                'search_items' => __('Знайти банер'),
+                'not_found' => __('Банер не знайдено'),
+                'not_found_in_trash' => __('В кошику банер не знайдено'),
+                'parent_item_colon' => '',
+                'menu_name' => __('Банери'),
+            ],
+            'public'  => false,
+            'publicly_queryable' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'query_var' => true,
+            'capability_type' => 'post',
+            'has_archive' => true,
+            'hierarchical' => false,
+            'menu_position' => 0,
+            'menu_icon' => 'dashicons-format-image',
+            'supports' => [
+                'title',
+            ]
+        ],
+
+        'metas' => [
+            'post' => [
+                'banner_information' => [
+                    'label' => __('Налаштування'),
+                    'position' => 'normal',
+                    'priority' => 'default',
+                    'fields' => [
+                        'title' => [
+                            'label' => __('Заголовок'),
+                            'component' => 'App\Components\MetaBox\Text',
+                            'single' => true,
+                            'params' => [],
+                        ],
+                        'text' => [
+                            'label' => __('Текст'),
+                            'component' => 'App\Components\MetaBox\Editor',
+                            'single' => true,
+                            'params' => [],
+                        ],
+                        'link' => [
+                            'label' => __('Посилання'),
+                            'component' => 'App\Components\MetaBox\Url',
+                            'single' => true,
+                            'params' => [],
+                        ],
+                        'list' => [
+                            'label' => 'Кнопки',
+                            'component' => 'App\Components\MetaBox\Banner\BtnList',
+                            'single' => true,
+                            'params' => [],
+                        ],
+                        'btn' => [
+                            'label' => __('1'),
+                            'component' => 'App\Components\MetaBox\GenerateBtn',
+                            'single' => true,
+                            'params' => [],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
 
     'forms' => [
         'type' => [
