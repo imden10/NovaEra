@@ -63,38 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// }
 
 
-	const form = document.querySelector('.form');
-	form.addEventListener('submit', function (event) {
-		event.preventDefault();
-		const formData = new FormData(form);
-
-		// Собрать данные в объект
-		const data = {};
-		formData.forEach((value, key) => {
-			data[key] = value;
-		});
-
-		console.log(data);
-
-		// Отправить данные через fetch или другим способом
-		fetch('your-server-endpoint', {
-			method: 'POST',
-			body: JSON.stringify(data),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		})
-			.then(response => response.json())
-			.then(data => {
-				console.log('Success:', data);
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
-	});
-
-
-
+	
 	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger')
 	const mobileMenu = document.querySelector('.mobile-menu')
 	burgerMenuTrigger.addEventListener('click', ({ target }) => {
