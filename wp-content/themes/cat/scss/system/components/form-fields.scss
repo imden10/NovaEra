@@ -3,7 +3,7 @@
 	width: 100%;
 
 	textarea {
-		resize: 0px;
+		resize: none;
 		min-height: var(--form-text-area-height-input);
 		padding: var(--form-text-field-underlined-base-padding-input-top-bottom) 0px;
 
@@ -46,16 +46,73 @@
 
 	}
 
-	span {
+	.checkbox {
+		p {
+			display: flex;
+			align-items: center;
+			grid-gap: 15px;
+			position: relative;
+			cursor: pointer;
+
+			&::before {
+				content: '';
+				display: inline-block;
+				border-radius: 5px;
+				width: 24px;
+				height: 24px;
+				border: 1px solid #000;
+			}
+		}
+
+		input {
+			display: none;
+
+			&:checked+p::before {
+				content: '';
+				background: #000;
+			}
+		}
+	}
+
+	.select {
+		display: flex;
+		grid-gap: var(--spacing-global-spacing-xxxs);
+		flex-wrap: wrap;
+
+		.option {
+			display: flex;
+			cursor: pointer;
+			height: var(--form-btn-input-height);
+			padding: var(--form-btn-input-padding-top-bottom) var(--form-btn-input-padding-left-right);
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			border-radius: var(--border-radius-card-m);
+			border: 1px solid var(--btn-input-on-light-border-default);
+			background: var(--btn-input-on-light-bg-default);
+
+			&.active {
+				border-color: var(--btn-input-on-light-border-current);
+				color: var(--btn-input-on-light-border-current);
+			}
+		}
+	}
+
+	.field-title {
 		// position: absolute;
 		@include set-typography(14px, 500, var(--text-field-underline-label-filled) !important, 100%, 0.56px);
+
 		// top: 50%;
 		// transition: 0.3s;
+		&.with-padding {
+			display: block;
+			padding: var(--spacing-global-spacing-l) 0px var(--spacing-text-editor-default-h-bottom) 0px;
+		}
 	}
 
 	&.error {
 		span {
-			color: var(--text-field-underline-helper-error-text-error);
+			color: var(--text-field-underline-helper-error-text-error) !important;
 		}
 
 		input,
@@ -82,7 +139,7 @@
 	&.disabled {
 		pointer-events: none;
 
-		span {
+		.field-title {
 			color: var(--text-field-underline-label-disabled)
 		}
 
@@ -121,5 +178,28 @@
 
 	.text {
 		@include set-typography(16px, 400, var(--text-on-light-bg-darker-high), 160%)
+	}
+}
+
+.success {
+	display: flex;
+	padding: var(--spacing-global-spacing-xs);
+	align-items: flex-start;
+	grid-gap: var(--spacing-global-spacing-xs);
+	border-radius: var(--border-radius-global-m);
+	border: 1px solid var(--system-green-600);
+	background: var(--system-green-50);
+
+	i {
+		color: var(--system-green-700);
+		font-size: 37px;
+	}
+
+	h3 {
+		@include set-typography(16px, 600, var(--text-on-light-bg-darker-high), 160%)
+	}
+
+	p {
+		@include set-typography(16px, 400, var(--text-on-light-bg-lighter-high), 160%)
 	}
 }

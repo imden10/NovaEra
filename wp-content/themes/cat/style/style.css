@@ -1242,6 +1242,21 @@ template {
   --accordion-head-top-bottom-padding: 16px;
   --accordion-head-min-height: 70px;
   --accordion-wrap-list-gap: 0px;
+  --banner-gap-non: 0px;
+  --banner-gap-s: 4px;
+  --banner-gap-m: 8px;
+  --banner-gap-l: 16px;
+  --banner-img-place-padding-bottom: 280px;
+  --banner-img-place-padding-left-right-m: 240px;
+  --banner-img-place-padding-left-right-l: 320px;
+  --banner-img-width-s: 240px;
+  --banner-img-width-m: 320px;
+  --banner-img-width-l: 480px;
+  --banner-wrap-padding-non: 0px;
+  --banner-wrap-padding-s: 16px;
+  --banner-wrap-padding-m: 24px;
+  --banner-wrap-padding-l: 32px;
+  --banner-wrap-padding-xl: 48px;
   --border-radius-accordeon-wrap: 0px;
   --border-radius-drop-menu: 8px;
   --border-radius-accordion-head: 12px;
@@ -1459,6 +1474,21 @@ template {
   --accordion-head-top-bottom-padding: 16px;
   --accordion-head-min-height: 70px;
   --accordion-wrap-list-gap: 0px;
+  --banner-gap-non: 0px;
+  --banner-gap-s: 4px;
+  --banner-gap-m: 8px;
+  --banner-gap-l: 16px;
+  --banner-img-place-padding-bottom: 280px;
+  --banner-img-place-padding-left-right-m: 240px;
+  --banner-img-place-padding-left-right-l: 320px;
+  --banner-img-width-s: 240px;
+  --banner-img-width-m: 320px;
+  --banner-img-width-l: 480px;
+  --banner-wrap-padding-non: 0px;
+  --banner-wrap-padding-s: 16px;
+  --banner-wrap-padding-m: 24px;
+  --banner-wrap-padding-l: 32px;
+  --banner-wrap-padding-xl: 48px;
   --border-radius-accordeon-wrap: 0px;
   --border-radius-drop-menu: 8px;
   --border-radius-accordion-head: 12px;
@@ -1676,6 +1706,21 @@ template {
   --accordion-head-top-bottom-padding: 16px;
   --accordion-head-min-height: 64px;
   --accordion-wrap-list-gap: 0px;
+  --banner-gap-non: 0px;
+  --banner-gap-s: 4px;
+  --banner-gap-m: 8px;
+  --banner-gap-l: 16px;
+  --banner-img-place-padding-bottom: 280px;
+  --banner-img-place-padding-left-right-m: 180px;
+  --banner-img-place-padding-left-right-l: 320px;
+  --banner-img-width-l: 180px;
+  --banner-img-width-m: 180px;
+  --banner-img-width-s: 180px;
+  --banner-wrap-padding-non: 0px;
+  --banner-wrap-padding-s: 16px;
+  --banner-wrap-padding-l: 24px;
+  --banner-wrap-padding-m: 24px;
+  --banner-wrap-padding-xl: 32px;
   --border-radius-accordeon-wrap: 0px;
   --border-radius-accordion-head: 0px;
   --border-radius-drop-menu: 8px;
@@ -1893,6 +1938,21 @@ template {
   --accordion-head-top-bottom-padding: 16px;
   --accordion-head-min-height: 64px;
   --accordion-wrap-list-gap: 0px;
+  --banner-gap-non: 0px;
+  --banner-gap-s: 4px;
+  --banner-gap-m: 8px;
+  --banner-gap-l: 16px;
+  --banner-img-place-padding-bottom: 280px;
+  --banner-img-place-padding-left-right-m: 180px;
+  --banner-img-place-padding-left-right-l: 320px;
+  --banner-img-width-s: 70px;
+  --banner-img-width-l: 180px;
+  --banner-img-width-m: 180px;
+  --banner-wrap-padding-non: 0px;
+  --banner-wrap-padding-m: 16px;
+  --banner-wrap-padding-s: 16px;
+  --banner-wrap-padding-l: 24px;
+  --banner-wrap-padding-xl: 32px;
   --border-radius-accordeon-wrap: 0px;
   --border-radius-accordion-head: 0px;
   --border-radius-banner: 8px;
@@ -3273,7 +3333,7 @@ footer .footer__bottom ul {
   width: 100%;
 }
 .form-field textarea {
-  resize: 0px;
+  resize: none;
   min-height: var(--form-text-area-height-input);
   padding: var(--form-text-field-underlined-base-padding-input-top-bottom) 0px;
 }
@@ -3311,15 +3371,62 @@ footer .footer__bottom ul {
   border-color: var(--text-field-underline-border-focused);
   box-shadow: 0px 0px 1px 1px var(--text-field-underline-border-focused);
 }
-.form-field span {
+.form-field .checkbox p {
+  display: flex;
+  align-items: center;
+  grid-gap: 15px;
+  position: relative;
+  cursor: pointer;
+}
+.form-field .checkbox p::before {
+  content: "";
+  display: inline-block;
+  border-radius: 5px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #000;
+}
+.form-field .checkbox input {
+  display: none;
+}
+.form-field .checkbox input:checked + p::before {
+  content: "";
+  background: #000;
+}
+.form-field .select {
+  display: flex;
+  grid-gap: var(--spacing-global-spacing-xxxs);
+  flex-wrap: wrap;
+}
+.form-field .select .option {
+  display: flex;
+  cursor: pointer;
+  height: var(--form-btn-input-height);
+  padding: var(--form-btn-input-padding-top-bottom) var(--form-btn-input-padding-left-right);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: var(--border-radius-card-m);
+  border: 1px solid var(--btn-input-on-light-border-default);
+  background: var(--btn-input-on-light-bg-default);
+}
+.form-field .select .option.active {
+  border-color: var(--btn-input-on-light-border-current);
+  color: var(--btn-input-on-light-border-current);
+}
+.form-field .field-title {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-field-underline-label-filled) !important;
   line-height: 100%;
   letter-spacing: 0.56px;
 }
+.form-field .field-title.with-padding {
+  display: block;
+  padding: var(--spacing-global-spacing-l) 0px var(--spacing-text-editor-default-h-bottom) 0px;
+}
 .form-field.error span {
-  color: var(--text-field-underline-helper-error-text-error);
+  color: var(--text-field-underline-helper-error-text-error) !important;
 }
 .form-field.error input,
 .form-field.error textarea {
@@ -3343,7 +3450,7 @@ footer .footer__bottom ul {
 .form-field.disabled {
   pointer-events: none;
 }
-.form-field.disabled span {
+.form-field.disabled .field-title {
   color: var(--text-field-underline-label-disabled);
 }
 .form-field.disabled input,
@@ -3379,6 +3486,32 @@ footer .footer__bottom ul {
   font-size: 16px;
   font-weight: 400;
   color: var(--text-on-light-bg-darker-high);
+  line-height: 160%;
+}
+
+.success {
+  display: flex;
+  padding: var(--spacing-global-spacing-xs);
+  align-items: flex-start;
+  grid-gap: var(--spacing-global-spacing-xs);
+  border-radius: var(--border-radius-global-m);
+  border: 1px solid var(--system-green-600);
+  background: var(--system-green-50);
+}
+.success i {
+  color: var(--system-green-700);
+  font-size: 37px;
+}
+.success h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-on-light-bg-darker-high);
+  line-height: 160%;
+}
+.success p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-lighter-high);
   line-height: 160%;
 }
 

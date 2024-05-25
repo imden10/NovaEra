@@ -9,7 +9,7 @@ $success = [
 
 
 
-<!-- This is form <?= $id ?> -->
+This is form <?= $id ?>
 <!-- <pre>
 <?php print_r($formConstructor) ?>
 </pre> -->
@@ -41,20 +41,20 @@ $success = [
                 };
                 formFieldsCollection.push(field);
 
-                // Добавляем обработчик события input для каждого поля формы
                 if (!field.el) return
                 field.el.addEventListener('input', () => {
                     validateField(field);
                 });
             }
         });
-
+        console.log(formFieldsCollection);
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const errors = formFieldsCollection.map(field => validateField(field)).filter(error => error);
             if (errors.length > 0) return;
 
             const formData = new FormData(form);
+            formData.append('form_id', "<?= $id ?>")
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
@@ -62,7 +62,7 @@ $success = [
 
             console.log(data);
             // Отправить данные через fetch или другим способом
-            fetch('your-server-endpoint', {
+            fetch('/api/form/send', {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
@@ -70,9 +70,22 @@ $success = [
                     }
                 })
                 .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                })
+                .then(
+                    ({
+                        data
+                    }) => {
+                        const div = document.createElement('div');
+                        div.classList.add('success');
+                        div.innerHTML = `<i class="ic-check-large"></i>
+                                <div class="text">
+                                    <h3>${data.success_title}</h3>
+                                    <p>${data.success_text}</p>
+                                </div>`
+                        form.append(div)
+                        setTimeout(() => {
+                            div.remove();
+                        }, 4000)
+                    })
                 .catch(error => {
                     console.error('Error:', error);
                 });
@@ -81,9 +94,15 @@ $success = [
         function validateField(field) {
             const inputErrors = [];
             if (!field.el) return
+            console.log(field);
             for (let rule in field.rules) {
-                if (rule === 'required' && !field.el.value) {
-                    inputErrors.push(field.messages[rule]);
+                if (rule === 'required') {
+
+                    if (field.el.type === 'checkbox' && !field.el.checked) {
+                        inputErrors.push(field.messages[rule]);
+                    } else if (field.el.type !== 'checkbox' && !field.el.value.trim()) {
+                        inputErrors.push(field.messages[rule]);
+                    }
                 }
                 if (rule === 'email') {
                     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -100,10 +119,12 @@ $success = [
             }
             if (inputErrors.length > 0) {
                 console.log(inputErrors);
-                field.el.nextElementSibling.innerHTML = inputErrors[0];
+                field.el.closest('.form-field').querySelector('.error').innerHTML = inputErrors[0]
+                field.el.closest('.form-field').classList.add('error')
                 return field;
             } else {
-                field.el.nextElementSibling.innerHTML = '';
+                field.el.closest('.form-field').querySelector('.error').innerHTML = ''
+                field.el.closest('.form-field').classList.remove('error')
                 return null;
             }
         }

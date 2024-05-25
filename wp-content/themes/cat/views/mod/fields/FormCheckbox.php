@@ -1,7 +1,7 @@
 <div class="form-field underline">
-	<label>
+	<label class="checkbox">
 		<input type="checkbox" name="<?= $item['content']['name'] ?>">
-		<?= $item['content']['title'] ?>
-		<span class="error"></span>
+		<p><?= $item['content']['title'] ?></p>
 	</label>
+	<span class="error"></span>
 </div>
