@@ -4581,20 +4581,6 @@ footer .footer__bottom ul {
 .contacts .form .btns-container .btn {
   border: none;
 }
-.contacts .form h2 {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--text-on-light-bg-darker-high);
-  line-height: 120%;
-  letter-spacing: -0.48px;
-  padding-bottom: var(--spacing-global-spacing-xxs, 8px);
-}
-.contacts .form .text {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-on-light-bg-darker-high);
-  line-height: 160%;
-}
 @media screen and (max-width: 1024px) {
   .contacts .form-wrapper-head {
     display: flex;
@@ -4604,4 +4590,20 @@ footer .footer__bottom ul {
     text-align: center;
     align-items: center;
   }
+}
+.contacts h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-on-light-bg-darker-high);
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  padding-bottom: var(--spacing-global-spacing-xxs);
+}
+.contacts .text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-darker-high);
+  line-height: 160%;
+  padding-bottom: var(--spacing-text-editor-default-p-bottom, 8px);
+  margin-bottom: 0;
 }
