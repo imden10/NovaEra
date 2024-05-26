@@ -11,6 +11,7 @@
 			@include set-typography(16px, 400, var(--brand-1-700), 120%);
 			position: relative;
 			&:after{
+				color: var(--gray-600);
 				position: absolute;
 				content: "\e924";
 				top: 50%;
