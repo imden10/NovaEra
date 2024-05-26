@@ -3561,7 +3561,7 @@ footer .footer__bottom ul {
 }
 .image-and-text .btns-container {
   display: inline-flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   grid-gap: 8px;
 }
 
@@ -4478,6 +4478,7 @@ footer .footer__bottom ul {
   position: relative;
 }
 .breadcrumbs li a:after {
+  color: var(--gray-600);
   position: absolute;
   content: "\e924";
   top: 50%;
@@ -4604,6 +4605,6 @@ footer .footer__bottom ul {
   font-weight: 400;
   color: var(--text-on-light-bg-darker-high);
   line-height: 160%;
-  padding-bottom: var(--spacing-text-editor-default-p-bottom, 8px);
+  padding-bottom: var(--spacing-text-editor-default-p-bottom);
   margin-bottom: 0;
 }
