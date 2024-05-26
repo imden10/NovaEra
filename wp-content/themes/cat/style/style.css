@@ -2925,6 +2925,79 @@ a {
   text-decoration: none;
 }
 
+.up {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: -100%;
+  transition: 0.3s;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-global-s);
+  border: 1px solid var(--gray-opacity-20);
+  background: var(--bg-on-light-lighter);
+  font-size: 24px;
+}
+.up.show {
+  right: 20px;
+}
+
+.cookie-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  max-width: var(--form-container-in-popup, 480px);
+  padding: var(--cookie-padding-top-bottom, 16px) var(--cookie-padding-left-right, 16px);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--border-radius-global-m, 12px);
+  border: 1px solid var(--border-on-light-bg-lighter-medium, #CEDFF3);
+  background: var(--bg-on-light-lighter, #FFF);
+  box-shadow: 0px 0px 0px 6px rgba(123, 136, 153, 0.08);
+}
+@media screen and (max-width: 768px) {
+  .cookie-popup {
+    left: 10px;
+    width: 95%;
+  }
+}
+.cookie-popup.show {
+  display: flex;
+}
+.cookie-popup h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-on-light-bg-lighter-high);
+  line-height: 140%;
+}
+.cookie-popup p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-lighter-high);
+  line-height: 160%;
+  margin: 0;
+}
+.cookie-popup .btn {
+  margin-left: auto;
+}
+@media screen and (max-width: 768px) {
+  .cookie-popup .btn {
+    order: -1;
+    margin: 0 auto;
+    margin-bottom: var(--spacing-global-spacing-s);
+  }
+}
+.cookie-popup .close {
+  position: absolute;
+  top: 12px;
+  right: 9px;
+  cursor: pointer;
+}
+
 .setMode,
 .setColors {
   position: fixed;
@@ -2941,7 +3014,8 @@ a {
   color: #fff;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   display: block;
 }
@@ -2957,7 +3031,12 @@ ul {
   list-style-type: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -2965,7 +3044,8 @@ p {
   margin-top: 0;
 }
 
-[class^=ic-], [class*=" ic-"] {
+[class^=ic-],
+[class*=" ic-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "nova-era" !important;
   speak: never;

@@ -81,6 +81,7 @@ $success = [
                                     <h3>${data.success_title}</h3>
                                     <p>${data.success_text}</p>
                                 </div>`
+                        form.reset();
                         form.append(div)
                         setTimeout(() => {
                             div.remove();
@@ -92,8 +93,8 @@ $success = [
         });
 
         function validateField(field) {
-            const inputErrors = [];
             if (!field.el) return
+            const inputErrors = [];
             console.log(field);
             for (let rule in field.rules) {
                 if (rule === 'required') {

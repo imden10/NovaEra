@@ -10,7 +10,7 @@
         <div class="redactor">
             <?php echo $content['text']; ?>
         </div>
-        <a href="#">test ссылка</a>
+        <!-- <a href="#">test ссылка</a> -->
 
         <!--        <div class="constrlnkwrap">-->
         <!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->

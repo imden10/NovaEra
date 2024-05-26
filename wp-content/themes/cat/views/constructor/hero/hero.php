@@ -1,7 +1,7 @@
 <div class="main-screen main-screen-hero">
     <div class="container">
         <?php if (!empty($content['title'])) : ?>
-            <h2><?php echo $content['title']; ?></h2>
+            <h1><?php echo $content['title']; ?></h1>
         <?php endif; ?>
 
         <?php if (!empty($content['text'])) : ?>

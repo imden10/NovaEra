@@ -16,8 +16,76 @@ section {
 		--bg-type: 'on-dark';
 	}
 }
-a{
+
+a {
 	text-decoration: none;
+}
+
+.up {
+	cursor: pointer;
+	position: fixed;
+	bottom: 20px;
+	right: -100%;
+	transition: .3s;
+	width: 56px;
+	height: 56px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-global-s);
+	border: 1px solid var(--gray-opacity-20);
+	background: var(--bg-on-light-lighter);
+	font-size: 24px;
+
+	&.show {
+		right: 20px;
+	}
+}
+
+.cookie-popup {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	max-width: var(--form-container-in-popup, 480px);
+	padding: var(--cookie-padding-top-bottom, 16px) var(--cookie-padding-left-right, 16px);
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	border-radius: var(--border-radius-global-m, 12px);
+	border: 1px solid var(--border-on-light-bg-lighter-medium, #CEDFF3);
+	background: var(--bg-on-light-lighter, #FFF);
+	box-shadow: 0px 0px 0px 6px rgba(123, 136, 153, 0.08);
+	@include _768{
+		left: 10px;
+		width: 95%;
+	}
+	&.show{
+		display: flex;
+	}
+	h3 {
+		@include set-typography(18px, 600, var(--text-on-light-bg-lighter-high), 140%)
+	}
+	
+	p {
+		@include set-typography(16px, 400, var(--text-on-light-bg-lighter-high), 160%);
+		margin: 0;
+	}
+
+	.btn{
+		margin-left: auto;
+		@include _768{
+			order: -1;
+			margin: 0 auto; 
+			margin-bottom: var(--spacing-global-spacing-s);
+		}
+	}
+
+	.close {
+		position: absolute;
+		top: 12px;
+		right: 9px;
+		cursor: pointer;
+	}
 }
 
 // setMode
@@ -37,28 +105,38 @@ a{
 	}
 }
 
-img, video{
+img,
+video {
 	max-width: 100%;
 	display: block;
 }
-.center{
+
+.center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 ul {
 	padding-left: 0;
 	list-style-type: none;
 }
-h1,h2,h3,h4,h5,h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 0;
 }
 
-p{
+p {
 	margin-top: 0;
 }
 
-[class^="ic-"], [class*=" ic-"] {
+[class^="ic-"],
+[class*=" ic-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'nova-era' !important;
 	speak: never;
@@ -71,4 +149,4 @@ p{
 	-moz-osx-font-smoothing: grayscale;
 	transition: .3s;
 	transform-origin: center;
-  }
+}

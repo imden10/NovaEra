@@ -72,9 +72,9 @@
                 <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
 
                 <li>Copyright © 2024</li>
-                <li><a class="menu__link" href="#">Правила використання</a></li>
-                <li><a class="menu__link" href="#">Політика конфіденційності</a></li>
-                <li><a class="menu__link" href="#">Управління Cookies</a></li>
+                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/rules-for-using-the-site/">Правила використання</a></li>
+                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/privacy-policy/">Політика конфіденційності</a></li>
+                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/cookies/">Управління Cookies</a></li>
             </ul>
             <p>Зроблено в Україні | SiDev</p>
         </div>
