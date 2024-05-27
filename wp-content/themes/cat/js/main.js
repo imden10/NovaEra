@@ -1,8 +1,6 @@
+// TODO refactor this file
 document.addEventListener("DOMContentLoaded", () => {
 	'use strict';
-	// document.body.setAttribute('data-theme', 'nova-era')
-	// document.body.setAttribute('data-mode', 'light')
-	// document.body.setAttribute('data-windowsize', '1440-1280')
 	// global variables
 	let windowSizeRange;
 	let windowSize = window.innerWidth;
@@ -96,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState === 4 && xhr.status === 200) {
-					console.log(xhr.responseText);
+					// console.log(xhr.responseText);
 				}
 			};
 
@@ -134,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// Отримання всіх елементів з класом render-form-btn
 		const buttons = document.querySelectorAll('.render-form-btn');
-		console.log(buttons);
 		// Додавання обробника події для кожної кнопки
 		buttons.forEach(function (button) {
 			button.addEventListener('click', function () {
