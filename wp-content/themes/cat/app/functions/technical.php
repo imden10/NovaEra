@@ -17,6 +17,7 @@ add_action('admin_menu', function() {
 
 add_action('admin_enqueue_scripts', function() {
     wp_enqueue_media();
+    wp_enqueue_script( 'sweetalert2-script', 'https://cdn.jsdelivr.net/npm/sweetalert2@11', array(), null, true );
 });
 
 /* Change logo and link in login page */
