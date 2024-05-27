@@ -11,10 +11,6 @@
 		font-weight: 500;
 	}
 
-	.btns-container {
-		display: flex;
-	}
-
 	&.fix-image {
 		.image-column {
 			@include _1024 {

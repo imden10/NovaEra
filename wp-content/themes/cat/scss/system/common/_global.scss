@@ -1,6 +1,9 @@
 body {
 	font-family: "SFProDisplay";
 	background-color: var(--main-bg);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 *,

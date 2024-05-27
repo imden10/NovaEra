@@ -1,0 +1,24 @@
+.page404 {
+	padding-top: var(--spacing-separator-s);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	.inner-wrapper {
+		max-width: 460px;
+	}
+
+	h1 {
+		@include set-typography (60px, 400, var(--text-on-light-bg-lighter-tertiary) !important, 100%, -1.2px)
+	}
+
+	h3 {
+		@include set-typography (20px, 600, var(--text-on-light-bg-lighter-high), 140%);
+		padding-bottom: 8px;
+	}
+
+	p {
+		@include set-typography (16px, 400, var(--text-on-light-bg-lighter-high), 160%);
+	}
+}

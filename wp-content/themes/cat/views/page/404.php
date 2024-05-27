@@ -1,19 +1,13 @@
-<?php if ($page) : ?>
-    <section class="cformbanner notfoundpage">
-        <div class="cformbanner__wrap">
-            <div class="cformbanner__textcol">
-                <div class="notfoundpage__messagewrap">
-                    <h1 class="notfoundpage__title"><?php echo $page->post_title; ?></h1>
-
-                    <?php echo $page->post_content; ?>
-
-                    <a href="<?php echo get_site_url(); ?>" class="notfoundpage__lnk"><?php echo trans('На главную'); ?></a>
-                </div>
-            </div>
-            <div class="cformbanner__banner" style="background: no-repeat center/cover url('<?php echo has_post_thumbnail($page->ID) ? get_the_post_thumbnail_url($page->ID, 'full') : ''; ?>');"></div>
+<div class="container page404">
+    <div class="inner-wrapper">
+        <h1>404</h1>
+        <h3>Нажаль, сторінку не знайдено.</h3>
+        <p>Якщо ви потрапили на цю сторінку, скопіюваваши послання, перевірте чи правильно введено посилання.
+            Якщо ви перейшли за послинням всередині сайту, скоріш за все адміністратор видалив цю сторінку.
+            Скористайтеся меню та посиланнями в футері, щоб знайти потрібний вам розділ.</p>
+        <div class="btns-container">
+            <div class="btn primary fill lg">На головну <i class="ic-chevron-right"></i></div>
+            <div class="btn primary stroke lg">Отримати консультацію <i class="ic-chevron-right"></i></div>
         </div>
-
-        <div class="bgdots bgtopcenter"></div>
-        <div class="bgtext bgbotleft"></div>
-    </section>
-<?php endif; ?>
+    </div>
+</div>

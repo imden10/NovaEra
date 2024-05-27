@@ -2315,6 +2315,8 @@ h2 {
 
 .btns-container {
   margin-top: var(--spacing-actions-top-m);
+  display: flex;
+  flex-wrap: wrap;
   grid-gap: 8px;
 }
 
@@ -2906,6 +2908,9 @@ a:not([class]),
 body {
   font-family: "SFProDisplay";
   background-color: var(--main-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 *,
@@ -3109,6 +3114,37 @@ p {
   font-weight: 400;
   font-style: normal;
 }
+.page404 {
+  padding-top: var(--spacing-separator-s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.page404 .inner-wrapper {
+  max-width: 460px;
+}
+.page404 h1 {
+  font-size: 60px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-lighter-tertiary) !important;
+  line-height: 100%;
+  letter-spacing: -1.2px;
+}
+.page404 h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-on-light-bg-lighter-high);
+  line-height: 140%;
+  padding-bottom: 8px;
+}
+.page404 p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-lighter-high);
+  line-height: 160%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -3343,6 +3379,7 @@ header .burger-menu-trigger.active::before {
 
 footer {
   background-color: #F3F5FC;
+  flex: 0 0;
 }
 footer a {
   text-decoration: none;
@@ -3639,11 +3676,6 @@ footer .footer__bottom ul {
     flex-direction: column !important;
   }
 }
-.image-and-text .btns-container {
-  display: inline-flex;
-  flex-wrap: wrap;
-  grid-gap: 8px;
-}
 
 .accordion .accordion-title {
   position: relative;
@@ -3774,9 +3806,6 @@ footer .footer__bottom ul {
 .first-screen h1 {
   margin-bottom: var(--spacing-page-headline-h1-bottom);
   font-weight: 500;
-}
-.first-screen .btns-container {
-  display: flex;
 }
 @media screen and (max-width: 1024px) {
   .first-screen.fix-image .image-column {
@@ -4655,7 +4684,6 @@ footer .footer__bottom ul {
   }
 }
 .contacts .form .btns-container {
-  display: flex;
   justify-self: end;
 }
 .contacts .form .btns-container .btn {

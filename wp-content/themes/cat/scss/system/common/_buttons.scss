@@ -1,5 +1,7 @@
 .btns-container {
 	margin-top: var(--spacing-actions-top-m);
+	display: flex;
+	flex-wrap: wrap;
 	grid-gap: 8px;
 }
 
