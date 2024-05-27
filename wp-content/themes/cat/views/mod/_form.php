@@ -1,18 +1,12 @@
 <?php
 $formData = \App\Models\Form::getData($id);
 $formConstructor = $formData['fields'];
-$success = [
-    'title' => $formData['success_text'],
-]
 ?>
 
 
 
 
 <!-- This is form <?= $id ?> -->
-<!-- <pre>
-<?php print_r($formConstructor) ?>
-</pre> -->
 <form class="form">
     <?php if (isset($formConstructor)) : ?>
         <?php foreach ($formConstructor as $item) : ?>
@@ -24,7 +18,7 @@ $success = [
     </div>
 </form>
 
-<script>
+<script defer>
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.querySelector('.form');
         const formComponent = <?= json_encode($formConstructor) ?>

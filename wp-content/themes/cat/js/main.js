@@ -32,12 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			upButton.classList.remove('show');
 		}
 	}
-	upButton.addEventListener('click', e => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		});
-	})
+	try {
+		upButton.addEventListener('click', e => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		})
+	} catch (error) {
+
+	}
 	window.addEventListener('scroll', handleScroll);
 	window.addEventListener('resize', () => {
 		checkWindowSize()
@@ -81,6 +85,39 @@ document.addEventListener("DOMContentLoaded", () => {
 				popup.classList.remove('show');
 			}
 		}
+	}
+
+	try {
+		// JavaScript код для виклику ajax-запиту
+		function loadForm(id) {
+			var url = '/api/form/render?id=' + id;
+
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					document.querySelector(".modal-form-content").innerHTML = xhr.responseText;
+					console.log(xhr.responseText);
+					modalFormShow();
+				}
+			};
+
+			xhr.send();
+		}
+
+		// Отримання всіх елементів з класом render-form-btn
+		const buttons = document.querySelectorAll('.render-form-btn');
+		console.log(buttons);
+		// Додавання обробника події для кожної кнопки
+		buttons.forEach(function (button) {
+			button.addEventListener('click', function () {
+				const id = this.getAttribute('data-form_id');
+				loadForm(id);
+			});
+		});
+	} catch (error) {
+
 	}
 
 	// Проверяем, установлены ли куки
