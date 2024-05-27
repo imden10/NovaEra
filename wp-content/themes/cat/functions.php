@@ -36,7 +36,7 @@ add_action('template_redirect', function () {
         ->pipe(new TermMiddleware())
         ->pipe(new UserMiddleware())
         ->pipe(function () {
-//            wp_safe_redirect('/');
+            wp_safe_redirect('/');
             //throw new Exception('Controller not fount');
         });
 
