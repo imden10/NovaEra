@@ -134,7 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		const buttons = document.querySelectorAll('.render-form-btn');
 		// Додавання обробника події для кожної кнопки
 		buttons.forEach(function (button) {
-			button.addEventListener('click', function () {
+			button.addEventListener('click', function (e) {
+				e.preventDefault();
 				const id = this.getAttribute('data-form_id');
 				loadForm(id);
 			});
@@ -150,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<div class="cookie-popup show">
 					<i class="close ic-close"></i>
 					<h3>Файли Cookie</h3>
-					<p>Файли cookie потрібні для того, щоб персоналізувати ваше користування Порталом та зробити його приємнішим і зручнішим.</p>
+					<p>Файли cookie потрібні для того, щоб персоналізувати ваше користування сайтом та зробити його приємнішим і зручнішим.</p>
 					<div class="btn primary lg fill">Дозволити всі Cookie <i class="ic-check-line"></i></div>
 				</div>
 			`;
