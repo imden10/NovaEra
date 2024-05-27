@@ -8,9 +8,4 @@
         <?php echo $content['text']; ?>
         <?php require app('path.views') . '/constructor/_buttons.php'; ?>
     </div>
-
-
-    <!--        <div class="constrlnkwrap">-->
-    <!--            <a href="#" class="constrlnk">Переход <img src="img/arrow_right.svg" alt=""></a>-->
-    <!--        </div>-->
 </div>
