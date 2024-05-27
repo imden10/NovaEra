@@ -103,16 +103,27 @@ document.addEventListener("DOMContentLoaded", () => {
 			xhr.send();
 		}
 
-		// JavaScript код для виклику ajax-запиту
 		function loadForm(id) {
 			var url = '/api/form/render?id=' + id;
-
 			var xhr = new XMLHttpRequest();
 			xhr.open('GET', url, true);
 
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState === 4 && xhr.status === 200) {
-					document.querySelector(".modal-form-content").innerHTML = xhr.responseText;
+					var container = document.querySelector(".modal-form-content");
+					container.innerHTML = xhr.responseText;
+
+					var scripts = container.getElementsByTagName('script');
+					for (var i = 0; i < scripts.length; i++) {
+						var script = document.createElement('script');
+						if (scripts[i].src) {
+							script.src = scripts[i].src;
+						} else {
+							script.innerHTML = scripts[i].innerHTML;
+						}
+						document.head.appendChild(script);
+					}
+
 					getFormData(id);
 					modalFormShow();
 				}

@@ -18,13 +18,14 @@ $formConstructor = $formData['fields'];
     </div>
 </form>
 
-<script defer>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.querySelector('.form');
-        const formComponent = <?= json_encode($formConstructor) ?>
-            .filter(el => el.component !== 'FormTitle' && el.component !== 'FormText').map(el => el.content);
+<script>
+    initializeForm(<?= json_encode($formConstructor) ?>);
 
-        const formFieldsCollection = []
+    function initializeForm(formConstructor) {
+        const form = document.querySelector('.form');
+        const formComponent = formConstructor.filter(el => el.component !== 'FormTitle' && el.component !== 'FormText').map(el => el.content);
+
+        const formFieldsCollection = [];
         formComponent.forEach(el => {
             if (Object.keys(el.rules).length) {
                 const field = {
@@ -35,20 +36,20 @@ $formConstructor = $formData['fields'];
                 };
                 formFieldsCollection.push(field);
 
-                if (!field.el) return
+                if (!field.el) return;
                 field.el.addEventListener('input', () => {
                     validateField(field);
                 });
             }
         });
-        // console.log(formFieldsCollection);
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const errors = formFieldsCollection.map(field => validateField(field)).filter(error => error);
             if (errors.length > 0) return;
 
             const formData = new FormData(form);
-            formData.append('form_id', "<?= $id ?>")
+            formData.append('form_id', "<?= $id ?>");
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
@@ -62,30 +63,29 @@ $formConstructor = $formData['fields'];
                     }
                 })
                 .then(response => response.json())
-                .then(
-                    ({
-                        data
-                    }) => {
-                        const div = document.createElement('div');
-                        div.classList.add('success');
-                        div.innerHTML = `<i class="ic-check-large"></i>
-                                <div class="text">
-                                    <h3>${data.success_title}</h3>
-                                    <p>${data.success_text}</p>
-                                </div>`
-                        form.reset();
-                        form.append(div)
-                        setTimeout(() => {
-                            div.remove();
-                        }, 4000)
-                    })
+                .then(({
+                    data
+                }) => {
+                    const div = document.createElement('div');
+                    div.classList.add('success');
+                    div.innerHTML = `<i class="ic-check-large"></i>
+                            <div class="text">
+                                <h3>${data.success_title}</h3>
+                                <p>${data.success_text}</p>
+                            </div>`;
+                    form.reset();
+                    form.append(div);
+                    setTimeout(() => {
+                        div.remove();
+                    }, 4000);
+                })
                 .catch(error => {
                     console.error('Error:', error);
                 });
         });
 
         function validateField(field) {
-            if (!field.el) return
+            if (!field.el) return;
             const inputErrors = [];
             for (let rule in field.rules) {
                 if (rule === 'required' && !!+field.rules[rule]) {
@@ -109,14 +109,14 @@ $formConstructor = $formData['fields'];
                 }
             }
             if (inputErrors.length > 0) {
-                field.el.closest('.form-field').querySelector('.error').innerHTML = inputErrors[0]
-                field.el.closest('.form-field').classList.add('error')
+                field.el.closest('.form-field').querySelector('.error').innerHTML = inputErrors[0];
+                field.el.closest('.form-field').classList.add('error');
                 return field;
             } else {
-                field.el.closest('.form-field').querySelector('.error').innerHTML = ''
-                field.el.closest('.form-field').classList.remove('error')
+                field.el.closest('.form-field').querySelector('.error').innerHTML = '';
+                field.el.closest('.form-field').classList.remove('error');
                 return null;
             }
         }
-    });
+    }
 </script>

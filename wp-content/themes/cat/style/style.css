@@ -4659,17 +4659,7 @@ footer .footer__bottom ul {
   width: 100%;
 }
 
-.contacts .contacts-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-coll-gap-coll-2);
-}
-@media screen and (max-width: 1024px) {
-  .contacts .contacts-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-.contacts .form {
+.form {
   display: grid;
   grid-gap: var(--spacing-global-spacing-s);
   border-radius: 12px;
@@ -4678,25 +4668,37 @@ footer .footer__bottom ul {
   background: var(--bg-on-light-lighter, #FFF);
 }
 @media screen and (max-width: 1024px) {
-  .contacts .form {
+  .form {
     max-width: 512px;
     margin: 0 auto;
   }
 }
-.contacts .form .btns-container {
+.form .btns-container {
   justify-self: end;
 }
-.contacts .form .btns-container .btn {
+.form .btns-container .btn {
   border: none;
 }
+
 @media screen and (max-width: 1024px) {
-  .contacts .form-wrapper-head {
+  .form-wrapper-head {
     display: flex;
     padding: var(--spacing-global-spacing-l) 0px var(--spacing-global-spacing-s) 0px;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+  }
+}
+
+.contacts .contacts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-coll-gap-coll-2);
+}
+@media screen and (max-width: 1024px) {
+  .contacts .contacts-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 .contacts h2 {
