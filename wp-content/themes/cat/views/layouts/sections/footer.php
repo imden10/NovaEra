@@ -28,10 +28,10 @@
                     Звʼязок та соціальні мережі
                 </a>
                 <div class="menu__list">
-                    <a href="#" class="menu__link"><i class="ic-facebook"></i> Facebook</a>
+                    <!-- <a href="#" class="menu__link"><i class="ic-facebook"></i> Facebook</a>
                     <a href="#" class="menu__link"><i class="ic-telegram"></i> Telegram</a>
                     <a href="#" class="menu__link"><i class="ic-linkedin-simple"></i> LinkedIn</a>
-                    <a href="#" class="menu__link"><i class="ic-youtube-simple"></i> Youtube</a>
+                    <a href="#" class="menu__link"><i class="ic-youtube-simple"></i> Youtube</a> -->
                     <a href="tel:+380672430001" class="menu__link">+380 67 243 00 01</a>
                     <a href="mailto:nfo@nova-era.com.ua" class="menu__link">nfo@nova-era.com.ua</a>
                 </div>
@@ -39,13 +39,12 @@
 
         </div>
         <div class="footer__bottom">
-            <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
 
 
-            <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
 
             <ul>
-                <li>
+                <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
+                <!-- <li>
                     <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
                         <div class="lang-switcher footer">
                             <?php $current_language = pll_current_language(); ?>
@@ -69,11 +68,13 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                </li>
+                </li> -->
+                <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
+
                 <li>Copyright © 2024</li>
-                <li><a class="menu__link" href="#">Правила використання</a></li>
-                <li><a class="menu__link" href="#">Політика конфіденційності</a></li>
-                <li><a class="menu__link" href="#">Управління Cookies</a></li>
+                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/rules-for-using-the-site/">Правила використання</a></li>
+                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/privacy-policy/">Політика конфіденційності</a></li>
+                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/cookies/">Управління Cookies</a></li>
             </ul>
             <p>Зроблено в Україні | SiDev</p>
         </div>

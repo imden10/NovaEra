@@ -48,7 +48,7 @@
 
 	.btns-container {
 		display: inline-flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		grid-gap: 8px;
 	}
 }

@@ -16,6 +16,13 @@
     <div class="constructor-container">
         <?php buildContentFromConstructorArray('service', $page->page_information_constructor); ?>
     </div>
+    <div class="up ic-chevron-up"></div>
+    <!-- <div class="cookie-popup">
+        <i class="close ic-close"></i>
+        <h3>Файли Cookie</h3>
+        <p>Файли cookie потрібні для того, щоб персоналізувати ваше користування Порталом та зробити його приємнішим і зручнішим.</p>
+        <div class="btn primary lg fill">Дозволити всі Cookie <i class="ic-check-line"></i></div>
+    </div> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </section>
