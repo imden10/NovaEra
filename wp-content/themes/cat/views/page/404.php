@@ -7,7 +7,7 @@
             Скористайтеся меню та посиланнями в футері, щоб знайти потрібний вам розділ.</p>
         <div class="btns-container">
             <div class="btn primary fill lg">На головну <i class="ic-chevron-right"></i></div>
-            <div class="btn primary stroke lg">Отримати консультацію <i class="ic-chevron-right"></i></div>
+            <div class="btn primary stroke lg render-form-btn" data-form_id="1629">Отримати консультацію <i class="ic-chevron-right"></i></div>
         </div>
     </div>
 </div>
