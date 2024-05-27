@@ -88,6 +88,21 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	try {
+		function getFormData(id) {
+			var url = '/api/form/get-data?id=' + id;
+
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					console.log(xhr.responseText);
+				}
+			};
+
+			xhr.send();
+		}
+
 		// JavaScript код для виклику ajax-запиту
 		function loadForm(id) {
 			var url = '/api/form/render?id=' + id;
@@ -98,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					document.querySelector(".modal-form-content").innerHTML = xhr.responseText;
-					console.log(xhr.responseText);
+					getFormData(id);
 					modalFormShow();
 				}
 			};

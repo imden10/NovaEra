@@ -39,30 +39,17 @@ class FormController
 
     public function renderFormView($id)
     {
-        $formData = \App\Models\Form::getData($id);
-
-        $viewsPath = app('path.views');
-
-        $object = get_queried_object();
-
-        $data = [
+        $this->view('mod/_form', [
             'id' => $id
-        ];
+        ]);
+    }
 
-        $template = $viewsPath . DIRECTORY_SEPARATOR . 'mod/_form' .$this->templateName($object) . '.php';
-        extract($data);
-
+    public function getFormData($id)
+    {
+        $formData = \App\Models\Form::getData($id);
         status_header(200);
-
-        return [
-            'html' => $template,
-            'form_data' => $formData
-        ];
-
-
-//        $this->view('mod/_form', [
-//            'id' => $id
-//        ]);
+        echo json_encode($formData);
+        die;
     }
 
     /**

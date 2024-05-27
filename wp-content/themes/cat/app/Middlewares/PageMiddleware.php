@@ -28,7 +28,14 @@ class PageMiddleware implements StageInterface
 
             $formController = $app->make(FormController::class);
             $formController->renderFormView($id);
-            die;
+        }
+
+        if ($path == "/api/form/get-data" && strpos($query, 'id=') !== false) {
+            parse_str($query, $params);
+            $id = $params['id'];
+
+            $formController = $app->make(FormController::class);
+            $formController->getFormData($id);
         }
 
         if ($path == "/api/banner/generate" && strpos($query, 'id=') !== false) {
