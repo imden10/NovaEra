@@ -3,6 +3,7 @@
 namespace App\Middlewares;
 
 use App\Controllers\FormController;
+use App\Controllers\BannerController;
 use App\Controllers\PageController;
 use League\Pipeline\StageInterface;
 
@@ -27,6 +28,14 @@ class PageMiddleware implements StageInterface
 
             $formController = $app->make(FormController::class);
             $formController->renderFormView($id);
+        }
+
+        if ($path == "/api/banner/generate" && strpos($query, 'id=') !== false) {
+            parse_str($query, $params);
+            $id = $params['id'];
+
+            $bannerController = $app->make(BannerController::class);
+            $bannerController->generate($id);
         }
 
         $pageController = $app->make(PageController::class);

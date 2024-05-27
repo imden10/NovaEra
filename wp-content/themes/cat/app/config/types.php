@@ -231,9 +231,27 @@ return [
                             'single' => true,
                             'params' => [],
                         ],
+                        'images' => [
+                            'label' => 'Зображення',
+                            'component' => 'App\Components\MetaBox\Banner\Images',
+                            'single' => true,
+                            'params' => [],
+                        ],
+                        'size' => [
+                            'label' => 'Розмір',
+                            'component' => 'App\Components\MetaBox\Select',
+                            'single' => true,
+                            'params' => [
+                                'list' => [
+                                    's' => 'Маленький',
+                                    'm' => 'Середній',
+                                    'l' => 'Великий',
+                                ]
+                            ],
+                        ],
                         'btn' => [
                             'label' => __('1'),
-                            'component' => 'App\Components\MetaBox\GenerateBtn',
+                            'component' => 'App\Components\MetaBox\Banner\GenerateBtn',
                             'single' => true,
                             'params' => [],
                         ],
