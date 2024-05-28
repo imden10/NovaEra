@@ -141,9 +141,10 @@ class Constructor extends BaseMetaBox
         ];
 
         $separatorList = [
+            'L'   => 'L',
             'M'   => 'M',
             'S'   => 'S',
-            'L'   => 'L',
+            'XS'  => 'XS',
             'NON' => 'NON',
         ];
 
