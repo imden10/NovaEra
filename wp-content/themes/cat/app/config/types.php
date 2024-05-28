@@ -360,6 +360,7 @@ return [
                                     'FormTitle.php',
                                     'FormText.php',
                                     'FormInput.php',
+                                    'FormPhone.php',
                                     'FormTextarea.php',
                                     'FormSelect.php',
                                     'FormCheckbox.php',
