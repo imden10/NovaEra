@@ -55,7 +55,7 @@ $formConstructor = $formData['fields'];
                 data[key] = value;
             });
 
-            fetch('/api/form/send123', {
+            fetch('/api/form/send', {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
