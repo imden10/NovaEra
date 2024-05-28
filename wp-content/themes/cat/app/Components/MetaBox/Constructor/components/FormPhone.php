@@ -4,7 +4,7 @@ namespace App\Components\MetaBox\Constructor\components;
 
 class FormPhone
 {
-    public $name = 'Phone';
+    public $name = 'Телефон';
 
     public function html($key, $name, $value)
     {
