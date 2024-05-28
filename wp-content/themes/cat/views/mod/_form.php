@@ -20,6 +20,7 @@ $formConstructor = $formData['fields'];
 
 <script>
     initializeForm(<?= json_encode($formConstructor) ?>);
+
     function initializeForm(formConstructor) {
         const isModal = JSON.parse(localStorage.isModalFormOpen) || null
         const form = document.querySelector('.form');
@@ -69,8 +70,8 @@ $formConstructor = $formData['fields'];
                     const div = document.createElement('div');
                     div.innerHTML = `<i class="ic-check-large"></i>
                         <div class="text">
-                        <h3>test title</h3>
-                        <p>test desc</p>
+                        <h3>${data.success_title}</h3>
+                        <p>${data.success_text}</p>
                         </div>`;
                     if (isModal) {
                         div.classList.add('modal-success')
