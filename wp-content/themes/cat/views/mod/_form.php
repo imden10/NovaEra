@@ -20,9 +20,10 @@ $formConstructor = $formData['fields'];
 
 <script>
     initializeForm(<?= json_encode($formConstructor) ?>);
-
     function initializeForm(formConstructor) {
+        const isModal = JSON.parse(localStorage.isModalFormOpen) || null
         const form = document.querySelector('.form');
+        const formWrapper = document.querySelector('.modal-form-content');
         const formComponent = formConstructor.filter(el => el.component !== 'FormTitle' && el.component !== 'FormText').map(el => el.content);
 
         const formFieldsCollection = [];
@@ -42,7 +43,6 @@ $formConstructor = $formData['fields'];
                 });
             }
         });
-
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const errors = formFieldsCollection.map(field => validateField(field)).filter(error => error);
@@ -55,7 +55,7 @@ $formConstructor = $formData['fields'];
                 data[key] = value;
             });
 
-            fetch('/api/form/send', {
+            fetch('/api/form/send123', {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
@@ -67,17 +67,26 @@ $formConstructor = $formData['fields'];
                     data
                 }) => {
                     const div = document.createElement('div');
-                    div.classList.add('success');
                     div.innerHTML = `<i class="ic-check-large"></i>
-                            <div class="text">
-                                <h3>${data.success_title}</h3>
-                                <p>${data.success_text}</p>
-                            </div>`;
+                        <div class="text">
+                        <h3>test title</h3>
+                        <p>test desc</p>
+                        </div>`;
+                    if (isModal) {
+                        div.classList.add('modal-success')
+                        form.remove();
+                        formWrapper.append(div)
+                    } else {
+                        div.classList.add('success');
+                        form.append(div);
+                        setTimeout(() => {
+                            div.remove();
+                        }, 4000)
+                    }
                     form.reset();
-                    form.append(div);
-                    setTimeout(() => {
-                        div.remove();
-                    }, 4000);
+                    if (isModal) {
+                        localStorage.setItem('isModalFormOpen', false);
+                    };
                 })
                 .catch(error => {
                     console.error('Error:', error);

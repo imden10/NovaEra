@@ -1,170 +1,145 @@
-// TODO refactor this file
+'use strict';
+
 document.addEventListener("DOMContentLoaded", () => {
-	'use strict';
-	// global variables
-	let windowSizeRange;
-	let windowSize = window.innerWidth;
 	const upButton = document.querySelector('.up');
-	const checkWindowSize = () => {
-		windowSize = window.innerWidth
-		if (windowSize >= 1280) {
-			windowSizeRange = '1440-1280';
-		} else if (windowSize >= 1024 && windowSize <= 1279) {
-			windowSizeRange = '1279-1024';
-		} else if (windowSize >= 577 && windowSize <= 1023) {
-			windowSizeRange = '1023-768';
-		} else if (windowSize <= 576) {
-			windowSizeRange = '567-320';
-		} else {
-			windowSizeRange = 'Unknown';
-		}
-		document.body.setAttribute('data-windowsize', windowSizeRange);
-	}
+	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger');
+	const mobileMenu = document.querySelector('.mobile-menu');
+	const buttons = document.querySelectorAll('.render-form-btn');
 
-	checkWindowSize()
+	// Helper functions
+	const setWindowSizeRange = () => {
+		const ranges = [
+			{ min: 1280, value: '1440-1280' },
+			{ min: 1024, max: 1279, value: '1279-1024' },
+			{ min: 577, max: 1023, value: '1023-768' },
+			{ max: 576, value: '567-320' }
+		];
+		const foundRange = ranges.find(r => (!r.max || window.innerWidth <= r.max) && (!r.min || window.innerWidth >= r.min)) || { value: 'Unknown' };
+		document.body.setAttribute('data-windowsize', foundRange.value);
+	};
 
-	function handleScroll() {
+	const handleScrollUpButton = () => {
 		if (window.scrollY >= 1000) {
 			upButton.classList.add('show');
 		} else {
 			upButton.classList.remove('show');
 		}
-	}
-	try {
-		upButton.addEventListener('click', e => {
-			window.scrollTo({
-				top: 0,
-				behavior: 'smooth'
-			});
-		})
-	} catch (error) {
+	};
 
-	}
-	window.addEventListener('scroll', handleScroll);
-	window.addEventListener('resize', () => {
-		checkWindowSize()
-	});
+	const handleResize = () => setWindowSizeRange();
 
-	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger')
-	const mobileMenu = document.querySelector('.mobile-menu')
-	burgerMenuTrigger.addEventListener('click', ({ target }) => {
-		target.classList.toggle('active')
-		mobileMenu.classList.toggle('show')
-	})
+	const toggleBurgerMenu = (event) => {
+		event.target.classList.toggle('active');
+		mobileMenu.classList.toggle('show');
+	};
 
-	// Функция для установки куки
-	function setCookie(name, value, days) {
+	const initializeMask = () => {
+		const elements = document.querySelectorAll('.phone');
+		const maskOptions = {
+			mask: '+{38}0-0000-00-000'
+		};
+		elements.forEach(el => {
+			IMask(el, maskOptions);
+		});
+	};
+	const setCookie = (name, value, days) => {
 		const date = new Date();
 		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-		const expires = "expires=" + date.toUTCString();
-		document.cookie = name + "=" + value + ";" + expires + ";path=/";
-	}
+		document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+	};
 
-	// Функция для получения значения куки по имени
-	function getCookie(name) {
-		const nameEQ = name + "=";
-		const ca = document.cookie.split(';');
-		for (let i = 0; i < ca.length; i++) {
-			let c = ca[i];
-			while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-			if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-		}
-		return null;
-	}
+	const getCookie = (name) => {
+		return document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith(`${name}=`))?.split('=')[1] || null;
+	};
 
-	// Функция для показа/скрытия модалки
-	function toggleCookiePopup(show) {
+	const toggleCookiePopup = (show) => {
 		const popup = document.querySelector('.cookie-popup');
-		if (popup) {
-			if (show) {
-				popup.classList.add('show');
-			} else {
-				popup.classList.remove('show');
-			}
-		}
-	}
+		popup?.classList.toggle('show', show);
+	};
 
-	try {
-		function getFormData(id) {
-			var url = '/api/form/get-data?id=' + id;
+	const loadForm = (id) => {
+		fetch(`/api/form/render?id=${id}`)
+			.then(response => {
+				if (response.ok) return response.text();
+				throw new Error(`Request failed with status ${response.status}`);
+			})
+			.then(html => {
+				const container = document.querySelector(".modal-form-content");
+				container.innerHTML = html;
 
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', url, true);
+				// Удаляем старые скрипты, которые были добавлены ранее
+				const oldScripts = document.querySelectorAll('.dynamic-script');
+				oldScripts.forEach(script => script.remove());
 
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					// console.log(xhr.responseText);
-				}
-			};
-
-			xhr.send();
-		}
-
-		function loadForm(id) {
-			var url = '/api/form/render?id=' + id;
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', url, true);
-
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					var container = document.querySelector(".modal-form-content");
-					container.innerHTML = xhr.responseText;
-
-					var scripts = container.getElementsByTagName('script');
-					for (var i = 0; i < scripts.length; i++) {
-						var script = document.createElement('script');
-						if (scripts[i].src) {
-							script.src = scripts[i].src;
-						} else {
-							script.innerHTML = scripts[i].innerHTML;
-						}
-						document.head.appendChild(script);
+				// Добавляем новые скрипты
+				const scripts = container.getElementsByTagName('script');
+				for (let i = 0; i < scripts.length; i++) {
+					const script = document.createElement('script');
+					script.classList.add('dynamic-script'); // Добавляем класс для идентификации динамически добавленных скриптов
+					if (scripts[i].src) {
+						script.src = scripts[i].src;
+					} else {
+						script.innerHTML = scripts[i].innerHTML;
 					}
-
-					getFormData(id);
-					modalFormShow();
+					document.head.appendChild(script);
 				}
-			};
+				localStorage.setItem('isModalFormOpen', true);
+				// getFormData(id);
+				modalFormShow();
+				initializeMask();
+			})
+			.catch(error => console.error('Error loading form:', error));
+	};
 
-			xhr.send();
+
+	const checkCookiesConsent = () => {
+		if (!getCookie('cookieConsent')) {
+			// Если cookie не установлены, добавляем HTML модалки
+			const cookiePopupHTML = `
+      <div class="cookie-popup show">
+        <i class="close ic-close"></i>
+        <h3>Файли Cookie</h3>
+        <p>Файли cookie потрібні для того, щоб персоналізувати ваше користування сайтом та зробити його приємнішим і зручнішим.</p>
+        <div class="btn primary lg fill">Дозволити всі Cookie <i class="ic-check-line"></i></div>
+      </div>
+      `;
+			document.body.insertAdjacentHTML('beforeend', cookiePopupHTML);
+
+			// Добавляем обработчики для кнопок сразу после добавления модалки
+			const consentBtn = document.querySelector('.cookie-popup .btn');
+			const closeBtn = document.querySelector('.cookie-popup .close');
+
+			consentBtn.addEventListener('click', () => {
+				setCookie('cookieConsent', 'true', 365);
+				toggleCookiePopup(false);
+			});
+
+			closeBtn.addEventListener('click', () => {
+				toggleCookiePopup(false);
+			});
 		}
+	};
 
-		// Отримання всіх елементів з класом render-form-btn
-		const buttons = document.querySelectorAll('.render-form-btn');
-		// Додавання обробника події для кожної кнопки
-		buttons.forEach(function (button) {
-			button.addEventListener('click', function (e) {
+	const attachFormButtonClickHandlers = () => {
+		buttons.forEach(button => {
+			button.addEventListener('click', (e) => {
 				e.preventDefault();
-				const id = this.getAttribute('data-form_id');
+				const id = button.getAttribute('data-form_id');
 				loadForm(id);
 			});
 		});
-	} catch (error) {
+	};
 
-	}
+	// Initial setup
+	setWindowSizeRange();
+	checkCookiesConsent();
+	attachFormButtonClickHandlers();
+	initializeMask();
+	upButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+	burgerMenuTrigger.addEventListener('click', toggleBurgerMenu);
 
-	// Проверяем, установлены ли куки
-	if (!getCookie('cookieConsent')) {
-		// Если куки не установлены, добавляем HTML модалки
-		const cookiePopupHTML = `
-				<div class="cookie-popup show">
-					<i class="close ic-close"></i>
-					<h3>Файли Cookie</h3>
-					<p>Файли cookie потрібні для того, щоб персоналізувати ваше користування сайтом та зробити його приємнішим і зручнішим.</p>
-					<div class="btn primary lg fill">Дозволити всі Cookie <i class="ic-check-line"></i></div>
-				</div>
-			`;
-		document.body.insertAdjacentHTML('beforeend', cookiePopupHTML);
+	// Event listeners
+	window.addEventListener('scroll', handleScrollUpButton);
+	window.addEventListener('resize', handleResize);
 
-		// Добавляем обработчики для кнопок сразу после добавления модалки
-		document.querySelector('.cookie-popup .btn').addEventListener('click', function () {
-			setCookie('cookieConsent', 'true', 365);
-			toggleCookiePopup(false);
-		});
-
-		document.querySelector('.cookie-popup .close').addEventListener('click', function () {
-			toggleCookiePopup(false);
-		});
-	}
-})
-
+});

@@ -2831,7 +2831,7 @@ a:not([class]),
 .modal-form-wrapper .modal-form .modal-form-content {
   background-color: #fff;
   border-radius: 10px;
-  max-width: 550px;
+  max-width: 480px;
   overflow: hidden;
   padding: 50px;
   width: calc(100vw - 20px);
@@ -2995,6 +2995,26 @@ p {
   -moz-osx-font-smoothing: grayscale;
   transition: 0.3s;
   transform-origin: center;
+}
+
+/* Для WebKit-браузеров */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Для Firefox */
+scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+scrollbar-thumb {
+  background-color: #888;
 }
 
 @font-face {
@@ -3546,6 +3566,34 @@ footer .footer__bottom ul {
   line-height: 160%;
 }
 
+.success i, .modal-success i {
+  color: var(--system-green-700);
+  font-size: 37px;
+}
+.success h3, .modal-success h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-on-light-bg-darker-high);
+  line-height: 160%;
+}
+.success p, .modal-success p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-lighter-high);
+  line-height: 160%;
+}
+
+.modal-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: var(--spacing-global-spacing-xs, 16px);
+  text-align: center;
+}
+.modal-success h3 {
+  font-size: 18px;
+}
+
 .success {
   display: flex;
   padding: var(--spacing-global-spacing-xs);
@@ -3554,22 +3602,6 @@ footer .footer__bottom ul {
   border-radius: var(--border-radius-global-m);
   border: 1px solid var(--system-green-600);
   background: var(--system-green-50);
-}
-.success i {
-  color: var(--system-green-700);
-  font-size: 37px;
-}
-.success h3 {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-on-light-bg-darker-high);
-  line-height: 160%;
-}
-.success p {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-on-light-bg-lighter-high);
-  line-height: 160%;
 }
 
 .image-and-text .text-wrapper {
@@ -4634,6 +4666,9 @@ footer .footer__bottom ul {
   }
 }
 
+.modal-form-wrapper .modal-form {
+  max-height: 90vh;
+}
 .modal-form-wrapper .modal-form .modal-form--btn-close {
   top: 22px;
   right: 19px;
