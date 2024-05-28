@@ -1,4 +1,4 @@
-<div class="form-field underline">
+<div class="form-field underline <?= $item['content']['rules']['required'] === '1' ? 'required' : '' ?>">
 	<span class="field-title with-padding"><?= $item['content']['title'] ?></span>
 	<?php if (isset($item['content']['options'])) : ?>
 		<?php

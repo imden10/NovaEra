@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		checkWindowSize()
 	});
 
-
 	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger')
 	const mobileMenu = document.querySelector('.mobile-menu')
 	burgerMenuTrigger.addEventListener('click', ({ target }) => {
