@@ -118,6 +118,8 @@
 	}
 
 	.card {
+		padding: var(--cards-item-wrap-padding-m, 24px);
+
 		h2 {
 			@include set-typography(24px, 500, var(--card-on-light-bg-lighter-title-default), 120%);
 		}
@@ -129,7 +131,7 @@
 		}
 
 		.card-info {
-			padding: var(--cards-item-wrap-padding-m, 24px);
+			width: 100%;
 		}
 	}
 }
@@ -162,6 +164,7 @@
 	.btns-container {
 		grid-column: 1 / span 2;
 		margin-left: auto;
+
 		@include _1024 {
 			grid-column: unset;
 		}
@@ -170,7 +173,8 @@
 	.card-info {
 		padding: var(--cards-item-wrap-padding-s);
 	}
-	.arrow-icon{
+
+	.arrow-icon {
 		margin-left: auto;
 	}
 }

@@ -1,22 +1,39 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     var swiper = new Swiper('.swiper-wrapper', {
-//         slidesPerView: 2,
-//         spaceBetween: 10, // Adjust this value to change space between slides
-//         centeredSlides: true,
-//         loop: true,
-//         pagination: {
-//             el: '.swiper-pagination',
-//             clickable: true,
-//         },
-//         navigation: {
-//             nextEl: '.swiper-button-next',
-//             prevEl: '.swiper-button-prev',
-//         },
-//     });
-// });
-//
 try {
-  const swiper = new Swiper('.swiper', {
+  new Swiper('#partner-list', {
+    centeredSlides: true,
+    allowTouchMove : false,
+    centerInsufficientSlides: true,
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+      nextEl: '.button-next',
+      prevEl: '.button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 3.5,
+        centeredSlides: false,
+        allowTouchMove : true,
+        centerInsufficientSlides: false,
+      },
+      1280: {
+        slidesPerView: 4.5,
+      },
+      1440: {
+        slidesPerView: 8,
+      },
+    }
+
+  })
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  new Swiper('#block-slider', {
     slidesPerView: 6.5,
     spaceBetween: 10,
     loop: true,
@@ -41,5 +58,5 @@ try {
 
   })
 } catch (error) {
-  console.log('на странице не обнаружено слайдера');
+  console.log(error);
 }

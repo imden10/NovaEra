@@ -15,7 +15,7 @@
 	}
 
 	.text {
-		@include set-typography(16px, 400, var(--text-on-light-bg-darker-high), 160%);
+		@include set-typography(16px, 400, var(--text-on-light-bg-lighter-medium), 160%);
 		padding-bottom: var(--spacing-text-editor-default-p-bottom);
 		margin-bottom: 0;
 	}

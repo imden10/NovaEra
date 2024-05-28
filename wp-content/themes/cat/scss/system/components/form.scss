@@ -41,7 +41,22 @@
 	}
 
 }
-.modal-form form{
-	padding: 0;
-	border: unset
+
+.modal-form-wrapper .modal-form {
+	.modal-form--btn-close{
+		top: 22px;
+		right: 19px;
+		color: #1C1C1E;
+	}
+	.modal-form-content {
+		background: var(--bg-on-light-darker, #F3F5FC);
+	}
+}
+
+.modal-form {
+	form {
+		padding: 0;
+		border: unset;
+		background-color: inherit;
+	}
 }

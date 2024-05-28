@@ -32,11 +32,14 @@
                     <a href="#" class="menu__link"><i class="ic-telegram"></i> Telegram</a>
                     <a href="#" class="menu__link"><i class="ic-linkedin-simple"></i> LinkedIn</a>
                     <a href="#" class="menu__link"><i class="ic-youtube-simple"></i> Youtube</a> -->
-                    <a href="tel:+380672430001" class="menu__link">+380 67 243 00 01</a>
-                    <a href="mailto:nfo@nova-era.com.ua" class="menu__link">nfo@nova-era.com.ua</a>
+                    <?php $phones = getCustomOption('contacts_data_phone', []) ?>
+                    <?php foreach ($phones as $phone) : ?>
+                        <a href="tel:<?= $phone ?>" class="menu__link"><?= $phone ?></a>
+                    <?php endforeach; ?>
+                    <?php $email = getCustomOption('contacts_data_email', []) ?>
+                    <a href="mailto:<?= $email ?>" class="menu__link"><?= $email ?></a>
                 </div>
             </div>
-
         </div>
         <div class="footer__bottom">
 
@@ -71,12 +74,12 @@
                 </li> -->
                 <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
 
-                <li>Copyright © 2024</li>
+                <li><a class="menu__link" href="https://bookkeeper.kiev.ua/">Copyright BookKeeper SaaS LLC</a> © 2024</li>
                 <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/rules-for-using-the-site/">Правила використання</a></li>
                 <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/privacy-policy/">Політика конфіденційності</a></li>
                 <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/cookies/">Управління Cookies</a></li>
             </ul>
-            <p>Зроблено в Україні | SiDev</p>
+            <a href="#" class="menu__link" rel="nofollow">Зроблено в Україні | SiDev</a>
         </div>
     </div>
 </footer>

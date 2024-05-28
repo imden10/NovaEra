@@ -14,7 +14,7 @@ $data = array_diff_key($content, array_flip(['list']));
     <?php endif; ?>
 </div>
 <?php if (isset($content['list'])) : ?>
-    <div class="swiper">
+    <div id="block-slider" class="swiper">
         <div class="swiper-wrapper">
             <?php foreach ($content['list'] as $item) : ?>
                 <a href="<?= $item['link'] ?>" class="swiper-slide">

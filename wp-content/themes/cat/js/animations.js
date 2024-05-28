@@ -23,6 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 // 		// repeat: 1,
 // 	},
 // })
+
 gsap.from('.masked', {
 	duration: 1.7,
 	rotation: 1,

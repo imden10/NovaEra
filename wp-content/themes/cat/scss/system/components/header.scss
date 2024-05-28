@@ -3,6 +3,9 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	background: var(--bg-on-light-lighter);
+	position: sticky;
+	top: 0;
+	z-index: 100;
 	.container {
 		display: flex;
 		justify-content: space-between;

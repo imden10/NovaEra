@@ -1,7 +1,11 @@
 .partner-list {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: var(--slider-gap-l, 32px);
+	overflow-x: hidden;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// flex-wrap: wrap;
+	// gap: var(--slider-gap-l, 32px);
+	a{
+		// margin-right: 10px;
+	}
 }

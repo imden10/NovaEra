@@ -43,9 +43,6 @@ $data = array_diff_key($content, array_flip(['list']));
                             if ($item['btn__type_link'] === "form") {
                                 $formData = \App\Models\Form::getData($item['btn__form_id']);
                             }
-
-                            // print_r($item);
-                            // print_r($formData);
                             ?>
 
                             <div class="btn <?= $item['btn__type'] ?>"><?= $item['btn__text'] ?></div>
