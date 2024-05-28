@@ -46,7 +46,9 @@
 
 	&.column50,
 	&.hero-cards {
-		padding: var(--spacing-separator-m) var(--spacing-container-left-right);
+		padding-bottom: var(--spacing-separator-m);
+		padding-top: var(--spacing-separator-xs);
+		// padding: var(--spacing-separator-m) var(--spacing-container-left-right);
 
 		.container {
 			// padding: 0;
@@ -56,12 +58,12 @@
 			// grid-gap: var(--spacing-coll-gap-coll-2);
 
 			.text-column {
-				padding: var(--spacing-coll-padding-top-l) var(--spacing-coll-padding-right-l) var(--spacing-coll-padding-bottom-l) 0px;
+				padding: var(--spacing-coll-padding-top-xs, 32px) var(--spacing-coll-padding-right-l, 100px) var(--spacing-coll-padding-bottom-non, 0px) 0px;	
 			}
 
 			@include _1024 {
 				grid-template-columns: 1fr;
-
+				grid-gap: 32px;
 				.image-column {
 					min-height: var(--image-height-m);
 					order: -1;

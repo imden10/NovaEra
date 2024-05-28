@@ -3774,7 +3774,8 @@ footer .footer__bottom ul {
   }
 }
 .first-screen.column50, .first-screen.hero-cards {
-  padding: var(--spacing-separator-m) var(--spacing-container-left-right);
+  padding-bottom: var(--spacing-separator-m);
+  padding-top: var(--spacing-separator-xs);
 }
 .first-screen.column50 .container, .first-screen.hero-cards .container {
   display: grid;
@@ -3782,11 +3783,12 @@ footer .footer__bottom ul {
   grid-template-columns: 0.5fr 0.5fr;
 }
 .first-screen.column50 .container .text-column, .first-screen.hero-cards .container .text-column {
-  padding: var(--spacing-coll-padding-top-l) var(--spacing-coll-padding-right-l) var(--spacing-coll-padding-bottom-l) 0px;
+  padding: var(--spacing-coll-padding-top-xs, 32px) var(--spacing-coll-padding-right-l, 100px) var(--spacing-coll-padding-bottom-non, 0px) 0px;
 }
 @media screen and (max-width: 1024px) {
   .first-screen.column50 .container, .first-screen.hero-cards .container {
     grid-template-columns: 1fr;
+    grid-gap: 32px;
   }
   .first-screen.column50 .container .image-column, .first-screen.hero-cards .container .image-column {
     min-height: var(--image-height-m);
