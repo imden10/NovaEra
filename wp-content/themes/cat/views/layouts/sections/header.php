@@ -14,7 +14,7 @@
                                 <?php if (!empty($item->children)) : ?>
                                     <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title ?> <i class="ic-chevron-down"></i></a>
                                 <?php else : ?>
-                                    <a href="<?php echo $item->url; ?>" class="menu__item__link"><?php echo $item->title ?></a>
+                                    <a href="<?php echo $item->url; ?>" <?php if($item->target_blank):?> target="_blank" <?php endif;?> class="menu__item__link"><?php echo $item->title ?></a>
                                 <?php endif; ?>
                                 
                                 <?php if (!empty($item->children)) : ?>
@@ -25,7 +25,7 @@
                                                 <?php if (!$children_item->is_custom_menu) : ?>
                                                     <li class="submenu__item">
 
-                                                        <a href="<?php echo $children_item->url; ?>" class="sublnk"><?php echo $children_item->title; ?></a>
+                                                        <a href="<?php echo $children_item->url; ?>" <?php if($children_item->target_blank):?> target="_blank" <?php endif;?> class="sublnk"><?php echo $children_item->title; ?></a>
 
                                                         <?php if ($children_item->description) : ?>
 
@@ -35,7 +35,7 @@
                                                         <?php if (!empty($children_item->children)) : ?>
                                                             <ul class="sub2menu">
                                                                 <?php foreach ($children_item->children as $children_children_item) : ?>
-                                                                    <li class="sub2item"><a href="<?php echo $children_children_item->url; ?>" class="sub2lnk"><?php echo $children_children_item->title; ?></a></li>
+                                                                    <li class="sub2item"><a href="<?php echo $children_children_item->url; ?>" <?php if($children_children_item->target_blank):?> target="_blank" <?php endif;?> class="sub2lnk"><?php echo $children_children_item->title; ?></a></li>
                                                                 <?php endforeach; ?>
                                                             </ul>
                                                         <?php endif; ?>
@@ -56,7 +56,7 @@
                                                 <ul>
                                                     <?php foreach ($custom_menu as $children_item_custom) : ?>
                                                         <li class="submenu__item">
-                                                            <a href="<?php echo $children_item_custom->url; ?>" class="sublnk"><?php echo $children_item_custom->title; ?></a>
+                                                            <a href="<?php echo $children_item_custom->url; ?>" <?php if($children_item_custom->target_blank):?> target="_blank" <?php endif;?> class="sublnk"><?php echo $children_item_custom->title; ?></a>
                                                         </li>
                                                     <?php endforeach; ?>
                                                 </ul>

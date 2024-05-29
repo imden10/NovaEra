@@ -55,6 +55,7 @@ function getTreeMenu($menu)
             $menu_items[$item->menu_item_parent][$item->ID] = $item;
             $menu_items[$item->menu_item_parent][$item->ID]->description = get_post_meta($item->ID, '_menu_item_desc', true) ?? '';
             $menu_items[$item->menu_item_parent][$item->ID]->is_custom_menu = (bool)get_post_meta($item->ID, '_menu_item_menu_custom', true) ?? false;
+            $menu_items[$item->menu_item_parent][$item->ID]->target_blank = (bool)get_post_meta($item->ID, '_menu_item_target_blank', true) ?? false;
         }
 
         $node = $menu_items[0];
