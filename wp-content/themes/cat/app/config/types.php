@@ -71,6 +71,16 @@ return [
                     'position' => 'normal',
                     'priority' => 'default',
                     'fields' => [
+                        'description' => [
+                            'label' => __('Опис блога'),
+                            'component' => 'App\Components\MetaBox\Editor',
+                            'single' => true,
+                            'params' => [],
+                            'condition' => [
+                                'type' => 'post',
+                                'val' => BLOG_POSTS_PAGE_IDS,
+                            ]
+                        ],
                         'breadcrumb' => [
                             'label' => __('Breadcrumb'),
                             'component' => 'App\Components\MetaBox\Text',

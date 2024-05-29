@@ -44,6 +44,22 @@ class MetaPostCreator
             $priority = $meta['priority'];
             $fields = $meta['fields'];
 
+            if(count($fields)){
+                foreach ($fields as $key => $field){
+                    // якщо є умова, для того коли відображати поле
+                    if(isset($field['condition'])){
+                        // якщо вона виконується
+                        if(isset($_GET[$field['condition']['type']]) && in_array($_GET[$field['condition']['type']],$field['condition']['val'])){
+
+                        }
+                        // якщо ні, то видаляємо поле
+                        else {
+                            unset($fields[$key]);
+                        }
+                    }
+                }
+            }
+
             add_meta_box($id, $label, [$this, 'outputBoxHtml'], $screen, $position, $priority, ['id' => $id, 'fields' => $fields]);
         }
     }
