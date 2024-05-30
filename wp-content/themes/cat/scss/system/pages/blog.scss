@@ -1,0 +1,7 @@
+.blog {
+	.blog-wrapper{
+		display: grid;
+		grid-gap: var(--cards-coll-gap-mini-text);
+		grid-template-columns: 320px auto;
+	}	
+}

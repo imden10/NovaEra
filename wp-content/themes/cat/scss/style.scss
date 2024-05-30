@@ -18,6 +18,7 @@
 @import './system/common/_fonts.scss';
 // pages
 @import './system/pages/404.scss';
+@import './system/pages/blog.scss';
 // components
 @import './system/components/header.scss';
 @import './system/components/footer.scss';
@@ -37,3 +38,4 @@
 @import './system/components/prices.scss';
 @import './system/components/form.scss';
 @import './system/components/contacts.scss';
+@import './system/components/article.scss';

@@ -1,17 +1,17 @@
-<div class="col-lg-4 col-md-6 col-sm-6">
-    <a href="<?php echo get_permalink($article->ID); ?>" class="postitem">
-        <div class="postitem__img" style="background: no-repeat center/cover url('<?php echo has_post_thumbnail($article->ID) ? get_the_post_thumbnail_url($article->ID, 'full') : ''; ?>');"></div>
+<!-- <pre><?php print_r($article) ?></pre> -->
+<a href="<?= get_permalink($article->ID); ?>" class="article-preview">
+    <div class="article-image" style="background: no-repeat center/cover url('<?= has_post_thumbnail($article->ID) ? get_the_post_thumbnail_url($article->ID, 'full') : ''; ?>');"></div>
 
-        <div class="postitem__textwrap">
-            <div class="postitem__cont">
-                <h3 class="postitem__title"><?php echo $article->post_title; ?></h3>
+    <div class="article-text">
 
-                <!-- <span class="postitem__subtitle">Эстетическая стоматология</span>-->
+        <h3 class="article-title"><?= $article->post_title; ?></h3>
 
-                <p class="postitem__text"><?php echo $article->post_excerpt; ?></p>
-            </div>
+        <span class="article-date"><?= $article->post_date ?></span>
+       
+        <p class="article-description"><?= $article->post_content; ?></p>
+        <!-- <p class="article-description"><?= $article->post_excerpt; ?></p> -->
 
-            <span class="postitem__lnk"><?php echo trans('Подробнее &#62'); ?></span>
-        </div>
-    </a>
-</div>
+
+        <!-- <span class="postitem__lnk"><?= trans('Подробнее &#62'); ?></span> -->
+    </div>
+</a>
