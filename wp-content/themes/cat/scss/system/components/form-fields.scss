@@ -93,7 +93,7 @@
 			&.active {
 				border-color: var(--btn-input-on-light-border-current);
 				color: var(--btn-input-on-light-border-current);
-				background: var(--btn-input-on-light-bg-current);
+				background: var(--btn-input-on-light-bg-current, #F3F5FC);
 			}
 		}
 	}

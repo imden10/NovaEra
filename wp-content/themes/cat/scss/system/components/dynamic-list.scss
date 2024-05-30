@@ -1,0 +1,27 @@
+.dynamic-list {
+	.list{
+		display: flex;
+		flex-direction: column;
+		grid-gap: var(--spacing-text-editor-default-p-bottom);
+		padding-left: 20px;
+	}
+	li {
+		@include set-typography(16px, 400, var(--text-on-light-bg-darker-high), 160%);
+	}
+	ul{
+		padding-left: 30px;
+		li{
+			position: relative;
+			&::before{
+				content: '';
+				width: 12px;
+				height: 1px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: -17px;
+				background-color: var(--text-on-light-bg-darker-high);
+			}
+		}
+	}
+}

@@ -2890,6 +2890,7 @@ a {
   position: fixed;
   bottom: 20px;
   left: 20px;
+  z-index: 99;
   max-width: var(--form-container-in-popup, 480px);
   padding: var(--cookie-padding-top-bottom, 16px) var(--cookie-padding-left-right, 16px);
   display: none;
@@ -3507,7 +3508,7 @@ footer .footer__bottom ul {
 .form-field .select .option.active {
   border-color: var(--btn-input-on-light-border-current);
   color: var(--btn-input-on-light-border-current);
-  background: var(--btn-input-on-light-bg-current);
+  background: var(--btn-input-on-light-bg-current, #F3F5FC);
 }
 .form-field.required .field-title::after {
   content: "*";
@@ -4759,6 +4760,13 @@ footer .footer__bottom ul {
   gap: 16px;
 }
 
+.article-container {
+  max-width: 960px;
+}
+.article-container .btn {
+  margin-bottom: var(--spacing-separator-xs);
+}
+
 .article-preview .article-title {
   font-size: 16px;
   font-weight: 600;
@@ -4779,6 +4787,36 @@ footer .footer__bottom ul {
   line-height: 160%;
 }
 
+.social-share {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-global-spacing-xs) 0px;
+}
+.social-share.bordered {
+  border-top: 1px solid var(--border-on-light-bg-lighter-medium);
+}
+.social-share .share {
+  display: flex;
+  grid-gap: 2px;
+}
+.social-share .share li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--header-items-on-light-ic-default);
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+  border: 1px solid var(--header-items-on-light-ic-wrap-border-default, #CEDFF3);
+  background: var(--header-items-on-light-ic-wrap-bg-default, rgba(28, 28, 30, 0));
+}
+.social-share .share li a {
+  color: inherit;
+}
+
 .pagination .page-numbers {
   display: inline-flex;
   justify-content: center;
@@ -4794,4 +4832,33 @@ footer .footer__bottom ul {
   border-radius: var(--border-radius-global-s);
   border: 1px solid var(--pagination-on-light-border-current);
   color: var(--pagination-on-light-label-current);
+}
+
+.dynamic-list .list {
+  display: flex;
+  flex-direction: column;
+  grid-gap: var(--spacing-text-editor-default-p-bottom);
+  padding-left: 20px;
+}
+.dynamic-list li {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-darker-high);
+  line-height: 160%;
+}
+.dynamic-list ul {
+  padding-left: 30px;
+}
+.dynamic-list ul li {
+  position: relative;
+}
+.dynamic-list ul li::before {
+  content: "";
+  width: 12px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -17px;
+  background-color: var(--text-on-light-bg-darker-high);
 }

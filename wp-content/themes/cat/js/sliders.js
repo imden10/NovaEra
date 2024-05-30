@@ -10,10 +10,10 @@ try {
     controls: false,
     responsive: {
       320: {
-        items: 3,
+        items: 2,
       },
       768: {
-        items: 3.5,
+        items: 2,
       },
       1280: {
         items: 4.5,
@@ -41,10 +41,10 @@ try {
     nextButton: '.button-next',
     responsive: {
       320: {
-        items: 2.5,
+        items: 2,
       },
       768: {
-        items: 3.5,
+        items: 2,
       },
       1280: {
         items: 4.5,

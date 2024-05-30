@@ -7,23 +7,6 @@
             <li class="breadcrumbs-item"><?php echo !empty($page->page_information_breadcrumb) ? $page->page_information_breadcrumb : $page->post_title; ?></li>
         </ul>
         <h1><?php echo $page->post_title; ?></h1>
-        <!-- <div class="cformbanner__wrap">
-            <div class="cformbanner__textcol">
-                <ul class="brdcrmb">
-                    
-                    <li class="brdcrmb__li"><a href="<?php echo site_url(); ?>" class="brdcrmb__lnk"><?php echo $home_page->post_title; ?></a></li>
-
-                    <li class="brdcrmb__li"><?php echo $page->post_title; ?></li>
-                </ul>
-
-                <div class="cformbanner__textcol__formwrap">
-                    <h1 class="blogtitle"><?php echo $page->post_title; ?></h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="bgdots bgtopcenter"></div>
-        <div class="bgtext bgtopleft"></div> -->
     </div>
     <div class="blog-wrapper">
 
@@ -69,3 +52,4 @@
         </section>
     </div>
 </div>
+<div class="up ic-chevron-up"></div>

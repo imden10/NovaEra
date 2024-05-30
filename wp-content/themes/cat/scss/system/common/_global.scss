@@ -49,6 +49,7 @@ a {
 	position: fixed;
 	bottom: 20px;
 	left: 20px;
+	z-index: 99;
 	max-width: var(--form-container-in-popup, 480px);
 	padding: var(--cookie-padding-top-bottom, 16px) var(--cookie-padding-left-right, 16px);
 	display: none;

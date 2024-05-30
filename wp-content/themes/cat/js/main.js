@@ -135,7 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	checkCookiesConsent();
 	attachFormButtonClickHandlers();
 	initializeMask();
-	upButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+	try {
+		upButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+	} catch (error) {
+		console.warn(error);
+	}
 	burgerMenuTrigger.addEventListener('click', toggleBurgerMenu);
 
 	// Event listeners
