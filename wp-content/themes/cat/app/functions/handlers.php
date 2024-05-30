@@ -477,12 +477,11 @@ function menu_item_menu_custom( $item_id, $item ) {
     $menu_item_checkbox = get_post_meta( $item_id, '_menu_item_menu_custom', true );
     ?>
     <p class="description description-wide">
-        <input type="hidden" class="nav-menu-id" value="<?php echo $item_id ;?>" />
+        <input type="hidden" class="nav-menu-id" value="<?php echo $item_id ;?>" /></p>
     <div class="logged-input-holder">
         <input type="checkbox" name="menu_item_menu_custom[<?php echo $item_id ;?>]" id="menu-item-menu_custom-<?php echo $item_id ;?>" <?php if($menu_item_checkbox == 1):?> checked <?php endif;?>  value="1" />
         <label for="menu-item-menu_custom-<?php echo $item_id ;?>">Кастомне меню</label>
     </div>
-    </p>
     <?php
 }
 add_action( 'wp_nav_menu_item_custom_fields', 'menu_item_menu_custom', 10, 3 );
@@ -496,6 +495,31 @@ function save_menu_item_menu_custom( $menu_id, $menu_item_db_id ) {
     }
 }
 add_action( 'wp_update_nav_menu_item', 'save_menu_item_menu_custom', 10, 3 );
+/******************************************************************************************************************** */
+/***************** Додавання поля "Чекбокс 'Target blank'" в меню ****************************************************/
+function menu_item_target_blank( $item_id, $item ) {
+    $menu_item_checkbox_target_blank = get_post_meta( $item_id, '_menu_item_target_blank', true );
+    ?>
+    <p class="description description-wide">
+        <input type="hidden" class="nav-menu-id" value="<?php echo $item_id ;?>" />
+    </p>
+    <div class="logged-input-holder">
+        <input type="checkbox" name="menu_item_target_blank[<?php echo $item_id ;?>]" id="menu-item-target_blank-<?php echo $item_id ;?>" <?php if($menu_item_checkbox_target_blank == 1):?> checked <?php endif;?>  value="1" />
+        <label for="menu-item-target_blank-<?php echo $item_id ;?>">Target blank</label>
+    </div>
+    <?php
+}
+add_action( 'wp_nav_menu_item_custom_fields', 'menu_item_target_blank', 10, 3 );
+
+function save_menu_item_target_blank( $menu_id, $menu_item_db_id ) {
+    if ( isset( $_POST['menu_item_target_blank'][$menu_item_db_id]  ) ) {
+        $sanitized_data = sanitize_text_field( $_POST['menu_item_target_blank'][$menu_item_db_id] );
+        update_post_meta( $menu_item_db_id, '_menu_item_target_blank', $sanitized_data );
+    } else {
+        delete_post_meta( $menu_item_db_id, '_menu_item_target_blank' );
+    }
+}
+add_action( 'wp_update_nav_menu_item', 'save_menu_item_target_blank', 10, 3 );
 /******************************************************************************************************************** */
 
 function remove_widgets_submenu() {
@@ -553,4 +577,11 @@ function rename_posts_menu() {
     // Якщо є додаткові підрозділи, змініть їхні назви тут
 }
 add_action( 'admin_menu', 'rename_posts_menu' );
+/******************************************************************************************************************** */
+
+/*************************** Приховати блок "Категорії" в редагуванні посту блога *************************************/
+function remove_categories_metabox() {
+    remove_meta_box('categorydiv', 'post', 'side');
+}
+add_action('admin_menu', 'remove_categories_metabox');
 /******************************************************************************************************************** */

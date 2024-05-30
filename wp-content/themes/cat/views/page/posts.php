@@ -20,6 +20,10 @@
     <div class="bgtext bgtopleft"></div>
 </section>
 
+<div class="blog-description">
+    <?= $page->page_information_description ?? '' ?>
+</div>
+
 <?php $article_objects = model('post')->all(isset($main_article->ID) ? [$main_article->ID] : [], 12);
 $articles = $article_objects->posts;
 if (!empty($articles)) : ?>
