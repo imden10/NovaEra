@@ -9,6 +9,8 @@
 
             <li class="breadcrumbs-item"><?php echo $post->post_title; ?></li>
         </ul>
+    </div>
+    <div class="container article-container">
 
         <h1><?php echo $post->post_title; ?></h1>
         <div class="social-share">
