@@ -707,12 +707,12 @@ template {
   --card-on-light-bg-lighter-title-default: var(--gray-1);
   --card-on-light-bg-lighter-title-hover: var(--brand-1-700);
   --checkbox-border-disabled: var(--gray-opacity-8);
-  --checkbox-border-enable: var(--gray-opacity-20);
-  --checkbox-border-hover: var(--gray-opacity-40);
+  --checkbox-border-enable: var(--brand-1-200);
+  --checkbox-border-hover: var(--brand-1-300);
   --checkbox-fill-disabled: var(--gray-opacity-8);
-  --checkbox-fill-disabled-selected: var(--brand-1-300);
-  --checkbox-fill-hover-selected: var(--brand-1-800);
-  --checkbox-fill-selected: var(--brand-1-700);
+  --checkbox-fill-disabled-selected: var(--gray-400);
+  --checkbox-fill-hover-selected: var(--brand-1-700);
+  --checkbox-fill-selected: var(--brand-1-600);
   --checkbox-icon-icon-fill: var(--white-opacity-100);
   --footer-subtitle: var(--gray-1);
   --footer-nav-item-ic-default: var(--gray-400);
@@ -811,7 +811,7 @@ template {
   --text-field-underline-label-disabled: var(--gray-opacity-40);
   --text-field-underline-label-enabled: var(--gray-1);
   --text-field-underline-label-error: var(--system-red-600);
-  --text-field-underline-label-filled: var(--gray-1);
+  --text-field-underline-label-filled: var(--gray-600);
   --text-field-underline-label-focused: var(--gray-1);
   --text-field-underline-placeholder-disabled: var(--gray-opacity-40);
   --text-field-underline-placeholder-enabled: var(--gray-opacity-40);
@@ -1082,12 +1082,12 @@ template {
   --card-on-light-bg-lighter-title-default: var(--white-opacity-100);
   --card-on-light-bg-lighter-title-hover: var(--brand-1-600);
   --checkbox-border-disabled: var(--white-opacity-20);
-  --checkbox-border-enable: var(--white-opacity-20);
-  --checkbox-border-hover: var(--white-opacity-40);
+  --checkbox-border-enable: var(--brand-1-200);
+  --checkbox-border-hover: var(--brand-1-300);
   --checkbox-fill-disabled: var(--white-opacity-8);
-  --checkbox-fill-disabled-selected: var(--brand-1-1);
-  --checkbox-fill-hover-selected: var(--brand-1-800);
-  --checkbox-fill-selected: var(--brand-1-700);
+  --checkbox-fill-disabled-selected: var(--gray-400);
+  --checkbox-fill-hover-selected: var(--brand-1-700);
+  --checkbox-fill-selected: var(--brand-1-600);
   --checkbox-icon-icon-fill: var(--white-opacity-100);
   --footer-subtitle: var(--gray-1);
   --footer-nav-item-ic-default: var(--gray-400);
@@ -1184,7 +1184,7 @@ template {
   --text-field-underline-input-text-filled: var(--gray-1);
   --text-field-underline-input-text-focused: var(--gray-1);
   --text-field-underline-label-disabled: var(--white-opacity-40);
-  --text-field-underline-label-enabled: var(--gray-1);
+  --text-field-underline-label-enabled: var(--gray-600);
   --text-field-underline-label-error: var(--system-red-500);
   --text-field-underline-label-filled: var(--gray-600);
   --text-field-underline-label-focused: var(--gray-600);
@@ -1328,9 +1328,10 @@ template {
   --footer-nav-item-padding-top-bottom: 8px;
   --footer-title-padding-left-right: 8px;
   --footer-title-padding-top-bottom: 8px;
-  --form-btn-input-height: 42px;
+  --form-gap: 8px;
+  --form-btn-input-height: 38px;
+  --form-btn-input-padding-top-bottom: 8px;
   --form-btn-input-padding-left-right: 16px;
-  --form-btn-input-padding-top-bottom: 16px;
   --form-container-in-popup: 480px;
   --form-container-in-block: 560px;
   --form-input-file-gap-gap-horisontal: 8px;
@@ -1341,12 +1342,12 @@ template {
   --form-text-field-outlined-gap-gap-horisontal: 4px;
   --form-text-field-outlined-haight-label: 21px;
   --form-text-field-outlined-haight-placeholder-input: 46px;
+  --form-text-field-outlined-padding-label-helper-left: 0px;
   --form-text-field-outlined-padding-helper-text-top: 2px;
-  --form-text-field-outlined-padding-label-bottom: 2px;
+  --form-text-field-outlined-padding-label-bottom: 4px;
   --form-text-field-outlined-padding-input-left-right: 12px;
-  --form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
   --form-text-field-outlined-padding-input-top-bottom: 14px;
-  --form-text-field-outlined-radius-radius-input: 12px;
+  --form-text-field-outlined-radius-radius-input: 8px;
   --form-text-field-underlined-base-gap-gap-horisontal: 4px;
   --form-text-field-underlined-base-haight-label: 21px;
   --form-text-field-underlined-base-haight-placeholder-input: 32px;
@@ -1560,9 +1561,10 @@ template {
   --footer-nav-item-padding-top-bottom: 8px;
   --footer-title-padding-left-right: 8px;
   --footer-title-padding-top-bottom: 8px;
-  --form-btn-input-height: 42px;
+  --form-gap: 8px;
+  --form-btn-input-height: 38px;
+  --form-btn-input-padding-top-bottom: 8px;
   --form-btn-input-padding-left-right: 16px;
-  --form-btn-input-padding-top-bottom: 16px;
   --form-container-in-popup: 480px;
   --form-container-in-block: 560px;
   --form-input-file-gap-gap-horisontal: 8px;
@@ -1573,12 +1575,12 @@ template {
   --form-text-field-outlined-gap-gap-horisontal: 4px;
   --form-text-field-outlined-haight-label: 21px;
   --form-text-field-outlined-haight-placeholder-input: 46px;
+  --form-text-field-outlined-padding-label-helper-left: 0px;
   --form-text-field-outlined-padding-helper-text-top: 2px;
-  --form-text-field-outlined-padding-label-bottom: 2px;
+  --form-text-field-outlined-padding-label-bottom: 4px;
   --form-text-field-outlined-padding-input-left-right: 12px;
-  --form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
   --form-text-field-outlined-padding-input-top-bottom: 14px;
-  --form-text-field-outlined-radius-radius-input: 12px;
+  --form-text-field-outlined-radius-radius-input: 8px;
   --form-text-field-underlined-base-gap-gap-horisontal: 4px;
   --form-text-field-underlined-base-haight-label: 21px;
   --form-text-field-underlined-base-haight-placeholder-input: 32px;
@@ -1792,9 +1794,10 @@ template {
   --footer-nav-item-padding-top-bottom: 8px;
   --footer-title-padding-left-right: 8px;
   --footer-title-padding-top-bottom: 8px;
+  --form-gap: 8px;
   --form-btn-input-height: 52px;
+  --form-btn-input-padding-top-bottom: 8px;
   --form-btn-input-padding-left-right: 16px;
-  --form-btn-input-padding-top-bottom: 16px;
   --form-container-in-popup: 480px;
   --form-container-in-block: 560px;
   --form-input-file-gap-gap-horisontal: 8px;
@@ -1805,12 +1808,12 @@ template {
   --form-text-field-outlined-gap-gap-horisontal: 4px;
   --form-text-field-outlined-haight-label: 21px;
   --form-text-field-outlined-haight-placeholder-input: 50px;
+  --form-text-field-outlined-padding-label-helper-left: 0px;
   --form-text-field-outlined-padding-helper-text-top: 2px;
-  --form-text-field-outlined-padding-label-bottom: 2px;
+  --form-text-field-outlined-padding-label-bottom: 4px;
   --form-text-field-outlined-padding-input-left-right: 12px;
-  --form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
   --form-text-field-outlined-padding-input-top-bottom: 14px;
-  --form-text-field-outlined-radius-radius-input: 12px;
+  --form-text-field-outlined-radius-radius-input: 8px;
   --form-text-field-underlined-base-gap-gap-horisontal: 4px;
   --form-text-field-underlined-base-haight-label: 21px;
   --form-text-field-underlined-base-haight-placeholder-input: 40px;
@@ -2024,6 +2027,7 @@ template {
   --footer-nav-item-padding-top-bottom: 8px;
   --footer-title-padding-left-right: 8px;
   --footer-title-padding-top-bottom: 8px;
+  --form-gap: 8px;
   --form-btn-input-height: 52px;
   --form-btn-input-padding-left-right: 16px;
   --form-btn-input-padding-top-bottom: 16px;
@@ -2037,12 +2041,12 @@ template {
   --form-text-field-outlined-gap-gap-horisontal: 4px;
   --form-text-field-outlined-haight-label: 21px;
   --form-text-field-outlined-haight-placeholder-input: 50px;
+  --form-text-field-outlined-padding-label-helper-left: 0px;
   --form-text-field-outlined-padding-helper-text-top: 2px;
-  --form-text-field-outlined-padding-label-bottom: 2px;
+  --form-text-field-outlined-padding-label-bottom: 4px;
   --form-text-field-outlined-padding-input-left-right: 12px;
-  --form-text-field-outlined-padding-label-helper-left: var(--form-text-field-outlined-radius-radius-input);
   --form-text-field-outlined-padding-input-top-bottom: 14px;
-  --form-text-field-outlined-radius-radius-input: 12px;
+  --form-text-field-outlined-radius-radius-input: 8px;
   --form-text-field-underlined-base-gap-gap-horisontal: 4px;
   --form-text-field-underlined-base-haight-label: 21px;
   --form-text-field-underlined-base-haight-placeholder-input: 40px;
@@ -2831,9 +2835,9 @@ a:not([class]),
 .modal-form-wrapper .modal-form .modal-form-content {
   background-color: #fff;
   border-radius: 10px;
-  max-width: 480px;
+  max-width: var(--form-container-in-popup);
+  padding: var(--spacing-global-spacing-m);
   overflow: hidden;
-  padding: 50px;
   width: calc(100vw - 20px);
 }
 
@@ -3413,9 +3417,8 @@ footer .footer__bottom ul {
 .form-field input,
 .form-field textarea {
   display: flex;
-  height: var(--form-text-field-outlined-haight-placeholder-input);
   width: 100%;
-  padding: var(--form-text-field-outlined-padding-input-top-bottom) var(--form-text-field-outlined-padding-input-left-right);
+  height: var(--form-text-field-underlined-base-haight-placeholder-input);
   align-items: center;
   gap: var(--form-text-field-underlined-base-gap-gap-horisontal);
   align-self: stretch;
@@ -3474,7 +3477,7 @@ footer .footer__bottom ul {
   display: flex;
   cursor: pointer;
   height: var(--form-btn-input-height);
-  padding: var(--form-btn-input-padding-top-bottom) var(--form-btn-input-padding-left-right);
+  padding: var(--form-btn-input-padding-top-bottom, 8px) var(--form-btn-input-padding-left-right, 16px);
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -3485,6 +3488,7 @@ footer .footer__bottom ul {
 .form-field .select .option.active {
   border-color: var(--btn-input-on-light-border-current);
   color: var(--btn-input-on-light-border-current);
+  background: var(--btn-input-on-light-bg-current);
 }
 .form-field.required .field-title::after {
   content: "*";
@@ -3497,10 +3501,12 @@ footer .footer__bottom ul {
   line-height: 100%;
   letter-spacing: 0.56px;
   position: relative;
+  display: block;
+  padding-bottom: var(--form-text-field-outlined-padding-label-bottom);
 }
 .form-field .field-title.with-padding {
   display: block;
-  padding: var(--spacing-global-spacing-l) 0px var(--spacing-text-editor-default-h-bottom) 0px;
+  padding: var(--spacing-text-editor-default-h-bottom) 0px;
 }
 .form-field.error span {
   color: var(--text-field-underline-helper-error-text-error) !important;
@@ -3542,6 +3548,7 @@ footer .footer__bottom ul {
 .form-field.underline input,
 .form-field.underline textarea {
   border: none;
+  padding: 0;
   border-radius: unset;
   border-bottom: 1px solid var(--text-field-underline-border-enabled);
 }
@@ -3551,6 +3558,13 @@ footer .footer__bottom ul {
   border-width: 2px;
   box-shadow: unset;
 }
+.form-field.outlined input {
+  height: var(--form-text-field-outlined-haight-placeholder-input);
+}
+.form-field.outlined input,
+.form-field.outlined textarea {
+  padding: var(--form-text-field-outlined-padding-input-top-bottom) var(--form-text-field-outlined-padding-input-left-right);
+}
 .form-field h2 {
   font-size: 24px;
   font-weight: 600;
@@ -3559,11 +3573,15 @@ footer .footer__bottom ul {
   letter-spacing: -0.48px;
   padding: 0;
 }
-.form-field .text {
-  font-size: 16px;
+.form-field .text, .form-field .text > *:not(a) {
+  font-size: 14px;
   font-weight: 400;
-  color: var(--text-on-light-bg-darker-high);
-  line-height: 160%;
+  color: var(--text-on-light-bg-darker-medium);
+  line-height: 140%;
+  margin-bottom: 0;
+}
+.form-field .text p:not(:last-of-type), .form-field .text > *:not(a) p:not(:last-of-type) {
+  padding-bottom: var(--spacing-text-editor-small-p-bottom);
 }
 
 .success i, .modal-success i {
@@ -4636,7 +4654,7 @@ footer .footer__bottom ul {
 
 .form {
   display: grid;
-  grid-gap: var(--spacing-global-spacing-s);
+  grid-gap: var(--form-gap);
   border-radius: 12px;
   padding: 24px;
   border: 1px solid var(--border-on-light-bg-lighter-medium, #CEDFF3);
@@ -4650,6 +4668,7 @@ footer .footer__bottom ul {
 }
 .form .btns-container {
   justify-self: end;
+  margin-top: 8px;
 }
 .form .btns-container .btn {
   border: none;
@@ -4667,7 +4686,7 @@ footer .footer__bottom ul {
 }
 
 .modal-form-wrapper .modal-form {
-  max-height: 90vh;
+  max-height: 97vh;
 }
 .modal-form-wrapper .modal-form .modal-form--btn-close {
   top: 22px;

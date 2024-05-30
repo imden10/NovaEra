@@ -45,12 +45,13 @@
 				transition: opacity .25s ease 0s;
 			}
 		}
+
 		.modal-form-content {
 			background-color: #fff;
 			border-radius: 10px;
-			max-width: 480px;
+			max-width: var(--form-container-in-popup);
+			padding: var(--spacing-global-spacing-m);
 			overflow: hidden;
-			padding: 50px;
 			width: calc(100vw - 20px);
 		}
 	}

@@ -1,20 +1,39 @@
 <?php
 $formData = \App\Models\Form::getData($id);
 $formConstructor = $formData['fields'];
-?>
+$formFields = [];
+$formTextInfo = [];
 
+if (isset($formConstructor)) {
+    foreach ($formConstructor as $item) {
+        if (isset($item['component']) && ($item['component'] === 'FormTitle' || $item['component'] === 'FormText')) {
+            $formTextInfo[] = $item;
+        } else {
+            $formFields[] = $item;
+        }
+    }
+}
+?>
 
 
 
 <!-- This is form <?= $id ?> -->
 <form class="form">
-    <?php if (isset($formConstructor)) : ?>
-        <?php foreach ($formConstructor as $item) : ?>
+    <?php if (isset($formTextInfo)) : ?>
+        <div class="text-wrapper">
+
+            <?php foreach ($formTextInfo as $item) : ?>
+                <?php require app('path.views') . '/mod/fields/' . $item['component'] . '.php'; ?>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($formFields)) : ?>
+        <?php foreach ($formFields as $item) : ?>
             <?php require app('path.views') . '/mod/fields/' . $item['component'] . '.php'; ?>
         <?php endforeach; ?>
     <?php endif; ?>
     <div class="btns-container">
-        <button type="submit" class="btn secondary fill lg">Задати питання</button>
+        <button type="submit" class="btn secondary fill lg"><?= $formData['btn_name'] ?></button>
     </div>
 </form>
 
@@ -26,6 +45,13 @@ $formConstructor = $formData['fields'];
         const form = document.querySelector('.form');
         const formWrapper = document.querySelector('.modal-form-content');
         const formComponent = formConstructor.filter(el => el.component !== 'FormTitle' && el.component !== 'FormText').map(el => el.content);
+
+        if (isModal) {
+            const submmitBtn = formWrapper.querySelector('.btn')
+            console.log(submmitBtn);
+            submmitBtn.classList.remove('lg')
+            submmitBtn.classList.add('sm')
+        }
 
         const formFieldsCollection = [];
         formComponent.forEach(el => {
