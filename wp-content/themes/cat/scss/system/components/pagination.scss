@@ -1,0 +1,18 @@
+.pagination {
+
+	// background-color: red;;
+	.page-numbers {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 32px;
+		height: 32px;
+		@include set-typography(15px, 400, var(--pagination-on-light-label-default), 100%);
+
+		&.current {
+			border-radius: var(--border-radius-global-s);
+			border: 1px solid var(--pagination-on-light-border-current);
+			color: var(--pagination-on-light-label-current);
+		}
+	}
+}

@@ -6,12 +6,9 @@
 
         <h3 class="article-title"><?= $article->post_title; ?></h3>
 
-        <span class="article-date"><?= $article->post_date ?></span>
+        <p class="article-date"><?= $article->post_date ?></p>
        
         <p class="article-description"><?= $article->post_content; ?></p>
         <!-- <p class="article-description"><?= $article->post_excerpt; ?></p> -->
-
-
-        <!-- <span class="postitem__lnk"><?= trans('Подробнее &#62'); ?></span> -->
     </div>
 </a>

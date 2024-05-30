@@ -1,0 +1,19 @@
+.article-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.article-preview {
+	.article-title {
+		@include set-typography(16px, 600, var(--card-on-light-bg-lighter-title-default), 140%)
+	}
+
+	.article-date {
+		@include set-typography(15px, 400, var(--card-on-light-bg-lighter-price) !important, 140%);
+		margin: 4px 0px
+	}
+	.article-description {
+		@include set-typography(15px, 400, var(--text-on-light-bg-darker-high), 160%);
+	}
+}

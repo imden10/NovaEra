@@ -4546,7 +4546,7 @@ function paginate_links( $args = '' ) {
 		$link .= $args['add_fragment'];
 
 		$page_links[] = sprintf(
-			'<a class="prev page-numbers" href="%s">%s</a>',
+			'<a class="prev page-numbers ic-chevron-left" href="%s"></a>',
 			/**
 			 * Filters the paginated links for the given archive pages.
 			 *
@@ -4602,7 +4602,7 @@ function paginate_links( $args = '' ) {
 		$link .= $args['add_fragment'];
 
 		$page_links[] = sprintf(
-			'<a class="next page-numbers" href="%s">%s</a>',
+			'<a class="next page-numbers ic-chevron-right" href="%s"></a>',
 			/** This filter is documented in wp-includes/general-template.php */
 			esc_url( apply_filters( 'paginate_links', $link ) ),
 			$args['next_text']

@@ -48,7 +48,7 @@
                 </div>
 
                 <!-- Пагінація -->
-                <div class="pagination">
+                <div class="pagination test">
                     <?php
                     $pagination_args = array(
                         'total'        => $article_objects->max_num_pages,
