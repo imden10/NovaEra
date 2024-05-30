@@ -24,7 +24,9 @@
     <?= $page->page_information_description ?? '' ?>
 </div>
 
-<?php $article_objects = model('post')->all(isset($main_article->ID) ? [$main_article->ID] : [], 12);
+<?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$article_objects = model('post')->all([], null, $paged);
 $articles = $article_objects->posts;
 if (!empty($articles)) : ?>
     <section class="postssection blogpage">
@@ -32,64 +34,29 @@ if (!empty($articles)) : ?>
             <div class="row articles-container">
 
                 <?php foreach ($articles as $article) :
-
                     require app('path.views') . '/page/articles/article-block.php';
-
                 endforeach; ?>
 
             </div>
-
-            <?php if ($article_objects->max_num_pages > 1) : ?>
-                <script>
-                    const ajaxurl = '<?php echo appConfig('ajax_handler'); ?>';
-                    const query = '<?php echo serialize($article_objects->query_vars); ?>';
-                    const max_pages = '<?php echo $article_objects->max_num_pages; ?>';
-                    let current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-                </script>
-
-                <div class="gomore">
-                    <a href="#" id="loadMoreArticles" class="gomore__lnk"><span><?php echo trans('Показать ещё статьи'); ?></span><img src="<?php echo appConfig('theme_url'); ?>/img/reloadicon.svg" alt="More"></a>
-                </div>
-
-                <?php add_action('wp_footer', function() { ?>
-                    <script>
-                        jQuery(function($){
-                            $('#loadMoreArticles').click(function(e) {
-                                e.preventDefault();
-                                const loadButton = $(this);
-                                const articlesContainer = $('.articles-container');
-
-                                loadButton.find('a').text('<?php echo trans('Загружаю...'); ?>');
-
-                                const data = {
-                                    'action': 'load_more_articles',
-                                    'query': query,
-                                    'page' : current_page
-                                };
-
-                                $.ajax({
-                                    url: ajaxurl,
-                                    data: data,
-                                    type:'POST',
-                                    success:function(response){
-                                        if (response) {
-                                            loadButton.text('<?php echo trans('Загрузить ещё'); ?>');
-                                            articlesContainer.append(response);
-                                            resizeimgs();
-                                            current_page++;
-                                            if (current_page == max_pages) {
-                                                loadButton.remove();
-                                            }
-                                        } else {
-                                            loadButton.remove();
-                                        }
-                                    }
-                                });
-                            });
-                        });
-                    </script>
-                <?php }, 999); ?>
-            <?php endif; ?>
         </div>
     </section>
+
+    <!-- Пагінація -->
+    <div class="pagination">
+        <?php
+        $pagination_args = array(
+            'total'        => $article_objects->max_num_pages,
+            'current'      => $paged,
+            'show_all'     => false,
+            'end_size'     => 1,
+            'mid_size'     => 2,
+            'prev_next'    => true,
+            'prev_text'    => __('« Попередня'),
+            'next_text'    => __('Наступна »'),
+            'type'         => 'plain',
+        );
+        echo paginate_links($pagination_args);
+        ?>
+    </div>
+
 <?php endif; ?>
