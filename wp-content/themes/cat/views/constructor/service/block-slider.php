@@ -14,18 +14,15 @@ $data = array_diff_key($content, array_flip(['list']));
     <?php endif; ?>
 </div>
 <?php if (isset($content['list'])) : ?>
-    <div id="block-slider" class="swiper">
-        <div class="swiper-wrapper">
-            <?php foreach ($content['list'] as $item) : ?>
-                <a href="<?= $item['link'] ?>" class="swiper-slide">
-                    <h4><?= $item['title']; ?></h4>
-                    <!-- <p><?= $item['text']; ?>descr</p> -->
-                    <!-- <img src="https://nova-era.sisidev.com.ua/wp-content/uploads/2024/05/img-golovna-test.png" alt=""> -->
-                    <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
-                </a>
-            <?php endforeach; ?>
-        </div>
-
+    <div id="block-slider" class="splide" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <?php foreach ($content['list'] as $item) : ?>
+            <a href="<?= $item['link'] ?>" class="swiper-slide">
+                <h4><?= $item['title']; ?></h4>
+                <!-- <p><?= $item['text']; ?>descr</p> -->
+                <!-- <img src="https://nova-era.sisidev.com.ua/wp-content/uploads/2024/05/img-golovna-test.png" alt=""> -->
+                <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
+            </a>
+        <?php endforeach; ?>
     </div>
 <?php endif; ?>
 

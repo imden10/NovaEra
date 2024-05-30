@@ -57,9 +57,9 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 function custom_scripts()
 {
-    wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.js', array(), null, true);
+    wp_enqueue_script('sliders', get_template_directory_uri() . '/js/sliders.js', array(), null, true);
     wp_enqueue_script('accordions', get_template_directory_uri() . '/js/accordions.js', array(), null, true);
-    wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), null, true);
+    // wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), null, true);
     wp_enqueue_script('scrollTrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array(), null, true);
     wp_enqueue_script('imask', 'https://unpkg.com/imask', array(), null, true);
     // wp_enqueue_script('animations', get_template_directory_uri() . '/js/animations.js', array(), null, true);
