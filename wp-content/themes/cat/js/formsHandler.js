@@ -67,14 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			const errors = formFieldsCollection.map(field => validateField(field)).filter(error => error);
 			console.log(errors);
 			if (errors.length > 0) return;
-			
+
 			const formData = new FormData(e.target);
 			formData.append('form_id', e.target.dataset.form);
 			const data = {};
 			formData.forEach((value, key) => {
 				data[key] = value;
 			});
-			sendForm(data)
+			sendForm(data, e.target)
 		});
 	}
 
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
-	const sendForm = (formData) => {
+	const sendForm = (formData, form) => {
 		fetch('/api/form/send', {
 			method: 'POST',
 			body: JSON.stringify(formData),
@@ -149,21 +149,12 @@ document.addEventListener("DOMContentLoaded", () => {
 				<h3>${data.success_title}</h3>
 				<p>${data.success_text}</p>
 				</div>`;
-				if (isModal) {
-					div.classList.add('modal-success')
-					form.remove();
-					formWrapper.append(div)
-				} else {
-					div.classList.add('success');
-					form.append(div);
-					setTimeout(() => {
-						div.remove();
-					}, 4000)
-				}
+
+				div.classList.add('modal-success')
+				form.remove();
+				formWrapper.append(div)
+
 				form.reset();
-				if (isModal) {
-					localStorage.setItem('isModalFormOpen', false);
-				};
 			})
 			.catch(error => {
 				console.error('Error:', error);
