@@ -2,7 +2,6 @@
     <?php if (!empty($content['title'])) : ?>
         <h2><?php echo $content['title']; ?></h2>
     <?php endif; ?>
-<pre> <?php print_r($formData['fields']) ?></pre>
     <div class="contacts-wrapper">
         <div class="redactor">
             <?= $content['text']; ?>

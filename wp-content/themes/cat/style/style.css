@@ -4802,6 +4802,7 @@ footer .footer__bottom ul {
   line-height: 160%;
 }
 .article-preview .article-image {
+  border-radius: var(--border-radius-global-s);
   width: var(--slider-item-height-l);
 }
 
