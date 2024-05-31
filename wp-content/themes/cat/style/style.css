@@ -3027,6 +3027,9 @@ scrollbar-thumb {
     grid-template-columns: 1fr;
   }
 }
+#blocks-2 .card-info {
+  display: none;
+}
 
 @font-face {
   font-family: "SFProDisplay";
