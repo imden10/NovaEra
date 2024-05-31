@@ -1,6 +1,6 @@
 <a href="<?= get_permalink($article->ID); ?>" class="article-preview">
 
-    <img src="<?= get_the_post_thumbnail_url($article->ID, 'full'); ?>" alt="">
+    <img class="article-image" src="<?= get_the_post_thumbnail_url($article->ID, 'full'); ?>" alt="">
 
     <div class="article-text">
 

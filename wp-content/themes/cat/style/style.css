@@ -3439,7 +3439,7 @@ footer .footer__bottom ul {
   width: 100%;
 }
 .form-field textarea {
-  resize-x: none;
+  resize: vertical;
   min-height: var(--form-text-area-height-input);
   padding: var(--form-text-field-underlined-base-padding-input-top-bottom) 0px;
 }
@@ -4778,6 +4778,10 @@ footer .footer__bottom ul {
   margin-bottom: var(--spacing-separator-xs);
 }
 
+.article-preview {
+  display: flex;
+  grid-gap: var(--cards-item-gap-m, 16px);
+}
 .article-preview .article-title {
   font-size: 16px;
   font-weight: 600;
@@ -4796,6 +4800,9 @@ footer .footer__bottom ul {
   font-weight: 400;
   color: var(--text-on-light-bg-darker-high);
   line-height: 160%;
+}
+.article-preview .article-image {
+  width: var(--slider-item-height-l);
 }
 
 .social-share {

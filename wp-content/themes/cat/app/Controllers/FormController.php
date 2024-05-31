@@ -39,7 +39,7 @@ class FormController
 
     public function renderFormView($id)
     {
-        $this->view('mod/_form', [
+        $this->view('mod/_modal-form', [
             'id' => $id
         ]);
     }

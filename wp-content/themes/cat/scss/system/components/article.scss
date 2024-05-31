@@ -12,7 +12,12 @@
 	}
 }
 
+
+
 .article-preview {
+	display: flex;
+	grid-gap: var(--cards-item-gap-m, 16px);
+
 	.article-title {
 		@include set-typography(16px, 600, var(--card-on-light-bg-lighter-title-default), 140%)
 	}
@@ -24,6 +29,10 @@
 
 	.article-description {
 		@include set-typography(15px, 400, var(--text-on-light-bg-darker-high), 160%);
+	}
+
+	.article-image {
+		width: var(--slider-item-height-l);
 	}
 }
 

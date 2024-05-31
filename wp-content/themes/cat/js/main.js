@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const upButton = document.querySelector('.up');
 	const burgerMenuTrigger = document.querySelector('.burger-menu-trigger');
 	const mobileMenu = document.querySelector('.mobile-menu');
-	const buttons = document.querySelectorAll('.render-form-btn');
-
 	// Helper functions
 	const setWindowSizeRange = () => {
 		const ranges = [
@@ -33,15 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		mobileMenu.classList.toggle('show');
 	};
 
-	const initializeMask = () => {
-		const elements = document.querySelectorAll('.phone');
-		const maskOptions = {
-			mask: '+{38}0-0000-00-000'
-		};
-		elements.forEach(el => {
-			IMask(el, maskOptions);
-		});
-	};
 	const setCookie = (name, value, days) => {
 		const date = new Date();
 		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -56,41 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		const popup = document.querySelector('.cookie-popup');
 		popup?.classList.toggle('show', show);
 	};
-
-	const loadForm = (id) => {
-		fetch(`/api/form/render?id=${id}`)
-			.then(response => {
-				if (response.ok) return response.text();
-				throw new Error(`Request failed with status ${response.status}`);
-			})
-			.then(html => {
-				const container = document.querySelector(".modal-form-content");
-				container.innerHTML = html;
-
-				// Удаляем старые скрипты, которые были добавлены ранее
-				const oldScripts = document.querySelectorAll('.dynamic-script');
-				oldScripts.forEach(script => script.remove());
-
-				// Добавляем новые скрипты
-				const scripts = container.getElementsByTagName('script');
-				for (let i = 0; i < scripts.length; i++) {
-					const script = document.createElement('script');
-					script.classList.add('dynamic-script'); // Добавляем класс для идентификации динамически добавленных скриптов
-					if (scripts[i].src) {
-						script.src = scripts[i].src;
-					} else {
-						script.innerHTML = scripts[i].innerHTML;
-					}
-					document.head.appendChild(script);
-				}
-				localStorage.setItem('isModalFormOpen', true);
-				// getFormData(id);
-				modalFormShow();
-				initializeMask();
-			})
-			.catch(error => console.error('Error loading form:', error));
-	};
-
 
 	const checkCookiesConsent = () => {
 		if (!getCookie('cookieConsent')) {
@@ -120,21 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	};
 
-	const attachFormButtonClickHandlers = () => {
-		buttons.forEach(button => {
-			button.addEventListener('click', (e) => {
-				e.preventDefault();
-				const id = button.getAttribute('data-form_id');
-				loadForm(id);
-			});
-		});
-	};
 
 	// Initial setup
 	setWindowSizeRange();
 	checkCookiesConsent();
-	attachFormButtonClickHandlers();
-	initializeMask();
+
 	try {
 		upButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 	} catch (error) {

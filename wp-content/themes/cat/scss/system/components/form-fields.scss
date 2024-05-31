@@ -3,7 +3,7 @@
 	width: 100%;
 
 	textarea {
-		resize-x: none;
+		resize: vertical;
 		min-height: var(--form-text-area-height-input);
 		padding: var(--form-text-field-underlined-base-padding-input-top-bottom) 0px;
 

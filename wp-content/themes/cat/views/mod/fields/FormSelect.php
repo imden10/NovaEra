@@ -9,7 +9,7 @@
 		<div class="select">
 			<?php foreach ($options as $option) : ?>
 				<?php list($value, $text) = explode(':', $option); ?>
-				<div class="option" onclick="updateHiddenInput(this, '<?= htmlspecialchars($item['content']['name']) ?>', '<?= htmlspecialchars($value) ?>')"><?= htmlspecialchars($text) ?></div>
+				<div class="option" onclick="updateHiddenInput(this, '<?= htmlspecialchars($item['content']['name']) ?>', '<?= htmlspecialchars($value) ?>')" data-value="<?= htmlspecialchars($value) ?>"><?= htmlspecialchars($text) ?></div>
 
 			<?php endforeach; ?>
 		</div>

@@ -3,7 +3,6 @@ $formData = \App\Models\Form::getData($id);
 $formConstructor = $formData['fields'];
 $formFields = [];
 $formTextInfo = [];
-
 if (isset($formConstructor)) {
     foreach ($formConstructor as $item) {
         if (isset($item['component']) && ($item['component'] === 'FormTitle' || $item['component'] === 'FormText')) {
@@ -15,10 +14,7 @@ if (isset($formConstructor)) {
 }
 ?>
 
-
-
-<!-- This is form <?= $id ?> -->
-<form class="form">
+<form class="form" id="tg-form-<?php echo uniqid(); ?>">
     <?php if (isset($formTextInfo)) : ?>
         <div class="text-wrapper">
 
@@ -41,17 +37,8 @@ if (isset($formConstructor)) {
     initializeForm(<?= json_encode($formConstructor) ?>);
 
     function initializeForm(formConstructor) {
-        const isModal = JSON.parse(localStorage.isModalFormOpen) || null
         const forms = document.querySelectorAll('.form');
-        const formWrapper = document.querySelector('.modal-form-content');
         const formComponent = formConstructor.filter(el => el.component !== 'FormTitle' && el.component !== 'FormText').map(el => el.content);
-
-        if (isModal) {
-            const submmitBtn = formWrapper.querySelector('.btn')
-            console.log(submmitBtn);
-            submmitBtn.classList.remove('lg')
-            submmitBtn.classList.add('sm')
-        }
 
         const formFieldsCollection = [];
         formComponent.forEach(el => {
@@ -100,17 +87,11 @@ if (isset($formConstructor)) {
                         <h3>${data.success_title}</h3>
                         <p>${data.success_text}</p>
                         </div>`;
-                        if (isModal) {
-                            div.classList.add('modal-success')
-                            form.remove();
-                            formWrapper.append(div)
-                        } else {
-                            div.classList.add('success');
-                            form.append(div);
-                            setTimeout(() => {
-                                div.remove();
-                            }, 4000)
-                        }
+                        div.classList.add('success');
+                        form.append(div);
+                        setTimeout(() => {
+                            div.remove();
+                        }, 4000)
                         form.reset();
                         if (isModal) {
                             localStorage.setItem('isModalFormOpen', false);

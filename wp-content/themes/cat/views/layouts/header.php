@@ -14,7 +14,6 @@
     <?php if (in_array($_SERVER['REQUEST_URI'], ['/cookies', '/rules-for-using-the-site', '/privacy-policy'])) : ?>
         <meta name="robots" content="noindex">
     <?php endif; ?>
-
 </head>
 
 <?php
