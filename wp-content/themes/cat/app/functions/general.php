@@ -102,11 +102,11 @@ function buildContentFromConstructorArray($post_type, $data = [])
             if (file_exists($file)) {
                 if ($content['background_type'] !== 'image' && $content['background_type'] !== 'gradient') {
                     $bg = $content[$content['background_type']] ?? '';
-                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$bg}'>";
+                    echo "<section id='$component_file_name-$key' class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} {$content['background_type']} {$bg}'>";
                 } elseif ($content['background_type'] === 'gradient') {
-                    echo "<section class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-light bg-gradient'>";
+                    echo "<section id='$component_file_name-$key' class='$component_file_name  mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-light bg-gradient'>";
                 } else {
-                    echo "<section style='background-image: url(" . wp_get_attachment_image_url($content['background_type_image']['id'], 'full') . ")' class='$component_file_name mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-img'>";
+                    echo "<section id='$component_file_name-$key' style='background-image: url(" . wp_get_attachment_image_url($content['background_type_image']['id'], 'full') . ")' class='$component_file_name mt-{$content['top_separator']} mb-{$content['bottom_separator']} on-dark bg-img'>";
                 }
                 require $file;
                 echo "</section>";

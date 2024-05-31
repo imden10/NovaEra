@@ -19,7 +19,7 @@ $data = array_diff_key($content, array_flip(['list']));
             <a href="<?= $item['link'] ?>" class="swiper-slide">
                 <h4><?= $item['title']; ?></h4>
                 <!-- <p><?= $item['text']; ?>descr</p> -->
-                <!-- <img src="https://nova-era.sisidev.com.ua/wp-content/uploads/2024/05/img-golovna-test.png" alt=""> -->
+                <!-- <img src="https://nova-era.com.ua/wp-content/uploads/2024/05/img.jpg" alt=""> -->
                 <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
             </a>
         <?php endforeach; ?>

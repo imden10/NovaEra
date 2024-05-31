@@ -16,6 +16,8 @@
 			@include set-typography(15px, 700, var(--card-on-light-bg-darker-title-default), 140%);
 			font-variant-numeric: lining-nums proportional-nums;
 			padding: var(--cards-item-wrap-padding-s);
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 
 		img {

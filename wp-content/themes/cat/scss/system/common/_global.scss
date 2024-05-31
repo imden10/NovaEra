@@ -181,3 +181,9 @@ scrollbar {
 scrollbar-thumb {
     background-color: #888;
 }
+
+#blocks-2 .cards-wrapper{
+    @include _1024{
+        grid-template-columns: 1fr;
+    }
+}

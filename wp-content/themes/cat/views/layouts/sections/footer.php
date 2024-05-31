@@ -75,9 +75,9 @@
                 <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
 
                 <li><a class="menu__link" href="https://bookkeeper.kiev.ua/" target="_blank">Copyright BookKeeper SaaS LLC</a> © 2024</li>
-                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/rules-for-using-the-site/">Правила використання</a></li>
-                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/privacy-policy/">Політика конфіденційності</a></li>
-                <li><a class="menu__link" href="https://nova-era.sisidev.com.ua/cookies/">Управління Cookies</a></li>
+                <li><a class="menu__link" href="/rules-for-using-the-site/">Правила використання</a></li>
+                <li><a class="menu__link" href="/privacy-policy/">Політика конфіденційності</a></li>
+                <li><a class="menu__link" href="/cookies/">Управління Cookies</a></li>
             </ul>
             <a href="#" class="menu__link" rel="nofollow">Зроблено в Україні | SiDev</a>
         </div>

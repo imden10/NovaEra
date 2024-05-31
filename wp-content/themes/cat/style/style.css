@@ -3022,6 +3022,12 @@ scrollbar-thumb {
   background-color: #888;
 }
 
+@media screen and (max-width: 1024px) {
+  #blocks-2 .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
@@ -4499,6 +4505,8 @@ footer .footer__bottom ul {
   line-height: 140%;
   font-variant-numeric: lining-nums proportional-nums;
   padding: var(--cards-item-wrap-padding-s);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .block-slider .swiper-slide img {
   display: flex;

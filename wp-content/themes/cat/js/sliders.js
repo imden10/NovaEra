@@ -10,10 +10,13 @@ try {
     controls: false,
     responsive: {
       320: {
-        items: 2,
+        items: 2.5,
+      },
+      576: {
+        items: 3,
       },
       768: {
-        items: 2,
+        items: 4,
       },
       1280: {
         items: 4.5,
@@ -31,8 +34,7 @@ try {
 try {
   var slider = tns({
     container: '#block-slider',
-    items: 6.5,
-    center: true,
+    center: false,
     nav: false,
     controls: true,
     loop: true,
@@ -43,8 +45,11 @@ try {
       320: {
         items: 2,
       },
+      568: {
+        items: 2.5,
+      },
       768: {
-        items: 2,
+        items: 3.5,
       },
       1280: {
         items: 4.5,

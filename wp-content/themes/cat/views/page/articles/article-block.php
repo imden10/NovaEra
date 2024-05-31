@@ -1,6 +1,6 @@
-<!-- <pre><?php print_r($article) ?></pre> -->
 <a href="<?= get_permalink($article->ID); ?>" class="article-preview">
-    <div class="article-image" style="background: no-repeat center/cover url('<?= has_post_thumbnail($article->ID) ? get_the_post_thumbnail_url($article->ID, 'full') : ''; ?>');"></div>
+
+    <img src="<?= get_the_post_thumbnail_url($article->ID, 'full'); ?>" alt="">
 
     <div class="article-text">
 
