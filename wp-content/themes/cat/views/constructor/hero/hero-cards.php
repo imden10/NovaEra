@@ -40,12 +40,12 @@ $imageUrl = get_image_url_by_id($content['image']['id']);
                         </div>
                     <?php else : ?>
                         <div class="hero-item hero-card">
-
-                            <a href="<?= $item['link'] ?>" class="hero-card-link"><?= $item['title'] ?>
+<!-- href="<?= $item['link'] ?>" -->
+                            <div class="hero-card-link"><?= $item['title'] ?>
                                 <?php if ($item['icon']) : ?>
                                     <i class="icon <?= $item['icon'] ?>"></i>
                                 <?php endif; ?>
-                            </a>
+                            </div>
 
                         </div>
                     <?php endif; ?>

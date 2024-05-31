@@ -58,18 +58,18 @@
 	<?php endif; ?>
 	<div class="mobile-menu-footer">
 		<?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
-        <!-- <div class="lang-switcher">
+			<!-- <div class="lang-switcher">
             <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
                 <a href="<?php echo $locale['url']; ?>" class="lang<?php echo $locale['slug'] == pll_current_language() ? ' active' : ''; ?>">
                     <?php echo strtoupper($locale['slug']); ?>
                 </a>
             <?php endforeach; ?>
         </div> -->
-    <?php endif; ?>
+		<?php endif; ?>
 
 		<div class="buttons-wrapper">
-			<div class="btn sm primary fill">Демо версія</div>
-			<div class="btn sm secondary fill">Реєстрація</div>
+			<div class="btn sm primary fill render-form-btn" data-form_id="1629">Демо версія <i class="ic-chevron-right"></i></div>
+			<div class="btn sm secondary fill render-form-btn" data-form_id="1629">Реєстрація</div>
 		</div>
 	</div>
 </div>

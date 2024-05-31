@@ -42,7 +42,7 @@ if (isset($formConstructor)) {
 
     function initializeForm(formConstructor) {
         const isModal = JSON.parse(localStorage.isModalFormOpen) || null
-        const form = document.querySelector('.form');
+        const forms = document.querySelectorAll('.form');
         const formWrapper = document.querySelector('.modal-form-content');
         const formComponent = formConstructor.filter(el => el.component !== 'FormTitle' && el.component !== 'FormText').map(el => el.content);
 
@@ -70,55 +70,57 @@ if (isset($formConstructor)) {
                 });
             }
         });
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const errors = formFieldsCollection.map(field => validateField(field)).filter(error => error);
-            if (errors.length > 0) return;
+        forms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const errors = formFieldsCollection.map(field => validateField(field)).filter(error => error);
+                if (errors.length > 0) return;
 
-            const formData = new FormData(form);
-            formData.append('form_id', "<?= $id ?>");
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+                const formData = new FormData(form);
+                formData.append('form_id', "<?= $id ?>");
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
 
-            fetch('/api/form/send', {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => response.json())
-                .then(({
-                    data
-                }) => {
-                    const div = document.createElement('div');
-                    div.innerHTML = `<i class="ic-check-large"></i>
+                fetch('/api/form/send', {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(({
+                        data
+                    }) => {
+                        const div = document.createElement('div');
+                        div.innerHTML = `<i class="ic-check-large"></i>
                         <div class="text">
                         <h3>${data.success_title}</h3>
                         <p>${data.success_text}</p>
                         </div>`;
-                    if (isModal) {
-                        div.classList.add('modal-success')
-                        form.remove();
-                        formWrapper.append(div)
-                    } else {
-                        div.classList.add('success');
-                        form.append(div);
-                        setTimeout(() => {
-                            div.remove();
-                        }, 4000)
-                    }
-                    form.reset();
-                    if (isModal) {
-                        localStorage.setItem('isModalFormOpen', false);
-                    };
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        });
+                        if (isModal) {
+                            div.classList.add('modal-success')
+                            form.remove();
+                            formWrapper.append(div)
+                        } else {
+                            div.classList.add('success');
+                            form.append(div);
+                            setTimeout(() => {
+                                div.remove();
+                            }, 4000)
+                        }
+                        form.reset();
+                        if (isModal) {
+                            localStorage.setItem('isModalFormOpen', false);
+                        };
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        })
 
         function validateField(field) {
             if (!field.el) return;

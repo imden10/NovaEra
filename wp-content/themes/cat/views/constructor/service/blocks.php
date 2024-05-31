@@ -9,7 +9,6 @@ $data = array_diff_key($content, array_flip(['list']));
         <?php if (isset($content['list'])) : ?>
             <?php foreach ($content['list'] as $item) : ?>
                 <div class="card">
-                    <!-- <?php print_r($item); ?> -->
                     <?php if ($content['image_position'] == 'top' && $content['type'] === 'image') : ?>
                         <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
 

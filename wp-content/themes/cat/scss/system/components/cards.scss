@@ -75,6 +75,7 @@
 		height: fit-content;
 		display: flex;
 		justify-content: center;
+		height: 100%;
 
 		.title-wrp {
 			display: flex;
@@ -119,7 +120,6 @@
 
 	.card {
 		padding: var(--cards-item-wrap-padding-m, 24px);
-
 		h2 {
 			@include set-typography(24px, 500, var(--card-on-light-bg-lighter-title-default), 120%);
 		}
