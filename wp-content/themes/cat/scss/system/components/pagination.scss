@@ -1,5 +1,5 @@
 .pagination {
-
+	padding-top: var(--spacing-global-spacing-m);
 	// background-color: red;;
 	.page-numbers {
 		display: inline-flex;
@@ -14,5 +14,10 @@
 			border: 1px solid var(--pagination-on-light-border-current);
 			color: var(--pagination-on-light-label-current);
 		}
+	}
+}
+.articlepage{
+	.pagination{
+		
 	}
 }

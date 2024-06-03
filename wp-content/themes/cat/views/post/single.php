@@ -7,7 +7,7 @@
             <?php $blog_page = get_post(get_option('page_for_posts')); ?>
             <li class="breadcrumbs-item"><a href="<?php echo get_permalink($blog_page->ID); ?>" class="brdcrmb__lnk"><?php echo $blog_page->post_title; ?></a></li>
 
-            <li class="breadcrumbs-item"><?php echo $post->post_title; ?></li>
+            <!-- <li class="breadcrumbs-item"><?php echo $post->post_title; ?></li> -->
         </ul>
     </div>
     <div class="container article-container">
@@ -27,7 +27,8 @@
                 <li>
                     <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nova-era.com.ua" target="_blank" class="ic-linkedin-simple" aria-label="Share on LinkedIn"></a>
                 </li>
-                <li onclick="copyLink()" class="ic-link" aria-label="Copy link">
+                <li onclick="copyLink(event)" class="ic-link copylink" aria-label="Copy link">
+                <span>copy</span>
                 </li>
             </ul>
         </div>
@@ -38,8 +39,8 @@
 <section class="article-container container">
 
     <?php buildContentFromConstructorArray('service', $post->post_information_body); ?>
-    <div class="btn primary fill lg back">Назад</div>
-    <div onclick="history.back" class="social-share bordered">
+    <div onclick="history.back()" class="btn primary fill lg back"><i class="ic-chevron-left"></i> Назад</div>
+    <div class="social-share bordered">
         <span class="date">
             <?php echo $post->post_date ?>
         </span>
@@ -126,12 +127,16 @@ if (!empty($similarArticles)) : ?>
 <div class="up ic-chevron-up"></div>
 
 <script>
-    function copyLink() {
+    function copyLink(event) {
+        event.target.classList.add('active');
         const url = location.href;
         navigator.clipboard.writeText(url).then(() => {
             console.log('Link copied to clipboard');
         }).catch(err => {
             console.error('Error copying link: ', err);
         });
+        setTimeout(() => {
+            event.target.classList.remove('active');
+        }, 2000);
     }
 </script>

@@ -29,6 +29,9 @@
 
 	.article-description {
 		@include set-typography(15px, 400, var(--text-on-light-bg-darker-high), 160%);
+		p:last-of-type{
+			margin-bottom: 0;
+		}
 	}
 
 	.article-image {
@@ -68,5 +71,32 @@
 				color: inherit
 			}
 		}
+
+		.copylink {
+			position: relative;
+			&.active span{
+				visibility: visible;
+				opacity: 1;
+			}
+			span {
+				visibility: hidden;
+				opacity: 0;
+				transition: .3s;
+				position: absolute;
+				bottom: -45px;
+				left: 0;
+				background-color: #fff;
+				border-radius: 5px;
+				border: 1px solid var(--header-items-on-light-ic-wrap-border-default);
+				padding: 5px 15px;
+				font-size: 16px;
+				font-weight: 400;
+				color: var(--text-on-light-bg-darker-high);
+				line-height: 160%;
+			}
+		}
 	}
+}
+.back{
+	padding: var(--button-small-top-bottom) var(--button-small-left-right);
 }

@@ -1,53 +1,18 @@
 @import '../../mixinsAndVariables/breakpoints';
 
-$gap-desktop: 0px 20px;
-$gap-tablet-l: 0px 50px;
-$gap-tablet-s: 0px 34px;
-$gap-mobile-l: 0px 20px;
-$gap-mobile-s: 0px 15px;
+$gap-desktop: var(--spacing-separator-non) var(--spacing-container-left-right) var(--spacing-separator-s) var(--spacing-container-left-right);
 
 $container-width: 1200px;
 .container {
     width: 100%;
     max-width: $container-width;
     margin: 0 auto;
-
-    @include _1440 {
-        padding: $gap-tablet-l;
-    }
-
-    @include _1024 {
-        padding: $gap-tablet-s;
-    }
-
-    @include _820 {
-        padding: $gap-mobile-l;
-    }
-
-    @include _425 {
-        padding: $gap-mobile-s;
-    }
+    padding: var(--spacing-separator-non) var(--spacing-container-left-right) var(--spacing-separator-s) var(--spacing-container-left-right);
 }
 
 .container-fluid {
     width: 100%;
     @media (min-width: 1440px) {
-        padding: $gap-desktop;
-    }
-
-    @include _1440 {
-        padding: $gap-tablet-l;
-    }
-
-    @include _1024 {
-        padding: $gap-tablet-s;
-    }
-
-    @include _820 {
-        padding: $gap-mobile-l;
-    }
-
-    @include _425 {
-        padding: $gap-mobile-s;
+        padding: var(--spacing-separator-non) var(--spacing-container-left-right) var(--spacing-separator-s) var(--spacing-container-left-right)
     }
 }

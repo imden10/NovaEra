@@ -19,13 +19,16 @@
 			flex-direction: column;
 			align-items: flex-start;
 			grid-gap: 8px;
-
+			position: sticky;
+			top: 90px;
+			height: fit-content;
 			a {
 				@include set-typography(16px, 400, var(--sidebar-on-light-label-default), normal);
 				padding: var(--sidebar-item-padding-top-bottom) var(--sidebar-item-padding-left-right);
 				transition: .3s;
 
 				&:hover,
+				&:first-of-type,
 				&.active {
 					color: var(--sidebar-on-light-label-hover)
 				}

@@ -10,6 +10,9 @@ h1 {
 h2 {
 	@include set-typography(30px, 500, var(--text-on-light-bg-darker-high), 120%, -0.6px);
 	padding-bottom: var(--spacing-page-headline-h2-bottom, 24px);
+	@include _768{
+		@include set-typography(24px, 500, var(--text-on-light-bg-darker-high), 120%, -0.48px);
+	}
 }
 
 .redactor {
@@ -23,26 +26,38 @@ h2 {
 
 	h1 {
 		@include set-typography(24px, 600, inherit, 120%);
+		padding: var(--spacing-text-editor-default-h-top, 16px) 0px var(--spacing-text-editor-default-h-bottom, 8px) 0px;
+
 	}
 
 	h2 {
 		@include set-typography(20px, 600, inherit, 140%);
+		padding: var(--spacing-text-editor-default-h-top, 16px) 0px var(--spacing-text-editor-default-h-bottom, 8px) 0px;
+
 	}
 
 	h3 {
 		@include set-typography(18px, 600, inherit, 140%);
+		padding: var(--spacing-text-editor-default-h-top, 16px) 0px var(--spacing-text-editor-default-h-bottom, 8px) 0px;
+
 	}
 
 	h4 {
 		@include set-typography(16px, 600, inherit, 140%);
+		padding: var(--spacing-text-editor-default-h-top, 16px) 0px var(--spacing-text-editor-default-h-bottom, 8px) 0px;
+
 	}
 
 	h5 {
-		@include set-typography(14px, 600, inherit, 140%);
+		@include set-typography(16px, 600, inherit, 140%);
+		padding: var(--spacing-text-editor-default-h-top, 16px) 0px var(--spacing-text-editor-default-h-bottom, 8px) 0px;
+
 	}
 
 	h6 {
-		@include set-typography(12px, 600, inherit, 140%);
+		@include set-typography(16px, 600, inherit, 140%);
+		padding: var(--spacing-text-editor-default-h-top, 16px) 0px var(--spacing-text-editor-default-h-bottom, 8px) 0px;
+
 	}
 
 	p,

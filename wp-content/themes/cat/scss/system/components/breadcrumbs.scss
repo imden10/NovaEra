@@ -21,3 +21,8 @@
 		}
 	}
 }
+.articlepage{
+	.breadcrumbs li:last-of-type a{
+		position: static;
+	}
+}

@@ -1,4 +1,4 @@
-<div class="blog container">
+<div class="blogpage container">
     <div class="top-side">
         <ul class="breadcrumbs">
             <?php $home_page = get_post(get_option('page_on_front')); ?>
@@ -31,7 +31,7 @@
                 </div>
 
                 <!-- Пагінація -->
-                <div class="pagination test">
+                <div class="pagination">
                     <?php
                     $pagination_args = array(
                         'total'        => $article_objects->max_num_pages,

@@ -38,7 +38,9 @@
 	.controls {
 		position: relative;
 		display: flex;
-
+		@include _576{
+			display: none;
+		}
 		.button-next,
 		.button-prev {
 			padding: var(--button-small-top-bottom, 16px) var(--button-small-left-right, 16px);
