@@ -6,7 +6,7 @@
             <?php endif; ?>
 
             <?php if (!empty($content['text'])) : ?>
-                <p><?php echo $content['text']; ?></p>
+                <div class="redactor"><?php echo $content['text']; ?></div>
             <?php endif; ?>
         </div>
         <?php require app('path.views') . '/constructor/_buttons.php'; ?>
