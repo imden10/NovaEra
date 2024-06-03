@@ -73,9 +73,10 @@ if (!empty($similarArticles)) : ?>
                 <div class="cards-wrapper card-in-row-4 ">
                     <?php foreach ($similarArticles as $item) : ?>
                         <a href="<?= get_permalink($item->ID); ?>" class="card card-article">
-                            <img src="https://nova-era.com.ua/wp-content/uploads/2024/05/Rectangle-2503.png" alt="">
-                            <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
-                            <div class="card-info">
+                        <?php if (get_the_post_thumbnail_url($item->ID, 'full')): ?>    
+                        <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
+                        <?php endif ?>    
+                        <div class="card-info">
                                 <div class="title-wrp">
                                     <?php if ($item->post_title) : ?>
                                         <h2>
