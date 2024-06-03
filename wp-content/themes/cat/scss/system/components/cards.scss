@@ -201,7 +201,7 @@
 
 .otherposts {
 	.cards-wrapper {
-		padding-top: 0;
+		padding: 0;
 		grid-gap: var(--cards-coll-gap-m);
 	}
 
@@ -227,5 +227,13 @@
 			border-radius: var(--border-radius-image-m);
 		}
 
+	}
+	.btns-wrapper{
+		display: flex;
+		justify-content: flex-end;
+	}
+	.btn{
+		margin-bottom: var(--spacing-separator-s);
+		margin-top: var(--spacing-actions-top-m);
 	}
 }

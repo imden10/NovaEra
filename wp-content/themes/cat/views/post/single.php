@@ -73,10 +73,10 @@ if (!empty($similarArticles)) : ?>
                 <div class="cards-wrapper card-in-row-4 ">
                     <?php foreach ($similarArticles as $item) : ?>
                         <a href="<?= get_permalink($item->ID); ?>" class="card card-article">
-                        <?php if (get_the_post_thumbnail_url($item->ID, 'full')): ?>    
-                        <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
-                        <?php endif ?>    
-                        <div class="card-info">
+                            <?php if (get_the_post_thumbnail_url($item->ID, 'full')) : ?>
+                                <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
+                            <?php endif ?>
+                            <div class="card-info">
                                 <div class="title-wrp">
                                     <?php if ($item->post_title) : ?>
                                         <h2>
@@ -97,7 +97,9 @@ if (!empty($similarArticles)) : ?>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="btn primary fill lg">Всі статті</div>
+            <div class="btns-wrapper">
+                <a href="/blog" class="btn primary fill lg">Всі статті <i class="ic-chevron-right"></i></a>
+            </div>
         </div>
     </section>
 <?php endif; ?>

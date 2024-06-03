@@ -4306,7 +4306,7 @@ footer .footer__bottom ul {
 }
 
 .otherposts .cards-wrapper {
-  padding-top: 0;
+  padding: 0;
   grid-gap: var(--cards-coll-gap-m);
 }
 .otherposts .card-article {
@@ -4327,6 +4327,14 @@ footer .footer__bottom ul {
 .otherposts .card-article img {
   margin-bottom: 8px;
   border-radius: var(--border-radius-image-m);
+}
+.otherposts .btns-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.otherposts .btn {
+  margin-bottom: var(--spacing-separator-s);
+  margin-top: var(--spacing-actions-top-m);
 }
 
 .text-with-background .container {
