@@ -2169,7 +2169,7 @@ template {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-separator-non) var(--spacing-container-left-right) var(--spacing-separator-s) var(--spacing-container-left-right);
+  padding: 0px var(--spacing-container-left-right);
 }
 
 .container-fluid {
@@ -2177,7 +2177,7 @@ template {
 }
 @media (min-width: 1440px) {
   .container-fluid {
-    padding: var(--spacing-separator-non) var(--spacing-container-left-right) var(--spacing-separator-s) var(--spacing-container-left-right);
+    padding: 0px var(--spacing-container-left-right);
   }
 }
 
