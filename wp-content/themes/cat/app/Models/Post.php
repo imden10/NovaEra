@@ -57,9 +57,11 @@ class Post extends Model
     public function similarArticles($without_id = [])
     {
         return new \WP_Query([
-            'posts_per_page' => -1,
+            'posts_per_page' => 4, // Отримати лише 4 записи
             'post_type' => $this->postType,
             'post__not_in' => $without_id,
+            'orderby' => 'date', // Сортувати за датою
+            'order' => 'DESC' // Від нових до старих
         ]);
     }
 }

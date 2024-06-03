@@ -68,60 +68,27 @@ if (!empty($similarArticles)) : ?>
     <section class="otherposts">
         <div class="container">
             <div class="titlefigure"></div>
-            <h2><?php echo trans('Другие посты на эту тему'); ?></h2>
+            <h2><?php echo trans('Тематичні публікації'); ?></h2>
             <div class="blocks">
                 <div class="cards-wrapper card-in-row-4 ">
                     <?php foreach ($similarArticles as $item) : ?>
-                        <a href="<?php echo get_permalink($similar->ID); ?>" class="card">
+                        <a href="<?= get_permalink($item->ID); ?>" class="article-preview">
 
-                            <img src="<?= get_image_url_by_id($item->image); ?>" alt="">
+                            <img class="article-image" src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?>" alt="">
 
+                            <div class="article-text">
 
+                                <h3 class="article-title"><?= $item->post_title; ?></h3>
 
-                            <div class="card-info">
-                                <div class="title-wrp">
-                                    <?php if ($item->post_title) : ?>
-                                        <h2>
-                                            <?php $item->post_title; ?>
-                                        </h2>
-                                    <?php endif; ?>
-                                </div>
+                                <p class="article-date"><?= date('d.m.Y', strtotime($item->post_date)); ?></p>
 
-
-                                <?php if ($item->post_excerpt) : ?>
-                                    <div class="description">
-                                        <?= $item->post_excerpt; ?>
-                                    </div>
-                                <?php endif; ?>
+                                <p class="article-description"><?= $item->post_content; ?></p>
+                                <!-- <p class="article-description"><?= $item->post_excerpt; ?></p> -->
                             </div>
                         </a>
                     <?php endforeach; ?>
-
                 </div>
             </div>
-            <!-- <div class="therpostssliderwrap sliderwraptrgt">
-                <div class="therpostsslider">
-
-                    <?php foreach ($similarArticles as $similar) : ?>
-                        <a href="<?php echo get_permalink($similar->ID); ?>" class="postitem">
-                            <div class="postitem__img" style="background: no-repeat center/cover url('<?php echo has_post_thumbnail($similar->ID) ? get_the_post_thumbnail_url($similar->ID, 'full') : ''; ?>');"></div>
-
-                            <div class="postitem__textwrap">
-                                <div class="postitem__cont">
-                                    <h3 class="postitem__title"><?php echo $similar->post_title; ?></h3>
-
-                                    <span class="postitem__subtitle">Эстетическая стоматология</span>
-
-                                    <p class="postitem__text"><?php echo $similar->post_excerpt; ?></p>
-                                </div>
-
-                                <span class="postitem__lnk"><?php echo trans('Подробнее &#62'); ?></span>
-                            </div>
-                        </a>
-                    <?php endforeach; ?>
-
-                </div>
-            </div> -->
         </div>
     </section>
 <?php endif; ?>
