@@ -4316,6 +4316,7 @@ footer .footer__bottom ul {
 }
 .otherposts .card-article .card-info {
   grid-gap: 0;
+  justify-content: flex-end;
 }
 .otherposts .card-article .card-info .title-wrp h2 {
   font-size: 16px;
