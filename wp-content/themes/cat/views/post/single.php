@@ -15,7 +15,7 @@
         <h1><?php echo $post->post_title; ?></h1>
         <div class="social-share">
             <span class="date">
-                <?php echo $post->post_date ?>
+               <?php echo date('d.m.Y', strtotime($post->post_date)); ?>
             </span>
             <ul class="share">
                 <li>
