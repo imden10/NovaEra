@@ -86,9 +86,9 @@ if (!empty($similarArticles)) : ?>
 
                                 <p class="article-date"><?= date('d.m.Y', strtotime($item->post_date)); ?></p>
 
-                                <?php if ($item->post_content) : ?>
+                                <?php if ($item->post_excerpt) : ?>
                                     <div class="description">
-                                        <?= $item->post_content; ?>
+                                        <?= $item->post_excerpt; ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -96,6 +96,7 @@ if (!empty($similarArticles)) : ?>
                     <?php endforeach; ?>
                 </div>
             </div>
+            <div class="btn primary fill lg">Всі статті</div>
         </div>
     </section>
 <?php endif; ?>

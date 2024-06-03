@@ -4305,21 +4305,27 @@ footer .footer__bottom ul {
   line-height: 160%;
 }
 
-.card-article {
+.otherposts .cards-wrapper {
+  padding-top: 0;
+  grid-gap: var(--cards-coll-gap-m);
+}
+.otherposts .card-article {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
-.card-article .card-info {
+.otherposts .card-article .card-info {
   grid-gap: 0;
 }
-.card-article .card-info .title-wrp h2 {
+.otherposts .card-article .card-info .title-wrp h2 {
   font-size: 16px;
   font-weight: 600;
   color: var(--card-on-light-bg-lighter-title-default);
   line-height: 140%;
 }
-.card-article img {
+.otherposts .card-article img {
   margin-bottom: 8px;
+  border-radius: var(--border-radius-image-m);
 }
 
 .text-with-background .container {
