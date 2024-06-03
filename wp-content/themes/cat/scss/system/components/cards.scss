@@ -120,6 +120,7 @@
 
 	.card {
 		padding: var(--cards-item-wrap-padding-m, 24px);
+
 		h2 {
 			@include set-typography(24px, 500, var(--card-on-light-bg-lighter-title-default), 120%);
 		}
@@ -195,4 +196,24 @@
 	.redactor>* {
 		@include set-typography(16px, 400, var(--text-on-light-bg-lighter-high), 160%);
 	}
+}
+
+.card-article {
+	display: flex;
+	flex-direction: column;
+
+	.card-info {
+		grid-gap: 0;
+
+		.title-wrp {
+			h2 {
+				@include set-typography(16px, 600, var(--card-on-light-bg-lighter-title-default), 140%)
+			}
+		}
+	}
+
+	img {
+		margin-bottom: 8px;
+	}
+
 }

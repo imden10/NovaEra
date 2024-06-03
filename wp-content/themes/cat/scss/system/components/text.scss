@@ -1,0 +1,10 @@
+.simple-text{
+	.text-wrapper{
+		display: grid;
+		grid-gap: var(--cards-coll-gap-mini-text);
+		grid-template-columns: 320px auto;
+		@include _1024 {
+			grid-template-columns: 1fr;
+		}
+	}
+}

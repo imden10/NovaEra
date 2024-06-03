@@ -23,7 +23,6 @@
 			}
 		}
 	}
-
 	&.column30 {
 		padding: var(--spacing-separator-l) var(--spacing-container-left-right);
 
@@ -221,7 +220,14 @@
 			}
 		}
 	}
-
+	&.without-img .container{
+		display: grid;
+		grid-template-columns: auto 320px;
+		align-items: flex-end;
+		@include _1024{
+			grid-template-columns: 1fr;
+		}
+	}
 	&.section50 {
 		@media (min-width: 1023px) and (max-width: 1440px) {
 			padding-left: var(--spacing-container-left-right);

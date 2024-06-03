@@ -15,7 +15,7 @@
         <h1><?php echo $post->post_title; ?></h1>
         <div class="social-share">
             <span class="date">
-               <?php echo date('d.m.Y', strtotime($post->post_date)); ?>
+                <?php echo date('d.m.Y', strtotime($post->post_date)); ?>
             </span>
             <ul class="share">
                 <li>
@@ -28,7 +28,7 @@
                     <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nova-era.com.ua" target="_blank" class="ic-linkedin-simple" aria-label="Share on LinkedIn"></a>
                 </li>
                 <li onclick="copyLink(event)" class="ic-link copylink" aria-label="Copy link">
-                <span>copy</span>
+                    <span>copy</span>
                 </li>
             </ul>
         </div>
@@ -72,18 +72,25 @@ if (!empty($similarArticles)) : ?>
             <div class="blocks">
                 <div class="cards-wrapper card-in-row-4 ">
                     <?php foreach ($similarArticles as $item) : ?>
-                        <a href="<?= get_permalink($item->ID); ?>" class="article-preview">
-
-                            <img class="article-image" src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?>" alt="">
-
-                            <div class="article-text">
-
-                                <h3 class="article-title"><?= $item->post_title; ?></h3>
+                        <a href="<?= get_permalink($item->ID); ?>" class="card card-article">
+                            <img src="https://nova-era.com.ua/wp-content/uploads/2024/05/Rectangle-2503.png" alt="">
+                            <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
+                            <div class="card-info">
+                                <div class="title-wrp">
+                                    <?php if ($item->post_title) : ?>
+                                        <h2>
+                                            <?= $item->post_title; ?>
+                                        </h2>
+                                    <?php endif; ?>
+                                </div>
 
                                 <p class="article-date"><?= date('d.m.Y', strtotime($item->post_date)); ?></p>
 
-                                <p class="article-description"><?= $item->post_content; ?></p>
-                                <!-- <p class="article-description"><?= $item->post_excerpt; ?></p> -->
+                                <?php if ($item->post_content) : ?>
+                                    <div class="description">
+                                        <?= $item->post_content; ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </a>
                     <?php endforeach; ?>

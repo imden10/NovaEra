@@ -4009,6 +4009,16 @@ footer .footer__bottom ul {
     order: 0;
   }
 }
+.first-screen.without-img .container {
+  display: grid;
+  grid-template-columns: auto 320px;
+  align-items: flex-end;
+}
+@media screen and (max-width: 1024px) {
+  .first-screen.without-img .container {
+    grid-template-columns: 1fr;
+  }
+}
 @media (min-width: 1023px) and (max-width: 1440px) {
   .first-screen.section50 {
     padding-left: var(--spacing-container-left-right);
@@ -4295,6 +4305,23 @@ footer .footer__bottom ul {
   line-height: 160%;
 }
 
+.card-article {
+  display: flex;
+  flex-direction: column;
+}
+.card-article .card-info {
+  grid-gap: 0;
+}
+.card-article .card-info .title-wrp h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--card-on-light-bg-lighter-title-default);
+  line-height: 140%;
+}
+.card-article img {
+  margin-bottom: 8px;
+}
+
 .text-with-background .container {
   display: flex;
   justify-content: center;
@@ -4540,6 +4567,17 @@ footer .footer__bottom ul {
   margin-right: 10px;
 }
 
+.simple-text .text-wrapper {
+  display: grid;
+  grid-gap: var(--cards-coll-gap-mini-text);
+  grid-template-columns: 320px auto;
+}
+@media screen and (max-width: 1024px) {
+  .simple-text .text-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 .text-and-menu h1 {
   font-size: 30px;
   font-weight: 500;
@@ -4781,6 +4819,14 @@ footer .footer__bottom ul {
   margin-bottom: var(--spacing-separator-xs);
 }
 
+.article-date {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--card-on-light-bg-lighter-price) !important;
+  line-height: 140%;
+  margin: 4px 0px;
+}
+
 .article-preview {
   display: flex;
   grid-gap: var(--cards-item-gap-m, 16px);
@@ -4790,13 +4836,6 @@ footer .footer__bottom ul {
   font-weight: 600;
   color: var(--card-on-light-bg-lighter-title-default);
   line-height: 140%;
-}
-.article-preview .article-date {
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--card-on-light-bg-lighter-price) !important;
-  line-height: 140%;
-  margin: 4px 0px;
 }
 .article-preview .article-description {
   font-size: 15px;
