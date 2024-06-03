@@ -72,7 +72,6 @@ if (!empty($similarArticles)) : ?>
             <div class="blocks">
                 <div class="cards-wrapper card-in-row-4 ">
                     <?php foreach ($similarArticles as $item) : ?>
-                        <?php print_r($item) ?>
                         <a href="<?= get_permalink($item->ID); ?>" class="card card-article">
                             <img src="https://nova-era.com.ua/wp-content/uploads/2024/05/Rectangle-2503.png" alt="">
                             <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
