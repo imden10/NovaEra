@@ -6,7 +6,7 @@
 
         <h3 class="article-title"><?= $article->post_title; ?></h3>
 
-        <p class="article-date"><?= $article->post_date ?></p>
+        <p class="article-date"><?= date('d.m.Y', strtotime($article->post_date)); ?></p>
        
         <p class="article-description"><?= $article->post_content; ?></p>
         <!-- <p class="article-description"><?= $article->post_excerpt; ?></p> -->
