@@ -4810,6 +4810,12 @@ footer .footer__bottom ul {
 .article-preview .article-image {
   border-radius: var(--border-radius-global-s);
   width: var(--slider-item-height-l);
+  max-width: 200px;
+}
+@media screen and (max-width: 576px) {
+  .article-preview .article-image {
+    max-width: 115px;
+  }
 }
 
 .social-share {
@@ -4871,6 +4877,12 @@ footer .footer__bottom ul {
 
 .pagination {
   padding-top: var(--spacing-global-spacing-m);
+}
+@media screen and (max-width: 576px) {
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
 }
 .pagination .page-numbers {
   display: inline-flex;
