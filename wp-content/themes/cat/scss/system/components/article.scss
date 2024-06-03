@@ -37,6 +37,10 @@
 	.article-image {
 		border-radius: var(--border-radius-global-s);
 		width: var(--slider-item-height-l);
+		max-width: 200px;
+		@include _576{
+			max-width: 115px;
+		}
 	}
 }
 
