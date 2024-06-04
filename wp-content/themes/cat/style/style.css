@@ -4330,7 +4330,13 @@ footer .footer__bottom ul {
 }
 .otherposts .card-article img {
   margin-bottom: 8px;
+  height: 178px;
   border-radius: var(--border-radius-image-m);
+}
+@media screen and (max-width: 576px) {
+  .otherposts .card-article img {
+    height: 130px;
+  }
 }
 .otherposts .description {
   display: -webkit-box;

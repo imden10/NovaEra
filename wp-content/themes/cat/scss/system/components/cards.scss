@@ -224,7 +224,11 @@
 
 		img {
 			margin-bottom: 8px;
+			height: 178px;
 			border-radius: var(--border-radius-image-m);
+			@include _576{
+				height: 130px;
+			}
 		}
 
 	}
