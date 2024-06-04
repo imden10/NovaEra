@@ -33,7 +33,7 @@
             </ul>
         </div>
         <!-- <div class="cformbanner__banner" style="background: no-repeat center/cover url('<?php echo has_post_thumbnail($post->ID) ? get_the_post_thumbnail_url($post->ID, 'full') : ''; ?>');"></div> -->
-        <img src="<?php echo has_post_thumbnail($post->ID) ? get_the_post_thumbnail_url($post->ID, 'full') : ''; ?>" alt="">
+        <img class="article-banner" src="<?php echo has_post_thumbnail($post->ID) ? get_the_post_thumbnail_url($post->ID, 'full') : ''; ?>" alt="">
     </div>
 </section>
 

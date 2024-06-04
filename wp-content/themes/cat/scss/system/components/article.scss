@@ -34,6 +34,9 @@
 		p:last-of-type {
 			margin-bottom: 0;
 		}
+		@include _576{
+			display: none;
+		}
 	}
 
 	.article-image {
@@ -110,4 +113,8 @@
 .back {
 	margin-top: var(--spacing-actions-top-m);
 	padding: var(--button-small-top-bottom) var(--button-small-left-right);
+}
+.article-banner{
+	width: 100%;
+	object-fit: cover;
 }

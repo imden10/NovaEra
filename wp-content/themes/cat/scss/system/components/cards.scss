@@ -213,7 +213,7 @@
 
 		.card-info {
 			grid-gap: 0;
-			
+
 
 			.title-wrp {
 				h2 {
@@ -228,11 +228,21 @@
 		}
 
 	}
-	.btns-wrapper{
+
+	.description {
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.btns-wrapper {
 		display: flex;
 		justify-content: flex-end;
 	}
-	.btn{
+
+	.btn {
 		margin-bottom: var(--spacing-separator-s);
 		margin-top: var(--spacing-actions-top-m);
 	}
