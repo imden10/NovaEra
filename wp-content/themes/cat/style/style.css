@@ -4695,6 +4695,9 @@ footer .footer__bottom ul {
 .articlepage .breadcrumbs li:last-of-type a {
   position: static;
 }
+.articlepage .breadcrumbs li:last-of-type a::before {
+  display: none;
+}
 
 .prices .prices-list {
   display: flex;
