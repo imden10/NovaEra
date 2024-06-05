@@ -81,15 +81,15 @@ return [
                                 'val' => BLOG_POSTS_PAGE_IDS,
                             ]
                         ],
-                        'breadcrumb' => [
-                            'label' => __('Breadcrumb'),
+                        'breadcrumb_text' => [
+                            'label' => __('Breadcrumb текст'),
                             'component' => 'App\Components\MetaBox\Text',
                             'single' => true,
                             'params' => []
                         ],
-                        'subtitle' => [
-                            'label' => __('Підзаголовок'),
-                            'component' => 'App\Components\MetaBox\Text',
+                        'breadcrumb_url' => [
+                            'label' => __('Breadcrumb посилання'),
+                            'component' => 'App\Components\MetaBox\Url',
                             'single' => true,
                             'params' => []
                         ],
@@ -161,6 +161,18 @@ return [
                     'position' => 'normal',
                     'priority' => 'default',
                     'fields' => [
+                        'breadcrumb_text' => [
+                            'label' => __('Breadcrumb текст'),
+                            'component' => 'App\Components\MetaBox\Text',
+                            'single' => true,
+                            'params' => []
+                        ],
+                        'breadcrumb_url' => [
+                            'label' => __('Breadcrumb посилання'),
+                            'component' => 'App\Components\MetaBox\Url',
+                            'single' => true,
+                            'params' => []
+                        ],
                         'body' => [
                             'label' => __(''),
                             'component' => 'App\Components\MetaBox\Constructor\Constructor',

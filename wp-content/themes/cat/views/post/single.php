@@ -2,7 +2,7 @@
     <div class="container top-side">
         <ul class="breadcrumbs">
             <?php $home_page = get_post(get_option('page_on_front')); ?>
-            <li class="breadcrumbs-item"><a href="<?php echo site_url(); ?>" class="brdcrmb__lnk"><?php echo $home_page->post_title; ?></a></li>
+            <li class="breadcrumbs-item"><a href="<?= $post->post_information_breadcrumb_url ?? site_url() ?>" class="brdcrmb__lnk"><?= $post->post_information_breadcrumb_text ?? $home_page->post_title ?></a></li>
 
             <?php $blog_page = get_post(get_option('page_for_posts')); ?>
             <li class="breadcrumbs-item"><a href="<?php echo get_permalink($blog_page->ID); ?>" class="brdcrmb__lnk"><?php echo $blog_page->post_title; ?></a></li>
@@ -43,7 +43,7 @@
     <div onclick="history.back()" class="btn primary fill lg back"><i class="ic-chevron-left"></i> Назад</div>
     <div class="social-share bordered">
         <span class="date">
-            <?php echo $post->post_date ?>
+            <?php echo date('d.m.Y', strtotime($post->post_date)); ?>
         </span>
         <ul class="share">
             <li>
