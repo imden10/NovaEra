@@ -8,7 +8,7 @@
 
         <p class="article-date"><?= date('d.m.Y', strtotime($article->post_date)); ?></p>
        
-        <p class="article-description"><?= $article->post_content; ?></p>
-        <!-- <p class="article-description"><?= $article->post_excerpt; ?></p> -->
+        <!-- <p class="article-description"><?= $article->post_content; ?></p> -->
+        <p class="article-description"><?= $article->post_excerpt; ?></p>
     </div>
 </a>
