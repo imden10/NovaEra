@@ -4365,6 +4365,9 @@ footer .footer__bottom ul {
 .text-with-background .content h2 {
   padding-bottom: var(--spacing-page-headline-h2-bottom);
 }
+.text-with-background .content p {
+  text-align: left;
+}
 .text-with-background .btns-container {
   justify-content: center;
 }
