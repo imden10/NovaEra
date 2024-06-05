@@ -5,7 +5,11 @@
         <?php if (!empty($content['title'])) : ?>
             <h2><?php echo $content['title']; ?></h2>
         <?php endif; ?>
-        <?php echo $content['text']; ?>
+        <?php if (!empty($content['text'])) : ?>
+        <div class="redactor">
+            <?php echo $content['text']; ?>
+        </div>
+        <?php endif; ?>
         <?php require app('path.views') . '/constructor/_buttons.php'; ?>
     </div>
 </div>
