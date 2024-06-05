@@ -1,7 +1,13 @@
 <div class="container">
 	<ul class="breadcrumbs">
         <?php $home_page = get_post(get_option('page_on_front')); ?>
-        <li class="breadcrumbs-item"><a href="<?= $page->page_information_breadcrumb_url ?? site_url() ?>" class="brdcrmb__lnk"><?= $page->page_information_breadcrumb_text ?? $home_page->post_title ?></a></li>
+        <?php if ( $page->page_information_breadcrumb_text ): ?>
+            <li class="breadcrumbs-item"><a href="<?= $page->page_information_breadcrumb_url ?>" class="brdcrmb__lnk"><?= $page->page_information_breadcrumb_text ?></a></li>
+        <?php elseif ($home_page->page_information_breadcrumb_text): ?>
+            <li class="breadcrumbs-item"><a href="<?= site_url() ?>" class="brdcrmb__lnk"><?= $home_page->page_information_breadcrumb_text ?></a></li>
+        <?php else: ?>
+            <li class="breadcrumbs-item"><a href="<?= site_url() ?>" class="brdcrmb__lnk"><?= $home_page->post_title ?></a></li>
+        <?php endif ?>
         <li class="breadcrumbs-item"><?= $page->post_title; ?></li>
 	</ul>
 </div>
