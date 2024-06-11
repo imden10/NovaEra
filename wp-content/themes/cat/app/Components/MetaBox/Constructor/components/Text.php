@@ -17,6 +17,11 @@ class Text
             'name' => $name . '[' . $key . '][content][mini_text]',
             'value' => isset($value['content']['mini_text']) ? $value['content']['mini_text'] : ''
         ];
+
+        $miniTextShow = [
+            'name' => $name . '[' . $key . '][content][mini_text_show]',
+            'value' => isset($value['content']['mini_text_show']) ? $value['content']['mini_text_show'] : 1
+        ];
         ?>
 
         <div class="body-block">
@@ -27,16 +32,22 @@ class Text
                 <br>
 
                 <label>Міні текст</label>
-                <textarea id="componentMiniText<?php echo $key; ?>" class="ck-editor" name="<?php echo $miniText['name']; ?>"><?php echo $miniText['value']; ?></textarea>
+
+                <label>
+                    <input type="hidden" value="0" name="<?php echo $miniTextShow['name']; ?>">
+                    <input type="checkbox" class="mini-text-show-checkbox" style="width: 15px; margin: 10px 0;" value="1" name="<?php echo $miniTextShow['name']; ?>" <?php if($miniTextShow['value'] == 1):?> checked <?php endif;?> >
+                    <span>Показувати</span>
+                </label>
+
+                <div <?php if(!$miniTextShow['value']):?> style="display: none" <?php endif;?> class="mini-text-show-container">
+                    <textarea id="componentMiniText<?php echo $key; ?>" class="ck-editor" name="<?php echo $miniText['name']; ?>"><?php echo $miniText['value']; ?></textarea>
+                </div>
             </div>
         </div>
 
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#componentText<?php echo $key; ?>').summernote(summernote_options);
-            });
-
-            $(document).ready(function() {
                 $('#componentMiniText<?php echo $key; ?>').summernote(summernote_options);
             });
         </script>
@@ -63,13 +74,23 @@ class Text
 
     public function handlerScript()
     {
-        /*
+
         add_action('admin_footer', function () { ?>
 
             <script type="text/javascript">
+                $(document).ready(function(){
+                    $(document).on("change",".mini-text-show-checkbox", function (){
+                        let val = $(this).prop('checked');
+                        if(val){
+                            $(this).closest('.textarea-part').find('.mini-text-show-container').show();
+                        } else {
+                            $(this).closest('.textarea-part').find('.mini-text-show-container').hide();
+                        }
+                    })
+                });
             </script>
 
         <?php });
-        */
+
     }
 }
