@@ -18,7 +18,7 @@
                                 <?= $item['price_title']  ?>
                             </p>
                         <?php endif ?>
-                        <?php if ($item['btn__link']) : ?>
+                        <?php if ($item['btn__link'] && $item['btn__enable'] !== 1) : ?>
                             <a href="<?= $item['btn__link'] ?>" class="btn <?= $item['btn__color'] . ' ' . $item['btn__size'] . ' ' . $item['btn__type']  ?>">
                                 <?= $item['btn__text'] ?>
                                 <?php if ($item['btn__icon']) : ?>
@@ -26,6 +26,15 @@
                                 <?php endif ?>
                             </a>
                         <?php endif ?>
+                        <?php if ($item['btn__enable'] == 1) : ?>
+                            <?php
+                            if ($item['btn__type_link'] === "form") {
+                                $formData = \App\Models\Form::getData($item['btn__form_id']);
+                            }
+                            ?>
+
+                            <div class="btn <?= $item['btn__type'] ?>"><?= $item['btn__text'] ?></div>
+                        <?php endif; ?>
                     </div>
                     <?php if ($item['description']) : ?>
                         <div class="redactor">

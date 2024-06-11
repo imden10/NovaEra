@@ -31,7 +31,9 @@ $imgPosition = $content['image_position']
                                         <?= $item['title']; ?>
                                     </h2>
                                 <?php endif; ?>
+                                <?php if ( $item['link_url']) : ?>
                                 <i class="arrow-icon ic-chevron-right"></i>
+                                <?php endif ?>
                             </div>
 
                             <?php if ($item['link_text'] && $item['link_url']) : ?>

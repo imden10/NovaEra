@@ -77,6 +77,10 @@
 		justify-content: center;
 		height: 100%;
 
+		.card-info {
+			width: 100%;
+		}
+
 		.title-wrp {
 			display: flex;
 			grid-gap: 8px;
@@ -226,7 +230,8 @@
 			margin-bottom: 8px;
 			height: 178px;
 			border-radius: var(--border-radius-image-m);
-			@include _576{
+
+			@include _576 {
 				height: 130px;
 			}
 		}
