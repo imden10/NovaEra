@@ -4195,6 +4195,11 @@ footer .footer__bottom ul {
 .blocks .card .card-info {
   width: 100%;
 }
+.card-mini-text .card .card-info.without-title,
+.blocks .card .card-info.without-title {
+  display: flex;
+  flex-direction: row;
+}
 .card-mini-text .card .title-wrp,
 .blocks .card .title-wrp {
   display: flex;

@@ -21,7 +21,7 @@ $imgPosition = $content['image_position']
                         <?php if ($content['image_position'] == 'top' && $content['type'] === 'image') : ?>
                             <img src="<?= get_image_url_by_id($item['image']); ?>" alt="">
                         <?php endif ?>
-                        <div class="card-info">
+                        <div class="card-info <?= !$item['title'] && $item['description'] ? 'without-title' : '' ?>">
                             <div class="title-wrp">
                                 <?php if ($content['type'] === 'icon' && $item['icon']) : ?>
                                     <i class="<?= $item['icon'] ?>"></i>

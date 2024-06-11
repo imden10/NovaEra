@@ -26,15 +26,9 @@
                                 <?php endif ?>
                             </a>
                         <?php endif ?>
-                        <?php if ($item['btn__enable'] == 1) : ?>
-                            <?php
-                            if ($item['btn__type_link'] === "form") {
-                                $formData = \App\Models\Form::getData($item['btn__form_id']);
-                            }
-                            ?>
+                                    
+                        <?php require app('path.views') . '/constructor/single_button.php'; ?>
 
-                            <div class="btn <?= $item['btn__type'] ?>"><?= $item['btn__text'] ?></div>
-                        <?php endif; ?>
                     </div>
                     <?php if ($item['description']) : ?>
                         <div class="redactor">

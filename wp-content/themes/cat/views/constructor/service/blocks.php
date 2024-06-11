@@ -15,6 +15,7 @@ $data = array_diff_key($content, array_flip(['list']));
                     <?php endif ?>
 
                     <div class="card-info">
+
                         <div class="title-wrp">
                             <?php if ($content['type'] === 'icon' && $item['icon']) : ?>
                                 <i class="<?= $item['icon'] ?>"></i>
@@ -38,13 +39,7 @@ $data = array_diff_key($content, array_flip(['list']));
                         <!-- new fields -->
 
                         <?php if ($item['btn__enable'] == 1) : ?>
-                            <?php
-                            if ($item['btn__type_link'] === "form") {
-                                $formData = \App\Models\Form::getData($item['btn__form_id']);
-                            }
-                            ?>
-
-                            <div class="btn <?= $item['btn__type'] ?>"><?= $item['btn__text'] ?></div>
+                            <?php require app('path.views') . '/constructor/single_button.php'; ?>
                         <?php endif; ?>
                     </div>
 
