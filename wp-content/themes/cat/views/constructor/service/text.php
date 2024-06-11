@@ -1,6 +1,6 @@
 <div class="simple-text">
     <div class="container">
-        <?php if ($content['mini_text']) : ?>
+        <?php if ($content['mini_text_show'] === '1') : ?>
             <div class="text-wrapper">
                 <div class="mini-text">
                     <?php if (!empty($content['title'])) : ?>
