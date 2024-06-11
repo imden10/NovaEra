@@ -18,15 +18,7 @@
                                 <?= $item['price_title']  ?>
                             </p>
                         <?php endif ?>
-                        <?php if ($item['btn__link'] && $item['btn__enable'] !== 1) : ?>
-                            <a href="<?= $item['btn__link'] ?>" class="btn <?= $item['btn__color'] . ' ' . $item['btn__size'] . ' ' . $item['btn__type']  ?>">
-                                <?= $item['btn__text'] ?>
-                                <?php if ($item['btn__icon']) : ?>
-                                    <i class="<?= $item['btn__icon'] ?>"></i>
-                                <?php endif ?>
-                            </a>
-                        <?php endif ?>
-                                    
+                                
                         <?php require app('path.views') . '/constructor/single_button.php'; ?>
 
                     </div>
