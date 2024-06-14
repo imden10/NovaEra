@@ -121,6 +121,17 @@ class MetaPostCreator
                 }
 
                 if ($value) {
+                    if(is_array($value) && count($value)){
+                        foreach ($value as $key => $item){
+                            if(isset($item['content']) && is_array($item['content']) && count($item['content'])){
+                                foreach ($item['content'] as $key2 => $item2){
+                                    if(is_string($item2) && $item2 == "<p><br></p>"){
+                                        $value[$key]['content'][$key2] = "";
+                                    }
+                                }
+                            }
+                        }
+                    }
                     update_post_meta($post_id, $name, $value);
                 } else {
                     delete_post_meta($post_id, $name);
