@@ -199,7 +199,7 @@
 	}
 
 	.text, .text > *:not(a) {
-		@include set-typography(14px, 400, var(--text-on-light-bg-darker-medium), 140%);
+		@include set-typography(14px, 400, var(--text-on-light-bg-lighter-medium), 140%);
 		margin-bottom: 0;
 		p:not(:last-of-type){
 			padding-bottom: var(--spacing-text-editor-small-p-bottom);

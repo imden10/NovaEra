@@ -3600,7 +3600,7 @@ footer .footer__bottom ul {
 .form-field .text, .form-field .text > *:not(a) {
   font-size: 14px;
   font-weight: 400;
-  color: var(--text-on-light-bg-darker-medium);
+  color: var(--text-on-light-bg-lighter-medium);
   line-height: 140%;
   margin-bottom: 0;
 }

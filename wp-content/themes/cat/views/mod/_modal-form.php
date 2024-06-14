@@ -20,13 +20,17 @@ if (isset($formConstructor)) {
 		<div class="text-wrapper">
 
 			<?php foreach ($formTextInfo as $item) : ?>
-				<?php require app('path.views') . '/mod/fields/' . $item['component'] . '.php'; ?>
+				<?php if ($item['display'] === 'on') : ?>
+					<?php require app('path.views') . '/mod/fields/' . $item['component'] . '.php'; ?>
+				<?php endif ?>
 			<?php endforeach; ?>
 		</div>
 	<?php endif; ?>
 	<?php if (isset($formFields)) : ?>
 		<?php foreach ($formFields as $item) : ?>
-			<?php require app('path.views') . '/mod/fields/' . $item['component'] . '.php'; ?>
+			<?php if ($item['display'] === 'on') : ?>
+				<?php require app('path.views') . '/mod/fields/' . $item['component'] . '.php'; ?>
+			<?php endif ?>
 		<?php endforeach; ?>
 	<?php endif; ?>
 	<div class="btns-container">
