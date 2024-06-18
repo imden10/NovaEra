@@ -18,8 +18,8 @@
                                 <?php endif; ?>
 
                                 <?php if (!empty($item->children)) : ?>
-                                    <?php $has_custom_menu = false; ?>
-                                    <div class="submenu double-column">
+                                    <?php $has_custom_menu = !$children_item->is_custom_menu; ?>
+                                    <div class="submenu <?echo $has_custom_menu ? 'double-column' : '' ?>">
                                         <ul class="list-wrapper">
                                             <?php foreach ($item->children as $children_item) : ?>
                                                 <?php if (!$children_item->is_custom_menu) : ?>
@@ -41,7 +41,7 @@
                                                     </li>
                                                 <?php else : ?>
                                                     <?php
-                                                    $has_custom_menu = true;
+                                                    // $has_custom_menu = true;
                                                     $custom_menu_title = $children_item->title;
                                                     $custom_menu = $children_item->children;
                                                     ?>
