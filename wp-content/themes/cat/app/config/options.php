@@ -98,27 +98,32 @@ return [
                     'fields' => [
                         'facebook' => [
                             'label' => __('Facebook'),
-                            'component' => 'App\Components\Option\Url',
+                            'component' => 'App\Components\Option\LinkSort',
                             'params' => [],
                         ],
                         'instagram' => [
                             'label' => __('Instagram'),
-                            'component' => 'App\Components\Option\Url',
+                            'component' => 'App\Components\Option\LinkSort',
                             'params' => [],
                         ],
                         'telegram' => [
                             'label' => __('Telegram'),
-                            'component' => 'App\Components\Option\Text',
+                            'component' => 'App\Components\Option\LinkSort',
                             'params' => [],
                         ],
                         'linkedin' => [
                             'label' => __('Linkedin'),
-                            'component' => 'App\Components\Option\Text',
+                            'component' => 'App\Components\Option\LinkSort',
                             'params' => [],
                         ],
                         'youtube' => [
                             'label' => __('Youtube'),
-                            'component' => 'App\Components\Option\Text',
+                            'component' => 'App\Components\Option\LinkSort',
+                            'params' => [],
+                        ],
+                        'tiktok' => [
+                            'label' => __('Tiktok'),
+                            'component' => 'App\Components\Option\LinkSort',
                             'params' => [],
                         ],
                     ],

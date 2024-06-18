@@ -20,7 +20,7 @@ class Text
 
         $miniTextShow = [
             'name' => $name . '[' . $key . '][content][mini_text_show]',
-            'value' => isset($value['content']['mini_text_show']) ? $value['content']['mini_text_show'] : 1
+            'value' => isset($value['content']['mini_text_show']) ? $value['content']['mini_text_show'] : 0
         ];
         ?>
 
