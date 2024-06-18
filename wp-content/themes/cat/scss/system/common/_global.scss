@@ -18,7 +18,11 @@ section {
 		--bg-type: 'on-dark';
 	}
 }
-
+ol{
+	@include _576{
+		padding-left: 15px;
+	}
+}
 a {
 	text-decoration: none;
 }

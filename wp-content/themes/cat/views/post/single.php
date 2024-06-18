@@ -43,7 +43,7 @@
     </div>
 </section>
 
-<section class="article-container container">
+<section class="article-container">
 
     <?php buildContentFromConstructorArray('service', $post->post_information_body); ?>
     <div onclick="history.back()" class="btn primary fill lg back"><i class="ic-chevron-left"></i> Назад</div>

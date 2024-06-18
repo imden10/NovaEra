@@ -19,18 +19,16 @@
 
                                 <?php if (!empty($item->children)) : ?>
                                     <?php $has_custom_menu = !$children_item->is_custom_menu; ?>
-                                    <div class="submenu <?echo $has_custom_menu ? 'double-column' : '' ?>">
+                                    <div class="submenu <? echo $has_custom_menu ? 'double-column' : '' ?>">
                                         <ul class="list-wrapper">
                                             <?php foreach ($item->children as $children_item) : ?>
                                                 <?php if (!$children_item->is_custom_menu) : ?>
                                                     <li class="submenu__item">
 
                                                         <a href="<?php echo $children_item->url; ?>" <?php if ($children_item->target_blank) : ?> target="_blank" <?php endif; ?> class="sublnk"><?php echo $children_item->title; ?> <i class="ic-chevron-right"></i></a>
-
                                                         <?php if ($children_item->description) : ?>
                                                             <p><?= $children_item->description ?></p>
                                                         <?php endif; ?>
-
                                                         <?php if (!empty($children_item->children)) : ?>
                                                             <ul class="sub2menu">
                                                                 <?php foreach ($children_item->children as $children_children_item) : ?>
@@ -51,10 +49,12 @@
 
                                         <?php if ($has_custom_menu) : ?>
                                             <div class="list-wrapper custom">
-                                                <h4><?= $custom_menu_title ?></h4>
-                                                <?php if ($children_item->description) : ?>
-                                                    <p class="item_desc"><?= $children_item->description ?></p>
-                                                <?php endif; ?>
+                                                <div class="submenu__item">
+                                                    <h4><?= $custom_menu_title ?></h4>
+                                                    <?php if ($children_item->description) : ?>
+                                                        <p class="item_desc"><?= $children_item->description ?></p>
+                                                    <?php endif; ?>
+                                                </div>
                                                 <ul>
                                                     <?php foreach ($custom_menu as $children_item_custom) : ?>
                                                         <li class="submenu__item">

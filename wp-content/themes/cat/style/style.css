@@ -2838,6 +2838,12 @@ section.dark {
   --bg-type: "on-dark";
 }
 
+@media screen and (max-width: 576px) {
+  ol {
+    padding-left: 15px;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -3157,7 +3163,6 @@ header .menu__item {
 }
 header .menu__item:hover .submenu {
   display: grid;
-  gap: 30px;
 }
 header .menu__item__link {
   font-size: 16px;
@@ -3186,19 +3191,15 @@ header .submenu {
   left: 0;
   z-index: 100;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: var(--header-drop-menu-wrap-padding-m);
   border-radius: var(--border-radius-image-m);
   border: 1px solid var(--brand-1-200);
   box-shadow: 0px 0px 0px 6px rgba(123, 136, 153, 0.08);
   background: #FFF;
   width: 344px;
 }
-header .submenu .list-wrapper {
-  padding: 16px;
-}
 header .submenu .list-wrapper.custom a {
   display: block;
-  padding: 8px 0px;
   font-size: 16px;
   font-weight: 400 !important;
   color: var(--header-items-on-light-main-nav-label-default);
@@ -3210,9 +3211,8 @@ header .submenu .list-wrapper.custom ul {
 }
 header .submenu .list-wrapper h4 {
   margin-top: 0px;
-  padding-bottom: 8px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
 }
@@ -3222,7 +3222,9 @@ header .submenu.double-column {
 }
 header .submenu .submenu__item {
   position: relative;
-  margin-bottom: 21px;
+  padding: var(--header-drop-menu-item-2-padding-top-bottom, 12px) var(--header-drop-menu-item-2-padding-left-right, 16px);
+  display: grid;
+  grid-gap: var(--header-drop-menu-item-2-padding-top-bottom, 12px);
 }
 header .submenu .submenu__item a {
   width: 100%;
@@ -3230,7 +3232,7 @@ header .submenu .submenu__item a {
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--header-items-on-light-main-nav-label-default);
   line-height: normal;
 }
@@ -4892,6 +4894,7 @@ footer .footer__bottom ul {
 
 .article-container {
   max-width: 960px;
+  margin: 0 auto;
 }
 .article-container .btn {
   margin-bottom: var(--spacing-separator-xs);
