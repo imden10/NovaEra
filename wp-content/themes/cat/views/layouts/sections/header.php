@@ -25,10 +25,13 @@
                                                 <?php if (!$children_item->is_custom_menu) : ?>
                                                     <li class="submenu__item">
 
-                                                        <a href="<?php echo $children_item->url; ?>" <?php if ($children_item->target_blank) : ?> target="_blank" <?php endif; ?> class="sublnk"><?php echo $children_item->title; ?> <i class="ic-chevron-right"></i></a>
-                                                        <?php if ($children_item->description) : ?>
-                                                            <p><?= $children_item->description ?></p>
-                                                        <?php endif; ?>
+                                                        <a href="<?php echo $children_item->url; ?>" <?php if ($children_item->target_blank) : ?> target="_blank" <?php endif; ?> class="sublnk"><?php echo $children_item->title; ?> <i class="ic-chevron-right">
+                                                            </i>
+                                                            <?php if ($children_item->description) : ?>
+                                                                <p><?= $children_item->description ?></p>
+                                                            <?php endif; ?>
+                                                        </a>
+
                                                         <?php if (!empty($children_item->children)) : ?>
                                                             <ul class="sub2menu">
                                                                 <?php foreach ($children_item->children as $children_children_item) : ?>
