@@ -5,6 +5,9 @@
 	li {
 		&:last-of-type {
 			@include set-typography(16px, 400, var(--gray-600), 120%);
+			a::after{
+				display: none;
+			}
 		}
 
 		a {

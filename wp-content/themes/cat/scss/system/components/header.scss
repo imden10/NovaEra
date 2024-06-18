@@ -6,19 +6,23 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 100;
+
 	.container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
-	.btn{
+
+	.btn {
 		min-width: unset;
 	}
+
 	.left-column {
 		display: flex;
 		align-items: center;
 		grid-gap: 48px;
-		.logo{
+
+		.logo {
 			height: 36px;
 		}
 	}
@@ -51,14 +55,17 @@ header {
 		text-decoration: none;
 		padding: var(--header-main-nav-item-padding-top-bottom) var(--header-main-nav-item-padding-left-right);
 		transition: .3s;
-		&:has(i){
+
+		&:has(i) {
 			display: flex;
 			align-items: center;
 			grid-gap: 5px;
-			i{
+
+			i {
 				color: inherit;
 			}
 		}
+
 		&:hover {
 			color: #007bff;
 		}
@@ -82,13 +89,22 @@ header {
 		.list-wrapper {
 			padding: 16px;
 
-			&.custom ul {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
+			&.custom {
+				a {
+					display: block;
+					padding: 8px 0px;
+					@include set-typography(16px, 400 !important, var(--header-items-on-light-main-nav-label-default), normal);
+				}
+
+				ul {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+				}
 			}
 
 			h4 {
 				margin-top: 0px;
+				padding-bottom: 8px;
 				@include set-typography(16px, 600, var(--header-items-on-light-main-nav-label-default), normal);
 			}
 		}
@@ -103,6 +119,10 @@ header {
 			margin-bottom: 21px;
 
 			a {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 				@include set-typography(16px, 600, var(--header-items-on-light-main-nav-label-default), normal);
 			}
 
@@ -202,8 +222,9 @@ header {
 			padding: 8px 0px;
 		}
 	}
-	&.footer{
-		.other-langs{
+
+	&.footer {
+		.other-langs {
 			top: -100%;
 		}
 	}
@@ -212,9 +233,11 @@ header {
 header {
 	.burger-menu-trigger {
 		display: none;
-		&.active::before{
+
+		&.active::before {
 			content: "\e927";
 		}
+
 		@include _1280 {
 			// padding: var(--button-small-top-bottom) var(--button-small-left-right);
 			border-radius: var(--button-small-btn-radius);
@@ -239,14 +262,21 @@ header {
 			display: none;
 		}
 	}
-	@include _576{
-		.secondary{
+
+	@include _576 {
+		.secondary {
 			display: none;
 		}
 	}
-	@include _425{
-		.primary{
+
+	@include _425 {
+		.primary {
 			display: none;
 		}
 	}
+}
+
+.item_desc {
+	@include set-typography(14px, 400, var(--text-on-light-bg-lighter-tertiary) !important, normal);
+	margin-bottom: 0;
 }

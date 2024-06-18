@@ -2857,6 +2857,7 @@ a {
   border: 1px solid var(--gray-opacity-20);
   background: var(--bg-on-light-lighter);
   font-size: 24px;
+  z-index: 1;
 }
 .up.show {
   right: 20px;
@@ -3195,12 +3196,21 @@ header .submenu {
 header .submenu .list-wrapper {
   padding: 16px;
 }
+header .submenu .list-wrapper.custom a {
+  display: block;
+  padding: 8px 0px;
+  font-size: 16px;
+  font-weight: 400 !important;
+  color: var(--header-items-on-light-main-nav-label-default);
+  line-height: normal;
+}
 header .submenu .list-wrapper.custom ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 header .submenu .list-wrapper h4 {
   margin-top: 0px;
+  padding-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
   color: var(--header-items-on-light-main-nav-label-default);
@@ -3215,6 +3225,10 @@ header .submenu .submenu__item {
   margin-bottom: 21px;
 }
 header .submenu .submenu__item a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 16px;
   font-weight: 600;
   color: var(--header-items-on-light-main-nav-label-default);
@@ -3345,6 +3359,14 @@ header .burger-menu-trigger.active::before {
   header .primary {
     display: none;
   }
+}
+
+.item_desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-on-light-bg-lighter-tertiary) !important;
+  line-height: normal;
+  margin-bottom: 0;
 }
 
 footer {
@@ -3806,11 +3828,6 @@ footer .footer__bottom ul {
   bottom: 0;
   left: 0;
   transform: translateX(12px);
-}
-
-[class^=hero] {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .first-screen {
@@ -4315,6 +4332,11 @@ footer .footer__bottom ul {
 .mini-text h2 {
   padding-bottom: var(--spacing-page-headline-h2-bottom, 24px);
 }
+@media screen and (max-width: 576px) {
+  .mini-text h2 {
+    padding-bottom: 0;
+  }
+}
 .mini-text .redactor > * {
   font-size: 16px;
   font-weight: 400;
@@ -4692,6 +4714,9 @@ footer .footer__bottom ul {
   color: var(--gray-600);
   line-height: 120%;
 }
+.breadcrumbs li:last-of-type a::after {
+  display: none;
+}
 .breadcrumbs li a {
   font-size: 16px;
   font-weight: 400;
@@ -4744,6 +4769,8 @@ footer .footer__bottom ul {
 @media screen and (max-width: 768px) {
   .prices .prices-item {
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 .prices .prices-item h2 {
@@ -4955,7 +4982,7 @@ footer .footer__bottom ul {
   transition: 0.3s;
   position: absolute;
   bottom: -45px;
-  left: 0;
+  left: -30px;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid var(--header-items-on-light-ic-wrap-border-default);

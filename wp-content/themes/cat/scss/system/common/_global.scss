@@ -14,7 +14,6 @@ body {
 
 section {
 	--bg-type: 'on-ligth';
-
 	&.dark {
 		--bg-type: 'on-dark';
 	}
@@ -39,6 +38,7 @@ a {
 	border: 1px solid var(--gray-opacity-20);
 	background: var(--bg-on-light-lighter);
 	font-size: 24px;
+	z-index: 1;
 
 	&.show {
 		right: 20px;

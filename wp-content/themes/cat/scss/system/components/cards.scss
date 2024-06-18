@@ -199,6 +199,9 @@
 
 	h2 {
 		padding-bottom: var(--spacing-page-headline-h2-bottom, 24px);
+		@include _576{
+			padding-bottom: 0;
+		}
 	}
 
 	.redactor>* {

@@ -6,9 +6,11 @@
                     <?php if (!empty($content['title'])) : ?>
                         <h2><?= $content['title']; ?></h2>
                     <?php endif; ?>
-                    <div class="redactor">
-                        <?= $content['mini_text']  ?>
-                    </div>
+                    <?php if ($content['mini_text']) : ?>
+                        <div class="redactor">
+                            <?= $content['mini_text']  ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="redactor">
                     <?php echo $content['text']; ?>

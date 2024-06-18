@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const initializeMask = () => {
 		const elements = document.querySelectorAll('.phone');
 		const maskOptions = {
-			mask: '+{38}0-0000-00-000'
+			mask: '+{38}000-000-00-00'
 		};
 		elements.forEach(el => {
 			IMask(el, maskOptions);
