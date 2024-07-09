@@ -76,6 +76,7 @@ class CardMiniText
         $imagePositionList = [
             'top'    => 'Картинка зверху',
             'bottom' => 'Картинка знизу',
+            'left'   => 'Картинка ліворуч',
         ];
 
         $numberSize = [
@@ -96,6 +97,16 @@ class CardMiniText
         $iconTypeList = [
             'standard' => 'Стандартні',
             'custom'   => 'Кастомні',
+        ];
+
+        $numInRows = [
+            'name'  => $name . '[' . $key . '][content][num_in_rows]',
+            'value' => (isset($value['content']['num_in_rows'])) ? $value['content']['num_in_rows'] : 1
+        ];
+
+        $numInRowsList = [
+            '1' => '1 в ряд',
+            '2' => '2 в ряд',
         ];
         ?>
 
@@ -165,6 +176,17 @@ class CardMiniText
                         <select name="<?php echo $iconType['name']; ?>" class="form-control select-icon-type-card-val">
                             <?php foreach ($iconTypeList as $iconTypeListKey => $iconTypeListItem) : ?>
                                 <option value="<?= $iconTypeListKey ?>" <?php if ($iconTypeListKey == $iconType['value']) : ?> selected <?php endif; ?>><?= $iconTypeListItem ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <label style="margin-bottom: 5px">Кількість в ряд</label>
+                        <select name="<?php echo $numInRows['name']; ?>" class="form-control">
+                            <?php foreach ($numInRowsList as $numInRowsListKey => $numInRowsListItem) : ?>
+                                <option value="<?= $numInRowsListKey ?>" <?php if ($numInRowsListKey == $numInRows['value']) : ?> selected <?php endif; ?>><?= $numInRowsListItem ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
