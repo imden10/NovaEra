@@ -79,7 +79,7 @@
                 <li><a class="menu__link" href="/privacy-policy/">Політика конфіденційності</a></li>
                 <li><a class="menu__link" href="/cookies/">Управління Cookies</a></li>
             </ul>
-            <a href="#" class="menu__link" rel="nofollow">Зроблено в Україні | SiDev</a>
+            <a href="https://sidev.digital" target="_blank" class="menu__link" rel="nofollow">Зроблено в Україні | SiDev</a>
         </div>
     </div>
 </footer>
