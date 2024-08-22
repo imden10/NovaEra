@@ -28,10 +28,25 @@
                     Звʼязок та соціальні мережі
                 </a>
                 <div class="menu__list">
-                    <!-- <a href="#" class="menu__link"><i class="ic-facebook"></i> Facebook</a>
-                    <a href="#" class="menu__link"><i class="ic-telegram"></i> Telegram</a>
-                    <a href="#" class="menu__link"><i class="ic-linkedin-simple"></i> LinkedIn</a>
-                    <a href="#" class="menu__link"><i class="ic-youtube-simple"></i> Youtube</a> -->
+                    <div class="social__list">
+
+                        <?php if (getCustomOption('social_links_facebook', [])['link']): ?>
+                            <a href="<?= getCustomOption('social_links_facebook', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_facebook', [])['sort'] ?>"><i class="ic-facebook"></i> Facebook</a>
+                        <?php endif; ?>
+
+                        <?php if (getCustomOption('social_links_telegram', [])['link']): ?>
+                            <a href="<?= getCustomOption('social_links_telegram', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_telegram', [])['sort'] ?>"><i class="ic-telegram"></i> Telegram</a>
+                        <?php endif; ?>
+
+                        <?php if (getCustomOption('social_links_linkedin', [])['link']): ?>
+                            <a href="<?= getCustomOption('social_links_linkedin', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_linkedin', [])['sort'] ?>"><i class="ic-linkedin-simple"></i> LinkedIn</a>
+                        <?php endif; ?>
+
+                        <?php if (getCustomOption('social_links_youtube', [])['link']): ?>
+                            <a href="<?= getCustomOption('social_links_youtube', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_youtube', [])['sort'] ?>"><i class="ic-youtube-simple"></i> Youtube</a>
+                        <?php endif; ?>
+                    </div>
+
                     <?php $phones = getCustomOption('contacts_data_phone', []) ?>
                     <?php foreach ($phones as $phone) : ?>
                         <a href="tel:<?= $phone ?>" class="menu__link"><?= $phone ?></a>
@@ -47,33 +62,6 @@
 
             <ul>
                 <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
-                <!-- <li>
-                    <?php if (function_exists('pll_the_languages') && function_exists('pll_current_language')) : ?>
-                        <div class="lang-switcher footer">
-                            <?php $current_language = pll_current_language(); ?>
-                            <div class="selected-lang">
-                                <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
-                                    <?php if ($locale['slug'] == $current_language) : ?>
-                                        <div class="lang">
-                                            <i class="icon ic-lang"></i> <?php echo strtoupper($locale['slug']); ?>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </div>
-                            <div class="other-langs">
-                                <?php foreach (pll_the_languages(['raw' => 1]) as $locale) : ?>
-                                    <?php if ($locale['slug'] != $current_language) : ?>
-                                        <a href="<?php echo $locale['url']; ?>" class="lang">
-                                            <?php echo strtoupper($locale['slug']); ?>
-                                        </a>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </li> -->
-                <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
-
                 <li><a class="menu__link" href="https://bookkeeper.kiev.ua/" target="_blank">Copyright BookKeeper SaaS LLC</a> © 2024</li>
                 <li><a class="menu__link" href="/rules-for-using-the-site/">Правила використання</a></li>
                 <li><a class="menu__link" href="/privacy-policy/">Політика конфіденційності</a></li>

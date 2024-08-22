@@ -3375,7 +3375,7 @@ header .burger-menu-trigger.active::before {
 }
 
 footer {
-  background-color: #F3F5FC;
+  background-color: #f3f5fc;
   flex: 0 0;
 }
 footer a {
@@ -3454,6 +3454,11 @@ footer .footer__bottom ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+}
+footer .social__list {
+  display: grid;
+  grid-gap: 16px;
+  margin-top: 16px;
 }
 
 .form-field {
