@@ -31,19 +31,19 @@
                     <div class="social__list">
 
                         <?php if (getCustomOption('social_links_facebook', [])['link']): ?>
-                            <a href="<?= getCustomOption('social_links_facebook', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_facebook', [])['sort'] ?>"><i class="ic-facebook"></i> Facebook</a>
+                            <a target="_blank" href="<?= getCustomOption('social_links_facebook', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_facebook', [])['sort'] ?>"><i class="ic-facebook"></i> Facebook</a>
                         <?php endif; ?>
 
                         <?php if (getCustomOption('social_links_telegram', [])['link']): ?>
-                            <a href="<?= getCustomOption('social_links_telegram', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_telegram', [])['sort'] ?>"><i class="ic-telegram"></i> Telegram</a>
+                            <a target="_blank" href="<?= getCustomOption('social_links_telegram', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_telegram', [])['sort'] ?>"><i class="ic-telegram"></i> Telegram</a>
                         <?php endif; ?>
 
                         <?php if (getCustomOption('social_links_linkedin', [])['link']): ?>
-                            <a href="<?= getCustomOption('social_links_linkedin', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_linkedin', [])['sort'] ?>"><i class="ic-linkedin-simple"></i> LinkedIn</a>
+                            <a target="_blank" href="<?= getCustomOption('social_links_linkedin', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_linkedin', [])['sort'] ?>"><i class="ic-linkedin-simple"></i> LinkedIn</a>
                         <?php endif; ?>
 
                         <?php if (getCustomOption('social_links_youtube', [])['link']): ?>
-                            <a href="<?= getCustomOption('social_links_youtube', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_youtube', [])['sort'] ?>"><i class="ic-youtube-simple"></i> Youtube</a>
+                            <a target="_blank" href="<?= getCustomOption('social_links_youtube', [])['link'] ?>" class="menu__link" style="order: <?= getCustomOption('social_links_youtube', [])['sort'] ?>"><i class="ic-youtube-simple"></i> Youtube</a>
                         <?php endif; ?>
                     </div>
 

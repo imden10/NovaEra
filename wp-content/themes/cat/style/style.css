@@ -4815,6 +4815,10 @@ footer .social__list {
 .prices .prices-item .redactor {
   width: 100%;
 }
+.prices .prices-item .redactor p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
 
 .form {
   display: grid;
