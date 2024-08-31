@@ -527,22 +527,21 @@ function choiceManyImages(e, obj, image_name) {
     frame.open();
 }
 /* End Choice many images */
-
 const cb = function (callback) {
     $('#exampleModalBtn').modal('show');
     $(".cb-btn-submit").on("click",function () {
+       
         let data = {
             text:$(".cb-input-text").val(),
             type_link:$(".cb-input-type_link").val(),
             link:$(".cb-input-link").val(),
-            link_target:$(".cb-input-link_target").val(),
+            link_target:$(".cb-input-link_target").prop('checked'),
             form:$(".cb-input-form").val(),
             color_button:$(".cb-input-color_button").val(),
             size_button:$(".cb-input-size_button").val(),
             type_button:$(".cb-input-type_button").val(),
             icon:$(".cb-input-icon-wrapper").find("select").val(),
         };
-
         let a = document.createElement('a');
         a.className = "cb-component " + data.type_button;
 
@@ -554,7 +553,7 @@ const cb = function (callback) {
 
         if(data.type_link == "link"){
             a.setAttribute('href',data.link);
-            if(data.link_target === 'on'){
+            if(data.link_target){
                 a.setAttribute('target','_blank');
             }
         } else {
@@ -575,6 +574,7 @@ const cb = function (callback) {
 };
 
 const CustomButton = function (context) {
+
     const ui = $.summernote.ui;
     const button = ui.button({
         contents: '<i class="fa fa-leaf"></i> Кнопка',
