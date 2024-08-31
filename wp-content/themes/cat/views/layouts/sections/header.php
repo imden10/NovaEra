@@ -109,8 +109,8 @@
 
             <!--------------------------------- END LANG SWICHET -------------------------------------------------------------->
             <div class="buttons-wrapper">
-                <div class="btn sm primary fill render-form-btn" data-form_id="1629">Демо версія <i class="ic-chevron-right"></i></div>
-                <div class="btn sm secondary fill render-form-btn" data-form_id="1629">Реєстрація</div>
+                <a href="https://beta.nova-era.com.ua/demo" target="_blank" class="btn sm primary fill" >Демо версія <i class="ic-chevron-right"></i></a>
+                <a href="https://service.nova-era.com.ua/account/register" target="_blank" class="btn sm secondary fill">Реєстрація</a>
                 <div class="burger-menu-trigger ic-menu"></div>
             </div>
         </div>
