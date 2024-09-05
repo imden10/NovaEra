@@ -452,7 +452,7 @@ function choiceImage(e, obj) {
                 imageWrapper.find('img').attr('src', selected.sizes.full.url);
             } else {
                 // Це не зображення
-                imageWrapper.find('img').attr('src', '/wp-content/themes/dental/img/file-ext/'+ext+'.png');
+                imageWrapper.find('img').attr('src', '/wp-content/themes/cat/img/file-ext/'+ext+'.png');
             }
         }
     });
@@ -527,10 +527,10 @@ function choiceManyImages(e, obj, image_name) {
     frame.open();
 }
 /* End Choice many images */
-
 const cb = function (callback) {
     $('#exampleModalBtn').modal('show');
     $(".cb-btn-submit").on("click",function () {
+       
         let data = {
             text:$(".cb-input-text").val(),
             type_link:$(".cb-input-type_link").val(),
@@ -542,7 +542,6 @@ const cb = function (callback) {
             type_button:$(".cb-input-type_button").val(),
             icon:$(".cb-input-icon-wrapper").find("select").val(),
         };
-
         let a = document.createElement('a');
         a.className = "cb-component " + data.type_button;
 
@@ -575,6 +574,7 @@ const cb = function (callback) {
 };
 
 const CustomButton = function (context) {
+
     const ui = $.summernote.ui;
     const button = ui.button({
         contents: '<i class="fa fa-leaf"></i> Кнопка',
