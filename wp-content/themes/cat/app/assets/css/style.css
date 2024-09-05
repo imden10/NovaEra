@@ -461,3 +461,23 @@
 .note-btn-group .note-dropdown-item h6 {
     font-size: 18px !important;
 }
+
+/* summernote link modal */
+.note-modal-footer {
+    height: 52px;
+}
+.note-modal-body .checkbox.sn-checkbox-open-in-new-window, .note-modal-body .checkbox.sn-checkbox-use-protocol {
+    position: initial;
+}
+
+.note-modal-body .checkbox.sn-checkbox-open-in-new-window input {
+    width: initial;
+    position: initial;
+    opacity: 1;
+}
+
+.note-modal-body .checkbox.sn-checkbox-use-protocol input {
+    width: initial;
+    position: initial;
+    opacity: 1;
+}
