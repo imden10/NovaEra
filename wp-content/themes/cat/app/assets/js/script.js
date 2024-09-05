@@ -398,10 +398,10 @@ jQuery(document).ready(function($)
         let type = $(this).val();
 
         if (type == 'form') {
-            $(this).closest('.card-body').find('.type_link_link').hide();
+            $(this).closest('.card-body').find('.type_link_link, .type_link_link_target').hide();
             $(this).closest('.card-body').find('.type_link_form').show();
         } else {
-            $(this).closest('.card-body').find('.type_link_link').show();
+            $(this).closest('.card-body').find('.type_link_link, .type_link_link_target').show();
             $(this).closest('.card-body').find('.type_link_form').hide();
         }
     });
@@ -535,6 +535,7 @@ const cb = function (callback) {
             text:$(".cb-input-text").val(),
             type_link:$(".cb-input-type_link").val(),
             link:$(".cb-input-link").val(),
+            link_target:$(".cb-input-link_target").prop('checked'),
             form:$(".cb-input-form").val(),
             color_button:$(".cb-input-color_button").val(),
             size_button:$(".cb-input-size_button").val(),
@@ -553,6 +554,9 @@ const cb = function (callback) {
 
         if(data.type_link == "link"){
             a.setAttribute('href',data.link);
+            if(data.link_target){
+                a.setAttribute('target','_blank');
+            }
         } else {
             a.setAttribute('href',"javascript:void(0)");
             a.className += " render-form-btn";

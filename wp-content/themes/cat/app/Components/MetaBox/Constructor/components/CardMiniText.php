@@ -224,12 +224,19 @@ class CardMiniText
                                             <option value="link">Довільне посилання</option>
                                             <option value="form">Форма</option>
                                         </select>
-                                        <input type="text" style="margin: 5px 0 15px 0" placeholder="Посилання" class="form-control form-control-sm type_link_link" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__link]" disabled="disabled">
+
+                                        <input type="text" style="margin: 5px 0 5px 0" placeholder="Посилання" class="form-control form-control-sm type_link_link" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__link]" disabled="disabled">
+                                        <label style="margin-bottom: 10px" class="type_link_link_target">
+                                            <input type="checkbox" style="width: 10px;"  name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__link_target]" disabled="disabled">
+                                            <span>В новому вікні</span>
+                                        </label>
+
                                         <select style="margin: 5px 0 15px 0; display: none" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__form_id]" class="form-control form-control-sm type_link_form">
                                             <?php foreach ($formsList as $formListKey => $formList) : ?>
                                                 <option value="<?= $formListKey ?>"><?= $formList ?></option>
                                             <?php endforeach; ?>
                                         </select>
+
 
                                         <label>Колір</label>
                                         <select style="margin: 5px 0 15px 0" name="<?= $list['name']; ?>[<?php echo self::$placeholder; ?>][btn__color]" class="form-control form-control-sm">
@@ -321,8 +328,17 @@ class CardMiniText
                                                    placeholder="Посилання"
                                                    class="form-control form-control-sm type_link_link"
                                                    name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__link]"
-                                                   style="margin:5px 0 15px 0;<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>"
+                                                   style="margin:5px 0 5px 0;<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>"
                                                    value="<?= esc_attr($value['btn__link']); ?>">
+
+                                            <label style="margin-bottom: 10px;<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>" class="type_link_link_target">
+                                                <input type="checkbox"
+                                                       style="width: 10px;"
+                                                       <?php if($value['btn__link_target']):?> checked <?php endif?>
+                                                       name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__link_target]">
+                                                <span>В новому вікні</span>
+                                            </label>
+
                                             <?php $form_id = $value['btn__form_id'] ?? ''; ?>
                                             <select
                                                     name="<?php echo $list['name']; ?>[<?php echo $id; ?>][btn__form_id]"

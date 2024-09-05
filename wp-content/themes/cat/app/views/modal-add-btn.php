@@ -29,8 +29,18 @@ $formsList = Form::getList();
                 </div>
 
                 <div class="form-group note-form-group type_link_link">
-                    <label class="note-form-label">Посилання</label>
-                    <input class="form-control form-control-sm cb-input-link" type="text">
+                    <div style="display: flex; gap: 10px;align-items: flex-end;">
+                        <div>
+                            <label class="note-form-label">Посилання</label>
+                            <input class="form-control form-control-sm cb-input-link" type="text">
+                        </div>
+                        <div>
+                            <label>
+                                <input class="cb-input-link_target" type="checkbox">
+                                <span>В новому вікні</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group note-form-group type_link_form" style="display: none">

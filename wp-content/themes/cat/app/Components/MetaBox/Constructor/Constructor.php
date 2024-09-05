@@ -279,8 +279,18 @@ class Constructor extends BaseMetaBox
                                     </select>
                                 </div>
                                 <div class="mb-3 type_link_link">
-                                    <label>Посилання</label>
-                                    <input type="text" class="form-control form-control-sm" name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][link]" placeholder="<?php _e('Посилання '); ?>">
+                                    <div style="display: flex; gap: 10px;align-items: flex-end;">
+                                        <div>
+                                            <label>Посилання</label>
+                                            <input type="text" class="form-control form-control-sm" name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][link]" placeholder="<?php _e('Посилання '); ?>">
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input class="cb-input-link_target" type="checkbox" name="<?= $btns_list['name']; ?>[<?= self::$btn_placeholder; ?>][link_target]">
+                                                <span>В новому вікні</span>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="mb-3 type_link_form" style="display: none">
                                     <label>Форма</label>
@@ -341,8 +351,21 @@ class Constructor extends BaseMetaBox
                                         </select>
                                     </div>
                                     <div class="mb-3 type_link_link" style="<?php if ($type_link != 'link') : ?> display: none <?php endif; ?>">
-                                        <label>Посилання</label>
-                                        <input type="text" class="form-control form-control-sm" name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][link]" placeholder="<?php _e('Посилання '); ?>" value="<?= esc_attr($value['link']); ?>">
+                                        <div style="display: flex; gap: 10px;align-items: flex-end;">
+                                            <div>
+                                                <label>Посилання</label>
+                                                <input type="text" class="form-control form-control-sm" name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][link]" placeholder="<?php _e('Посилання '); ?>" value="<?= esc_attr($value['link']); ?>">
+                                            </div>
+                                            <div>
+                                                <label>
+                                                    <input class="cb-input-link_target"
+                                                           type="checkbox"
+                                                           <?php if($value['link_target']):?> checked <?php endif?>
+                                                           name="<?php echo $btns_list['name']; ?>[<?php echo $id; ?>][link_target]">
+                                                    <span>В новому вікні</span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <?php $form_id = $value['form_id'] ?? ''; ?>
                                     <div class="mb-3 type_link_form" style="<?php if ($type_link != 'form') : ?> display: none <?php endif; ?>">
