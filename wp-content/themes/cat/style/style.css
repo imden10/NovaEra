@@ -4907,6 +4907,7 @@ footer .social__list {
 .article-container {
   max-width: 960px;
   margin: 0 auto;
+  width: 100%;
 }
 .article-container .btn {
   margin-bottom: var(--spacing-separator-xs);
