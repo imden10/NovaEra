@@ -5073,3 +5073,16 @@ footer .social__list {
   left: -20px;
   background-color: var(--text-on-light-bg-darker-high);
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+iframe, video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
