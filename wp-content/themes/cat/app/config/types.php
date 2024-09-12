@@ -182,6 +182,7 @@ return [
                                     'Text.php',
                                     'DynamicList.php',
                                     'ImageBlock.php',
+                                    'VideoBlog',
                                 ],
                             ]
                         ],
