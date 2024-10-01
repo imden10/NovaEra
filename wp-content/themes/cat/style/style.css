@@ -4960,6 +4960,7 @@ footer .social__list {
   border-radius: var(--border-radius-global-s);
   width: var(--slider-item-height-l);
   max-width: 200px;
+  max-height: 112px;
 }
 @media screen and (max-width: 576px) {
   .article-preview .article-image {

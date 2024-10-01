@@ -44,7 +44,7 @@
 		border-radius: var(--border-radius-global-s);
 		width: var(--slider-item-height-l);
 		max-width: 200px;
-
+		max-height: 112px;
 		@include _576 {
 			max-width: 115px;
 		}
