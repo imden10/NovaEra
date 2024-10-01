@@ -4362,7 +4362,7 @@ footer .social__list {
   display: flex;
   flex-direction: column;
   padding: 0;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .otherposts .card-article .card-info {
   grid-gap: 0;
@@ -4372,6 +4372,12 @@ footer .social__list {
   font-weight: 600;
   color: var(--card-on-light-bg-lighter-title-default);
   line-height: 140%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
 }
 .otherposts .card-article img {
   margin-bottom: 8px;
@@ -4389,6 +4395,11 @@ footer .social__list {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media screen and (max-width: 576px) {
+  .otherposts .description {
+    -webkit-line-clamp: 3;
+  }
 }
 .otherposts .btns-wrapper {
   display: flex;
