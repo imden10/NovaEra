@@ -9,7 +9,6 @@
 
     <?= config('theme')['fonts'][get_option('theme_settings__font_style')]['link'] ?>
     <link rel="icon" href="<?= get_image_url_by_id(get_option('theme_settings__favicon')) ?>" type="image/png">
-    <link rel="stylesheet" href="https://i.icomoon.io/public/0b30d968be/NovaEraNew/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <?php if (in_array($_SERVER['REQUEST_URI'], ['/cookies', '/rules-for-using-the-site', '/privacy-policy'])) : ?>
         <meta name="robots" content="noindex">
