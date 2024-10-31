@@ -8,6 +8,7 @@
 @import './mixinsAndVariables/breakpoints.scss';
 @import './mixinsAndVariables/mixins.scss';
 // common
+@import './fonts/icons.scss';
 @import './system/common/_animations.scss';
 @import './system/common/_typography.scss';
 @import './system/common/_buttons.scss';
@@ -42,3 +43,4 @@
 @import './system/components/article.scss';
 @import './system/components/pagination.scss';
 @import './system/components/dynamic-list.scss';
+@import './system/components/video-blog.scss';

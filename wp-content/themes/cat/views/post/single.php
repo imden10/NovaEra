@@ -83,7 +83,7 @@ if (!empty($similarArticles)) : ?>
                     <?php foreach ($similarArticles as $item) : ?>
                         <a href="<?= get_permalink($item->ID); ?>" class="card card-article">
                             <?php if (get_the_post_thumbnail_url($item->ID, 'full')) : ?>
-                                <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?> ?>" alt="">
+                                <img src="<?= get_the_post_thumbnail_url($item->ID, 'full'); ?>" alt="">
                             <?php endif ?>
                             <div class="card-info">
                                 <div class="title-wrp">
