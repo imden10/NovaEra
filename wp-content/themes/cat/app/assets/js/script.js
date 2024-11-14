@@ -245,7 +245,6 @@ jQuery(document).ready(function($)
             .sortable('toArray');
         refreshOrder(sortableArray);
 
-        const urlWithoutHash = document.location.href.replace(location.hash , '');
         scrollToSection($(cloneComponent).attr('id'));
     });
     /* End Create component */
@@ -253,10 +252,7 @@ jQuery(document).ready(function($)
     function scrollToSection(sectionId) {
         var section = document.getElementById(sectionId);
         if (section) {
-            window.scrollTo({
-                top: section.offsetTop,
-                behavior: 'smooth' // Додаємо плавність прокрутки
-            });
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }
 
