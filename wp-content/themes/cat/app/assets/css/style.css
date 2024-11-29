@@ -363,7 +363,7 @@
 #wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before {
     content: "";
     top: 4px;
-    background-image: url(/wp-content/themes/cat/img/logo.png);
+    background-image: url(/wp-content/themes/cat/img/logo-s.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
