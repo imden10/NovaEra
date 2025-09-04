@@ -57,12 +57,9 @@
             </div>
         </div>
         <div class="footer__bottom">
-
-
-
             <ul>
                 <!--------------------------------- LANG SWICHET ------------------------------------------------------------------>
-                <li><a class="menu__link" href="https://bookkeeper.kiev.ua/" target="_blank">Copyright BookKeeper SaaS LLC</a> © 2024</li>
+                <li><a class="menu__link" href="https://bookkeeper.kiev.ua/" target="_blank">Copyright BookKeeper SaaS LLC</a> © 2025</li>
                 <li><a class="menu__link" href="/rules-for-using-the-site/">Правила використання</a></li>
                 <li><a class="menu__link" href="/privacy-policy/">Політика конфіденційності</a></li>
                 <li><a class="menu__link" href="/cookies/">Управління Cookies</a></li>
