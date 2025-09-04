@@ -29,13 +29,13 @@
             ?>
             <ul class="share">
                 <li>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentUrl ?>" target="_blank" class="ic-facebook" aria-label="Share on Facebook"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode($currentUrl) ?>" target="_blank" class="ic-facebook" aria-label="Share on Facebook"></a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/intent/tweet?url=<?= $currentUrl ?>" target="_blank" class="ic-twitter-simple" aria-label="Share on Twitter"></a>
+                    <a href="https://twitter.com/intent/tweet?url=<?= urlencode($currentUrl) ?>" target="_blank" class="ic-twitter-simple" aria-label="Share on Twitter"></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentUrl ?>" target="_blank" class="ic-linkedin-simple" aria-label="Share on LinkedIn"></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= urlencode($currentUrl) ?>" target="_blank" class="ic-linkedin-simple" aria-label="Share on LinkedIn"></a>
                 </li>
                 <li onclick="copyLink(event)" class="ic-link copylink" aria-label="Copy link">
                     <span>copy</span>
@@ -59,13 +59,13 @@
             </span>
             <ul class="share">
                 <li>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentUrl ?>" target="_blank" class="ic-facebook" aria-label="Share on Facebook"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode($currentUrl) ?>" target="_blank" class="ic-facebook" aria-label="Share on Facebook"></a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/intent/tweet?url=<?= $currentUrl ?>&text=Check%20this%20out!" target="_blank" class="ic-twitter-simple" aria-label="Share on Twitter"></a>
+                    <a href="https://twitter.com/intent/tweet?url=<?= urlencode($currentUrl) ?>&text=Check%20this%20out!" target="_blank" class="ic-twitter-simple" aria-label="Share on Twitter"></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= $currentUrl ?>" target="_blank" class="ic-linkedin-simple" aria-label="Share on LinkedIn"></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= urlencode($currentUrl) ?>" target="_blank" class="ic-linkedin-simple" aria-label="Share on LinkedIn"></a>
                 </li>
                 <li onclick="copyLink()" class="ic-link" aria-label="Copy link">
                 </li>
