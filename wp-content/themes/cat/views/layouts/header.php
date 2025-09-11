@@ -13,6 +13,10 @@
     <?php if (in_array($_SERVER['REQUEST_URI'], ['/cookies', '/rules-for-using-the-site', '/privacy-policy'])) : ?>
         <meta name="robots" content="noindex">
     <?php endif; ?>
+
+    <meta property="og:title" content="Test Era" />
+    <meta property="og:description" content="Test Era desc" />
+    <meta property="og:image" content="https://nova-era.sidev.digital/wp-content/uploads/2024/05/img.jpg" />
 </head>
 
 <?php
